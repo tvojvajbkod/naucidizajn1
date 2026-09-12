@@ -1,0 +1,70 @@
+name: Objavi sajt na GitHub Pages
+
+# Pokreće se na svaki push u glavnu granu, i ručno iz Actions taba.
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+# Dozvole koje traži objava na Pages.
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Jedan deploy u isto vreme. Novi push čeka da se prethodni završi,
+# umesto da se dva deploy-a pregaze.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: 1.3.0
+
+      - name: Instalacija
+        run: bun install --frozen-lockfile
+
+      - name: Podesi Pages
+        id: pages
+        uses: actions/configure-pages@v5
+
+      - name: Build (statički izvoz)
+        env:
+          STATIC_EXPORT: "1"
+          # base_path je prazan za sopstveni domen i za <korisnik>.github.io
+          # repozitorijum; inače je "/ime-repozitorijuma".
+          NEXT_PUBLIC_BASE_PATH: ${{ steps.pages.outputs.base_path }}
+          NEXT_PUBLIC_MARKETING_URL: ${{ steps.pages.outputs.origin }}${{ steps.pages.outputs.base_path }}
+          # Bez Supabase ključeva blog ostaje prazan — to je očekivano.
+          # Dodaj ih u Settings → Secrets and variables → Actions ako hoćeš blog.
+          NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
+          NEXT_PUBLIC_SUPABASE_ANON_KEY: ${{ secrets.NEXT_PUBLIC_SUPABASE_ANON_KEY }}
+          NEXT_PUBLIC_GA_MEASUREMENT_ID: ${{ vars.NEXT_PUBLIC_GA_MEASUREMENT_ID }}
+          NEXT_PUBLIC_META_PIXEL_ID: ${{ vars.NEXT_PUBLIC_META_PIXEL_ID }}
+        run: bun run build:static
+
+      - name: Isključi Jekyll
+        # Bez ovog fajla GitHub Pages ignoriše sve foldere koji počinju
+        # donjom crtom — a tu živi ceo _next folder sa CSS-om i skriptama.
+        run: touch apps/marketing/out/.nojekyll
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: apps/marketing/out
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

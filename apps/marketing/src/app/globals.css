@@ -1,0 +1,146 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@source "../../../../packages/ui/src";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --radius: 0.625rem;
+  /* Nauči Dizajn brend */
+  --brand-olive: #3a4021;
+  --brand-cream: #e5dfd0;
+  --brand-lime: #ddff00;
+  --background: #ffffff;
+  --foreground: #232421;
+  --card: #ffffff;
+  --card-foreground: #232421;
+  --popover: #ffffff;
+  --popover-foreground: #232421;
+  --primary: #ddff00;
+  --primary-foreground: #232421;
+  --secondary: #ecf0ef;
+  --secondary-foreground: #232421;
+  --muted: #ecf0ef;
+  --muted-foreground: #5c5f58;
+  --accent: #f2f7d9;
+  --accent-foreground: #232421;
+  --destructive: #dc2626;
+  --border: #e2e5e1;
+  --input: #d6dad4;
+  --ring: #ddff00;
+  --sidebar: #f6f8f6;
+  --sidebar-foreground: #232421;
+  --sidebar-primary: #ddff00;
+  --sidebar-primary-foreground: #232421;
+  --sidebar-accent: #f2f7d9;
+  --sidebar-accent-foreground: #232421;
+  --sidebar-border: #e2e5e1;
+  --sidebar-ring: #ddff00;
+}
+
+.dark {
+  --background: #1a1b19;
+  --foreground: #f4f5f2;
+  --card: #232421;
+  --card-foreground: #f4f5f2;
+  --popover: #232421;
+  --popover-foreground: #f4f5f2;
+  --primary: #ddff00;
+  --primary-foreground: #232421;
+  --secondary: #313330;
+  --secondary-foreground: #f4f5f2;
+  --muted: #313330;
+  --muted-foreground: #a8aca4;
+  --accent: #3a4021;
+  --accent-foreground: #f4f5f2;
+  --destructive: #ef4444;
+  --border: #34362f;
+  --input: #3d403a;
+  --ring: #ddff00;
+  --sidebar: #141512;
+  --sidebar-foreground: #f4f5f2;
+  --sidebar-primary: #ddff00;
+  --sidebar-primary-foreground: #232421;
+  --sidebar-accent: #3a4021;
+  --sidebar-accent-foreground: #f4f5f2;
+  --sidebar-border: #34362f;
+  --sidebar-ring: #ddff00;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+  /* legacy brend aliasi — stariji kod i moduli koriste ink/paper */
+  --color-ink: var(--foreground);
+  --color-paper: var(--background);
+  --color-olive: var(--brand-olive);
+  --color-cream: var(--brand-cream);
+  --color-lime: var(--brand-lime);
+  --font-sans: var(--font-space-grotesk), ui-sans-serif, system-ui, sans-serif;
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --animate-accordion-down: accordion-down 0.2s ease-out;
+  --animate-accordion-up: accordion-up 0.2s ease-out;
+
+  @keyframes accordion-down {
+    from {
+      height: 0;
+    }
+    to {
+      height: var(--radix-accordion-content-height);
+    }
+  }
+  @keyframes accordion-up {
+    from {
+      height: var(--radix-accordion-content-height);
+    }
+    to {
+      height: 0;
+    }
+  }
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+    outline-color: color-mix(in oklab, var(--color-ring) 50%, transparent);
+    /* Native scrollbarovi u stilu shadcn ScrollArea (textarea, pre, tabele...).
+       Za scroll sadržaja u komponentama koristi <ScrollArea> iz @repo/ui. */
+    scrollbar-width: thin;
+  }
+  html {
+    scrollbar-color: var(--color-border) transparent;
+  }
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+  }
+}
+
+/* @ludus:inject:css:marketing */

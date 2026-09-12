@@ -1,0 +1,20 @@
+{
+  "generator": "ludus-saas-generator",
+  "baseVersion": "0.6.0",
+  "projectName": "Moj SaaS",
+  "projectSlug": "moj-saas",
+  "modules": [
+    "analytics-google",
+    "analytics-meta-pixel",
+    "blog",
+    "seo-aeo"
+  ],
+  "localPorts": {
+    "api": 59240,
+    "db": 59241,
+    "studio": 59242,
+    "inbucket": 59243,
+    "shadowDb": 59244
+  },
+  "warnings": []
+}

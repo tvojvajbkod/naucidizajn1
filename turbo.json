@@ -1,0 +1,41 @@
+{
+  "$schema": "https://turbo.build/schema.json",
+  "tasks": {
+    "build": {
+      "dependsOn": [
+        "^build"
+      ],
+      "outputs": [
+        ".next/**",
+        "!.next/cache/**"
+      ]
+    },
+    "typecheck": {
+      "dependsOn": [
+        "^typecheck"
+      ]
+    },
+    "dev": {
+      "cache": false,
+      "persistent": true
+    },
+    "build:static": {
+      "dependsOn": [
+        "^build"
+      ],
+      "outputs": [
+        "out/**"
+      ],
+      "env": [
+        "STATIC_EXPORT",
+        "NEXT_PUBLIC_BASE_PATH",
+        "NEXT_PUBLIC_MARKETING_URL",
+        "NEXT_PUBLIC_APP_URL",
+        "NEXT_PUBLIC_SUPABASE_URL",
+        "NEXT_PUBLIC_SUPABASE_ANON_KEY",
+        "NEXT_PUBLIC_GA_MEASUREMENT_ID",
+        "NEXT_PUBLIC_META_PIXEL_ID"
+      ]
+    }
+  }
+}

@@ -1,0 +1,102 @@
+"use client";
+
+import { BrandMark } from "@/components/brand-mark";
+import { brand, links as brandLinks } from "@/lib/brand";
+import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@repo/ui";
+import { Menu, Sparkles } from "lucide-react";
+import Link from "next/link";
+import { useState } from "react";
+
+/**
+ * Navigacija je namerno kratka. Zatečeni sajt je imao sedam kurseva u
+ * padajućem meniju, pa je kviz služio kao zakrpa za paralizu izbora —
+ * kursevi sada žive na svojoj stranici, a meni ima pet stavki.
+ */
+const links: Array<{ href: string; label: string; highlight?: boolean }> = [
+  { href: "/ai-web-dizajner", label: "AI Web Dizajner", highlight: true },
+  { href: "/studije-slucaja", label: "Kako radi" },
+  { href: "/kursevi", label: "Kursevi" },
+  { href: "/mentorstvo", label: "Mentorstvo" },
+  { href: "/cene", label: "Cene" },
+  { href: "/utisci", label: "Utisci" },
+  // @ludus:inject:nav:links
+];
+
+export function SiteNav() {
+  const [open, setOpen] = useState(false);
+
+  return (
+    <header className="sticky top-0 z-50 border-border/70 border-b bg-background/85 backdrop-blur">
+      <nav className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-6 py-3">
+        <Link href="/" className="flex items-center gap-2 font-bold text-ink text-lg">
+          <BrandMark />
+          <span>
+            nauči<span className="text-muted-foreground">dizajn</span>
+          </span>
+        </Link>
+
+        <div className="hidden items-center gap-7 md:flex">
+          {links.map((link) => (
+            <Link
+              key={link.href}
+              href={link.href}
+              className={
+                link.highlight
+                  ? "flex items-center gap-1.5 font-medium text-ink text-sm hover:text-ink/70"
+                  : "text-ink/70 text-sm hover:text-ink"
+              }
+            >
+              {link.highlight ? <Sparkles className="size-3.5" /> : null}
+              {link.label}
+            </Link>
+          ))}
+          <a
+            href={brandLinks.skool}
+            target="_blank"
+            rel="noreferrer noopener"
+            className="rounded-full bg-ink px-5 py-2.5 font-semibold text-background text-sm transition-colors hover:bg-ink/85"
+          >
+            Pridruži se
+          </a>
+        </div>
+
+        <Sheet open={open} onOpenChange={setOpen}>
+          <SheetTrigger
+            className="inline-flex size-10 items-center justify-center rounded-lg border md:hidden"
+            aria-label="Otvori meni"
+          >
+            <Menu className="size-5" />
+          </SheetTrigger>
+          <SheetContent side="right" className="w-72">
+            <SheetHeader>
+              <SheetTitle className="flex items-center gap-2">
+                <BrandMark />
+                {brand.name}
+              </SheetTitle>
+            </SheetHeader>
+            <div className="flex flex-col gap-1 px-4">
+              {links.map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  onClick={() => setOpen(false)}
+                  className="rounded-lg px-3 py-2.5 font-medium text-ink hover:bg-muted"
+                >
+                  {link.label}
+                </Link>
+              ))}
+              <a
+                href={brandLinks.skool}
+                target="_blank"
+                rel="noreferrer noopener"
+                className="mt-3 rounded-full bg-ink px-5 py-3 text-center font-semibold text-background"
+              >
+                Pridruži se
+              </a>
+            </div>
+          </SheetContent>
+        </Sheet>
+      </nav>
+    </header>
+  );
+}

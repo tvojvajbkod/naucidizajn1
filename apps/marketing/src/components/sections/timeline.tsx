@@ -33,38 +33,38 @@ const weeks = [
 
 export function TimelineSection() {
   return (
-    <section className="mx-auto max-w-6xl px-6 py-20 md:py-24">
-      <div className="max-w-2xl">
-        <h2 className="font-medium text-3xl text-ink tracking-[-0.02em] md:text-4xl">
-          Kako izgleda tvojih 30 dana
-        </h2>
-        <p className="mt-4 text-lg text-muted-foreground">
-          Jedan dan teorije, dvadeset devet dana rada. Svakog dana znaš šta ti je zadatak — ne biraš
-          sam šta ćeš učiti.
+    <section className="bg-olive py-20 md:py-24">
+      <div className="mx-auto max-w-6xl px-6">
+        <div className="max-w-2xl">
+          <h2 className="font-medium text-3xl text-background tracking-[-0.02em] md:text-4xl">
+            Kako izgleda tvojih 30 dana
+          </h2>
+          <p className="mt-4 text-background/75 text-lg">
+            Jedan dan teorije, dvadeset devet dana rada. Svakog dana znaš šta ti je zadatak — ne
+            biraš sam šta ćeš učiti.
+          </p>
+        </div>
+
+        <ol className="mt-12 space-y-px overflow-hidden rounded-2xl border border-background/15">
+          {weeks.map((week) => (
+            <li
+              key={week.label}
+              className="grid gap-2 bg-background/[0.06] p-6 md:grid-cols-[9rem_1fr] md:gap-8 md:p-7"
+            >
+              <span className="font-semibold text-primary text-sm md:pt-0.5">{week.label}</span>
+              <div>
+                <h3 className="font-semibold text-background text-lg">{week.title}</h3>
+                <p className="mt-1.5 text-background/70 leading-relaxed">{week.body}</p>
+              </div>
+            </li>
+          ))}
+        </ol>
+
+        <p className="mt-6 text-background/60 text-sm">
+          Ritam je okvir, ne rok. Ako ti treba više vremena, članstvo traje dok god ti treba — i
+          prestaje onog trenutka kad ga otkažeš.
         </p>
       </div>
-
-      <ol className="mt-12 space-y-px overflow-hidden rounded-2xl border">
-        {weeks.map((week) => (
-          <li
-            key={week.label}
-            className="grid gap-2 bg-card p-6 md:grid-cols-[9rem_1fr] md:gap-8 md:p-7"
-          >
-            <span className="font-semibold text-muted-foreground text-sm md:pt-0.5">
-              {week.label}
-            </span>
-            <div>
-              <h3 className="font-semibold text-ink text-lg">{week.title}</h3>
-              <p className="mt-1.5 text-muted-foreground leading-relaxed">{week.body}</p>
-            </div>
-          </li>
-        ))}
-      </ol>
-
-      <p className="mt-6 text-muted-foreground text-sm">
-        Ritam je okvir, ne rok. Ako ti treba više vremena, članstvo traje dok god ti treba — i
-        prestaje onog trenutka kad ga otkažeš.
-      </p>
     </section>
   );
 }

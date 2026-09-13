@@ -27,7 +27,7 @@ export function WorksGallery() {
               type="button"
               onClick={() => setActive(category)}
               className={cn(
-                "rounded-full border px-4 py-2 font-medium text-sm transition-colors",
+                "rounded border px-4 py-2 font-medium text-sm transition-colors",
                 active === category
                   ? "border-ink bg-ink text-background"
                   : "text-ink/70 hover:bg-muted",

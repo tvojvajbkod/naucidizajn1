@@ -78,7 +78,7 @@ export default function MentorstvoPage() {
       <section className="border-b bg-muted/40">
         <div className="mx-auto max-w-6xl px-6 py-16 md:py-20">
           <p className="font-medium text-muted-foreground text-sm">Mentorstvo 1-1</p>
-          <h1 className="mt-3 max-w-3xl font-bold text-4xl text-ink leading-tight tracking-tight md:text-5xl">
+          <h1 className="mt-3 max-w-3xl font-medium text-4xl text-ink leading-tight tracking-[-0.02em] md:text-5xl">
             Lični mentor koji te vodi šest meseci
           </h1>
           <p className="mt-5 max-w-2xl text-lg text-muted-foreground leading-relaxed">
@@ -88,7 +88,7 @@ export default function MentorstvoPage() {
           </p>
           <Link
             href="/cene"
-            className="mt-9 inline-flex items-center justify-center rounded-full bg-ink px-7 py-3.5 font-semibold text-background transition-colors hover:bg-ink/85"
+            className="mt-9 inline-flex items-center justify-center rounded bg-ink px-7 py-3.5 font-semibold text-background transition-colors hover:bg-ink/85"
           >
             Pogledaj cene mentorstva
           </Link>
@@ -96,7 +96,7 @@ export default function MentorstvoPage() {
       </section>
 
       <section className="mx-auto max-w-6xl px-6 py-16 md:py-20">
-        <h2 className="max-w-2xl font-bold text-3xl text-ink tracking-tight md:text-4xl">
+        <h2 className="max-w-2xl font-medium text-3xl text-ink tracking-[-0.02em] md:text-4xl">
           Program u tri faze
         </h2>
         <p className="mt-4 max-w-2xl text-lg text-muted-foreground">
@@ -118,7 +118,7 @@ export default function MentorstvoPage() {
 
       <section className="bg-muted/50 py-16 md:py-20">
         <div className="mx-auto max-w-6xl px-6">
-          <h2 className="font-bold text-3xl text-ink tracking-tight md:text-4xl">
+          <h2 className="font-medium text-3xl text-ink tracking-[-0.02em] md:text-4xl">
             Šta je uključeno
           </h2>
           <ul className="mt-8 grid gap-3.5 sm:grid-cols-2">

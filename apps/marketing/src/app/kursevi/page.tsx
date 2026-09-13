@@ -17,7 +17,7 @@ export default function KurseviPage() {
   return (
     <main>
       <section className="mx-auto max-w-6xl px-6 pt-16 pb-4 md:pt-20">
-        <h1 className="max-w-3xl font-bold text-4xl text-ink leading-tight tracking-tight md:text-5xl">
+        <h1 className="max-w-3xl font-medium text-4xl text-ink leading-tight tracking-[-0.02em] md:text-5xl">
           Izaberi veštinu koju hoćeš da savladaš
         </h1>
         <p className="mt-5 max-w-2xl text-lg text-muted-foreground leading-relaxed">

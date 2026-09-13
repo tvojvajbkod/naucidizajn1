@@ -5,7 +5,9 @@ import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@
 export function ComparisonSection() {
   return (
     <section className="mx-auto max-w-5xl px-6 py-16">
-      <h2 className="font-bold text-2xl text-ink tracking-tight md:text-3xl">Šta da izaberem</h2>
+      <h2 className="font-medium text-2xl text-ink tracking-[-0.02em] md:text-3xl">
+        Šta da izaberem
+      </h2>
       <p className="mt-3 text-muted-foreground">
         Tri načina učenja, tri različita cilja. Ako se dvoumiš, gledaj prvi red.
       </p>

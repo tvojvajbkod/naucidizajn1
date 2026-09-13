@@ -17,7 +17,7 @@ export function FAQSection({
 }) {
   return (
     <section id="pitanja" className="mx-auto max-w-3xl px-6 py-20 md:py-24">
-      <h2 className="font-bold text-3xl text-ink tracking-tight md:text-4xl">{title}</h2>
+      <h2 className="font-medium text-3xl text-ink tracking-[-0.02em] md:text-4xl">{title}</h2>
       <p className="mt-4 text-lg text-muted-foreground">{description}</p>
 
       <Accordion type="single" collapsible className="mt-10 w-full">

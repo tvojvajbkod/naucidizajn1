@@ -54,7 +54,7 @@ export function SiteNav() {
             href={brandLinks.skool}
             target="_blank"
             rel="noreferrer noopener"
-            className="rounded-full bg-ink px-5 py-2.5 font-semibold text-background text-sm transition-colors hover:bg-ink/85"
+            className="rounded bg-ink px-5 py-2.5 font-semibold text-background text-sm transition-colors hover:bg-ink/85"
           >
             Pridruži se
           </a>
@@ -89,7 +89,7 @@ export function SiteNav() {
                 href={brandLinks.skool}
                 target="_blank"
                 rel="noreferrer noopener"
-                className="mt-3 rounded-full bg-ink px-5 py-3 text-center font-semibold text-background"
+                className="mt-3 rounded bg-ink px-5 py-3 text-center font-semibold text-background"
               >
                 Pridruži se
               </a>

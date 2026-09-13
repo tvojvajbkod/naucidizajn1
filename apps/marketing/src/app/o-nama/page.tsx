@@ -15,7 +15,7 @@ export default function ONamaPage() {
     <main>
       <section className="border-b bg-muted/40">
         <div className="mx-auto max-w-6xl px-6 py-16 md:py-20">
-          <h1 className="max-w-3xl font-bold text-4xl text-ink leading-tight tracking-tight md:text-5xl">
+          <h1 className="max-w-3xl font-medium text-4xl text-ink leading-tight tracking-[-0.02em] md:text-5xl">
             Najbolja online edukacija na našem jeziku — dostupna svima
           </h1>
           {/* AEO: prvi pasus odgovara na „šta je Nauči Dizajn". */}
@@ -29,7 +29,9 @@ export default function ONamaPage() {
       </section>
 
       <section className="mx-auto max-w-3xl px-6 py-16 md:py-20">
-        <h2 className="font-bold text-2xl text-ink tracking-tight md:text-3xl">U šta verujemo</h2>
+        <h2 className="font-medium text-2xl text-ink tracking-[-0.02em] md:text-3xl">
+          U šta verujemo
+        </h2>
         <div className="mt-8 space-y-6 text-lg text-muted-foreground leading-relaxed">
           <p>
             <strong className="text-ink">Uči se radeći.</strong> Snimci su najlakši deo. Ono što

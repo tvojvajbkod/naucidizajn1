@@ -19,7 +19,7 @@ export default async function BlogPage() {
 
   return (
     <main className="mx-auto max-w-3xl px-6 py-16">
-      <h1 className="font-bold text-4xl text-ink">Blog</h1>
+      <h1 className="font-medium text-4xl text-ink">Blog</h1>
       <div className="mt-10 space-y-4">
         {posts.map((post) => (
           <Link key={post.slug} href={`/blog/${post.slug}`} className="block">

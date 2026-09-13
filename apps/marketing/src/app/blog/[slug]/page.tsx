@@ -101,7 +101,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
           {new Date(post.publishedAt).toLocaleDateString("sr-RS")}
         </p>
       ) : null}
-      <h1 className="mt-2 font-bold text-4xl text-ink">{post.title}</h1>
+      <h1 className="mt-2 font-medium text-4xl text-ink">{post.title}</h1>
       <article className="blog-article mt-8">
         <ReactMarkdown remarkPlugins={[remarkGfm]}>{post.content}</ReactMarkdown>
       </article>

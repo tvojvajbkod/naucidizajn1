@@ -11,7 +11,7 @@ apps/
   app/         # SaaS proizvod (iza auth-a), port 3000
   marketing/   # javni sajt (landing, pricing, SEO), port 3001 — poseban Vercel projekat
 packages/
-  ui/          # design system (Space Grotesk, primarna #DDFF00, ink #232421, podloga #FFFFFF)
+  ui/          # design system (Archivo, limeta #DBFF00, ink #232421, podloga #FFFFFF)
   db/          # Drizzle šema + migracije (Supabase Postgres)
   auth/        # Supabase Auth klijenti (server, browser, admin, middleware)
   config/      # Zod env šeme + deljeni tsconfig
@@ -107,6 +107,23 @@ $99/mes, Skool) je heroj početne strane i ima svoju punu landing stranu.
 - **Prazno stanje je namerno.** Zid radova se ne prikazuje dok nema objavljenih
   radova, a `/radovi` tada objašnjava zašto. Ne dodavati natpis „uskoro" ni
   slike sa stocka — jedini smisao te stranice je da bude istinita.
+- **Vizuelni jezik je izmeren sa postojećeg sajta, ne pogođen.** Naslovi su
+  težine 500 sa razmakom `-0.02em` (`-0.03em` za hero), dugmad imaju radijus
+  4px (`rounded`), kartice 12px. Par dugmadi je limeta sa ink tekstom
+  (primarno) i maslinasto `bg-olive` sa limeta tekstom (sekundarno) — ne
+  outline. Ne vraćaj `rounded-full` i ne vraćaj `font-bold` na naslove.
+- **Tri potpisna poteza brenda**, svaki ima svoju komponentu:
+  `<Accent>` (serifni kurziv za JEDNU reč u naslovu — dve ubijaju efekat),
+  `<BigStat>` (kondenzovane brojke; `size="giant"` najviše jednom po stranici),
+  i krem traka `StatBandSection`. Ne razvlači ih po svakoj sekciji.
+- **Fontovi putuju sa sajtom** (`@fontsource` u `layout.tsx`): Archivo umesto
+  Raptora, Instrument Serif umesto Saola, Anton umesto Druk Condensed. Zbog
+  toga build radi i bez mreže, a posetilac ne šalje zahtev Google-u. Originalni
+  fontovi su komercijalni — ne preuzimaj ih sa njihovog CDN-a; smeju tek kad
+  firma dostavi fajlove i potvrdi da licenca pokriva novi sajt.
+- **`isProposal` u `src/lib/brand.ts`** drži sajt van pretraživača i prikazuje
+  napomenu u futeru da ovo nije zvanični Nauči Dizajn. Prebacuje se na `false`
+  tek kad firma preuzme sajt.
 - **Skool je spoljni levak.** Sve CTA dugmad ka članstvu vode na `links.skool`
   i otvaraju se u novom tabu. Cena i uslovi stoje NA sajtu, pre klika.
 

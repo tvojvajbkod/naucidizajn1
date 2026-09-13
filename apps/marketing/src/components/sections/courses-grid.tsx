@@ -7,7 +7,7 @@ export function CoursesGrid({ heading = true }: { heading?: boolean }) {
     <section className="mx-auto max-w-6xl px-6 py-16">
       {heading ? (
         <div className="max-w-2xl">
-          <h2 className="font-bold text-3xl text-ink tracking-tight md:text-4xl">
+          <h2 className="font-medium text-3xl text-ink tracking-[-0.02em] md:text-4xl">
             Šest oblasti, jedan tempo — tvoj
           </h2>
           <p className="mt-4 text-lg text-muted-foreground">

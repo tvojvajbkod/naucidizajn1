@@ -7,6 +7,7 @@ import { MembershipOfferSection } from "@/components/sections/membership-offer";
 import { MentorsSection } from "@/components/sections/mentors";
 import { PathsSection } from "@/components/sections/paths";
 import { ProofSection } from "@/components/sections/proof";
+import { StatBandSection } from "@/components/sections/stat-band";
 import { TimelineSection } from "@/components/sections/timeline";
 import { TurningPointSection } from "@/components/sections/turning-point";
 import { WhatsIncludedSection } from "@/components/sections/whats-included";
@@ -26,6 +27,7 @@ export default function HomePage() {
     <main>
       <HeroSection />
       <TurningPointSection />
+      <StatBandSection />
       <WhatsIncludedSection />
       <TimelineSection />
       <WorksWallSection limit={3} />

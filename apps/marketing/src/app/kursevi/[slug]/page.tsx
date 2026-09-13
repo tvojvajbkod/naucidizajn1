@@ -33,7 +33,7 @@ export default async function CoursePage({ params }: { params: Promise<{ slug: s
       <section className="border-b bg-muted/40">
         <div className="mx-auto max-w-6xl px-6 py-16 md:py-20">
           <p className="font-medium text-muted-foreground text-sm">Kurs</p>
-          <h1 className="mt-3 max-w-3xl font-bold text-4xl text-ink leading-tight tracking-tight md:text-5xl">
+          <h1 className="mt-3 max-w-3xl font-medium text-4xl text-ink leading-tight tracking-[-0.02em] md:text-5xl">
             {course.title}
           </h1>
           {/* AEO: prvi pasus direktno odgovara na „šta ću moći posle ovoga". */}
@@ -64,7 +64,7 @@ export default async function CoursePage({ params }: { params: Promise<{ slug: s
 
       <section className="mx-auto grid max-w-6xl gap-12 px-6 py-16 md:grid-cols-[1.4fr_1fr] md:py-20">
         <div>
-          <h2 className="font-bold text-2xl text-ink tracking-tight md:text-3xl">Šta učiš</h2>
+          <h2 className="font-medium text-2xl text-ink tracking-[-0.02em] md:text-3xl">Šta učiš</h2>
           <ul className="mt-7 space-y-4">
             {course.curriculum.map((item) => (
               <li key={item} className="flex items-start gap-3">
@@ -84,7 +84,7 @@ export default async function CoursePage({ params }: { params: Promise<{ slug: s
           </p>
           <a
             href="/cene"
-            className="mt-6 inline-flex w-full items-center justify-center rounded-full bg-ink px-6 py-3 font-semibold text-background transition-colors hover:bg-ink/85"
+            className="mt-6 inline-flex w-full items-center justify-center rounded bg-ink px-6 py-3 font-semibold text-background transition-colors hover:bg-ink/85"
           >
             Pogledaj pakete i cene
           </a>

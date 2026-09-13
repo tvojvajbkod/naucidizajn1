@@ -20,7 +20,7 @@ function Quote({ item }: { item: Testimonial }) {
           <span className="block text-muted-foreground text-sm">{item.role}</span>
         ) : null}
         {item.retention ? (
-          <span className="mt-1.5 inline-block rounded-full bg-accent px-2.5 py-0.5 text-ink text-xs">
+          <span className="mt-1.5 inline-block rounded bg-accent px-2.5 py-0.5 text-ink text-xs">
             {item.retention}
           </span>
         ) : null}
@@ -35,7 +35,7 @@ export function ProofSection({ limit }: { limit?: number }) {
   return (
     <section id="utisci" className="mx-auto max-w-6xl px-6 py-20 md:py-24">
       <div className="max-w-2xl">
-        <h2 className="font-bold text-3xl text-ink tracking-tight md:text-4xl">
+        <h2 className="font-medium text-3xl text-ink tracking-[-0.02em] md:text-4xl">
           Šta kažu ljudi koji plaćaju
         </h2>
         <p className="mt-4 text-lg text-muted-foreground">

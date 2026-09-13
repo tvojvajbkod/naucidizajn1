@@ -13,7 +13,7 @@ export function LegalPage({
 }) {
   return (
     <main className="mx-auto max-w-3xl px-6 py-16">
-      <h1 className="font-bold text-4xl text-ink">{title}</h1>
+      <h1 className="font-medium text-4xl text-ink">{title}</h1>
       <p className="mt-2 text-muted-foreground text-sm">Poslednja izmena: {updated}</p>
       <div className="mt-4 rounded-lg border border-amber-300 bg-amber-50 px-4 py-3 text-amber-900 text-sm">
         <strong>Šablon, ne pravni savet.</strong> Popuni polja u [uglastim zagradama], prilagodi

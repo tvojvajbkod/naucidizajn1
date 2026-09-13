@@ -1,23 +1,28 @@
+import { Accent } from "@/components/accent";
+import { BigStat } from "@/components/big-stat";
 import { links, membership, stats } from "@/lib/brand";
-import { ArrowRight, Star } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 
 /**
  * Hero je AI-first: najnovija ponuda je ono što posetilac vidi prvo.
  * Dva CTA-a, oba iznad preloma — jedan za odlučne, jedan za one koji prvo gledaju.
  * Cena stoji odmah uz dugme; zatečeni sajt ju je krio do Skool checkout-a.
+ *
+ * Tipografija prati postojeći sajt: naslov je težine 500 sa vrlo skupljenim
+ * razmakom (-0.03em), jedna reč je serifni kurziv, a brojke su kondenzovane.
  */
 export function HeroSection() {
   return (
     <section className="bg-ink text-background">
       <div className="mx-auto max-w-6xl px-6 py-20 md:py-28">
-        <p className="inline-flex items-center gap-2 rounded-full border border-background/20 px-4 py-1.5 font-medium text-background/80 text-sm">
+        <p className="inline-flex items-center gap-2 rounded border border-background/20 px-4 py-1.5 font-medium text-background/80 text-sm">
           <span className="size-2 rounded-full bg-primary" />
           Nova edukacija · mesečno članstvo
         </p>
 
-        <h1 className="mt-7 max-w-3xl font-bold text-4xl leading-[1.08] tracking-tight md:text-6xl">
-          AI dizajnira. <span className="text-primary">Ti zarađuješ.</span>
+        <h1 className="mt-7 max-w-3xl font-medium text-4xl leading-[1.04] tracking-[-0.03em] md:text-[4.75rem]">
+          AI dizajnira. Ti <Accent className="text-primary">zarađuješ</Accent>.
         </h1>
 
         <p className="mt-6 max-w-xl text-background/75 text-lg leading-relaxed">
@@ -31,14 +36,15 @@ export function HeroSection() {
             href={links.skool}
             target="_blank"
             rel="noreferrer noopener"
-            className="inline-flex h-13 items-center justify-center gap-2 rounded-full bg-primary px-7 py-3.5 font-semibold text-ink transition-transform hover:scale-[1.02]"
+            className="inline-flex items-center justify-center gap-2 rounded bg-primary px-7 py-4 font-semibold text-ink transition-transform hover:scale-[1.02]"
           >
             Pridruži se — {membership.price} mesečno
             <ArrowRight className="size-4" />
           </a>
+          {/* Sekundarno dugme je maslinasto sa limeta tekstom — par preuzet sa postojećeg sajta. */}
           <Link
             href="/ai-web-dizajner"
-            className="inline-flex items-center justify-center rounded-full border border-background/25 px-7 py-3.5 font-semibold text-background transition-colors hover:bg-background/10"
+            className="inline-flex items-center justify-center rounded bg-olive px-7 py-4 font-semibold text-primary transition-colors hover:bg-olive/85"
           >
             Vidi kako izgleda iznutra
           </Link>
@@ -48,26 +54,11 @@ export function HeroSection() {
           Plaćaš mesec po mesec. Otkazuješ sam, iz naloga.
         </p>
 
-        <dl className="mt-14 grid max-w-3xl grid-cols-2 gap-8 border-background/15 border-t pt-8 sm:grid-cols-4">
-          <div>
-            <dt className="text-background/55 text-sm">Članova zajednice</dt>
-            <dd className="mt-1 font-bold text-2xl">{stats.skoolMembers}</dd>
-          </div>
-          <div>
-            <dt className="text-background/55 text-sm">Ocena zajednice</dt>
-            <dd className="mt-1 flex items-center gap-1.5 font-bold text-2xl">
-              {stats.skoolRating}
-              <Star className="size-4 fill-primary text-primary" />
-            </dd>
-          </div>
-          <div>
-            <dt className="text-background/55 text-sm">Polaznika od 2020.</dt>
-            <dd className="mt-1 font-bold text-2xl">{stats.studentsSince2020}</dd>
-          </div>
-          <div>
-            <dt className="text-background/55 text-sm">Sastanak uživo</dt>
-            <dd className="mt-1 font-bold text-2xl">Nedeljno</dd>
-          </div>
+        <dl className="mt-16 grid max-w-4xl grid-cols-2 gap-8 border-background/15 border-t pt-10 sm:grid-cols-4">
+          <BigStat value={stats.skoolMembers} label="Članova zajednice" />
+          <BigStat value={stats.skoolRating} label="Ocena zajednice" />
+          <BigStat value={stats.studentsSince2020} label="Polaznika od 2020." />
+          <BigStat value="1×" label="Sastanak uživo nedeljno" />
         </dl>
       </div>
     </section>

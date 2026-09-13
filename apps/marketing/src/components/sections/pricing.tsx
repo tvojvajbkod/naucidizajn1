@@ -15,11 +15,11 @@ function PlanCard({ plan }: { plan: PricingPlan }) {
   return (
     <Card className={cn("h-full gap-4 py-8", plan.highlighted && "border-ink ring-1 ring-ink/15")}>
       <CardContent className="flex h-full flex-col px-8">
-        <h3 className="font-bold text-2xl text-ink">{plan.name}</h3>
+        <h3 className="font-medium text-2xl text-ink">{plan.name}</h3>
         <p className="mt-2 min-h-12 text-muted-foreground">{plan.description}</p>
 
         <div className="mt-6">
-          <p className="font-bold text-4xl text-ink tracking-tight">
+          <p className="font-medium text-4xl text-ink tracking-[-0.02em]">
             {plan.price}
             {plan.period ? (
               <span className="ml-1 font-normal text-base text-muted-foreground">
@@ -36,7 +36,7 @@ function PlanCard({ plan }: { plan: PricingPlan }) {
           href={plan.href}
           {...(external ? { target: "_blank", rel: "noreferrer noopener" } : {})}
           className={cn(
-            "mt-6 inline-flex h-11 w-full items-center justify-center rounded-full font-semibold text-sm transition-colors",
+            "mt-6 inline-flex h-11 w-full items-center justify-center rounded font-semibold text-sm transition-colors",
             plan.highlighted
               ? "bg-ink text-background hover:bg-ink/85"
               : "border bg-background text-ink hover:bg-muted",
@@ -70,7 +70,7 @@ export function PricingSection() {
   return (
     <section id="cene" className="mx-auto max-w-6xl px-6 py-20">
       <div className="mx-auto max-w-2xl text-center">
-        <h1 className="font-bold text-3xl text-ink tracking-tight md:text-4xl">
+        <h1 className="font-medium text-3xl text-ink tracking-[-0.02em] md:text-4xl">
           Cene, bez traženja
         </h1>
         <p className="mt-4 text-lg text-muted-foreground">
@@ -80,9 +80,9 @@ export function PricingSection() {
       </div>
 
       <Tabs defaultValue={pricingGroups[0]?.id} className="mt-10 items-center">
-        <TabsList className="h-11 rounded-full p-1">
+        <TabsList className="h-11 rounded p-1">
           {pricingGroups.map((group) => (
-            <TabsTrigger key={group.id} value={group.id} className="rounded-full px-4">
+            <TabsTrigger key={group.id} value={group.id} className="rounded px-4">
               {group.label}
               {group.badge ? <Badge className="ml-1.5">{group.badge}</Badge> : null}
             </TabsTrigger>

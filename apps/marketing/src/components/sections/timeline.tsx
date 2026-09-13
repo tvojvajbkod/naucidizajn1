@@ -35,7 +35,7 @@ export function TimelineSection() {
   return (
     <section className="mx-auto max-w-6xl px-6 py-20 md:py-24">
       <div className="max-w-2xl">
-        <h2 className="font-bold text-3xl text-ink tracking-tight md:text-4xl">
+        <h2 className="font-medium text-3xl text-ink tracking-[-0.02em] md:text-4xl">
           Kako izgleda tvojih 30 dana
         </h2>
         <p className="mt-4 text-lg text-muted-foreground">

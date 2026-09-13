@@ -1,3 +1,4 @@
+import { isProposal } from "@/lib/brand";
 import { marketingEnv } from "@repo/config/marketing-env";
 import type { MetadataRoute } from "next";
 
@@ -7,7 +8,7 @@ export const dynamic = "force-static";
 export default function robots(): MetadataRoute.Robots {
   const base = marketingEnv().NEXT_PUBLIC_MARKETING_URL;
   return {
-    rules: { userAgent: "*", allow: "/" },
+    rules: isProposal ? { userAgent: "*", disallow: "/" } : { userAgent: "*", allow: "/" },
     sitemap: `${base}/sitemap.xml`,
   };
 }

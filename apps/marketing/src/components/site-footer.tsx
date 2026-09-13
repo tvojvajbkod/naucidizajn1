@@ -1,5 +1,5 @@
 import { BrandMark } from "@/components/brand-mark";
-import { brand, links } from "@/lib/brand";
+import { brand, isProposal, links } from "@/lib/brand";
 import Link from "next/link";
 
 const columns: Array<{ title: string; items: Array<{ href: string; label: string }> }> = [
@@ -93,7 +93,23 @@ export function SiteFooter() {
           </div>
         </div>
 
-        <div className="mt-12 flex flex-col gap-4 border-border/70 border-t pt-6 text-muted-foreground text-sm sm:flex-row sm:items-center sm:justify-between">
+        {isProposal ? (
+          <p className="mt-12 rounded border border-border bg-muted/60 px-4 py-3 text-muted-foreground text-sm leading-relaxed">
+            Ovo je <strong className="text-ink">predlog redizajna</strong>, a ne zvanični sajt Nauči
+            Dizajna. Zvanični sajt je{" "}
+            <a
+              href="https://www.naucidizajn.com/"
+              className="text-ink underline underline-offset-4"
+              rel="noreferrer noopener"
+              target="_blank"
+            >
+              naucidizajn.com
+            </a>
+            .
+          </p>
+        ) : null}
+
+        <div className="mt-8 flex flex-col gap-4 border-border/70 border-t pt-6 text-muted-foreground text-sm sm:flex-row sm:items-center sm:justify-between">
           <span>
             © {new Date().getFullYear()} {brand.legalName}
           </span>

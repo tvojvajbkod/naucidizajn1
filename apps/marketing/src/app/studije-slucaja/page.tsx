@@ -16,7 +16,7 @@ export default function StudijeSlucajaPage() {
     <main>
       <section className="border-b bg-muted/40">
         <div className="mx-auto max-w-6xl px-6 py-16 md:py-20">
-          <h1 className="max-w-3xl font-bold text-4xl text-ink leading-tight tracking-tight md:text-5xl">
+          <h1 className="max-w-3xl font-medium text-4xl text-ink leading-tight tracking-[-0.02em] md:text-5xl">
             Kako posao izgleda kad se raspakuje
           </h1>
           {/* AEO: prvi pasus direktno odgovara na pitanje iz naslova. */}
@@ -37,7 +37,7 @@ export default function StudijeSlucajaPage() {
               className="group flex flex-col rounded-2xl border bg-card p-7 transition-colors hover:border-ink/30"
             >
               {study.kind === "demonstracija" ? (
-                <span className="inline-flex w-fit items-center gap-1.5 rounded-full bg-muted px-3 py-1 font-medium text-muted-foreground text-xs">
+                <span className="inline-flex w-fit items-center gap-1.5 rounded bg-muted px-3 py-1 font-medium text-muted-foreground text-xs">
                   <FlaskConical className="size-3" />
                   Prikaz metoda
                 </span>

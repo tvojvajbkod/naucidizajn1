@@ -1,3 +1,4 @@
+import { Accent } from "@/components/accent";
 import { Clock, TrendingUp, Users } from "lucide-react";
 
 /**
@@ -26,7 +27,9 @@ export function TurningPointSection() {
   return (
     <section className="mx-auto max-w-6xl px-6 py-20 md:py-24">
       <div className="max-w-2xl">
-        <h2 className="font-bold text-3xl text-ink tracking-tight md:text-4xl">Zašto baš sad</h2>
+        <h2 className="font-medium text-3xl text-ink tracking-[-0.02em] md:text-4xl">
+          Zašto baš <Accent>sad</Accent>
+        </h2>
         <p className="mt-4 text-lg text-muted-foreground">
           Web dizajn se u poslednje dve godine promenio više nego u prethodnih deset. Evo šta je
           konkretno drugačije.

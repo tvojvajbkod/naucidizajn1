@@ -5,7 +5,9 @@ export function MentorsSection() {
     <section id="mentori" className="bg-muted/50 py-20 md:py-24">
       <div className="mx-auto max-w-6xl px-6">
         <div className="max-w-2xl">
-          <h2 className="font-bold text-3xl text-ink tracking-tight md:text-4xl">Ko te vodi</h2>
+          <h2 className="font-medium text-3xl text-ink tracking-[-0.02em] md:text-4xl">
+            Ko te vodi
+          </h2>
           <p className="mt-4 text-lg text-muted-foreground">
             Ljudi koji dizajn rade za klijente svakog dana, a ne predaju ga iz udžbenika. To je i
             razlog zašto se materijal menja kad se promene alati.

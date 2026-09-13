@@ -25,7 +25,9 @@ export function MembershipOfferSection() {
           <div className="border-border/70 border-b p-8 md:border-r md:border-b-0 md:p-12">
             <p className="font-medium text-muted-foreground text-sm">Članstvo · AI Web Dizajner</p>
             <p className="mt-4 flex items-baseline gap-2">
-              <span className="font-bold text-5xl text-ink tracking-tight">{membership.price}</span>
+              <span className="font-medium text-5xl text-ink tracking-[-0.02em]">
+                {membership.price}
+              </span>
               <span className="text-lg text-muted-foreground">{membership.period}</span>
             </p>
             <p className="mt-3 text-muted-foreground text-sm">{membership.priceNote}</p>
@@ -34,7 +36,7 @@ export function MembershipOfferSection() {
               href={links.skool}
               target="_blank"
               rel="noreferrer noopener"
-              className="mt-8 inline-flex w-full items-center justify-center gap-2 rounded-full bg-ink px-6 py-3.5 font-semibold text-background transition-colors hover:bg-ink/85"
+              className="mt-8 inline-flex w-full items-center justify-center gap-2 rounded bg-ink px-6 py-3.5 font-semibold text-background transition-colors hover:bg-ink/85"
             >
               Pridruži se zajednici
               <ArrowRight className="size-4" />

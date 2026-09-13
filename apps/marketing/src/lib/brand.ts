@@ -6,6 +6,15 @@
  * 40.000+) — to ruši poverenje. Menja se ovde, na jednom mestu.
  */
 
+/**
+ * Dok je sajt PREDLOG a ne zvanični sajt Nauči Dizajna, ovo ostaje `true`.
+ *
+ * Posledice: sajt se ne indeksira u pretraživačima (da ne konkuriše pravom
+ * sajtu i da niko ne pomisli da je zvaničan), a u futeru stoji napomena.
+ * Kad firma preuzme sajt, prebaci na `false` — to je jedina izmena.
+ */
+export const isProposal = true;
+
 export const brand = {
   name: "Nauči Dizajn",
   legalName: "Nauči Dizajn™",

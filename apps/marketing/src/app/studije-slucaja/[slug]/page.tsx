@@ -35,13 +35,13 @@ export default async function CaseStudyPage({
       <section className="border-b bg-muted/40">
         <div className="mx-auto max-w-4xl px-6 py-16 md:py-20">
           {study.kind === "demonstracija" ? (
-            <span className="inline-flex items-center gap-1.5 rounded-full bg-ink px-3.5 py-1.5 font-medium text-background text-xs">
+            <span className="inline-flex items-center gap-1.5 rounded bg-ink px-3.5 py-1.5 font-medium text-background text-xs">
               <FlaskConical className="size-3" />
               Prikaz metoda na izmišljenom klijentu
             </span>
           ) : null}
 
-          <h1 className="mt-5 font-bold text-4xl text-ink leading-tight tracking-tight md:text-5xl">
+          <h1 className="mt-5 font-medium text-4xl text-ink leading-tight tracking-[-0.02em] md:text-5xl">
             {study.title}
           </h1>
           <p className="mt-5 text-lg text-muted-foreground leading-relaxed">{study.intro}</p>
@@ -86,7 +86,9 @@ export default async function CaseStudyPage({
           {study.steps.map((step) => (
             <li key={step.label}>
               <span className="font-semibold text-muted-foreground text-sm">{step.label}</span>
-              <h2 className="mt-1.5 font-bold text-2xl text-ink tracking-tight">{step.title}</h2>
+              <h2 className="mt-1.5 font-medium text-2xl text-ink tracking-[-0.02em]">
+                {step.title}
+              </h2>
               <p className="mt-4 text-lg text-muted-foreground leading-relaxed">{step.body}</p>
 
               {step.snippet ? (
@@ -114,7 +116,7 @@ export default async function CaseStudyPage({
 
         {study.gallery?.length ? (
           <section className="mt-16">
-            <h2 className="font-bold text-2xl text-ink tracking-tight">Kako izgleda</h2>
+            <h2 className="font-medium text-2xl text-ink tracking-[-0.02em]">Kako izgleda</h2>
             <div className="mt-8 grid gap-6 sm:grid-cols-2">
               {study.gallery.map((media) => (
                 <Screenshot

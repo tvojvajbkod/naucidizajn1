@@ -17,7 +17,7 @@ export function CaseStudyTeaserSection() {
         <div className="grid items-center gap-10 p-8 md:grid-cols-[1.2fr_1fr] md:p-14">
           <div>
             <p className="font-medium text-ink/60 text-sm">Bez uvijanja</p>
-            <h2 className="mt-3 font-bold text-3xl text-ink tracking-tight md:text-4xl">
+            <h2 className="mt-3 font-medium text-3xl text-ink tracking-[-0.02em] md:text-4xl">
               Pogledaj ceo posao pre nego što platiš išta
             </h2>
             <p className="mt-4 text-ink/70 text-lg leading-relaxed">
@@ -27,7 +27,7 @@ export function CaseStudyTeaserSection() {
             </p>
             <Link
               href={`/studije-slucaja/${study.slug}`}
-              className="mt-8 inline-flex items-center gap-2 rounded-full bg-ink px-7 py-3.5 font-semibold text-background transition-colors hover:bg-ink/85"
+              className="mt-8 inline-flex items-center gap-2 rounded bg-ink px-7 py-3.5 font-semibold text-background transition-colors hover:bg-ink/85"
             >
               Otvori ceo postupak
               <ArrowRight className="size-4" />

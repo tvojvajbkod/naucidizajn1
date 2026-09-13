@@ -40,12 +40,12 @@ export default function AiWebDizajnerPage() {
     <main>
       <section className="bg-ink text-background">
         <div className="mx-auto max-w-6xl px-6 py-20 md:py-24">
-          <p className="inline-flex items-center gap-2 rounded-full border border-background/20 px-4 py-1.5 font-medium text-background/80 text-sm">
+          <p className="inline-flex items-center gap-2 rounded border border-background/20 px-4 py-1.5 font-medium text-background/80 text-sm">
             <span className="size-2 rounded-full bg-primary" />
             Mesečno članstvo · {stats.skoolMembers} članova
           </p>
 
-          <h1 className="mt-7 max-w-3xl font-bold text-4xl leading-[1.08] tracking-tight md:text-6xl">
+          <h1 className="mt-7 max-w-3xl font-medium text-4xl leading-[1.08] tracking-[-0.02em] md:text-6xl">
             Postani AI web dizajner <span className="text-primary">za 30 dana</span>
           </h1>
 
@@ -60,14 +60,14 @@ export default function AiWebDizajnerPage() {
               href={links.skool}
               target="_blank"
               rel="noreferrer noopener"
-              className="inline-flex items-center justify-center gap-2 rounded-full bg-primary px-7 py-3.5 font-semibold text-ink transition-transform hover:scale-[1.02]"
+              className="inline-flex items-center justify-center gap-2 rounded bg-primary px-7 py-3.5 font-semibold text-ink transition-transform hover:scale-[1.02]"
             >
               Pridruži se — {membership.price} mesečno
               <ArrowRight className="size-4" />
             </a>
             <Link
               href="/webinar"
-              className="inline-flex items-center justify-center rounded-full border border-background/25 px-7 py-3.5 font-semibold text-background transition-colors hover:bg-background/10"
+              className="inline-flex items-center justify-center rounded border border-background/25 px-7 py-3.5 font-semibold text-background transition-colors hover:bg-background/10"
             >
               Prvo besplatan webinar
             </Link>
@@ -84,7 +84,7 @@ export default function AiWebDizajnerPage() {
       <TimelineSection />
 
       <section className="mx-auto max-w-6xl px-6 py-20 md:py-24">
-        <h2 className="max-w-2xl font-bold text-3xl text-ink tracking-tight md:text-4xl">
+        <h2 className="max-w-2xl font-medium text-3xl text-ink tracking-[-0.02em] md:text-4xl">
           Da li je ovo za tebe
         </h2>
         <p className="mt-4 max-w-2xl text-lg text-muted-foreground">

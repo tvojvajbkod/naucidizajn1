@@ -11,6 +11,9 @@
     "build:static": "STATIC_EXPORT=1 next build"
   },
   "dependencies": {
+    "@fontsource/anton": "5.2.5",
+    "@fontsource/archivo": "5.2.5",
+    "@fontsource/instrument-serif": "5.2.5",
     "@repo/config": "workspace:*",
     "@repo/ui": "workspace:*",
     "@supabase/supabase-js": "2.110.8",

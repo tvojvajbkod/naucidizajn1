@@ -33,22 +33,24 @@ export function ProofSection({ limit }: { limit?: number }) {
   const items = limit ? testimonials.slice(0, limit) : testimonials;
 
   return (
-    <section id="utisci" className="mx-auto max-w-6xl px-6 py-20 md:py-24">
-      <div className="max-w-2xl">
-        <h2 className="font-medium text-3xl text-ink tracking-[-0.02em] md:text-4xl">
-          Šta kažu ljudi koji plaćaju
-        </h2>
-        <p className="mt-4 text-lg text-muted-foreground">
-          Ocena zajednice je {stats.skoolRating} na {stats.skoolReviews} recenzija. Uz svaku stoji i
-          koliko dugo je taj čovek i dalje član — zadovoljstvo se lako izjavi, zadržavanje se plaća
-          svakog meseca.
-        </p>
-      </div>
+    <section id="utisci" className="bg-muted/50 py-20 md:py-24">
+      <div className="mx-auto max-w-6xl px-6">
+        <div className="max-w-2xl">
+          <h2 className="font-medium text-3xl text-ink tracking-[-0.02em] md:text-4xl">
+            Šta kažu ljudi koji plaćaju
+          </h2>
+          <p className="mt-4 text-lg text-muted-foreground">
+            Ocena zajednice je {stats.skoolRating} na {stats.skoolReviews} recenzija. Uz svaku stoji
+            i koliko dugo je taj čovek i dalje član — zadovoljstvo se lako izjavi, zadržavanje se
+            plaća svakog meseca.
+          </p>
+        </div>
 
-      <div className="mt-12 gap-5 md:columns-2 lg:columns-3 [&>*]:mb-5">
-        {items.map((item) => (
-          <Quote key={item.name} item={item} />
-        ))}
+        <div className="mt-12 gap-5 md:columns-2 lg:columns-3 [&>*]:mb-5">
+          {items.map((item) => (
+            <Quote key={item.name} item={item} />
+          ))}
+        </div>
       </div>
     </section>
   );

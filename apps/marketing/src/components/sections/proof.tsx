@@ -1,3 +1,4 @@
+import { VideoWall } from "@/components/video-wall";
 import { stats } from "@/lib/brand";
 import { type Testimonial, testimonials } from "@/lib/testimonials";
 import { Star } from "lucide-react";
@@ -46,7 +47,11 @@ export function ProofSection({ limit }: { limit?: number }) {
           </p>
         </div>
 
-        <div className="mt-12 gap-5 md:columns-2 lg:columns-3 [&>*]:mb-5">
+        <VideoWall />
+
+        <h3 className="mt-16 font-medium text-ink text-xl tracking-[-0.02em]">Napisali su</h3>
+
+        <div className="mt-6 gap-5 md:columns-2 lg:columns-3 [&>*]:mb-5">
           {items.map((item) => (
             <Quote key={item.name} item={item} />
           ))}

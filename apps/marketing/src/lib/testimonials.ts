@@ -53,23 +53,35 @@ export const testimonials: Testimonial[] = [
 ];
 
 export interface Mentor {
+  /** Koristi se i kao ime fajla sa fotografijom. */
+  slug: string;
   name: string;
   role: string;
   bio: string;
+  /**
+   * Putanja do fotografije, npr. „/mentori/nikola-tripkovic.jpg".
+   * Prazno = na sajtu stoji prazno mesto za sliku, sa uputstvom.
+   * Fotografija se objavljuje ISKLJUČIVO uz saglasnost osobe sa slike.
+   * Preporuka: uspravna slika, najmanje 800 × 1000 px, lice u gornjoj trećini.
+   */
+  photo?: string;
 }
 
 export const mentors: Mentor[] = [
   {
+    slug: "nikola-tripkovic",
     name: "Nikola Tripković",
     role: "Osnivač Nauči Dizajn",
     bio: "Vodi zajednicu AI Web Dizajner i drži nedeljne sastanke. Preko 2.000 mentorisanih polaznika od 2020.",
   },
   {
+    slug: "voja",
     name: "Voja",
     role: "Senior Web Designer, Rippling (San Francisco)",
     bio: "Preko deset godina u struci i 500+ mentorisanih polaznika. Radi za firmu iz San Franciska, predaje na srpskom.",
   },
   {
+    slug: "teodora",
     name: "Teodora",
     role: "Mentorka",
     bio: "Radi sa polaznicima na izradi sajtova, sadržaju i prodaji naučenog — deo tima na nedeljnim sastancima zajednice.",

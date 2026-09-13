@@ -1,0 +1,19 @@
+Video utisci polaznika
+
+Dva nacina da se snimak pojavi na sajtu:
+
+1) YOUTUBE (preporuceno)
+   Snimak se okaci na YouTube (moze i kao "unlisted"), pa se u
+   apps/marketing/src/lib/videos.ts doda stavka sa youtubeId.
+   ID je deo linka posle "v=", npr. https://youtube.com/watch?v=ABC123xyz00
+   -> youtubeId: "ABC123xyz00"
+
+2) FAJL U OVOM FOLDERU
+   ime-prezime.mp4  (uspravan snimak 9:16, do 60 sekundi, do 20 MB)
+   ime-prezime.jpg  (naslovna slika, 1080 x 1920)
+   pa u videos.ts:  src: "/video/ime-prezime.mp4", poster: "/video/ime-prezime.jpg"
+
+Primer stavke u videos.ts je vec upisan kao komentar.
+
+VAZNO: snimak se objavljuje samo uz pismenu saglasnost osobe sa snimka,
+koja pokriva objavu na sajtu — ne samo na Instagramu.

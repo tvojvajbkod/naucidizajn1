@@ -22,36 +22,38 @@ const paths = [
 
 export function PathsSection() {
   return (
-    <section className="mx-auto max-w-6xl px-6 py-20 md:py-24">
-      <div className="max-w-2xl">
-        <h2 className="font-medium text-3xl text-ink tracking-[-0.02em] md:text-4xl">
-          Članstvo nije jedini put
-        </h2>
-        <p className="mt-4 text-lg text-muted-foreground">
-          Ako ti mesečna obaveza ne odgovara ili hoćeš temeljnije da savladaš zanat, postoje još dva
-          načina. Puno poređenje je na{" "}
-          <Link href="/cene" className="font-medium text-ink underline underline-offset-4">
-            stranici Cene
-          </Link>
-          .
-        </p>
-      </div>
+    <section className="bg-cream py-20 md:py-24">
+      <div className="mx-auto max-w-6xl px-6">
+        <div className="max-w-2xl">
+          <h2 className="font-medium text-3xl text-ink tracking-[-0.02em] md:text-4xl">
+            Članstvo nije jedini put
+          </h2>
+          <p className="mt-4 text-ink/70 text-lg">
+            Ako ti mesečna obaveza ne odgovara ili hoćeš temeljnije da savladaš zanat, postoje još
+            dva načina. Puno poređenje je na{" "}
+            <Link href="/cene" className="font-medium text-ink underline underline-offset-4">
+              stranici Cene
+            </Link>
+            .
+          </p>
+        </div>
 
-      <div className="mt-10 grid gap-5 md:grid-cols-2">
-        {paths.map((path) => (
-          <Link
-            key={path.href}
-            href={path.href}
-            className="group rounded-2xl border bg-card p-7 transition-colors hover:border-ink/30"
-          >
-            <div className="flex items-start justify-between gap-4">
-              <h3 className="font-semibold text-ink text-xl">{path.title}</h3>
-              <ArrowUpRight className="size-5 shrink-0 text-muted-foreground transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
-            </div>
-            <p className="mt-1 font-medium text-muted-foreground text-sm">{path.price}</p>
-            <p className="mt-4 text-muted-foreground leading-relaxed">{path.body}</p>
-          </Link>
-        ))}
+        <div className="mt-10 grid gap-5 md:grid-cols-2">
+          {paths.map((path) => (
+            <Link
+              key={path.href}
+              href={path.href}
+              className="group rounded-2xl border border-ink/10 bg-background p-7 transition-colors hover:border-ink/30"
+            >
+              <div className="flex items-start justify-between gap-4">
+                <h3 className="font-semibold text-ink text-xl">{path.title}</h3>
+                <ArrowUpRight className="size-5 shrink-0 text-muted-foreground transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+              </div>
+              <p className="mt-1 font-medium text-muted-foreground text-sm">{path.price}</p>
+              <p className="mt-4 text-muted-foreground leading-relaxed">{path.body}</p>
+            </Link>
+          ))}
+        </div>
       </div>
     </section>
   );

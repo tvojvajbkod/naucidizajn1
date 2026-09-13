@@ -1,3 +1,4 @@
+import { MentorPhoto } from "@/components/mentor-photo";
 import { mentors } from "@/lib/testimonials";
 
 export function MentorsSection() {
@@ -17,12 +18,10 @@ export function MentorsSection() {
         <div className="mt-12 grid gap-6 md:grid-cols-3">
           {mentors.map((mentor) => (
             <div
-              key={mentor.name}
-              className="rounded-2xl border border-background/15 bg-background/[0.06] p-7"
+              key={mentor.slug}
+              className="rounded-2xl border border-background/15 bg-background/[0.06] p-5"
             >
-              <div className="flex size-12 items-center justify-center rounded-full bg-primary font-bold text-ink text-lg">
-                {mentor.name.charAt(0)}
-              </div>
+              <MentorPhoto mentor={mentor} />
               <h3 className="mt-5 font-semibold text-background text-lg">{mentor.name}</h3>
               <p className="mt-1 font-medium text-primary text-sm">{mentor.role}</p>
               <p className="mt-3 text-background/70 leading-relaxed">{mentor.bio}</p>

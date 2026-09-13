@@ -1,0 +1,19 @@
+Fotografije mentora
+
+Ovde idu slike mentora. Ime fajla mora da odgovara polju "slug" u
+apps/marketing/src/lib/testimonials.ts:
+
+  nikola-tripkovic.jpg
+  voja.jpg
+  teodora.jpg
+
+Format: uspravna slika (odnos 4:5), najmanje 800 x 1000 px, lice u gornjoj
+trecini, .jpg ili .webp, do 500 KB.
+
+Posle uploada slike, u testimonials.ts kod tog mentora dodati red:
+
+  photo: "/mentori/nikola-tripkovic.jpg",
+
+Dok tog reda nema, na sajtu stoji prazno mesto sa uputstvom.
+
+VAZNO: fotografija se objavljuje samo uz saglasnost osobe sa slike.

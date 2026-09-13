@@ -66,7 +66,7 @@ const items: Item[] = [
 
 export function WhatsIncludedSection() {
   return (
-    <section id="sta-dobijas" className="bg-muted/50 py-20 md:py-24">
+    <section id="sta-dobijas" className="py-20 md:py-24">
       <div className="mx-auto max-w-6xl px-6">
         <div className="max-w-2xl">
           <h2 className="font-medium text-3xl text-ink tracking-[-0.02em] md:text-4xl">
@@ -80,8 +80,10 @@ export function WhatsIncludedSection() {
 
         <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {items.map((item) => (
-            <div key={item.title} className="rounded-2xl border bg-card p-6">
-              <item.icon className="size-5 text-ink" />
+            <div key={item.title} className="rounded-2xl border bg-cream/60 p-6">
+              <div className="flex size-10 items-center justify-center rounded-lg bg-primary">
+                <item.icon className="size-5 text-ink" />
+              </div>
               <h3 className="mt-4 font-semibold text-ink">{item.title}</h3>
               <p className="mt-2 text-muted-foreground text-sm leading-relaxed">
                 {item.description}

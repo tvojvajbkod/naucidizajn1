@@ -7,6 +7,7 @@ import { courses, getCourse } from "@/lib/courses";
 import { generalFaq } from "@/lib/faq";
 import { buildMetadata } from "@/lib/seo";
 import { Check } from "lucide-react";
+import Link from "next/link";
 import { notFound } from "next/navigation";
 
 export function generateStaticParams() {
@@ -84,12 +85,13 @@ export default async function CoursePage({ params }: { params: Promise<{ slug: s
             Starter paket nosi pristup od tri meseca; paketi sa mentorstvom nose doživotan pristup.
             Na svim paketima važi garancija povraćaja novca u roku od 14 dana.
           </p>
-          <a
+          {/* Mora <Link>, ne <a> — vidi napomenu na /kursevi. */}
+          <Link
             href="/cene"
             className="mt-6 inline-flex w-full items-center justify-center rounded bg-ink px-6 py-3 font-semibold text-background transition-colors hover:bg-ink/85"
           >
             Pogledaj pakete i cene
-          </a>
+          </Link>
         </aside>
       </section>
 

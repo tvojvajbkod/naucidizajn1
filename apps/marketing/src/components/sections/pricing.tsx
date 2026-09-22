@@ -3,11 +3,21 @@
 import { type PricingPlan, pricingGroups } from "@/lib/pricing";
 import { Badge, Card, CardContent, Tabs, TabsContent, TabsList, TabsTrigger, cn } from "@repo/ui";
 import { Check, Sparkles } from "lucide-react";
+import Link from "next/link";
 
 /**
  * Cene sa prebacivačem: AI članstvo / Kursevi / Mentorstvo.
  * Podaci žive u src/lib/pricing.ts — ovde je samo izgled.
  */
+
+function ctaClass(highlighted?: boolean) {
+  return cn(
+    "mt-6 inline-flex h-11 w-full items-center justify-center rounded font-semibold text-sm transition-colors",
+    highlighted
+      ? "bg-ink text-background hover:bg-ink/85"
+      : "border bg-background text-ink hover:bg-muted",
+  );
+}
 
 function PlanCard({ plan }: { plan: PricingPlan }) {
   const external = plan.href.startsWith("http");
@@ -32,18 +42,23 @@ function PlanCard({ plan }: { plan: PricingPlan }) {
           ) : null}
         </div>
 
-        <a
-          href={plan.href}
-          {...(external ? { target: "_blank", rel: "noreferrer noopener" } : {})}
-          className={cn(
-            "mt-6 inline-flex h-11 w-full items-center justify-center rounded font-semibold text-sm transition-colors",
-            plan.highlighted
-              ? "bg-ink text-background hover:bg-ink/85"
-              : "border bg-background text-ink hover:bg-muted",
-          )}
-        >
-          {plan.cta}
-        </a>
+        {/* Spoljni link ide kao <a>, unutrašnji MORA kao <Link>: sajt živi u
+            podfolderu (/naucidizajn1), a obično <a href="/..."> ne dobija taj
+            prefiks i završi na 404. */}
+        {external ? (
+          <a
+            href={plan.href}
+            target="_blank"
+            rel="noreferrer noopener"
+            className={ctaClass(plan.highlighted)}
+          >
+            {plan.cta}
+          </a>
+        ) : (
+          <Link href={plan.href} className={ctaClass(plan.highlighted)}>
+            {plan.cta}
+          </Link>
+        )}
 
         <div className="mt-8 space-y-3">
           {plan.inherits ? (

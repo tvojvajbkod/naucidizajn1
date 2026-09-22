@@ -5,6 +5,7 @@ import { FAQSection } from "@/components/sections/faq";
 import { PathsSection } from "@/components/sections/paths";
 import { generalFaq } from "@/lib/faq";
 import { buildMetadata } from "@/lib/seo";
+import Link from "next/link";
 
 export const metadata = buildMetadata({
   title: "Kursevi",
@@ -24,9 +25,14 @@ export default function KurseviPage() {
           Snimljeni kursevi, plaćaju se jednom i gledaju svojim tempom. Uz svaki ide niz projekata —
           jer posao dobija portfolio, ne sertifikat. Ako ti je cilj prva zarada, a ne zanat,
           pogledaj{" "}
-          <a href="/ai-web-dizajner" className="font-medium text-ink underline underline-offset-4">
+          {/* Mora <Link>, ne <a>: sajt živi u podfolderu (/naucidizajn1), a
+              obično <a href="/..."> ne dobija taj prefiks i završi na 404. */}
+          <Link
+            href="/ai-web-dizajner"
+            className="font-medium text-ink underline underline-offset-4"
+          >
             AI članstvo
-          </a>
+          </Link>
           .
         </p>
       </section>

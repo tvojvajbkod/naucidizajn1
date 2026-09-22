@@ -131,6 +131,12 @@ $99/mes, Skool) je heroj početne strane i ima svoju punu landing stranu.
   toga build radi i bez mreže, a posetilac ne šalje zahtev Google-u. Originalni
   fontovi su komercijalni — ne preuzimaj ih sa njihovog CDN-a; smeju tek kad
   firma dostavi fajlove i potvrdi da licenca pokriva novi sajt.
+- **Unutrašnji link IDE KROZ `<Link>`, nikad kroz `<a href="/...">`.** Sajt
+  živi u podfolderu (`/naucidizajn1`); `<Link>` sam dodaje taj prefiks, obično
+  `<a>` ne — i link završi na 404. Greška se ne vidi u razvoju (tamo nema
+  podfoldera), nego tek na objavljenom sajtu. `<a>` ostaje samo za spoljne
+  adrese (`http…`) i `mailto:`. Provera pre objave:
+  `grep -rn 'href="/' --include=*.tsx src | grep '<a '`.
 - **Logo je prazno mesto dok pravi ne stigne.** `components/site-logo.tsx` u
   zaglavlju i futeru; putanja se upisuje u `logo.src` u `brand.ts`, a dimenzije
   (132 × 32) drže raspored da se ne pomeri. Ne vraćati `BrandMark` + tekstualni

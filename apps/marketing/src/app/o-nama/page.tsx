@@ -6,7 +6,7 @@ import { buildMetadata } from "@/lib/seo";
 export const metadata = buildMetadata({
   title: "O nama",
   description:
-    "Nauči Dizajn je online škola dizajna na srpskom jeziku. Od 2020. kroz naše edukacije prošlo je preko 4.800 polaznika.",
+    "Nauči Dizajn je online škola dizajna na srpskom jeziku. Od 2020. kroz naše edukacije prošlo je preko 4.600 polaznika.",
   path: "/o-nama",
 });
 

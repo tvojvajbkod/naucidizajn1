@@ -59,9 +59,12 @@ export default async function CoursePage({ params }: { params: Promise<{ slug: s
             </div>
             <div>
               <dt className="text-muted-foreground text-sm">Cena</dt>
-              <dd className="mt-1 font-semibold text-ink">od 99 €</dd>
+              <dd className="mt-1 font-semibold text-ink">{course.price}</dd>
             </div>
           </dl>
+          {/* Cena i paketi se razlikuju od kursa do kursa — zato dolaze iz
+              `courses.ts`, a ne kao jedna rečenica za sve. */}
+          <p className="mt-4 text-muted-foreground text-sm">{course.priceNote}</p>
         </div>
       </section>
 
@@ -82,8 +85,9 @@ export default async function CoursePage({ params }: { params: Promise<{ slug: s
           <h2 className="font-semibold text-ink text-lg">Za koga je</h2>
           <p className="mt-3 text-muted-foreground leading-relaxed">{course.audience}</p>
           <p className="mt-6 border-border/70 border-t pt-6 text-muted-foreground text-sm leading-relaxed">
-            Starter paket nosi pristup od tri meseca; paketi sa mentorstvom nose doživotan pristup.
-            Na svim paketima važi garancija povraćaja novca u roku od 14 dana.
+            {course.priceNote} Uz svaki kupljen paket ide bonus: mesec dana grupnog mentorstva i
+            video predavanje „Portfolio koji te vodi do posla". Na svim paketima važi garancija
+            povraćaja novca u roku od 14 dana.
           </p>
           {/* Mora <Link>, ne <a> — vidi napomenu na /kursevi. */}
           <Link

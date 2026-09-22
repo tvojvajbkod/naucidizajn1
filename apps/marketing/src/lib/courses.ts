@@ -12,6 +12,10 @@ export interface Course {
   /** Za koga je — konkretno, ne „za sve". */
   audience: string;
   curriculum: string[];
+  /** Najniža cena kursa, izmerena sa naucidizajn.com 22.09.2026. */
+  price: string;
+  /** Kratka napomena uz cenu — koji paketi postoje i šta je u ceni. */
+  priceNote: string;
 }
 
 export const courses: Course[] = [
@@ -33,6 +37,8 @@ export const courses: Course[] = [
       "Predaja dizajna razvoju",
       "Projekti za portfolio",
     ],
+    price: "99 €",
+    priceNote: "Starter 99 € · Pro 399 € · Ultra 699 €. Moguće na rate.",
   },
   {
     slug: "ui-ux",
@@ -52,6 +58,8 @@ export const courses: Course[] = [
       "Klikabilni prototip i testiranje",
       "Studija slučaja za portfolio",
     ],
+    price: "99 €",
+    priceNote: "Starter 99 € · Pro 399 € · Ultra 699 €. Moguće na rate.",
   },
   {
     slug: "webflow",
@@ -71,6 +79,8 @@ export const courses: Course[] = [
       "SEO podešavanja i objava",
       "Predaja sajta klijentu",
     ],
+    price: "99 €",
+    priceNote: "Starter 99 € · Pro 399 € · Ultra 699 €. Moguće na rate.",
   },
   {
     slug: "logo-dizajn",
@@ -90,6 +100,8 @@ export const courses: Course[] = [
       "Knjiga standarda",
       "Prezentacija rešenja klijentu",
     ],
+    price: "99 €",
+    priceNote: "Starter 99 € · Pro 399 € · Ultra 699 €. Moguće na rate.",
   },
   {
     slug: "motion-dizajn",
@@ -109,6 +121,8 @@ export const courses: Course[] = [
       "Zvuk i ritam montaže",
       "Izvoz za sve platforme",
     ],
+    price: "99 €",
+    priceNote: "Jedan paket, bez mentorstva. Moguće na dve rate po 60 €.",
   },
   {
     slug: "licni-brend",
@@ -128,6 +142,8 @@ export const courses: Course[] = [
       "Cena i pregovor",
       "Od prvog razgovora do ugovora",
     ],
+    price: "499 €",
+    priceNote: "Jedan paket. Moguće na četiri rate po 150 € (ukupno 600 €).",
   },
 ];
 

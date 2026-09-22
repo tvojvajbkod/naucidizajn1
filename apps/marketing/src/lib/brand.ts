@@ -44,6 +44,21 @@ export const stats = {
   hoursOfMaterial: "80+",
 } as const;
 
+/**
+ * Adrese na koje forme šalju prijave.
+ *
+ * Sajt je statičan (GitHub Pages) — nema servera koji bi primio formu, pa
+ * prijava ide spoljnom servisu. Dovoljno je nalepiti adresu koju taj servis
+ * da; forma je već napisana i radi sa bilo kojim koji prima `POST` sa
+ * `multipart/form-data` i vraća JSON (Formspree, Getform, Basin, Web3Forms).
+ *
+ * [POPUNI] Dok je prazno, dugme otvara mejl klijent sa popunjenom porukom —
+ * prijava i dalje stiže, samo ručno. Nijedna varijanta ne gubi posetioca.
+ */
+export const forms = {
+  webinar: "",
+} as const;
+
 /** Cena članstva. [POTVRDI] da li postoji evro ekvivalent za region. */
 export const membership = {
   price: "$99",

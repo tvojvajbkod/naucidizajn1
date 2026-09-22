@@ -1,11 +1,13 @@
 import { getPublishedPosts } from "@/lib/blog";
+import { buildMetadata } from "@/lib/seo";
 import { Card, CardDescription, CardHeader, CardTitle } from "@repo/ui";
 import Link from "next/link";
 
-export const metadata = {
+export const metadata = buildMetadata({
   title: "Blog",
-  description: "Tekstovi, vodiči i novosti.",
-};
+  description: "Tekstovi i vodiči o web dizajnu, AI alatima i dolasku do klijenata.",
+  path: "/blog",
+});
 
 // Objave stižu iz baze — ISR drži stranicu svežom bez novog deploy-a.
 export const revalidate = 60;

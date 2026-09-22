@@ -1,3 +1,4 @@
+import { CourseBadge } from "@/components/course-badge";
 import { JsonLd, courseJsonLd, faqJsonLd } from "@/components/json-ld";
 import { CtaSection } from "@/components/sections/cta";
 import { FAQSection } from "@/components/sections/faq";
@@ -32,8 +33,9 @@ export default async function CoursePage({ params }: { params: Promise<{ slug: s
     <main>
       <section className="border-b bg-muted/40">
         <div className="mx-auto max-w-6xl px-6 py-16 md:py-20">
-          <p className="font-medium text-muted-foreground text-sm">Kurs</p>
-          <h1 className="mt-3 max-w-3xl font-medium text-4xl text-ink leading-tight tracking-[-0.02em] md:text-5xl">
+          <CourseBadge slug={course.slug} title={course.title} className="size-16 bg-background" />
+          <p className="mt-6 font-medium text-muted-foreground text-sm">Kurs</p>
+          <h1 className="mt-2 max-w-3xl font-medium text-4xl text-ink leading-tight tracking-[-0.02em] md:text-5xl">
             {course.title}
           </h1>
           {/* AEO: prvi pasus direktno odgovara na „šta ću moći posle ovoga". */}

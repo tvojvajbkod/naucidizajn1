@@ -112,6 +112,16 @@ $99/mes, Skool) je heroj početne strane i ima svoju punu landing stranu.
   4px (`rounded`), kartice 12px. Par dugmadi je limeta sa ink tekstom
   (primarno) i maslinasto `bg-olive` sa limeta tekstom (sekundarno) — ne
   outline. Ne vraćaj `rounded-full` i ne vraćaj `font-bold` na naslove.
+- **Ritam podloga je namerno naizmeničan.** Sekcije se smenjuju po podlozi da
+  stranica ne bude niz belih blokova: hero `bg-ink` → bela → krem traka
+  (`StatBandSection`) → bela → maslinasta (`TimelineSection`) → bela sa krem
+  karticom (`CaseStudyTeaserSection`) → `bg-muted/50` (`ProofSection`) → ink
+  (`MentorsSection`) → limeta kolona sa cenom (`MembershipOfferSection`) → krem
+  (`PathsSection`) → bela (FAQ) → ink kartica (`CtaSection`). Pravilo: nikad
+  dve iste podloge jedna do druge i najviše jedan limeta blok po stranici —
+  limeta je akcenat, ne podloga. Na tamnim sekcijama tekst ide
+  `text-background` / `text-background/75`, kartice `bg-background/[0.06]` sa
+  `border-background/15`, a oznake u limeti (`text-primary`).
 - **Tri potpisna poteza brenda**, svaki ima svoju komponentu:
   `<Accent>` (serifni kurziv za JEDNU reč u naslovu — dve ubijaju efekat),
   `<BigStat>` (kondenzovane brojke; `size="giant"` najviše jednom po stranici),
@@ -121,6 +131,23 @@ $99/mes, Skool) je heroj početne strane i ima svoju punu landing stranu.
   toga build radi i bez mreže, a posetilac ne šalje zahtev Google-u. Originalni
   fontovi su komercijalni — ne preuzimaj ih sa njihovog CDN-a; smeju tek kad
   firma dostavi fajlove i potvrdi da licenca pokriva novi sajt.
+- **Deljenje sajta ima sliku.** `public/og.png` (1200 × 630) je OG slika i
+  ugrađena je u `buildMetadata()` i u root `layout.tsx`, pa je nose SVE
+  stranice — i one koje `buildMetadata` ne koriste. Favicon je
+  `src/app/icon.svg`, a `src/app/apple-icon.png` je ikonica za telefon. Ako se
+  menja tekst na OG slici, menja se i slika — ona se ne generiše u buildu.
+- **Znakovi kurseva** su u `components/course-badge.tsx`: šest originalnih
+  crteža, potez 2.6, zaobljeni krajevi, TAČNO JEDAN limeta element po znaku.
+  Crtaju delatnost, nikad tuđi logotip (Figma, Webflow, Adobe su tuđi žigovi).
+- **Forme rade bez servera.** Sajt je statičan, pa prijava ide spoljnom
+  servisu; adresa stoji u `forms` u `brand.ts`. Dok je prazno, forma otvara
+  mejl sa popunjenom porukom — nikad ne sme da ostane dugme koje ne radi.
+  Pristanak je posebno polje i NIJE unapred štikliran (ZZPL).
+- **Svaka nova javna stranica ide kroz `buildMetadata()`** — bez toga nema
+  canonical ni OG slike. Provereno automatskom proverom svih ruta.
+- **Fontovi: samo `latin` i `latin-ext`.** Latin nosi cifre, latin-ext naša
+  slova. Ne uvoziti `@fontsource/<font>/400.css` (povlači i vijetnamski), nego
+  `latin-400.css` + `latin-ext-400.css`.
 - **`isProposal` u `src/lib/brand.ts`** drži sajt van pretraživača i prikazuje
   napomenu u futeru da ovo nije zvanični Nauči Dizajn. Prebacuje se na `false`
   tek kad firma preuzme sajt.

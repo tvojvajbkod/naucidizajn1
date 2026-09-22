@@ -1,120 +1,196 @@
 import { LegalPage, LegalSection } from "@/components/legal";
+import { brand, membership } from "@/lib/brand";
+import { buildMetadata } from "@/lib/seo";
+import Link from "next/link";
 
-export const metadata = {
+export const metadata = buildMetadata({
   title: "Uslovi korišćenja",
-  description: "Uslovi korišćenja Moj SaaS usluge.",
-};
+  description: `Uslovi korišćenja edukacija i članstva ${brand.legalName}.`,
+  path: "/uslovi",
+});
 
 /**
- * Šablon uslova korišćenja za SaaS iz Srbije — oslonjen na Zakon o
- * obligacionim odnosima, Zakon o elektronskoj trgovini i Zakon o zaštiti
- * potrošača RS. Popuni [placeholder] polja i prilagodi svom modelu naplate.
+ * Uslovi korišćenja za ONLINE EDUKACIJU (snimljeni kursevi, mesečno članstvo,
+ * mentorstvo) — ne za SaaS. Templejtska verzija je govorila o „softveru koji
+ * se koristi preko interneta"; to nije ovaj posao i nije se smelo ostaviti.
+ *
+ * Oslonac: Zakon o obligacionim odnosima, Zakon o elektronskoj trgovini i
+ * Zakon o zaštiti potrošača RS. Polja u [uglastim zagradama] popunjava firma,
+ * a tekst pre objave mora da pogleda advokat.
  */
 export default function TermsPage() {
   return (
     <LegalPage title="Uslovi korišćenja" updated="[DATUM]">
-      <LegalSection title="1. O ovim uslovima">
+      <LegalSection title="1. Ko smo mi i na šta se ovi uslovi odnose">
         <p>
-          Ove uslove korišćenja primenjuje <strong>[PUNO POSLOVNO IME]</strong>, [ADRESA], matični
-          broj [MATIČNI BROJ], PIB [PIB], email [KONTAKT EMAIL] (u daljem tekstu: "{"Moj SaaS"}",
-          "mi"). Korišćenjem usluge prihvataš ove uslove — ako se sa njima ne slažeš, nemoj
-          koristiti uslugu.
+          Ove uslove primenjuje <strong>[PUNO POSLOVNO IME]</strong>, [ADRESA], matični broj
+          [MATIČNI BROJ], PIB [PIB], email {brand.email} (u daljem tekstu: {brand.legalName}, „mi").
         </p>
         <p>
-          Usluga je namenjena [poslovnim korisnicima / potrošačima / oboje — PRILAGODI]. Na odnose
-          sa potrošačima primenjuju se i odredbe Zakona o zaštiti potrošača Republike Srbije.
+          Uslovi važe za sve naše edukacije: snimljene kurseve, mesečno članstvo „AI Web Dizajner",
+          individualno i grupno mentorstvo, kao i za besplatan webinar i sadržaj na ovom sajtu.
+          Kupovinom ili prijavom prihvataš ove uslove.
         </p>
-      </LegalSection>
-
-      <LegalSection title="2. Usluga">
         <p>
-          {"Moj SaaS"} je softver koji se koristi preko interneta (SaaS) i omogućava [OPIS USLUGE —
-          šta proizvod radi, jednom rečenicom]. Uslugu pružamo "takvu kakva jeste", uz razumne
-          napore da bude dostupna neprekidno; povremeni prekidi zbog održavanja ili više sile su
-          mogući.
+          Ako si potrošač u smislu Zakona o zaštiti potrošača, na naš odnos primenjuju se i odredbe
+          tog zakona, koje imaju prednost nad bilo čim suprotnim u ovom tekstu.
         </p>
       </LegalSection>
 
-      <LegalSection title="3. Nalog">
+      <LegalSection title="2. Šta tačno kupuješ">
         <p>
-          Za korišćenje usluge potreban je nalog. Odgovoran si za tačnost podataka i čuvanje
-          pristupnih podataka; sve što se uradi sa tvog naloga smatra se tvojom radnjom, osim ako
-          nas bez odlaganja obavestiš o zloupotrebi. Nalog može otvoriti lice sa navršenih [15/18]
-          godina.
+          <strong>Snimljeni kurs</strong> je pristup unapred snimljenim video lekcijama i pratećim
+          materijalima. Nije uživo nastava. Obim (broj epizoda i sati) naveden je uz svaki kurs.
+        </p>
+        <p>
+          <strong>Mesečno članstvo „AI Web Dizajner"</strong> je pristup privatnoj zajednici,
+          materijalima i nedeljnim grupnim sastancima uživo, dok traje plaćeni mesec. Zajednica i
+          naplata su na platformi Skool; na nju se primenjuju i uslovi te platforme.
+        </p>
+        <p>
+          <strong>Mentorstvo</strong> je ugovoren broj individualnih ili grupnih sastanaka u
+          dogovorenom periodu, uz pristup materijalima.
+        </p>
+        <p>
+          Sadržaj edukacija povremeno dopunjujemo i menjamo kada se promene alati o kojima učimo.
+          Suštinski obim onoga što si platio time se ne umanjuje.
         </p>
       </LegalSection>
 
-      <LegalSection title="4. Cene i plaćanje">
+      <LegalSection title="3. Cene i plaćanje">
         <p>
-          Cene su istaknute na stranici sa cenama i iskazane su [u evrima / dinarima; sa/bez PDV-a —
-          PRILAGODI]. Pretplata se naplaćuje unapred za obračunski period [mesečno / godišnje] preko
-          [PROVAJDER PLAĆANJA]. Pretplatu možeš otkazati u svakom trenutku — usluga ostaje aktivna
-          do isteka plaćenog perioda. [PRILAGODI politiku povraćaja novca.]
+          Cene kurseva i mentorstva iskazane su u evrima, a članstvo se naplaćuje u dolarima preko
+          Skool platforme ({membership.price} mesečno). Iznos u dinarima zavisi od kursa tvoje banke
+          na dan naplate. [POTVRDI: da li je moguće plaćanje u dinarima, uplatnicom i na rate, i za
+          koje proizvode.]
         </p>
         <p>
-          Ako si potrošač u smislu Zakona o zaštiti potrošača: pravo na odustanak od ugovora
-          zaključenog na daljinu u roku od 14 dana ne važi za digitalni sadržaj čije je izvršenje
-          počelo uz tvoju izričitu saglasnost — što potvrđuješ aktiviranjem plaćene usluge.
-          Reklamacije primamo na [KONTAKT EMAIL] i odgovaramo u zakonskom roku od 8 dana.
+          Kursevi i mentorstvo plaćaju se jednokratno ili u ratama, prema uslovima istaknutim uz
+          proizvod. Članstvo se naplaćuje unapred, svakog meseca, dok ga ne otkažeš.
+        </p>
+        <p>[POTVRDI: da li su cene sa ili bez PDV-a i da li je firma u sistemu PDV-a.]</p>
+      </LegalSection>
+
+      <LegalSection title="4. Trajanje i otkazivanje članstva">
+        <p>
+          Članstvo traje mesec dana i obnavlja se automatski dok ga ne otkažeš. Otkazuješ ga sam, iz
+          svog naloga na Skool-u, u bilo kom trenutku — nije potrebno da nam pišeš ni da obrazlažeš
+          razlog.
+        </p>
+        <p>
+          Posle otkazivanja pristup ostaje aktivan do kraja već plaćenog meseca. Otkazivanje ne
+          povlači naplatu za naredni mesec.
+        </p>
+        <p>
+          [POTVRDI: šta ostaje polazniku posle otkazivanja — da li zadržava pristup snimcima
+          sastanaka i materijalima, i u kom obimu.]
         </p>
       </LegalSection>
 
-      <LegalSection title="5. Dozvoljeno korišćenje">
-        <p>Nije dozvoljeno:</p>
-        <ul className="list-disc space-y-1 pl-6">
-          <li>korišćenje usluge suprotno propisima Republike Srbije,</li>
-          <li>narušavanje bezbednosti, preopterećivanje ili zaobilaženje ograničenja usluge,</li>
-          <li>deljenje naloga sa trećim licima ili preprodaja usluge bez našeg pristanka,</li>
-          <li>postavljanje sadržaja kojim se krše tuđa prava (autorska, žig, privatnost...).</li>
-        </ul>
-        <p>Zadržavamo pravo da nalog koji krši ove uslove privremeno ograničimo ili ugasimo.</p>
-      </LegalSection>
-
-      <LegalSection title="6. Tvoj sadržaj i naši podaci">
+      <LegalSection title="5. Pravo na odustanak i garancija">
         <p>
-          Sadržaj koji uneseš ostaje tvoj. Daješ nam neisključivu licencu da ga skladištimo i
-          obrađujemo isključivo radi pružanja usluge. Softver, dizajn i žig {"Moj SaaS"} su naše
-          vlasništvo. Obrada podataka o ličnosti uređena je{" "}
-          <a href="/privatnost" className="text-primary underline underline-offset-4">
-            Politikom privatnosti
-          </a>
+          Za digitalni sadržaj koji se isporučuje odmah, zakonsko pravo potrošača na odustanak u
+          roku od 14 dana ne važi kada je izvršenje počelo uz izričitu saglasnost potrošača — što
+          potvrđuješ kada prvi put otvoriš materijale.
+        </p>
+        <p>
+          Nezavisno od toga, dajemo{" "}
+          <strong>sopstvenu garanciju povraćaja novca u roku od 14 dana</strong> od kupovine kursa,
+          bez obrazloženja. [POTVRDI: da li ista garancija važi i za mesečno članstvo i za
+          mentorstvo.]
+        </p>
+        <p>
+          Zahtev šalješ na {brand.email}. Postupak i rokovi opisani su na stranici{" "}
+          <Link href="/reklamacije" className="text-ink underline underline-offset-4">
+            Reklamacije
+          </Link>
           .
         </p>
       </LegalSection>
 
-      <LegalSection title="7. Odgovornost">
+      <LegalSection title="6. Kako se koristi pristup">
+        <p>Pristup je ličan i vezan za tvoj nalog. Nije dozvoljeno:</p>
+        <ul className="list-disc space-y-1 pl-6">
+          <li>deljenje pristupnih podataka sa drugim osobama,</li>
+          <li>snimanje, preuzimanje i dalja raspodela lekcija i materijala,</li>
+          <li>preprodaja ili javno objavljivanje sadržaja edukacije,</li>
+          <li>
+            objavljivanje snimaka i sadržaja iz zajednice i sa grupnih sastanaka izvan zajednice,
+          </li>
+          <li>ponašanje u zajednici koje vređa ili uznemirava druge polaznike i mentore.</li>
+        </ul>
         <p>
-          U najvećoj meri dozvoljenoj prinudnim propisima, ne odgovaramo za posrednu štetu ni za
-          izmaklu dobit nastalu korišćenjem ili nemogućnošću korišćenja usluge. Naša ukupna
-          odgovornost ograničena je na iznos koji si nam platio u poslednjih 12 meseci. Ograničenja
-          ne važe tamo gde ih zakon isključuje (namera, gruba nepažnja, prava potrošača).
+          Kod ozbiljnog ili ponovljenog kršenja možemo ograničiti ili ukinuti pristup. Ako je do
+          toga došlo bez tvoje krivice, vraćamo srazmeran deo uplaćenog iznosa.
         </p>
       </LegalSection>
 
-      <LegalSection title="8. Trajanje i raskid">
+      <LegalSection title="7. Autorska prava">
         <p>
-          Ugovor se zaključuje na neodređeno vreme. Možeš ga raskinuti brisanjem naloga ili
-          otkazivanjem pretplate. Mi ga možemo raskinuti uz otkazni rok od [30] dana, odnosno bez
-          otkaznog roka u slučaju bitne povrede ovih uslova. Nakon prestanka, podaci se brišu u
-          skladu sa Politikom privatnosti.
+          Video lekcije, materijali, šabloni, promptovi i naziv {brand.legalName} su naše
+          vlasništvo, odnosno vlasništvo naših predavača, i zaštićeni su zakonom. Kupovinom dobijaš
+          pravo da ih koristiš za sopstveno učenje i za rad sa svojim klijentima — ne i da ih
+          preprodaješ ili predaješ kao svoje.
+        </p>
+        <p>
+          Radovi koje napraviš tokom edukacije su tvoji. Objavljujemo ih na sajtu samo uz tvoju
+          saglasnost, a kada je u pitanju rad za klijenta — i uz saglasnost tog klijenta.
         </p>
       </LegalSection>
 
-      <LegalSection title="9. Izmene uslova">
+      <LegalSection title="8. Šta ne obećavamo">
         <p>
-          Uslove možemo izmeniti; o suštinskim izmenama obaveštavamo te najmanje [15] dana pre
-          stupanja na snagu, emailom ili u aplikaciji. Nastavak korišćenja nakon tog roka smatra se
-          prihvatanjem izmena — a ako se ne slažeš, možeš raskinuti ugovor pre stupanja izmena na
-          snagu.
+          Ne garantujemo zaposlenje, klijente ni određenu zaradu. Rezultati zavise od tvog rada,
+          vremena koje uložiš i tržišta. Iznosi i primeri na sajtu su ilustracije onoga što se na
+          tržištu sreće, a ne obećanje.
+        </p>
+        <p>
+          Edukacije zahtevaju sopstveni računar i internet vezu, kao i naloge kod alata o kojima
+          učimo. Ti alati su usluge trećih lica i mogu da menjaju svoje cene i uslove.
         </p>
       </LegalSection>
 
-      <LegalSection title="10. Merodavno pravo i sporovi">
+      <LegalSection title="9. Odgovornost i dostupnost">
         <p>
-          Na ove uslove primenjuje se pravo Republike Srbije. Sporove ćemo prvo pokušati da rešimo
-          dogovorom; u suprotnom, nadležan je sud u [MESTO, npr. Beogradu], osim ako je za potrošače
-          zakonom određena druga nadležnost. Potrošači mogu koristiti i vansudsko rešavanje
-          potrošačkih sporova u skladu sa Zakonom o zaštiti potrošača.
+          Trudimo se da materijali i zajednica budu dostupni bez prekida, ali zavisimo i od
+          platformi trećih lica (Skool, provajder plaćanja, alati za video). Kraći prekidi zbog
+          održavanja ili više sile su mogući i ne smatraju se neispunjenjem obaveze.
+        </p>
+        <p>
+          U meri u kojoj to prinudni propisi dozvoljavaju, ne odgovaramo za posrednu štetu ni za
+          izgubljenu dobit. Ovo ograničenje ne dira u odgovornost za nameru i grubu nepažnju, ni u
+          prava potrošača.
+        </p>
+      </LegalSection>
+
+      <LegalSection title="10. Reklamacije i sporovi">
+        <p>
+          Reklamaciju šalješ na {brand.email}. Odgovaramo u zakonskom roku od 8 dana od prijema.
+          Postupak je opisan na stranici{" "}
+          <Link href="/reklamacije" className="text-ink underline underline-offset-4">
+            Reklamacije
+          </Link>
+          .
+        </p>
+        <p>
+          Spor prvo pokušavamo da rešimo dogovorom, a potom vansudskim rešavanjem potrošačkih
+          sporova pred telom sa liste Ministarstva. Ako to ne uspe, nadležan je stvarno nadležni sud
+          u [MESTO].
+        </p>
+      </LegalSection>
+
+      <LegalSection title="11. Izmene uslova i kontakt">
+        <p>
+          Uslove možemo menjati; izmenjenu verziju objavljujemo na ovoj stranici sa novim datumom.
+          Ako izmena bitno menja tvoja prava kod već plaćene edukacije, obavestićemo te mejlom pre
+          nego što počne da važi.
+        </p>
+        <p>
+          Za sva pitanja: {brand.email}. Obrada podataka o ličnosti uređena je{" "}
+          <Link href="/privatnost" className="text-ink underline underline-offset-4">
+            Politikom privatnosti
+          </Link>
+          .
         </p>
       </LegalSection>
     </LegalPage>

@@ -1,5 +1,6 @@
 import { JsonLd, faqJsonLd } from "@/components/json-ld";
 import { FAQSection } from "@/components/sections/faq";
+import { WebinarForm } from "@/components/webinar-form";
 import { links, membership, stats } from "@/lib/brand";
 import type { FaqItem } from "@/lib/faq";
 import { buildMetadata } from "@/lib/seo";
@@ -69,7 +70,6 @@ export default function WebinarPage() {
           </p>
 
           <div className="mt-9 flex flex-col gap-3 sm:flex-row sm:items-center">
-            {/* [POTVRDI] zameni linkom ka formi za prijavu kad bude spremna. */}
             <a
               href="#prijava"
               className="inline-flex items-center justify-center gap-2 rounded bg-primary px-7 py-3.5 font-semibold text-ink transition-transform hover:scale-[1.02]"
@@ -100,8 +100,24 @@ export default function WebinarPage() {
         </div>
       </section>
 
-      <section id="prijava" className="mx-auto max-w-3xl px-6 pb-20">
-        <div className="rounded-3xl border bg-muted/50 p-8 text-center md:p-12">
+      <section id="prijava" className="scroll-mt-24 bg-muted/50 py-20 md:py-24">
+        <div className="mx-auto max-w-3xl px-6">
+          <h2 className="font-medium text-3xl text-ink tracking-[-0.02em] md:text-4xl">
+            Rezerviši mesto
+          </h2>
+          <p className="mt-4 text-lg text-muted-foreground leading-relaxed">
+            Dva podatka i gotovo. Termin i link za Zoom stižu na mejl, zajedno sa snimkom ako ne
+            stigneš uživo.
+          </p>
+
+          <div className="mt-8">
+            <WebinarForm />
+          </div>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-3xl px-6 py-20">
+        <div className="rounded-3xl border bg-card p-8 text-center md:p-12">
           <h2 className="font-medium text-2xl text-ink tracking-[-0.02em] md:text-3xl">
             Ne čekaš webinar da bi počeo
           </h2>

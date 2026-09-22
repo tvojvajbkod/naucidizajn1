@@ -1,7 +1,7 @@
 import { VideoWall } from "@/components/video-wall";
-import { stats } from "@/lib/brand";
+import { links, stats } from "@/lib/brand";
 import { type Testimonial, testimonials } from "@/lib/testimonials";
-import { Star } from "lucide-react";
+import { ArrowUpRight, Star } from "lucide-react";
 
 function Quote({ item }: { item: Testimonial }) {
   return (
@@ -45,6 +45,17 @@ export function ProofSection({ limit }: { limit?: number }) {
             i koliko dugo je taj čovek i dalje član — zadovoljstvo se lako izjavi, zadržavanje se
             plaća svakog meseca.
           </p>
+          {/* Sve što stoji na ovom sajtu o nama pišemo mi. Zato ide link na
+              izvor koji ne uređujemo — jedini način da tvrdnja bude proverljiva. */}
+          <a
+            href={links.skool}
+            target="_blank"
+            rel="noreferrer noopener"
+            className="mt-4 inline-flex items-center gap-1.5 font-medium text-ink text-sm underline underline-offset-4"
+          >
+            Sve recenzije stoje javno na Skool-u — proveri sam
+            <ArrowUpRight className="size-4" />
+          </a>
         </div>
 
         <VideoWall />

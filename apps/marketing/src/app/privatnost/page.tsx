@@ -1,150 +1,167 @@
 import { LegalPage, LegalSection } from "@/components/legal";
+import { brand } from "@/lib/brand";
+import { buildMetadata } from "@/lib/seo";
+import Link from "next/link";
 
-export const metadata = {
+export const metadata = buildMetadata({
   title: "Politika privatnosti",
-  description: "Kako Moj SaaS prikuplja, koristi i štiti podatke o ličnosti.",
-};
+  description: `Kako ${brand.name} prikuplja, koristi i štiti podatke o ličnosti.`,
+  path: "/privatnost",
+});
 
 /**
- * Šablon politike privatnosti usklađen sa Zakonom o zaštiti podataka o
- * ličnosti Republike Srbije ("Sl. glasnik RS", br. 87/2018 — ZZPL).
- * Popuni [placeholder] polja i prilagodi listu podataka svom proizvodu.
+ * Politika privatnosti usklađena sa Zakonom o zaštiti podataka o ličnosti RS
+ * („Sl. glasnik RS", br. 87/2018 — ZZPL).
+ *
+ * Prepisana za edukaciju, ne za SaaS. Obavezno pokriva i formu za prijavu na
+ * webinar — sajt od tog trenutka prikuplja ime i mejl, pa to mora biti
+ * navedeno ovde. Polja u [uglastim zagradama] popunjava firma, a tekst pre
+ * objave mora da pogleda advokat.
  */
 export default function PrivacyPage() {
   return (
     <LegalPage title="Politika privatnosti" updated="[DATUM]">
-      <LegalSection title="1. Rukovalac podacima">
+      <LegalSection title="1. Ko obrađuje tvoje podatke">
         <p>
-          Rukovalac podacima o ličnosti je <strong>[PUNO POSLOVNO IME]</strong>, sa sedištem na
-          adresi [ADRESA], matični broj [MATIČNI BROJ], PIB [PIB] (u daljem tekstu: "{"Moj SaaS"}",
-          "mi"). Za sva pitanja u vezi sa obradom podataka možeš nam se obratiti na{" "}
-          <strong>[EMAIL ZA PRIVATNOST]</strong>.
+          Rukovalac podacima je <strong>[PUNO POSLOVNO IME]</strong>, [ADRESA], matični broj
+          [MATIČNI BROJ], PIB [PIB] (u daljem tekstu: {brand.legalName}, „mi"). Kontakt za sva
+          pitanja o podacima: {brand.email}.
         </p>
         <p>
-          Podatke obrađujemo u skladu sa Zakonom o zaštiti podataka o ličnosti Republike Srbije
-          ("Sl. glasnik RS", br. 87/2018 — u daljem tekstu: ZZPL).
+          [POPUNI: da li je imenovano lice za zaštitu podataka o ličnosti i njegov kontakt, ako
+          postoji obaveza.]
         </p>
       </LegalSection>
 
-      <LegalSection title="2. Koje podatke prikupljamo">
-        <p>Prilikom korišćenja usluge prikupljamo sledeće podatke:</p>
-        <ul className="list-disc space-y-1 pl-6">
-          <li>
-            <strong>Podaci o nalogu:</strong> email adresa, ime (ako ga uneseš) i lozinka u
-            heširanom obliku; ako se prijavljuješ preko Google naloga — ime i email koje Google
-            podeli sa nama.
-          </li>
-          <li>
-            <strong>Sadržaj koji uneseš:</strong> podaci koje kreiraš u aplikaciji tokom korišćenja
-            usluge. [PRILAGODI: nabroj tipove sadržaja u svom proizvodu]
-          </li>
-          <li>
-            <strong>Podaci o plaćanju:</strong> plaćanja obrađuje [PROVAJDER PLAĆANJA — npr. Stripe
-            / Lemon Squeezy / banka]; mi ne čuvamo broj tvoje platne kartice, već samo status
-            pretplate i istoriju transakcija.
-          </li>
-          <li>
-            <strong>Tehnički podaci:</strong> IP adresa, tip uređaja i pregledača, logovi pristupa —
-            u meri neophodnoj za bezbednost i rad usluge.
-          </li>
-          <li>
-            <strong>Analitika (uz pristanak):</strong> podatke o poseti sajtu prikupljamo tek nakon
-            što prihvatiš kolačiće (vidi odeljak 6).
-          </li>
-        </ul>
-      </LegalSection>
-
-      <LegalSection title="3. Svrha i pravni osnov obrade">
-        <ul className="list-disc space-y-1 pl-6">
-          <li>
-            <strong>Pružanje usluge</strong> (izvršenje ugovora, čl. 12. st. 1. tač. 2 ZZPL) —
-            nalog, prijava, funkcionalnosti aplikacije, naplata.
-          </li>
-          <li>
-            <strong>Bezbednost i sprečavanje zloupotreba</strong> (legitimni interes, čl. 12. st. 1.
-            tač. 6 ZZPL).
-          </li>
-          <li>
-            <strong>Analitika i marketing</strong> (pristanak, čl. 12. st. 1. tač. 1 ZZPL) —
-            isključivo nakon tvog pristanka, koji možeš povući u svakom trenutku.
-          </li>
-          <li>
-            <strong>Ispunjenje zakonskih obaveza</strong> (čl. 12. st. 1. tač. 3 ZZPL) — npr.
-            računovodstveni propisi.
-          </li>
-        </ul>
-      </LegalSection>
-
-      <LegalSection title="4. Sa kim delimo podatke (obrađivači)">
+      <LegalSection title="2. Koje podatke prikupljamo i kada">
         <p>
-          Podatke ne prodajemo. Delimo ih samo sa pružaocima usluga koji ih obrađuju u naše ime, na
-          osnovu ugovora o obradi:
+          <strong>Prijava na besplatan webinar.</strong> Ime i imejl adresu, uz tvoj izričit
+          pristanak označen u formi. Koristimo ih da ti pošaljemo termin, link za pristup i snimak.
         </p>
+        <p>
+          <strong>Kupovina kursa ili mentorstva.</strong> Ime, imejl i podatke potrebne za izdavanje
+          računa. Podatke o kartici ne vidimo ni ne čuvamo — unosiš ih direktno kod provajdera
+          plaćanja [PROVAJDER PLAĆANJA].
+        </p>
+        <p>
+          <strong>Mesečno članstvo.</strong> Nalog, profil i naplata su na platformi Skool. Tamo
+          unesene podatke obrađuje Skool kao samostalan rukovalac, po svojoj politici privatnosti;
+          mi vidimo samo ono što je vidljivo unutar zajednice.
+        </p>
+        <p>
+          <strong>Kada nam pišeš.</strong> Sadržaj poruke i tvoju adresu, da bismo odgovorili.
+        </p>
+        <p>
+          <strong>Analitika i kolačići.</strong> Podatke o poseti (stranice, uređaj, približna
+          lokacija) — samo ako na traci sa kolačićima prihvatiš analitiku.
+        </p>
+        <p>
+          Ne tražimo i ne prikupljamo posebne vrste podataka (zdravlje, uverenja i slično). Naše
+          edukacije nisu namenjene deci mlađoj od [15] godina.
+        </p>
+      </LegalSection>
+
+      <LegalSection title="3. Zašto ih obrađujemo i po kom osnovu">
         <ul className="list-disc space-y-1 pl-6">
           <li>
-            <strong>Supabase</strong> (baza podataka i autentifikacija) — podaci se čuvaju u regionu
-            [REGION, npr. EU/Frankfurt].
+            <strong>Izvršenje ugovora</strong> — isporuka kursa, članstva ili mentorstva koje si
+            platio, i podrška uz njih.
           </li>
           <li>
-            <strong>Vercel</strong> (hosting aplikacije).
+            <strong>Pristanak</strong> — prijava na webinar, obaveštenja o novim edukacijama,
+            analitika i marketinški kolačići. Pristanak povlačiš u svakom trenutku, jednako lako kao
+            što si ga dao.
           </li>
-          <li>[PROVAJDER PLAĆANJA] (obrada plaćanja).</li>
-          <li>[DOPUNI: analitika, email servis, AI provajder ako se koristi...]</li>
+          <li>
+            <strong>Zakonska obaveza</strong> — izdavanje i čuvanje računa i poreske evidencije.
+          </li>
+          <li>
+            <strong>Legitiman interes</strong> — bezbednost sajta i sprečavanje zloupotreba, u meri
+            koja ne preteže nad tvojim pravima.
+          </li>
         </ul>
         <p>
-          Pojedini obrađivači mogu obrađivati podatke van Republike Srbije. U tom slučaju prenos se
-          vrši u države koje obezbeđuju primereni nivo zaštite ili uz odgovarajuće mere zaštite u
-          skladu sa čl. 63–70. ZZPL.
+          Ne donosimo odluke o tebi isključivo automatizovanom obradom i ne radimo profilisanje sa
+          pravnim dejstvom.
+        </p>
+      </LegalSection>
+
+      <LegalSection title="4. S kim delimo podatke">
+        <p>Podatke ne prodajemo. Delimo ih samo sa obrađivačima koji su nam potrebni da radimo:</p>
+        <ul className="list-disc space-y-1 pl-6">
+          <li>platforma zajednice i naplate članstva — Skool,</li>
+          <li>provajder plaćanja za kurseve i mentorstvo — [PROVAJDER PLAĆANJA],</li>
+          <li>servis koji prima prijave sa formi — [PROVAJDER FORMI],</li>
+          <li>imejl servis za slanje obaveštenja — [PROVAJDER MEJLA],</li>
+          <li>hosting i isporuka sajta — [HOSTING],</li>
+          <li>analitika i oglasni pikseli — Google Analytics, Meta Pixel (samo uz pristanak),</li>
+          <li>knjigovodstvo i nadležni organi kada to zakon nalaže.</li>
+        </ul>
+        <p>
+          Neki od ovih provajdera su van Srbije i Evropskog ekonomskog prostora (pre svega u SAD). U
+          tim slučajevima prenos se zasniva na standardnim ugovornim klauzulama ili drugom
+          odgovarajućem osnovu iz ZZPL-a.
         </p>
       </LegalSection>
 
       <LegalSection title="5. Koliko dugo čuvamo podatke">
-        <p>
-          Podatke o nalogu čuvamo dok nalog postoji. Nakon brisanja naloga podaci se brišu u roku od
-          [ROK, npr. 30 dana], osim podataka koje smo dužni da čuvamo po zakonu (npr. računi — u
-          rokovima iz računovodstvenih propisa).
-        </p>
-      </LegalSection>
-
-      <LegalSection title="6. Kolačići i analitika">
-        <p>
-          Neophodni kolačići (sesija prijave) postavljaju se uvek jer bez njih usluga ne radi.
-          Analitički i marketinški kolačići postavljaju se <strong>tek nakon tvog pristanka</strong>{" "}
-          kroz baner za kolačiće; pristanak možeš povući brisanjem kolačića u pregledaču.
-          [PRILAGODI: nabroj alate — npr. Google Analytics, Meta Pixel — ako su uključeni]
-        </p>
-      </LegalSection>
-
-      <LegalSection title="7. Tvoja prava">
-        <p>Po ZZPL imaš pravo na:</p>
         <ul className="list-disc space-y-1 pl-6">
-          <li>pristup podacima koje o tebi obrađujemo,</li>
-          <li>ispravku netačnih i dopunu nepotpunih podataka,</li>
-          <li>brisanje podataka ("pravo na zaborav"),</li>
-          <li>ograničenje obrade i prigovor na obradu,</li>
-          <li>prenosivost podataka,</li>
-          <li>povlačenje pristanka (bez uticaja na obradu pre povlačenja).</li>
+          <li>
+            prijave na webinar — do povlačenja pristanka, a najduže [2] godine od poslednje prijave,
+          </li>
+          <li>
+            podaci o kupovini i računi — u rokovima koje propisuju poreski propisi (najmanje 10
+            godina),
+          </li>
+          <li>prepiska — [2] godine od poslednje poruke,</li>
+          <li>podaci iz analitike — prema podešavanju servisa, najduže [14] meseci.</li>
+        </ul>
+        <p>Posle isteka roka podatke brišemo ili trajno anonimizujemo.</p>
+      </LegalSection>
+
+      <LegalSection title="6. Tvoja prava">
+        <p>U svakom trenutku imaš pravo da:</p>
+        <ul className="list-disc space-y-1 pl-6">
+          <li>tražiš pristup podacima koje o tebi imamo i kopiju tih podataka,</li>
+          <li>tražiš ispravku netačnih i dopunu nepotpunih podataka,</li>
+          <li>tražiš brisanje ili ograničenje obrade,</li>
+          <li>uložiš prigovor na obradu zasnovanu na legitimnom interesu,</li>
+          <li>tražiš prenosivost podataka u uobičajenom formatu,</li>
+          <li>povučeš pristanak, bez posledica po ono što je do tada zakonito obrađeno.</li>
         </ul>
         <p>
-          Zahtev nam pošalji na [EMAIL ZA PRIVATNOST] — odgovaramo bez odlaganja, a najkasnije u
-          roku od 30 dana. Imaš i pravo pritužbe{" "}
-          <strong>Povereniku za informacije od javnog značaja i zaštitu podataka o ličnosti</strong>{" "}
-          (Bulevar kralja Aleksandra 15, Beograd; www.poverenik.rs).
+          Zahtev šalješ na {brand.email}. Odgovaramo najkasnije u roku od 30 dana. Ako smatraš da ti
+          je pravo povređeno, možeš se obratiti i Povereniku za informacije od javnog značaja i
+          zaštitu podataka o ličnosti, Bulevar kralja Aleksandra 15, Beograd.
+        </p>
+      </LegalSection>
+
+      <LegalSection title="7. Kolačići">
+        <p>
+          Neophodni kolačići drže sajt funkcionalnim i postavljaju se bez pristanka. Analitika i
+          oglasni pikseli učitavaju se tek pošto ih prihvatiš na traci koja se pojavljuje pri prvoj
+          poseti. Izbor menjaš brisanjem kolačića u pregledaču, čime se traka ponovo pojavljuje.
         </p>
       </LegalSection>
 
       <LegalSection title="8. Bezbednost">
         <p>
-          Primenjujemo tehničke i organizacione mere zaštite: enkripciju u prenosu (HTTPS), kontrolu
-          pristupa na nivou baze podataka (izolacija podataka po korisniku), heširanje lozinki i
-          ograničen pristup podacima unutar tima.
+          Sajt radi preko šifrovane veze (HTTPS), pristup podacima imaju samo osobe kojima je
+          neophodan za rad, a provajdere biramo prema njihovim bezbednosnim merama. U slučaju
+          povrede podataka koja može da ugrozi tvoja prava, obaveštavamo Poverenika i tebe u
+          rokovima propisanim ZZPL-om.
         </p>
       </LegalSection>
 
       <LegalSection title="9. Izmene ove politike">
         <p>
-          O suštinskim izmenama obavestićemo te emailom ili obaveštenjem u aplikaciji pre nego što
-          stupe na snagu. Aktuelna verzija je uvek objavljena na ovoj stranici.
+          Politiku možemo menjati; važeća verzija je uvek na ovoj stranici, sa datumom poslednje
+          izmene na vrhu. O bitnim izmenama obaveštavamo mejlom one koji su nam ostavili adresu.
+          Uslovi pod kojima koristiš naše edukacije opisani su u{" "}
+          <Link href="/uslovi" className="text-ink underline underline-offset-4">
+            Uslovima korišćenja
+          </Link>
+          .
         </p>
       </LegalSection>
     </LegalPage>

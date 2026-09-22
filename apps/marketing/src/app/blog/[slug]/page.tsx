@@ -1,4 +1,6 @@
 import { getPost, getPublishedPosts } from "@/lib/blog";
+import { brand } from "@/lib/brand";
+import { ogImage } from "@/lib/seo";
 import { marketingEnv } from "@repo/config/marketing-env";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
@@ -55,15 +57,17 @@ export async function generateMetadata({
       title: post.title,
       description: post.description ?? undefined,
       url,
-      siteName: "Moj SaaS",
+      siteName: brand.name,
       type: "article",
       locale: "sr_RS",
       publishedTime: post.publishedAt ?? undefined,
+      images: [ogImage],
     },
     twitter: {
       card: "summary_large_image",
       title: post.title,
       description: post.description ?? undefined,
+      images: [ogImage.url],
     },
   };
 }
@@ -84,7 +88,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
     description: post.description ?? undefined,
     datePublished: post.publishedAt ?? undefined,
     url: postUrl(post.slug),
-    publisher: { "@type": "Organization", name: "Moj SaaS" },
+    publisher: { "@type": "Organization", name: brand.name },
   };
   // Escape "<" sprečava </script> breakout iz sadržaja objave.
   const articleLdJson = JSON.stringify(articleLd).replace(/</g, "\\u003c");

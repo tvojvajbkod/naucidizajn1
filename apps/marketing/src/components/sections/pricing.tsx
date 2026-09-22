@@ -80,9 +80,11 @@ export function PricingSection() {
       </div>
 
       <Tabs defaultValue={pricingGroups[0]?.id} className="mt-10 items-center">
-        <TabsList className="h-11 rounded p-1">
+        {/* max-w-full + scroll: tri jezička su na 390px šira od ekrana i
+            gurala su celu stranicu u horizontalni scroll. */}
+        <TabsList className="h-11 max-w-full overflow-x-auto rounded p-1">
           {pricingGroups.map((group) => (
-            <TabsTrigger key={group.id} value={group.id} className="rounded px-4">
+            <TabsTrigger key={group.id} value={group.id} className="rounded px-2.5 sm:px-4">
               {group.label}
               {group.badge ? <Badge className="ml-1.5">{group.badge}</Badge> : null}
             </TabsTrigger>
@@ -91,6 +93,7 @@ export function PricingSection() {
 
         {pricingGroups.map((group) => (
           <TabsContent key={group.id} value={group.id} className="mt-8 w-full">
+            <h2 className="sr-only">{group.label}</h2>
             <div
               className={cn(
                 "mx-auto grid max-w-5xl gap-6",

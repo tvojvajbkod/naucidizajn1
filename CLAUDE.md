@@ -112,25 +112,19 @@ $99/mes, Skool) je heroj početne strane i ima svoju punu landing stranu.
   4px (`rounded`), kartice 12px. Par dugmadi je limeta sa ink tekstom
   (primarno) i maslinasto `bg-olive` sa limeta tekstom (sekundarno) — ne
   outline. Ne vraćaj `rounded-full` i ne vraćaj `font-bold` na naslove.
-- **Ritam podloga je namerno naizmeničan.** Sekcije se smenjuju po podlozi da
-  stranica ne bude niz belih blokova: hero `bg-ink` → bela → krem traka
-  (`StatBandSection`) → bela → maslinasta (`TimelineSection`) → bela sa krem
-  karticom (`CaseStudyTeaserSection`) → `bg-muted/50` (`ProofSection`) → ink
-  (`MentorsSection`) → limeta kolona sa cenom (`MembershipOfferSection`) → krem
-  (`PathsSection`) → bela (FAQ) → ink kartica (`CtaSection`). Pravilo: nikad
-  dve iste podloge jedna do druge i najviše jedan limeta blok po stranici —
-  limeta je akcenat, ne podloga. Na tamnim sekcijama tekst ide
-  `text-background` / `text-background/75`, kartice `bg-background/[0.06]` sa
-  `border-background/15`, a oznake u limeti (`text-primary`).
-- **Tri potpisna poteza brenda**, svaki ima svoju komponentu:
-  `<Accent>` (serifni kurziv za JEDNU reč u naslovu — dve ubijaju efekat),
-  `<BigStat>` (kondenzovane brojke; `size="giant"` najviše jednom po stranici),
-  i krem traka `StatBandSection`. Ne razvlači ih po svakoj sekciji.
-- **Fontovi putuju sa sajtom** (`@fontsource` u `layout.tsx`): Archivo umesto
-  Raptora, Instrument Serif umesto Saola, Anton umesto Druk Condensed. Zbog
-  toga build radi i bez mreže, a posetilac ne šalje zahtev Google-u. Originalni
-  fontovi su komercijalni — ne preuzimaj ih sa njihovog CDN-a; smeju tek kad
-  firma dostavi fajlove i potvrdi da licenca pokriva novi sajt.
+- **Ritam podloga je izmeren, ne pogođen.** Zatečeni sajt je ~46% tamnog,
+  27% belog, 21% krem i 2% limeta po visini početne strane. Naš je na 41% / 31%
+  / 9% / 3% — namerno blizu. Redosled: hero ink → bela → krem traka
+  (`StatBandSection`) → **ink** (`WhatsIncludedSection`) → **maslinasta**
+  (`TimelineSection`) → **limeta traka** (`LimeBandSection`) → bela sa krem
+  panelom → siva (`ProofSection`) → **ink** (`MentorsSection`) → limeta kolona
+  sa cenom → krem (`PathsSection`) → bela (FAQ) → ink kartica (`CtaSection`) →
+  **ink futer**.
+  Pravila: dugi tamni blok sme da spoji ink i maslinastu (original ima 2.969px
+  neprekidno tamnog), ali dve ISTE podloge nikad ne idu jedna do druge; limeta
+  traka je jedna po stranici; na tamnim sekcijama tekst je `text-background` /
+  `text-background/75`, kartice `bg-background/[0.06]` uz `border-background/15`,
+  sitne oznake u limeti. Ako menjaš podloge, prvo izmeri udeo — ne procenjuj.
 - **Unutrašnji link IDE KROZ `<Link>`, nikad kroz `<a href="/...">`.** Sajt
   živi u podfolderu (`/naucidizajn1`); `<Link>` sam dodaje taj prefiks, obično
   `<a>` ne — i link završi na 404. Greška se ne vidi u razvoju (tamo nema

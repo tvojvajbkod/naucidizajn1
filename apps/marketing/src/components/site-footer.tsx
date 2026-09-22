@@ -37,23 +37,23 @@ const social: Array<{ href: string; label: string }> = [
 
 export function SiteFooter() {
   return (
-    <footer className="border-border/70 border-t bg-muted/40">
+    <footer className="bg-ink text-background">
       <div className="mx-auto max-w-6xl px-6 py-14">
         <div className="grid gap-10 md:grid-cols-4">
           <div className="md:col-span-1">
             <Link
               href="/"
               aria-label="Nauči Dizajn — početna"
-              className="flex items-center text-ink"
+              className="flex items-center text-background"
             >
               <SiteLogo />
             </Link>
-            <p className="mt-4 max-w-xs text-muted-foreground text-sm">
+            <p className="mt-4 max-w-xs text-background/65 text-sm">
               Naša misija je najbolja online edukacija na našem jeziku — dostupna svima.
             </p>
             <a
               href={`mailto:${brand.email}`}
-              className="mt-4 inline-block font-medium text-ink text-sm hover:underline"
+              className="mt-4 inline-block font-medium text-background text-sm hover:underline"
             >
               {brand.email}
             </a>
@@ -61,11 +61,14 @@ export function SiteFooter() {
 
           {columns.map((column) => (
             <div key={column.title}>
-              <h2 className="font-semibold text-ink text-sm">{column.title}</h2>
+              <h2 className="font-semibold text-background text-sm">{column.title}</h2>
               <ul className="mt-4 space-y-2.5">
                 {column.items.map((item) => (
                   <li key={item.href}>
-                    <Link href={item.href} className="text-muted-foreground text-sm hover:text-ink">
+                    <Link
+                      href={item.href}
+                      className="text-background/65 text-sm hover:text-background"
+                    >
                       {item.label}
                     </Link>
                   </li>
@@ -75,7 +78,7 @@ export function SiteFooter() {
           ))}
 
           <div>
-            <h2 className="font-semibold text-ink text-sm">Prati nas</h2>
+            <h2 className="font-semibold text-background text-sm">Prati nas</h2>
             <ul className="mt-4 space-y-2.5">
               {social.map((item) => (
                 <li key={item.label}>
@@ -83,7 +86,7 @@ export function SiteFooter() {
                     href={item.href}
                     target="_blank"
                     rel="noreferrer noopener"
-                    className="text-muted-foreground text-sm hover:text-ink"
+                    className="text-background/65 text-sm hover:text-background"
                   >
                     {item.label}
                   </a>
@@ -94,12 +97,12 @@ export function SiteFooter() {
         </div>
 
         {isProposal ? (
-          <p className="mt-12 rounded border border-border bg-muted/60 px-4 py-3 text-muted-foreground text-sm leading-relaxed">
-            Ovo je <strong className="text-ink">predlog redizajna</strong>, a ne zvanični sajt Nauči
-            Dizajna. Zvanični sajt je{" "}
+          <p className="mt-12 rounded border border-background/15 bg-background/[0.06] px-4 py-3 text-background/70 text-sm leading-relaxed">
+            Ovo je <strong className="text-background">predlog redizajna</strong>, a ne zvanični
+            sajt Nauči Dizajna. Zvanični sajt je{" "}
             <a
               href="https://www.naucidizajn.com/"
-              className="text-ink underline underline-offset-4"
+              className="text-primary underline underline-offset-4"
               rel="noreferrer noopener"
               target="_blank"
             >
@@ -109,18 +112,18 @@ export function SiteFooter() {
           </p>
         ) : null}
 
-        <div className="mt-8 flex flex-col gap-4 border-border/70 border-t pt-6 text-muted-foreground text-sm sm:flex-row sm:items-center sm:justify-between">
+        <div className="mt-8 flex flex-col gap-4 border-background/15 border-t pt-6 text-background/55 text-sm sm:flex-row sm:items-center sm:justify-between">
           <span>
             © {new Date().getFullYear()} {brand.legalName}
           </span>
           <nav className="flex flex-wrap items-center gap-6">
-            <Link href="/privatnost" className="hover:text-ink">
+            <Link href="/privatnost" className="hover:text-background">
               Politika privatnosti
             </Link>
-            <Link href="/uslovi" className="hover:text-ink">
+            <Link href="/uslovi" className="hover:text-background">
               Uslovi korišćenja
             </Link>
-            <Link href="/reklamacije" className="hover:text-ink">
+            <Link href="/reklamacije" className="hover:text-background">
               Reklamacije
             </Link>
           </nav>

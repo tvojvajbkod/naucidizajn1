@@ -66,13 +66,13 @@ const items: Item[] = [
 
 export function WhatsIncludedSection() {
   return (
-    <section id="sta-dobijas" className="py-20 md:py-24">
+    <section id="sta-dobijas" className="bg-ink py-20 md:py-24">
       <div className="mx-auto max-w-6xl px-6">
         <div className="max-w-2xl">
-          <h2 className="font-medium text-3xl text-ink tracking-[-0.02em] md:text-4xl">
+          <h2 className="font-medium text-3xl text-background tracking-[-0.02em] md:text-4xl">
             Šta dobijaš za članarinu
           </h2>
-          <p className="mt-4 text-lg text-muted-foreground">
+          <p className="mt-4 text-background/75 text-lg">
             Sve na jednom mestu, na srpskom. Pola programa je izrada, pola je nalaženje klijenata i
             naplata — jer prvo bez drugog ne donosi novac.
           </p>
@@ -80,14 +80,15 @@ export function WhatsIncludedSection() {
 
         <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {items.map((item) => (
-            <div key={item.title} className="rounded-2xl border bg-cream/60 p-6">
+            <div
+              key={item.title}
+              className="rounded-2xl border border-background/15 bg-background/[0.06] p-6"
+            >
               <div className="flex size-10 items-center justify-center rounded-lg bg-primary">
                 <item.icon className="size-5 text-ink" />
               </div>
-              <h3 className="mt-4 font-semibold text-ink">{item.title}</h3>
-              <p className="mt-2 text-muted-foreground text-sm leading-relaxed">
-                {item.description}
-              </p>
+              <h3 className="mt-4 font-semibold text-background">{item.title}</h3>
+              <p className="mt-2 text-background/70 text-sm leading-relaxed">{item.description}</p>
             </div>
           ))}
         </div>

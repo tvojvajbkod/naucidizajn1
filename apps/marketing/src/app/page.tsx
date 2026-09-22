@@ -3,6 +3,7 @@ import { CaseStudyTeaserSection } from "@/components/sections/case-study-teaser"
 import { CtaSection } from "@/components/sections/cta";
 import { FAQSection } from "@/components/sections/faq";
 import { HeroSection } from "@/components/sections/hero";
+import { LimeBandSection } from "@/components/sections/lime-band";
 import { MembershipOfferSection } from "@/components/sections/membership-offer";
 import { MentorsSection } from "@/components/sections/mentors";
 import { PathsSection } from "@/components/sections/paths";
@@ -30,6 +31,7 @@ export default function HomePage() {
       <StatBandSection />
       <WhatsIncludedSection />
       <TimelineSection />
+      <LimeBandSection />
       <WorksWallSection limit={3} />
       <CaseStudyTeaserSection />
       <ProofSection limit={6} />

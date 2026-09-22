@@ -1,0 +1,27 @@
+Logotip sajta
+
+Ovde ide pravi logo Nauci Dizajna. Preporuka: SVG (ostaje ostar na svakom
+ekranu), horizontalna varijanta, oko 4:1 odnosa.
+
+  naucidizajn.svg
+
+Kad fajl stigne, u apps/marketing/src/lib/brand.ts upisi:
+
+  export const logo = {
+    src: "/logo/naucidizajn.svg",
+    width: 132,
+    height: 32,
+    alt: "Nauci Dizajn",
+  };
+
+Ako logo nije u odnosu 4:1, ispravi width i height da odgovaraju stvarnom
+odnosu — raspored zaglavlja i futera se racuna po tim brojevima.
+
+Dok je src prazno, u zaglavlju i futeru stoji prazno mesto istih dimenzija,
+pa se nista ne pomera kad logo ubacis.
+
+NE ZABORAVI: isti znak nose i
+  src/app/icon.svg        (ikonica u tabu pregledaca)
+  src/app/apple-icon.png  (ikonica na telefonu)
+  public/og.png           (slika koja se vidi kad se link podeli)
+Njih treba zameniti u istom koraku, inace sajt ima dva razlicita znaka.

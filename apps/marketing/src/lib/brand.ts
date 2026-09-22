@@ -28,7 +28,30 @@ export const links = {
   instagram: "https://www.instagram.com/naucidizajn/",
   youtube: "https://www.youtube.com/@naucidizajn",
   facebook: "https://www.facebook.com/naucidizajn/",
-  tiktok: "https://www.tiktok.com/@naucidizajn",
+  // TikTok je NAMERNO uklonjen sa sajta (odluka 22.09.). Ne vraćati ga
+  // u futer ni u `sameAs` schema bez izričitog dogovora.
+} as const;
+
+/**
+ * Logotip sajta.
+ *
+ * Pravi logo je žig firme i nije preuzet sa njihovog sajta. Dok ne stigne
+ * fajl, u zaglavlju i futeru stoji prazno mesto tačnih dimenzija — raspored
+ * se ne pomera kad se logo ubaci.
+ *
+ * [POPUNI] Kad fajl stigne: ubaci ga u `public/logo/` i upiši putanju u `src`
+ * (npr. „/logo/naucidizajn.svg"). SVG je najbolji — ostaje oštar svuda.
+ * Ako logo nije u odnosu 4:1, ispravi `width` i `height`.
+ *
+ * NAPOMENA: favicon (`src/app/icon.svg`), ikonica za telefon
+ * (`src/app/apple-icon.png`) i slika za deljenje (`public/og.png`) nose crtež
+ * znaka i prave se posebno — njih treba zameniti u istom koraku.
+ */
+export const logo = {
+  src: "",
+  width: 132,
+  height: 32,
+  alt: "Nauči Dizajn",
 } as const;
 
 /** Brojke koje stoje na sajtu. [POTVRDI] pre objave — izvor: Skool + postojeći sajt. */

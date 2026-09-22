@@ -131,6 +131,13 @@ $99/mes, Skool) je heroj početne strane i ima svoju punu landing stranu.
   toga build radi i bez mreže, a posetilac ne šalje zahtev Google-u. Originalni
   fontovi su komercijalni — ne preuzimaj ih sa njihovog CDN-a; smeju tek kad
   firma dostavi fajlove i potvrdi da licenca pokriva novi sajt.
+- **Logo je prazno mesto dok pravi ne stigne.** `components/site-logo.tsx` u
+  zaglavlju i futeru; putanja se upisuje u `logo.src` u `brand.ts`, a dimenzije
+  (132 × 32) drže raspored da se ne pomeri. Ne vraćati `BrandMark` + tekstualni
+  wordmark u navigaciju. Kad stigne pravi logo, u istom koraku se menjaju i
+  `icon.svg`, `apple-icon.png` i `og.png` — inače sajt ima dva različita znaka.
+- **TikTok je namerno uklonjen** (22.09.) iz futera i iz `sameAs` schema. Ne
+  vraćati ga bez izričitog dogovora.
 - **Deljenje sajta ima sliku.** `public/og.png` (1200 × 630) je OG slika i
   ugrađena je u `buildMetadata()` i u root `layout.tsx`, pa je nose SVE
   stranice — i one koje `buildMetadata` ne koriste. Favicon je

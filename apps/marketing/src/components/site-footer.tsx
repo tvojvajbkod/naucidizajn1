@@ -1,4 +1,4 @@
-import { BrandMark } from "@/components/brand-mark";
+import { SiteLogo } from "@/components/site-logo";
 import { brand, isProposal, links } from "@/lib/brand";
 import Link from "next/link";
 
@@ -33,7 +33,6 @@ const social: Array<{ href: string; label: string }> = [
   { href: links.instagram, label: "Instagram" },
   { href: links.youtube, label: "YouTube" },
   { href: links.facebook, label: "Facebook" },
-  { href: links.tiktok, label: "TikTok" },
 ];
 
 export function SiteFooter() {
@@ -42,11 +41,12 @@ export function SiteFooter() {
       <div className="mx-auto max-w-6xl px-6 py-14">
         <div className="grid gap-10 md:grid-cols-4">
           <div className="md:col-span-1">
-            <Link href="/" className="flex items-center gap-2 font-bold text-ink text-lg">
-              <BrandMark />
-              <span>
-                nauči<span className="text-muted-foreground">dizajn</span>
-              </span>
+            <Link
+              href="/"
+              aria-label="Nauči Dizajn — početna"
+              className="flex items-center text-ink"
+            >
+              <SiteLogo />
             </Link>
             <p className="mt-4 max-w-xs text-muted-foreground text-sm">
               Naša misija je najbolja online edukacija na našem jeziku — dostupna svima.

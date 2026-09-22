@@ -1,7 +1,7 @@
 "use client";
 
-import { BrandMark } from "@/components/brand-mark";
-import { brand, links as brandLinks } from "@/lib/brand";
+import { SiteLogo } from "@/components/site-logo";
+import { links as brandLinks } from "@/lib/brand";
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@repo/ui";
 import { Menu, Sparkles } from "lucide-react";
 import Link from "next/link";
@@ -28,11 +28,8 @@ export function SiteNav() {
   return (
     <header className="sticky top-0 z-50 border-border/70 border-b bg-background/85 backdrop-blur">
       <nav className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-6 py-3">
-        <Link href="/" className="flex items-center gap-2 font-bold text-ink text-lg">
-          <BrandMark />
-          <span>
-            nauči<span className="text-muted-foreground">dizajn</span>
-          </span>
+        <Link href="/" aria-label="Nauči Dizajn — početna" className="flex items-center text-ink">
+          <SiteLogo />
         </Link>
 
         <div className="hidden items-center gap-7 md:flex">
@@ -69,9 +66,8 @@ export function SiteNav() {
           </SheetTrigger>
           <SheetContent side="right" className="w-72">
             <SheetHeader>
-              <SheetTitle className="flex items-center gap-2">
-                <BrandMark />
-                {brand.name}
+              <SheetTitle className="flex items-center text-ink">
+                <SiteLogo />
               </SheetTitle>
             </SheetHeader>
             <div className="flex flex-col gap-1 px-4">

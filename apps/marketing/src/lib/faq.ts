@@ -75,7 +75,7 @@ export const generalFaq: FaqItem[] = [
   {
     question: "Mogu li kurs da platim na rate?",
     answer:
-      "Da. Na svakom paketu, odmah ispod dugmeta za upis, stoji opcija plaćanja na rate. Plaćanje ide karticom preko Stripe-a ili uplatnicom.",
+      "Da, i rate su ispisane uz svaki paket. Starter: dve rate po 60 € (ukupno 120 €). Pro: prva rata 200 € pa dve po 130 € (ukupno 460 €). Ultra: prva rata 200 € pa četiri po 150 € (ukupno 800 €). Lični brend: četiri rate po 150 € (ukupno 600 €). Na rate izlaziš skuplje nego kad platiš odjednom — razlika je ispisana namerno. [POTVRDI način plaćanja: kartica, uplatnica.]",
   },
   {
     question: "Koliko dugo mogu da gledam kurs?",

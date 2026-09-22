@@ -60,6 +60,14 @@ function PlanCard({ plan }: { plan: PricingPlan }) {
           </Link>
         )}
 
+        {/* Rate stoje ISPOD dugmeta, kao na naucidizajn.com. Ko ne može
+            odjednom, to mora da vidi pre nego što odustane. */}
+        {plan.installments ? (
+          <p className="mt-2.5 text-center text-muted-foreground text-xs leading-relaxed">
+            {plan.installments}
+          </p>
+        ) : null}
+
         <div className="mt-8 space-y-3">
           {plan.inherits ? (
             <p className="flex items-center gap-2 font-medium text-ink text-sm">

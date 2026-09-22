@@ -16,6 +16,8 @@ export interface Course {
   price: string;
   /** Kratka napomena uz cenu — koji paketi postoje i šta je u ceni. */
   priceNote: string;
+  /** Plaćanje na rate, doslovno kao na naucidizajn.com (22.09.2026.). */
+  installments: string;
 }
 
 export const courses: Course[] = [
@@ -38,7 +40,8 @@ export const courses: Course[] = [
       "Projekti za portfolio",
     ],
     price: "99 €",
-    priceNote: "Starter 99 € · Pro 399 € · Ultra 699 €. Moguće na rate.",
+    priceNote: "Tri paketa: Starter 99 € · Pro 399 € · Ultra 699 €.",
+    installments: "Na rate: Starter 2 × 60 € · Pro 200 € + 2 × 130 € · Ultra 200 € + 4 × 150 €.",
   },
   {
     slug: "ui-ux",
@@ -59,7 +62,8 @@ export const courses: Course[] = [
       "Studija slučaja za portfolio",
     ],
     price: "99 €",
-    priceNote: "Starter 99 € · Pro 399 € · Ultra 699 €. Moguće na rate.",
+    priceNote: "Tri paketa: Starter 99 € · Pro 399 € · Ultra 699 €.",
+    installments: "Na rate: Starter 2 × 60 € · Pro 200 € + 2 × 130 € · Ultra 200 € + 4 × 150 €.",
   },
   {
     slug: "webflow",
@@ -80,7 +84,8 @@ export const courses: Course[] = [
       "Predaja sajta klijentu",
     ],
     price: "99 €",
-    priceNote: "Starter 99 € · Pro 399 € · Ultra 699 €. Moguće na rate.",
+    priceNote: "Tri paketa: Starter 99 € · Pro 399 € · Ultra 699 €.",
+    installments: "Na rate: Starter 2 × 60 € · Pro 200 € + 2 × 130 € · Ultra 200 € + 4 × 150 €.",
   },
   {
     slug: "logo-dizajn",
@@ -101,7 +106,8 @@ export const courses: Course[] = [
       "Prezentacija rešenja klijentu",
     ],
     price: "99 €",
-    priceNote: "Starter 99 € · Pro 399 € · Ultra 699 €. Moguće na rate.",
+    priceNote: "Tri paketa: Starter 99 € · Pro 399 € · Ultra 699 €.",
+    installments: "Na rate: Starter 2 × 60 € · Pro 200 € + 2 × 130 € · Ultra 200 € + 4 × 150 €.",
   },
   {
     slug: "motion-dizajn",
@@ -122,7 +128,8 @@ export const courses: Course[] = [
       "Izvoz za sve platforme",
     ],
     price: "99 €",
-    priceNote: "Jedan paket, bez mentorstva. Moguće na dve rate po 60 €.",
+    priceNote: "Jedan paket, bez mentorstva.",
+    installments: "Ili 2 rate po 60 € mesečno (ukupno 120 €).",
   },
   {
     slug: "licni-brend",
@@ -143,7 +150,8 @@ export const courses: Course[] = [
       "Od prvog razgovora do ugovora",
     ],
     price: "499 €",
-    priceNote: "Jedan paket. Moguće na četiri rate po 150 € (ukupno 600 €).",
+    priceNote: "Jedan paket.",
+    installments: "Ili 4 rate po 150 € mesečno (ukupno 600 €).",
   },
 ];
 

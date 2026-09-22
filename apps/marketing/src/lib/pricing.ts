@@ -17,6 +17,12 @@ export interface PricingPlan {
   period?: string;
   /** Sitna napomena ispod cene. */
   priceNote?: string;
+  /**
+   * Plaćanje na rate — doslovno kako stoji na naucidizajn.com (22.09.2026.).
+   * Stoji ispod dugmeta, kao i tamo: ko ne može odjednom, mora to da vidi pre
+   * nego što odustane, a ne tek na naplati.
+   */
+  installments?: string;
   cta: string;
   /** Interna ruta ili apsolutni URL. */
   href: string;
@@ -69,7 +75,8 @@ export const pricingGroups: PricingGroup[] = [
         name: "Starter",
         description: "Snimljen kurs, bez mentorstva. Učiš sam, svojim tempom.",
         price: "99 €",
-        priceNote: "Jednokratno ili 2 rate po 60 € (ukupno 120 €)",
+        priceNote: "Jednokratno · pristup kursu 3 meseca",
+        installments: "Ili 2 rate po 60 € mesečno (ukupno 120 €)",
         cta: "Pogledaj kurseve",
         href: "/kursevi",
         features: [
@@ -84,7 +91,8 @@ export const pricingGroups: PricingGroup[] = [
         name: "Pro",
         description: "Kurs plus šest meseci grupnog mentorstva.",
         price: "399 €",
-        priceNote: "Jednokratno ili prva rata 200 € + 2 rate po 130 € (ukupno 460 €)",
+        priceNote: "Jednokratno · doživotan pristup kursu",
+        installments: "Ili prva rata 200 € + 2 rate po 130 € mesečno (ukupno 460 €)",
         cta: "Pogledaj kurseve",
         href: "/kursevi",
         inherits: "Sve iz Starter paketa, plus:",
@@ -101,7 +109,8 @@ export const pricingGroups: PricingGroup[] = [
         name: "Ultra",
         description: "Kurs plus dvanaest meseci grupnog mentorstva.",
         price: "699 €",
-        priceNote: "Jednokratno ili prva rata 200 € + 4 rate po 150 € (ukupno 800 €)",
+        priceNote: "Jednokratno · doživotan pristup kursu",
+        installments: "Ili prva rata 200 € + 4 rate po 150 € mesečno (ukupno 800 €)",
         cta: "Pogledaj kurseve",
         href: "/kursevi",
         inherits: "Sve iz Pro paketa, plus:",
@@ -125,6 +134,7 @@ export const pricingGroups: PricingGroup[] = [
         price: "od 300 €",
         period: "/ mesečno",
         priceNote: "Raspon 300–550 € zavisi od smera",
+        installments: "Plaćaš mesec za mesec, bez obaveze",
         cta: "Zakaži besplatan poziv",
         href: "/mentorstvo",
         features: [
@@ -140,6 +150,7 @@ export const pricingGroups: PricingGroup[] = [
         price: "od 250 €",
         period: "/ mesečno",
         priceNote: "Raspon 250–500 € zavisi od smera",
+        installments: "Plaćaš mesečno, uz obavezu na 6 meseci",
         cta: "Zakaži besplatan poziv",
         href: "/mentorstvo",
         highlighted: true,
@@ -155,7 +166,8 @@ export const pricingGroups: PricingGroup[] = [
         description: "Isti program, najniža cena po mesecu.",
         price: "od 200 €",
         period: "/ mesečno",
-        priceNote: "Raspon 200–450 € · plaćeno jednom, unapred",
+        priceNote: "Raspon 200–450 € po mesecu",
+        installments: "Plaćeno odjednom unapred za svih 6 meseci",
         cta: "Zakaži besplatan poziv",
         href: "/mentorstvo",
         inherits: "Sve iz programa od 6 meseci i:",
@@ -189,7 +201,7 @@ export const comparison: ComparisonRow[] = [
   {
     label: "Plaćanje",
     membership: `${membership.price} mesečno`,
-    course: "99–699 € jednokratno",
+    course: "99–699 € jednokratno ili na rate",
     mentorship: "200–550 € mesečno",
   },
   {

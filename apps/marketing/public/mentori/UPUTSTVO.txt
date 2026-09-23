@@ -3,17 +3,21 @@ Fotografije mentora
 Ovde idu slike mentora. Ime fajla mora da odgovara polju "slug" u
 apps/marketing/src/lib/testimonials.ts:
 
-  nikola-tripkovic.jpg
-  voja.jpg
-  teodora.jpg
+  nikola-tripkovic.jpg   UI UX kurs, Webflow kurs, Licni brend, zajednica
+  voja.jpg               Web dizajn kurs
+  sava.jpg               Logo dizajn kurs
+  staki.jpg              Motion dizajn kurs
+  teodora.jpg            zajednica (sekcija "Ko te vodi")
 
 Format: uspravna slika (odnos 4:5), najmanje 800 x 1000 px, lice u gornjoj
 trecini, .jpg ili .webp, do 500 KB.
 
 Posle uploada slike, u testimonials.ts kod tog mentora dodati red:
 
-  photo: "/mentori/nikola-tripkovic.jpg",
+  photo: "/mentori/sava.jpg",
 
-Dok tog reda nema, na sajtu stoji prazno mesto sa uputstvom.
+Dok tog reda nema, na sajtu stoji prazno mesto sa uputstvom. Prazna mesta se
+vide na tri mesta: sekcija "Ko te vodi" (pocetna i /o-nama) i blok "Ko te uci
+na ovom kursu" na svakoj kursnoj stranici.
 
 VAZNO: fotografija se objavljuje samo uz saglasnost osobe sa slike.

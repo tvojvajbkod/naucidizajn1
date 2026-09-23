@@ -1,5 +1,5 @@
 import { MentorPhoto } from "@/components/mentor-photo";
-import { mentors } from "@/lib/testimonials";
+import { featuredMentors } from "@/lib/testimonials";
 
 export function MentorsSection() {
   return (
@@ -16,7 +16,7 @@ export function MentorsSection() {
         </div>
 
         <div className="mt-12 grid gap-6 md:grid-cols-3">
-          {mentors.map((mentor) => (
+          {featuredMentors.map((mentor) => (
             <div
               key={mentor.slug}
               className="rounded-2xl border border-background/15 bg-background/[0.06] p-5"

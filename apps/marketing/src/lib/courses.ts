@@ -18,6 +18,8 @@ export interface Course {
   priceNote: string;
   /** Plaćanje na rate, doslovno kao na naucidizajn.com (22.09.2026.). */
   installments: string;
+  /** Ko predaje — `slug` iz `mentors` u `lib/testimonials.ts`. */
+  mentorSlug: string;
 }
 
 export const courses: Course[] = [
@@ -42,6 +44,7 @@ export const courses: Course[] = [
     price: "99 €",
     priceNote: "Tri paketa: Starter 99 € · Pro 399 € · Ultra 699 €.",
     installments: "Na rate: Starter 2 × 60 € · Pro 200 € + 2 × 130 € · Ultra 200 € + 4 × 150 €.",
+    mentorSlug: "voja",
   },
   {
     slug: "ui-ux",
@@ -64,6 +67,7 @@ export const courses: Course[] = [
     price: "99 €",
     priceNote: "Tri paketa: Starter 99 € · Pro 399 € · Ultra 699 €.",
     installments: "Na rate: Starter 2 × 60 € · Pro 200 € + 2 × 130 € · Ultra 200 € + 4 × 150 €.",
+    mentorSlug: "nikola-tripkovic",
   },
   {
     slug: "webflow",
@@ -86,6 +90,7 @@ export const courses: Course[] = [
     price: "99 €",
     priceNote: "Tri paketa: Starter 99 € · Pro 399 € · Ultra 699 €.",
     installments: "Na rate: Starter 2 × 60 € · Pro 200 € + 2 × 130 € · Ultra 200 € + 4 × 150 €.",
+    mentorSlug: "nikola-tripkovic",
   },
   {
     slug: "logo-dizajn",
@@ -108,6 +113,7 @@ export const courses: Course[] = [
     price: "99 €",
     priceNote: "Tri paketa: Starter 99 € · Pro 399 € · Ultra 699 €.",
     installments: "Na rate: Starter 2 × 60 € · Pro 200 € + 2 × 130 € · Ultra 200 € + 4 × 150 €.",
+    mentorSlug: "sava",
   },
   {
     slug: "motion-dizajn",
@@ -130,6 +136,7 @@ export const courses: Course[] = [
     price: "99 €",
     priceNote: "Jedan paket, bez mentorstva.",
     installments: "Ili 2 rate po 60 € mesečno (ukupno 120 €).",
+    mentorSlug: "staki",
   },
   {
     slug: "licni-brend",
@@ -152,6 +159,7 @@ export const courses: Course[] = [
     price: "499 €",
     priceNote: "Jedan paket.",
     installments: "Ili 4 rate po 150 € mesečno (ukupno 600 €).",
+    mentorSlug: "nikola-tripkovic",
   },
 ];
 

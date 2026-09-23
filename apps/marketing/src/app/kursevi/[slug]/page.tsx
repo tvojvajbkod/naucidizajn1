@@ -1,4 +1,5 @@
 import { CourseBadge } from "@/components/course-badge";
+import { CourseMentor } from "@/components/course-mentor";
 import { JsonLd, courseJsonLd, faqJsonLd } from "@/components/json-ld";
 import { CtaSection } from "@/components/sections/cta";
 import { FAQSection } from "@/components/sections/faq";
@@ -100,6 +101,8 @@ export default async function CoursePage({ params }: { params: Promise<{ slug: s
           </Link>
         </aside>
       </section>
+
+      <CourseMentor mentorSlug={course.mentorSlug} />
 
       <FAQSection
         items={generalFaq}

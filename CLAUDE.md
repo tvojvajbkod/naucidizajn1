@@ -124,6 +124,14 @@ Skool). Ono je heroj početne strane i ima svoju punu landing stranu.
   polazniku. Ako klijent ne želi da se imenuje, `client` postaje opis
   delatnosti a `url` se izostavlja. Slike idu u `public/radovi/`, snimke pravi
   `bun scripts/snimi-radove.ts` (traži `bun add -d playwright@1.56.1`).
+- **Koraci studije slučaja imaju traku napretka** (`components/case-steps.tsx`,
+  odluka 23.09.). Lepljiva traka uz levu ivicu se puni pri skrolu, a krug oko
+  broja pokazuje koliko je prošao trenutni korak. Pravila: ništa se ne krije
+  (tekst mora da se skenira i da ga čitaju pretraživači), traka je `aria-hidden`
+  jer čitač ekrana već čuje „Korak 3" iz teksta, i poštuje se
+  `prefers-reduced-motion`. Sadržaj ispod koraka (galerija, zaključak, napomena)
+  uvučen je za `lg:pl-[6.5rem]` da bi se poklopio sa kolonom koraka — ako menjaš
+  širinu trake, menjaj i to uvlačenje.
 - **Prazno stanje je namerno.** Zid radova se ne prikazuje dok nema objavljenih
   radova, a `/radovi` tada objašnjava zašto. Ne dodavati natpis „uskoro" ni
   slike sa stocka — jedini smisao te stranice je da bude istinita.

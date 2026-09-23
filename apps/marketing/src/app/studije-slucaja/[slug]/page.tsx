@@ -1,3 +1,4 @@
+import { CaseSteps } from "@/components/case-steps";
 import { JsonLd, caseStudyJsonLd } from "@/components/json-ld";
 import { Screenshot } from "@/components/screenshot";
 import { CtaSection } from "@/components/sections/cta";
@@ -82,73 +83,46 @@ export default async function CaseStudyPage({
       ) : null}
 
       <article className="mx-auto max-w-4xl px-6 py-16 md:py-20">
-        <ol className="space-y-12">
-          {study.steps.map((step) => (
-            <li key={step.label}>
-              <span className="font-semibold text-muted-foreground text-sm">{step.label}</span>
-              <h2 className="mt-1.5 font-medium text-2xl text-ink tracking-[-0.02em]">
-                {step.title}
-              </h2>
-              <p className="mt-4 text-lg text-muted-foreground leading-relaxed">{step.body}</p>
+        <CaseSteps steps={study.steps} />
 
-              {step.snippet ? (
-                <div className="mt-6 overflow-hidden rounded-2xl border bg-muted/50">
-                  <p className="border-b bg-muted px-5 py-2.5 font-semibold text-ink text-xs uppercase tracking-wide">
-                    {step.snippetLabel ?? "Primer"}
-                  </p>
-                  <pre className="overflow-x-auto whitespace-pre-wrap px-5 py-5 font-sans text-ink/85 text-sm leading-relaxed">
-                    <code className="font-sans">{step.snippet}</code>
-                  </pre>
-                </div>
-              ) : null}
+        {/* Uvlačenje prati kolonu koraka — traka napretka zauzima 3,5rem + 3rem razmaka. */}
+        <div className="lg:pl-[6.5rem]">
+          {study.gallery?.length ? (
+            <section className="mt-16">
+              <h2 className="font-medium text-2xl text-ink tracking-[-0.02em]">Kako izgleda</h2>
+              <div className="mt-8 grid gap-6 sm:grid-cols-2">
+                {study.gallery.map((media) => (
+                  <Screenshot
+                    key={media.src}
+                    src={media.src}
+                    alt={media.alt}
+                    caption={media.caption}
+                  />
+                ))}
+              </div>
+            </section>
+          ) : null}
 
-              {step.image ? (
-                <Screenshot
-                  className="mt-6"
-                  src={step.image.src}
-                  alt={step.image.alt}
-                  caption={step.image.caption}
-                />
-              ) : null}
-            </li>
-          ))}
-        </ol>
-
-        {study.gallery?.length ? (
-          <section className="mt-16">
-            <h2 className="font-medium text-2xl text-ink tracking-[-0.02em]">Kako izgleda</h2>
-            <div className="mt-8 grid gap-6 sm:grid-cols-2">
-              {study.gallery.map((media) => (
-                <Screenshot
-                  key={media.src}
-                  src={media.src}
-                  alt={media.alt}
-                  caption={media.caption}
-                />
+          <section className="mt-16 rounded-2xl border bg-card p-8">
+            <h2 className="font-bold text-ink text-xl">Šta se iz ovoga uči</h2>
+            <ul className="mt-6 space-y-3.5">
+              {study.takeaways.map((item) => (
+                <li key={item} className="flex items-start gap-3">
+                  <Check className="mt-1 size-4 shrink-0 text-ink" />
+                  <span className="text-ink/85 leading-relaxed">{item}</span>
+                </li>
               ))}
-            </div>
+            </ul>
           </section>
-        ) : null}
 
-        <section className="mt-16 rounded-2xl border bg-card p-8">
-          <h2 className="font-bold text-ink text-xl">Šta se iz ovoga uči</h2>
-          <ul className="mt-6 space-y-3.5">
-            {study.takeaways.map((item) => (
-              <li key={item} className="flex items-start gap-3">
-                <Check className="mt-1 size-4 shrink-0 text-ink" />
-                <span className="text-ink/85 leading-relaxed">{item}</span>
-              </li>
-            ))}
-          </ul>
-        </section>
-
-        {study.kind === "demonstracija" ? (
-          <p className="mt-8 text-muted-foreground text-sm leading-relaxed">
-            Napomena: klijent iz ovog primera je izmišljen, a iznosi su rasponi koji se sreću na
-            tržištu u regionu — nisu obećanje zarade. Koliko ćeš naplatiti zavisi od obima posla,
-            klijenta i toga koliko si ubedljiv u razgovoru.
-          </p>
-        ) : null}
+          {study.kind === "demonstracija" ? (
+            <p className="mt-8 text-muted-foreground text-sm leading-relaxed">
+              Napomena: klijent iz ovog primera je izmišljen, a iznosi su rasponi koji se sreću na
+              tržištu u regionu — nisu obećanje zarade. Koliko ćeš naplatiti zavisi od obima posla,
+              klijenta i toga koliko si ubedljiv u razgovoru.
+            </p>
+          ) : null}
+        </div>
       </article>
 
       <CtaSection />

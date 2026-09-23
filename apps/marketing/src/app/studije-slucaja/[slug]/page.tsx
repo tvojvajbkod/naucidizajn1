@@ -4,7 +4,8 @@ import { Screenshot } from "@/components/screenshot";
 import { CtaSection } from "@/components/sections/cta";
 import { caseStudies, getCaseStudy } from "@/lib/case-studies";
 import { buildMetadata } from "@/lib/seo";
-import { ArrowUpRight, Check, FlaskConical } from "lucide-react";
+import { ArrowLeft, ArrowUpRight, Check, FlaskConical } from "lucide-react";
+import Link from "next/link";
 import { notFound } from "next/navigation";
 
 export function generateStaticParams() {
@@ -35,6 +36,15 @@ export default async function CaseStudyPage({
     <main>
       <section className="border-b bg-muted/40">
         <div className="mx-auto max-w-4xl px-6 py-16 md:py-20">
+          {/* Navigacija vodi pravo ovde, pa je ovo jedini put nazad na spisak. */}
+          <Link
+            href="/studije-slucaja"
+            className="mb-7 flex w-fit items-center gap-1.5 text-muted-foreground text-sm hover:text-ink"
+          >
+            <ArrowLeft className="size-4" />
+            Sve studije slučaja
+          </Link>
+
           {study.kind === "demonstracija" ? (
             <span className="inline-flex items-center gap-1.5 rounded bg-ink px-3.5 py-1.5 font-medium text-background text-xs">
               <FlaskConical className="size-3" />

@@ -15,7 +15,10 @@ import { useState } from "react";
 const links: Array<{ href: string; label: string; highlight?: boolean }> = [
   { href: "/ai-web-dizajner", label: "AI Web Dizajner", highlight: true },
   { href: "/ai-web-dizajner#program", label: "Program" },
-  { href: "/studije-slucaja", label: "Kako radi" },
+  // Vodi PRAVO na studiju slučaja, ne na spisak: postoji samo jedna, pa je
+  // međukorak sa jednom karticom bio klik bez sadržaja. Spisak ostaje u futeru
+  // i biće koristan kad stignu prave priče polaznika.
+  { href: "/studije-slucaja/anatomija-projekta", label: "Anatomija projekta" },
   { href: "/radovi", label: "Radovi" },
   { href: "/utisci", label: "Utisci" },
   // @ludus:inject:nav:links

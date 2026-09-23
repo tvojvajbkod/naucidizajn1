@@ -28,7 +28,7 @@ export function organizationJsonLd(): Record<string, unknown> {
     url: base,
     email: brand.email,
     description:
-      "Online škola dizajna na srpskom jeziku. Kursevi, mentorstvo i AI edukacija za web dizajn.",
+      "Online škola dizajna na srpskom jeziku. Edukacija Postani AI web dizajner — izrada sajtova uz veštačku inteligenciju, SEO, AI automatizacije i napredni web dizajn.",
     sameAs: [links.instagram, links.youtube, links.facebook],
   };
 }

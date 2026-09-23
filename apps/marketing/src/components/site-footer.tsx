@@ -4,14 +4,12 @@ import Link from "next/link";
 
 const columns: Array<{ title: string; items: Array<{ href: string; label: string }> }> = [
   {
-    title: "Nauči veštinu",
+    title: "Edukacija",
     items: [
       { href: "/ai-web-dizajner", label: "AI Web Dizajner" },
-      { href: "/kursevi/web-dizajn", label: "Web dizajn" },
-      { href: "/kursevi/ui-ux", label: "UI UX dizajn" },
-      { href: "/kursevi/webflow", label: "Webflow" },
-      { href: "/kursevi/logo-dizajn", label: "Logo dizajn" },
-      { href: "/kursevi/motion-dizajn", label: "Motion dizajn" },
+      { href: "/ai-web-dizajner#program", label: "Program po mesecima" },
+      { href: "/ai-web-dizajner#cena", label: "Cena i uslovi" },
+      { href: "/webinar", label: "Besplatan webinar" },
     ],
   },
   {
@@ -19,12 +17,9 @@ const columns: Array<{ title: string; items: Array<{ href: string; label: string
     items: [
       { href: "/radovi", label: "Radovi polaznika" },
       { href: "/studije-slucaja", label: "Studije slučaja" },
-      { href: "/mentorstvo", label: "Mentorstvo" },
-      { href: "/cene", label: "Cene" },
       { href: "/utisci", label: "Utisci studenata" },
       { href: "/o-nama", label: "O nama" },
       { href: "/blog", label: "Blog" },
-      { href: "/webinar", label: "Besplatan webinar" },
     ],
   },
 ];

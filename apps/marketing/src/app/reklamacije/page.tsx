@@ -13,9 +13,9 @@ export default function ReklamacijePage() {
     <LegalPage title="Reklamacije" updated="[DATUM]">
       <LegalSection title="Pravo na odustanak">
         <p>
-          Na sve kurseve važi garancija povraćaja novca u roku od 14 dana od dana kupovine, ako
-          edukacija ne ispuni očekivanja. [POTVRDI: da li ista garancija važi i za mesečno članstvo
-          u zajednici]
+          Članstvo se plaća mesec po mesec i otkazuješ ga sam, u svakom trenutku, pa ne ostaješ
+          vezan ni za jedan naredni mesec. [POTVRDI: da li za prvi plaćeni mesec važi garancija
+          povraćaja novca u roku od 14 dana]
         </p>
       </LegalSection>
 
@@ -25,8 +25,8 @@ export default function ReklamacijePage() {
           <a href={`mailto:${brand.email}`} className="underline underline-offset-4">
             {brand.email}
           </a>{" "}
-          sa podacima o kupovini: ime i prezime, mejl korišćen pri kupovini, naziv kursa ili paketa
-          i datum kupovine, uz kratak opis razloga.
+          sa podacima o uplati: ime i prezime, mejl sa kojim si se upisao i datum uplate, uz kratak
+          opis razloga.
         </p>
       </LegalSection>
 

@@ -6,7 +6,6 @@ import { HeroSection } from "@/components/sections/hero";
 import { LimeBandSection } from "@/components/sections/lime-band";
 import { MembershipOfferSection } from "@/components/sections/membership-offer";
 import { MentorsSection } from "@/components/sections/mentors";
-import { PathsSection } from "@/components/sections/paths";
 import { ProofSection } from "@/components/sections/proof";
 import { StatBandSection } from "@/components/sections/stat-band";
 import { TimelineSection } from "@/components/sections/timeline";
@@ -37,7 +36,6 @@ export default function HomePage() {
       <ProofSection limit={6} />
       <MentorsSection />
       <MembershipOfferSection />
-      <PathsSection />
       <FAQSection />
       <CtaSection />
       <JsonLd data={faqJsonLd(membershipFaq)} />

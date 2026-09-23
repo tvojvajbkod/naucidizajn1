@@ -1,6 +1,5 @@
 import { getPublishedPosts } from "@/lib/blog";
 import { caseStudies } from "@/lib/case-studies";
-import { courses } from "@/lib/courses";
 import { marketingEnv } from "@repo/config/marketing-env";
 import type { MetadataRoute } from "next";
 
@@ -17,9 +16,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: `${base}/ai-web-dizajner`, changeFrequency: "weekly", priority: 0.95 },
     { url: `${base}/studije-slucaja`, changeFrequency: "monthly", priority: 0.85 },
     { url: `${base}/radovi`, changeFrequency: "weekly", priority: 0.8 },
-    { url: `${base}/kursevi`, changeFrequency: "monthly", priority: 0.9 },
-    { url: `${base}/cene`, changeFrequency: "monthly", priority: 0.9 },
-    { url: `${base}/mentorstvo`, changeFrequency: "monthly", priority: 0.8 },
     { url: `${base}/webinar`, changeFrequency: "weekly", priority: 0.7 },
     { url: `${base}/utisci`, changeFrequency: "monthly", priority: 0.6 },
     { url: `${base}/o-nama`, changeFrequency: "yearly", priority: 0.5 },
@@ -32,13 +28,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       url: `${base}/studije-slucaja/${study.slug}`,
       changeFrequency: "monthly",
       priority: 0.7,
-    });
-  }
-  for (const course of courses) {
-    entries.push({
-      url: `${base}/kursevi/${course.slug}`,
-      changeFrequency: "monthly",
-      priority: 0.75,
     });
   }
   entries.push({ url: `${base}/blog`, changeFrequency: "weekly", priority: 0.7 });

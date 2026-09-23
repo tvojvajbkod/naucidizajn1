@@ -91,9 +91,17 @@ export const forms = {
   webinar: "",
 } as const;
 
-/** Cena članstva. [POTVRDI] da li postoji evro ekvivalent za region. */
+/**
+ * Cena članstva — jedina cena na sajtu.
+ *
+ * Od 23.09.2026. nema paketa, rata ni cenovnika sa tri modela: postoji samo
+ * mesečno članstvo za edukaciju „Postani AI web dizajner". Ne vraćaj cenovnik
+ * bez provere sa firmom.
+ *
+ * [POTVRDI] da li postoji evro ekvivalent za region.
+ */
 export const membership = {
   price: "$99",
   period: "/ mesečno",
-  priceNote: "Naplata preko Skool-a, u dolarima. Otkazuješ sam, iz svog naloga.",
+  priceNote: "Naplata preko Skool-a, u dolarima. Bez ugovora i bez obaveze na više meseci.",
 } as const;

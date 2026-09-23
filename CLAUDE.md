@@ -76,13 +76,33 @@ migracije i seed-uje naloge: `admin@local.test` / `korisnik@local.test`
 
 ## Marketing sajt (Nauči Dizajn)
 
-Redizajn je AI-first: najnovija ponuda (mesečno članstvo „AI Web Dizajner",
-$99/mes, Skool) je heroj početne strane i ima svoju punu landing stranu.
+Sajt prati JEDNU ponudu: mesečno članstvo „Postani AI web dizajner" ($99/mes,
+Skool). Ono je heroj početne strane i ima svoju punu landing stranu.
 
+- **JEDNA edukacija (odluka 23.09.2026.).** Nauči Dizajn više nema snimljene
+  kurseve, cenovnik sa tri modela ni mentorstvo 1-1. Obrisani su namerno:
+  `app/kursevi/`, `app/cene/`, `app/mentorstvo/`, `lib/courses.ts`,
+  `lib/pricing.ts`, `components/course-badge.tsx`, `components/course-mentor.tsx`
+  i sekcije `courses-grid`, `pricing`, `comparison`, `paths`. Ne vraćaj ih ni
+  kao „bilo je ranije" — prvo pitaj firmu.
+- **Put ide kroz četiri meseca**, jedan izvor istine: `src/lib/program.ts`
+  (M1 pravljenje sajtova + dolazak do klijenata, M2 SEO, M3 AI automatizacije,
+  M4 napredni web dizajn). Prikazuje ga `sections/timeline.tsx` (`id="program"`).
+  Obećanje „30 dana do prvog klijenta" OSTAJE, ali kao ishod prvog meseca, ne
+  kao trajanje programa.
+- **Cena je na ponudi, ne na posebnoj stranici.** `sections/membership-offer.tsx`
+  (`id="cena"`) stoji i na početnoj i na `/ai-web-dizajner`. Uz cenu UVEK ide
+  naglašeno da polaznik sam otkazuje pretplatu u svakom trenutku — to je
+  odluka, ne ukras, i ne skraćuje se.
+- **Edukaciju vodi samo Nikola.** `mentors` u `lib/testimonials.ts` ima jednu
+  stavku i `sections/mentors.tsx` je zato jedan blok, ne mreža od tri kartice.
 - **Sadržaj pre izgleda.** Brojke, linkovi i cena žive u `src/lib/brand.ts`,
-  kursevi u `src/lib/courses.ts`, cenovnik i poređenje u `src/lib/pricing.ts`,
-  FAQ u `src/lib/faq.ts`, utisci i mentori u `src/lib/testimonials.ts`.
-  Komponente su samo izgled — tekst se menja u `lib/`, ne po sekcijama.
+  program u `src/lib/program.ts`, FAQ u `src/lib/faq.ts`, utisci i mentor u
+  `src/lib/testimonials.ts`. Komponente su samo izgled — tekst se menja u
+  `lib/`, ne po sekcijama.
+- **Srpski navodnici u TS stringu ruše build.** `„…"` sa običnim `"` zatvara
+  string. Piši `„…“` (U+201E / U+201C) ili izostavi navodnike. U JSX tekstu
+  problema nema.
 - **Jedan skup brojki.** Zatečeni sajt je prikazivao 4.600+ / 4.000+ / 4.800+ /
   40.000+ polaznika na različitim stranicama. Sve sada dolazi iz `stats` u
   `brand.ts`. Ne upisuj broj direktno u JSX.
@@ -116,10 +136,12 @@ $99/mes, Skool) je heroj početne strane i ima svoju punu landing stranu.
   27% belog, 21% krem i 2% limeta po visini početne strane. Naš je na 41% / 31%
   / 9% / 3% — namerno blizu. Redosled: hero ink → bela → krem traka
   (`StatBandSection`) → **ink** (`WhatsIncludedSection`) → **maslinasta**
-  (`TimelineSection`) → **limeta traka** (`LimeBandSection`) → bela sa krem
-  panelom → siva (`ProofSection`) → **ink** (`MentorsSection`) → limeta kolona
-  sa cenom → krem (`PathsSection`) → bela (FAQ) → ink kartica (`CtaSection`) →
-  **ink futer**.
+  (`TimelineSection`, put od četiri meseca) → **limeta traka**
+  (`LimeBandSection`, vodi na besplatan webinar) → bela sa krem panelom → siva
+  (`ProofSection`) → **ink** (`MentorsSection`) → limeta kolona sa cenom
+  (`MembershipOfferSection`) → bela (FAQ) → ink kartica (`CtaSection`) →
+  **ink futer**. Mereno 23.09. posle izbacivanja kurseva: 30% ink, 15%
+  maslinasta, 15% siva, 4% krem, 3% limeta.
   Pravila: dugi tamni blok sme da spoji ink i maslinastu (original ima 2.969px
   neprekidno tamnog), ali dve ISTE podloge nikad ne idu jedna do druge; limeta
   traka je jedna po stranici; na tamnim sekcijama tekst je `text-background` /
@@ -143,9 +165,8 @@ $99/mes, Skool) je heroj početne strane i ima svoju punu landing stranu.
   stranice — i one koje `buildMetadata` ne koriste. Favicon je
   `src/app/icon.svg`, a `src/app/apple-icon.png` je ikonica za telefon. Ako se
   menja tekst na OG slici, menja se i slika — ona se ne generiše u buildu.
-- **Znakovi kurseva** su u `components/course-badge.tsx`: šest originalnih
-  crteža, potez 2.6, zaobljeni krajevi, TAČNO JEDAN limeta element po znaku.
-  Crtaju delatnost, nikad tuđi logotip (Figma, Webflow, Adobe su tuđi žigovi).
+- **Nikad ne crtati tuđe logotipe.** Ako ikad zatreba znak za neku oblast,
+  crta se delatnost, a ne žig (Figma, Webflow, Adobe su tuđi žigovi).
 - **Forme rade bez servera.** Sajt je statičan, pa prijava ide spoljnom
   servisu; adresa stoji u `forms` u `brand.ts`. Dok je prazno, forma otvara
   mejl sa popunjenom porukom — nikad ne sme da ostane dugme koje ne radi.

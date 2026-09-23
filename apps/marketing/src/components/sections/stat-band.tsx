@@ -25,7 +25,7 @@ export function StatBandSection() {
           </h2>
           <p className="mt-4 text-ink/70 text-lg leading-relaxed">
             Meri se anketom među polaznicima, ne procenom. Uz njega ide i ocena{" "}
-            {stats.mentorshipScore} za individualno mentorstvo, iz ankete sa preko sto studenata, i{" "}
+            {stats.mentorshipScore} za rad sa mentorom, iz ankete sa preko sto studenata, i{" "}
             {stats.skoolRating} od 5 za zajednicu.
           </p>
           <p className="mt-4 text-ink/55 text-sm leading-relaxed">

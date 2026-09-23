@@ -21,9 +21,10 @@ export default function ONamaPage() {
           {/* AEO: prvi pasus odgovara na „šta je Nauči Dizajn". */}
           <p className="mt-5 max-w-2xl text-lg text-muted-foreground leading-relaxed">
             {brand.name} je online škola dizajna koja od 2020. uči ljude sa našeg govornog područja
-            veštinama od kojih se živi: web dizajn, UI UX, Webflow, logo i motion dizajn, a od ove
-            godine i izrada sajtova uz pomoć veštačke inteligencije. Kroz naše edukacije prošlo je
-            preko {stats.studentsSince2020} polaznika.
+            veštinama od kojih se živi. Danas sve to stoji u jednoj edukaciji — „Postani AI web
+            dizajner": izrada sajtova uz veštačku inteligenciju, dolazak do klijenata, SEO, AI
+            automatizacije i napredni web dizajn. Kroz naše edukacije prošlo je preko{" "}
+            {stats.studentsSince2020} polaznika.
           </p>
         </div>
       </section>
@@ -39,19 +40,19 @@ export default function ONamaPage() {
             doradu.
           </p>
           <p>
-            <strong className="text-ink">Predaju ljudi iz prakse.</strong> Naši mentori rade dizajn
-            za klijente svakog dana. Zato se gradivo menja kad se promene alati, a ne na svakih pet
-            godina.
+            <strong className="text-ink">Predaju ljudi iz prakse.</strong> Dizajn za klijente radi
+            se svakog dana, ne predaje iz udžbenika. Zato se gradivo menja kad se promene alati, a
+            ne na svakih pet godina.
           </p>
           <p>
-            <strong className="text-ink">Znanje bez klijenata ne plaća račune.</strong> Zato
-            polovina svakog programa govori o tome kako se dolazi do posla, koliko se naplaćuje i
-            kako se razgovara sa klijentom.
+            <strong className="text-ink">Znanje bez klijenata ne plaća račune.</strong> Zato dobar
+            deo programa govori o tome kako se dolazi do posla, koliko se naplaćuje i kako se
+            razgovara sa klijentom.
           </p>
           <p>
             <strong className="text-ink">Bez obećanja koja ne možemo da održimo.</strong> Ne
-            garantujemo zaposlenje ni zaradu. Garantujemo sistem, ljude koji ga koriste i mogućnost
-            da se predomisliš u roku od 14 dana.
+            garantujemo zaposlenje ni zaradu. Garantujemo sistem, ljude koji ga koriste i to da
+            članstvo otkazuješ sam, u svakom trenutku.
           </p>
         </div>
       </section>

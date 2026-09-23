@@ -39,11 +39,6 @@ export default function PrivacyPage() {
           pristanak označen u formi. Koristimo ih da ti pošaljemo termin, link za pristup i snimak.
         </p>
         <p>
-          <strong>Kupovina kursa ili mentorstva.</strong> Ime, imejl i podatke potrebne za izdavanje
-          računa. Podatke o kartici ne vidimo ni ne čuvamo — unosiš ih direktno kod provajdera
-          plaćanja [PROVAJDER PLAĆANJA].
-        </p>
-        <p>
           <strong>Mesečno članstvo.</strong> Nalog, profil i naplata su na platformi Skool. Tamo
           unesene podatke obrađuje Skool kao samostalan rukovalac, po svojoj politici privatnosti;
           mi vidimo samo ono što je vidljivo unutar zajednice.
@@ -64,8 +59,7 @@ export default function PrivacyPage() {
       <LegalSection title="3. Zašto ih obrađujemo i po kom osnovu">
         <ul className="list-disc space-y-1 pl-6">
           <li>
-            <strong>Izvršenje ugovora</strong> — isporuka kursa, članstva ili mentorstva koje si
-            platio, i podrška uz njih.
+            <strong>Izvršenje ugovora</strong> — pristup članstvu koje si platio i podrška uz njega.
           </li>
           <li>
             <strong>Pristanak</strong> — prijava na webinar, obaveštenja o novim edukacijama,
@@ -90,7 +84,6 @@ export default function PrivacyPage() {
         <p>Podatke ne prodajemo. Delimo ih samo sa obrađivačima koji su nam potrebni da radimo:</p>
         <ul className="list-disc space-y-1 pl-6">
           <li>platforma zajednice i naplate članstva — Skool,</li>
-          <li>provajder plaćanja za kurseve i mentorstvo — [PROVAJDER PLAĆANJA],</li>
           <li>servis koji prima prijave sa formi — [PROVAJDER FORMI],</li>
           <li>imejl servis za slanje obaveštenja — [PROVAJDER MEJLA],</li>
           <li>hosting i isporuka sajta — [HOSTING],</li>

@@ -34,7 +34,7 @@ export default function UtisciPage() {
               <dd className="mt-1 font-medium text-2xl text-ink">{stats.satisfaction}</dd>
             </div>
             <div>
-              <dt className="text-muted-foreground text-sm">Ocena mentorstva</dt>
+              <dt className="text-muted-foreground text-sm">Ocena rada sa mentorom</dt>
               <dd className="mt-1 font-medium text-2xl text-ink">{stats.mentorshipScore}</dd>
             </div>
             <div>

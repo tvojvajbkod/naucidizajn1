@@ -8,7 +8,8 @@ import { ArrowRight, Check, Info } from "lucide-react";
  * „JOIN $99/month", bez ijedne rečenice konteksta.
  */
 const included = [
-  "Ceo sistem izrade sajta uz AI, bez koda",
+  "Ceo put od četiri meseca: sajtovi, SEO, AI automatizacije, napredni dizajn",
+  "Sistem izrade sajta uz AI, bez koda",
   "Biblioteka promptova",
   "Gde da nađeš klijente i kako da im se javiš",
   "Kalkulator cene projekta",
@@ -23,7 +24,7 @@ export function MembershipOfferSection() {
       <div className="overflow-hidden rounded-3xl border bg-card">
         <div className="grid md:grid-cols-2">
           <div className="bg-primary p-8 md:p-12">
-            <p className="font-medium text-ink/65 text-sm">Članstvo · AI Web Dizajner</p>
+            <p className="font-medium text-ink/65 text-sm">Članstvo · Postani AI web dizajner</p>
             <p className="mt-4 flex items-baseline gap-2">
               <span className="font-medium text-5xl text-ink tracking-[-0.02em]">
                 {membership.price}
@@ -45,8 +46,12 @@ export function MembershipOfferSection() {
             <div className="mt-6 flex gap-3 rounded-xl bg-ink/[0.07] p-4">
               <Info className="mt-0.5 size-4 shrink-0 text-ink/60" />
               <p className="text-ink/70 text-sm leading-relaxed">
-                Upis ide preko Skool platforme, gde zajednica i živi. Otkazuješ sam iz naloga i
-                članstvo ostaje aktivno do kraja plaćenog meseca.
+                <strong className="font-semibold text-ink">
+                  Otkazuješ sam, u svakom trenutku.
+                </strong>{" "}
+                Pretplatu gasiš iz svog naloga — bez poziva, mejla i objašnjenja. Ostaje aktivna do
+                kraja meseca koji si platio i posle toga se više ništa ne naplaćuje. Upis ide preko
+                Skool platforme, gde zajednica i živi.
               </p>
             </div>
           </div>

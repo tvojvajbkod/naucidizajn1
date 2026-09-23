@@ -18,7 +18,7 @@ export function HeroSection() {
       <div className="mx-auto max-w-6xl px-6 py-20 md:py-28">
         <p className="inline-flex items-center gap-2 rounded border border-background/20 px-4 py-1.5 font-medium text-background/80 text-sm">
           <span className="size-2 rounded-full bg-primary" />
-          Nova edukacija · mesečno članstvo
+          Postani AI web dizajner · mesečno članstvo
         </p>
 
         <h1 className="mt-7 max-w-3xl font-medium text-4xl leading-[1.04] tracking-[-0.03em] md:text-[4.75rem]">
@@ -27,8 +27,8 @@ export function HeroSection() {
 
         <p className="mt-6 max-w-xl text-background/75 text-lg leading-relaxed">
           Za 30 dana naučiš da napraviš ceo sajt pomoću veštačke inteligencije — bez kodiranja i bez
-          predznanja — i tačno znaš kome da se javiš i koliko da naplatiš. Jedan dan teorije,
-          dvadeset devet dana prakse.
+          predznanja — i tačno znaš kome da se javiš i koliko da naplatiš. Kroz četiri meseca uz to
+          dolaze SEO, AI automatizacije i napredni web dizajn.
         </p>
 
         <div className="mt-9 flex flex-col gap-3 sm:flex-row sm:items-center">

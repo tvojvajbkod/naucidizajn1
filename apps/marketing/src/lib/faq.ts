@@ -3,6 +3,11 @@
  * koja nama odgovaraju. Ovaj niz hrani i accordion i FAQ JSON-LD schema
  * (najjači AEO signal — AI asistenti rado citiraju FAQ schema).
  *
+ * Od 23.09.2026. postoji samo jedna edukacija — „Postani AI web dizajner",
+ * mesečno članstvo, put od četiri meseca. Pitanja o snimljenim kursevima,
+ * paketima, ratama i mentorstvu 1-1 obrisana su namerno, jer te ponude više
+ * nema. Ne vraćaj ih bez provere sa firmom.
+ *
  * [POTVRDI] označava tvrdnje koje firma mora da proveri pre objave.
  */
 
@@ -11,17 +16,22 @@ export interface FaqItem {
   answer: string;
 }
 
-/** Pitanja o AI članstvu — stoje na početnoj i na /ai-web-dizajner. */
+/** Pitanja o edukaciji — stoje na početnoj i na /ai-web-dizajner. */
 export const membershipFaq: FaqItem[] = [
   {
     question: "Šta tačno dobijam za 99 dolara mesečno?",
     answer:
-      "Pristup privatnoj zajednici sa kompletnim sistemom za izradu sajtova pomoću AI-a, bibliotekom promptova, materijalom o tome gde se nalaze klijenti i kako im se piše, kalkulatorom cene projekta, grupnim sastankom svake nedelje i pomoći mentora. Plaćaš mesec po mesec — nema ugovora na godinu dana.",
+      "Pristup celoj edukaciji „Postani AI web dizajner“: sistem za izradu sajtova pomoću AI-a, biblioteku promptova, materijal o tome gde se nalaze klijenti i kako im se piše, kalkulator cene projekta, SEO i AI automatizacije, napredni web dizajn, grupni sastanak svake nedelje i pomoć mentora. Plaćaš mesec po mesec — nema ugovora na godinu dana.",
   },
   {
     question: "Mogu li da otkažem kad hoću?",
     answer:
-      "Da. Članstvo se otkazuje iz tvog naloga, bez poziva i objašnjenja, i ostaje aktivno do kraja plaćenog meseca. [POTVRDI: šta se dešava sa pristupom materijalima posle otkazivanja]",
+      "Da. Članstvo otkazuješ sam, iz svog naloga, u svakom trenutku — bez poziva, mejla i objašnjenja. Ostaje aktivno do kraja meseca koji si platio i posle toga se više ništa ne naplaćuje. [POTVRDI: šta se dešava sa pristupom materijalima posle otkazivanja]",
+  },
+  {
+    question: "Koliko traje program?",
+    answer:
+      "Postavljen je kao put od četiri meseca: prvi mesec izrada sajtova i dolazak do klijenata, drugi SEO, treći AI automatizacije, četvrti napredni web dizajn. To je raspored, ne rok — ideš svojim tempom, a članstvo plaćaš mesec po mesec dok ti treba.",
   },
   {
     question: "Treba li mi predznanje? Moram li da znam da kodiram?",
@@ -31,12 +41,12 @@ export const membershipFaq: FaqItem[] = [
   {
     question: "Koliko vremena dnevno moram da izdvojim?",
     answer:
-      "Računaj na dva do tri sata dnevno da bi ispratio ritam od 30 dana. Gradivo je postavljeno kao jedan dan teorije i dvadeset devet dana prakse, pa vreme uglavnom ide na rad, ne na gledanje snimaka. Sastanci se snimaju, tako da propušten termin ne znači propušteno gradivo.",
+      "Računaj na dva do tri sata dnevno ako hoćeš da ispratiš ritam. Težište je na radu, ne na gledanju snimaka — svaki mesec se završava nečim što si napravio. Sastanci se snimaju, tako da propušten termin ne znači propušteno gradivo.",
   },
   {
     question: "Je li realno da nađem klijenta za 30 dana?",
     answer:
-      "Kod nekih se desi brže, kod nekih traje duže — to zavisi od toga koliko ljudi kontaktiraš i koliko brzo objaviš prve radove. Ono što program garantuje jeste sistem: šta da radiš svakog dana, kome da se javiš, šta da napišeš i koliko da naplatiš. Rezultat nije zagarantovan i niko ko ti to obeća ne govori istinu.",
+      "Prvi mesec je baš tako i postavljen: sajt i poslate ponude pravim firmama. Kod nekih se desi brže, kod nekih traje duže — zavisi od toga koliko ljudi kontaktiraš i koliko brzo objaviš prve radove. Program garantuje sistem: šta da radiš svakog dana, kome da se javiš, šta da napišeš i koliko da naplatiš. Rezultat nije zagarantovan i niko ko ti to obeća ne govori istinu.",
   },
   {
     question: "Zašto da plaćam kad AI alati i tutorijali na internetu postoje besplatno?",
@@ -51,7 +61,12 @@ export const membershipFaq: FaqItem[] = [
   {
     question: "Hoće li AI ukinuti posao web dizajnera?",
     answer:
-      "Menja ga, i to brzo. Izrada sajta više nije uska grlo — jeste procena, struktura i odnos sa klijentom. Zato je program i postavljen tako da polovinu vremena troši na nalaženje klijenata i prodaju, a ne samo na alat. Ko ostane samo na izradi, njega AI stvarno pritiska.",
+      "Menja ga, i to brzo. Izrada sajta više nije usko grlo — jeste procena, struktura i odnos sa klijentom. Zato je program i postavljen tako da polovinu vremena troši na nalaženje klijenata i prodaju, a ne samo na alat. Ko ostane samo na izradi, njega AI stvarno pritiska.",
+  },
+  {
+    question: "Da li mi je potreban jak računar?",
+    answer:
+      "Ne. Radi se u alatima koji žive u pregledaču, pa je dovoljan prosečan laptop sa stabilnim internetom.",
   },
   {
     question: "Na kom jeziku je edukacija i kako se plaća iz regiona?",
@@ -59,42 +74,8 @@ export const membershipFaq: FaqItem[] = [
       "Sve je na srpskom — materijal, sastanci i komunikacija u zajednici. Naplata ide preko Skool platforme, karticom, u dolarima. [POTVRDI: da li postoji mogućnost plaćanja u dinarima ili uplatnicom]",
   },
   {
-    question: "Koja je razlika između članstva, kursa i mentorstva?",
-    answer:
-      "Članstvo je najbrži put do prve zarade i plaća se mesečno. Kurs je snimljeno gradivo koje savladavaš svojim tempom i plaća se jednom. Mentorstvo je šestomesečni program sa ličnim mentorom i najveća je investicija. Tabelu sa poređenjem imaš na stranici Cene.",
-  },
-];
-
-/** Opšta pitanja o školi — stoje na /cene i /kursevi. */
-export const generalFaq: FaqItem[] = [
-  {
-    question: "Da li mi je potreban jak računar?",
-    answer:
-      "Ne. Za dizajn se radi u Figmi koja je alat u pregledaču, pa je dovoljan prosečan laptop sa stabilnim internetom. Izuzetak je Motion dizajn — After Effects traži nešto jaču mašinu.",
-  },
-  {
-    question: "Mogu li kurs da platim na rate?",
-    answer:
-      "Da, i rate su ispisane uz svaki paket. Starter: dve rate po 60 € (ukupno 120 €). Pro: prva rata 200 € pa dve po 130 € (ukupno 460 €). Ultra: prva rata 200 € pa četiri po 150 € (ukupno 800 €). Lični brend: četiri rate po 150 € (ukupno 600 €). Na rate izlaziš skuplje nego kad platiš odjednom — razlika je ispisana namerno. [POTVRDI način plaćanja: kartica, uplatnica.]",
-  },
-  {
-    question: "Koliko dugo mogu da gledam kurs?",
-    answer:
-      "Uz Starter paket pristup traje tri meseca. Paketi sa mentorstvom nose doživotan pristup kursu, uključujući i kasnije dopune gradiva.",
-  },
-  {
-    question: "Šta ako mi se ne svidi?",
-    answer:
-      "Na kursevima važi garancija povraćaja novca u roku od 14 dana od kupovine. [POTVRDI: da li ista garancija važi i za mesečno članstvo]",
-  },
-  {
-    question: "Dobijam li sertifikat?",
-    answer:
-      "Da, digitalni sertifikat dobijaš po završetku kompletne edukacije. Vredi koliko i radovi koje uz njega pokažeš — zato je težište programa na projektima za portfolio.",
-  },
-  {
     question: "Ja sam programer. Ima li ovo smisla za mene?",
     answer:
-      "Ima, jer prestaješ da zavisiš od dizajnera. Kad umeš i da osmisliš i da napraviš sajt, isporučuješ ceo posao i naplaćuješ ga kao ceo posao.",
+      "Ima, jer prestaješ da zavisiš od dizajnera. Kad umeš i da osmisliš i da napraviš sajt, isporučuješ ceo posao i naplaćuješ ga kao ceo posao. SEO i automatizacije su ti uz to usluga koja se naplaćuje mesečno.",
   },
 ];

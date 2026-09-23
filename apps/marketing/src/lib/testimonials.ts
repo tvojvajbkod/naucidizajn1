@@ -70,46 +70,23 @@ export interface Mentor {
 }
 
 /**
- * Mentori — imena, uloge i brojke PROVERENI na kursnim stranicama
- * naucidizajn.com, 23.09.2026.
+ * Mentor — podaci PROVERENI na naucidizajn.com, 23.09.2026.
+ *
+ * Od 23.09.2026. edukaciju vodi Nikola. Mentori sa snimljenih kurseva (Voja,
+ * Sava, Staki) i Teodora uklonjeni su zajedno sa tim kursevima — nisu obrisani
+ * greškom. Ako se neko od njih vrati u program, dodaj ga ovde sa proverenim
+ * podacima i traži saglasnost za fotografiju.
  *
  * Napomena: njihov sajt na različitim stranicama navodi različit broj učenika
- * (3.500 na UI UX strani, 4.000 na Webflow strani, 4.600+ na početnoj). Zato
- * ukupan broj polaznika NE prepisujemo iz mentorskih blokova — on dolazi iz
- * `stats` u `brand.ts`. Ovde stoje samo brojke vezane za samog mentora.
+ * (3.500 / 4.000 / 4.600+). Zato ukupan broj polaznika NE prepisujemo iz
+ * mentorskog bloka — on dolazi iz `stats` u `brand.ts`.
  */
 export const mentors: Mentor[] = [
   {
     slug: "nikola-tripkovic",
     name: "Nikola Tripković",
     role: "Osnivač Nauči Dizajn",
-    bio: "Vodi zajednicu AI Web Dizajner i drži nedeljne sastanke, a predaje i UI UX i Webflow. Preko 2.000 mentorisanih polaznika od 2020.",
-    featured: true,
-  },
-  {
-    slug: "voja",
-    name: "Voja",
-    role: "Web dizajn mentor",
-    bio: "Dizajnom se bavi od petnaeste godine. Sedam godina u struci i preko 50 mentorisanih polaznika. Radi kao senior web dizajner u velikoj softverskoj kompaniji. [POTVRDI naziv firme]",
-    featured: true,
-  },
-  {
-    slug: "sava",
-    name: "Sava",
-    role: "Logo dizajn mentor",
-    bio: "Pet godina u struci i preko 50 mentorisanih polaznika. Radio je za više od 140 klijenata iz celog sveta; logotip Nauči Dizajna je njegov rad.",
-  },
-  {
-    slug: "staki",
-    name: "Staki",
-    role: "Motion dizajn mentor",
-    bio: "Pet godina u struci i preko 100 mentorisanih polaznika. Sarađivao je sa preko 100 softverskih kompanija i web agencija, među njima i Flow Ninja.",
-  },
-  {
-    slug: "teodora",
-    name: "Teodora",
-    role: "Mentorka u zajednici",
-    bio: "Radi sa polaznicima na izradi sajtova, sadržaju i prodaji naučenog — deo tima na nedeljnim sastancima zajednice.",
+    bio: "Vodi edukaciju „Postani AI web dizajner“ i drži nedeljne sastanke zajednice. Dizajn predaje od 2020. i iza njega je preko 2.000 mentorisanih polaznika.",
     featured: true,
   },
 ];

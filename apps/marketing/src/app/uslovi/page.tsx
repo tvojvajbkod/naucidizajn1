@@ -10,9 +10,13 @@ export const metadata = buildMetadata({
 });
 
 /**
- * Uslovi korišćenja za ONLINE EDUKACIJU (snimljeni kursevi, mesečno članstvo,
- * mentorstvo) — ne za SaaS. Templejtska verzija je govorila o „softveru koji
- * se koristi preko interneta"; to nije ovaj posao i nije se smelo ostaviti.
+ * Uslovi korišćenja za ONLINE EDUKACIJU — ne za SaaS. Templejtska verzija je
+ * govorila o „softveru koji se koristi preko interneta"; to nije ovaj posao i
+ * nije se smelo ostaviti.
+ *
+ * Od 23.09.2026. postoji samo jedan proizvod: mesečno članstvo „Postani AI web
+ * dizajner". Odredbe o snimljenim kursevima, paketima, ratama i mentorstvu 1-1
+ * obrisane su jer te ponude više nema.
  *
  * Oslonac: Zakon o obligacionim odnosima, Zakon o elektronskoj trgovini i
  * Zakon o zaštiti potrošača RS. Polja u [uglastim zagradama] popunjava firma,
@@ -27,9 +31,8 @@ export default function TermsPage() {
           [MATIČNI BROJ], PIB [PIB], email {brand.email} (u daljem tekstu: {brand.legalName}, „mi").
         </p>
         <p>
-          Uslovi važe za sve naše edukacije: snimljene kurseve, mesečno članstvo „AI Web Dizajner",
-          individualno i grupno mentorstvo, kao i za besplatan webinar i sadržaj na ovom sajtu.
-          Kupovinom ili prijavom prihvataš ove uslove.
+          Uslovi važe za našu edukaciju — mesečno članstvo „Postani AI web dizajner" — kao i za
+          besplatan webinar i sadržaj na ovom sajtu. Upisom ili prijavom prihvataš ove uslove.
         </p>
         <p>
           Ako si potrošač u smislu Zakona o zaštiti potrošača, na naš odnos primenjuju se i odredbe
@@ -39,17 +42,14 @@ export default function TermsPage() {
 
       <LegalSection title="2. Šta tačno kupuješ">
         <p>
-          <strong>Snimljeni kurs</strong> je pristup unapred snimljenim video lekcijama i pratećim
-          materijalima. Nije uživo nastava. Obim (broj epizoda i sati) naveden je uz svaki kurs.
+          <strong>Mesečno članstvo „Postani AI web dizajner"</strong> je pristup privatnoj
+          zajednici, materijalima i nedeljnim grupnim sastancima uživo, dok traje plaćeni mesec.
+          Zajednica i naplata su na platformi Skool; na nju se primenjuju i uslovi te platforme.
         </p>
         <p>
-          <strong>Mesečno članstvo „AI Web Dizajner"</strong> je pristup privatnoj zajednici,
-          materijalima i nedeljnim grupnim sastancima uživo, dok traje plaćeni mesec. Zajednica i
-          naplata su na platformi Skool; na nju se primenjuju i uslovi te platforme.
-        </p>
-        <p>
-          <strong>Mentorstvo</strong> je ugovoren broj individualnih ili grupnih sastanaka u
-          dogovorenom periodu, uz pristup materijalima.
+          Gradivo je postavljeno kao put od četiri meseca (izrada sajtova i dolazak do klijenata,
+          SEO, AI automatizacije, napredni web dizajn). To je raspored materijala, a ne ugovoreno
+          trajanje — članstvo se plaća i otkazuje mesečno, bez obaveze da ostaneš četiri meseca.
         </p>
         <p>
           Sadržaj edukacija povremeno dopunjujemo i menjamo kada se promene alati o kojima učimo.
@@ -59,14 +59,13 @@ export default function TermsPage() {
 
       <LegalSection title="3. Cene i plaćanje">
         <p>
-          Cene kurseva i mentorstva iskazane su u evrima, a članstvo se naplaćuje u dolarima preko
-          Skool platforme ({membership.price} mesečno). Iznos u dinarima zavisi od kursa tvoje banke
-          na dan naplate. [POTVRDI: da li je moguće plaćanje u dinarima, uplatnicom i na rate, i za
-          koje proizvode.]
+          Članstvo se naplaćuje u dolarima preko Skool platforme ({membership.price} mesečno). Iznos
+          u dinarima zavisi od kursa tvoje banke na dan naplate. [POTVRDI: da li je moguće plaćanje
+          u dinarima ili uplatnicom.]
         </p>
         <p>
-          Kursevi i mentorstvo plaćaju se jednokratno ili u ratama, prema uslovima istaknutim uz
-          proizvod. Članstvo se naplaćuje unapred, svakog meseca, dok ga ne otkažeš.
+          Članarina se naplaćuje unapred, svakog meseca, dok je ne otkažeš. Nema ugovora na duži
+          period, upisnine ni plaćanja na rate.
         </p>
         <p>[POTVRDI: da li su cene sa ili bez PDV-a i da li je firma u sistemu PDV-a.]</p>
       </LegalSection>
@@ -94,10 +93,9 @@ export default function TermsPage() {
           potvrđuješ kada prvi put otvoriš materijale.
         </p>
         <p>
-          Nezavisno od toga, dajemo{" "}
-          <strong>sopstvenu garanciju povraćaja novca u roku od 14 dana</strong> od kupovine kursa,
-          bez obrazloženja. [POTVRDI: da li ista garancija važi i za mesečno članstvo i za
-          mentorstvo.]
+          Nezavisno od toga, članstvo otkazuješ sam i u svakom trenutku, pa ne ostaješ vezan ni za
+          jedan naredni mesec. [POTVRDI: da li za prvi plaćeni mesec važi garancija povraćaja novca
+          u roku od 14 dana, bez obrazloženja.]
         </p>
         <p>
           Zahtev šalješ na {brand.email}. Postupak i rokovi opisani su na stranici{" "}

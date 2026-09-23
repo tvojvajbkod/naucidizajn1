@@ -8,16 +8,15 @@ import Link from "next/link";
 import { useState } from "react";
 
 /**
- * Navigacija je namerno kratka. Zatečeni sajt je imao sedam kurseva u
- * padajućem meniju, pa je kviz služio kao zakrpa za paralizu izbora —
- * kursevi sada žive na svojoj stranici, a meni ima pet stavki.
+ * Navigacija prati jednu ponudu. Od 23.09.2026. Nauči Dizajn ima samo
+ * edukaciju „Postani AI web dizajner" — kursevi, mentorstvo 1-1 i stranica sa
+ * cenama su uklonjeni namerno, ne greškom. Cena sada stoji na samoj ponudi.
  */
 const links: Array<{ href: string; label: string; highlight?: boolean }> = [
   { href: "/ai-web-dizajner", label: "AI Web Dizajner", highlight: true },
+  { href: "/ai-web-dizajner#program", label: "Program" },
   { href: "/studije-slucaja", label: "Kako radi" },
-  { href: "/kursevi", label: "Kursevi" },
-  { href: "/mentorstvo", label: "Mentorstvo" },
-  { href: "/cene", label: "Cene" },
+  { href: "/radovi", label: "Radovi" },
   { href: "/utisci", label: "Utisci" },
   // @ludus:inject:nav:links
 ];

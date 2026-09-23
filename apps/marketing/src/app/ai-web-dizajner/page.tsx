@@ -15,9 +15,9 @@ import { ArrowRight, Check, X } from "lucide-react";
 import Link from "next/link";
 
 export const metadata = buildMetadata({
-  title: "AI Web Dizajner — mesečno članstvo",
+  title: "Postani AI web dizajner — mesečno članstvo",
   description:
-    "Mesečno članstvo u zajednici Nauči Dizajn. Za 30 dana praviš sajtove uz pomoć AI-a i dolaziš do prvog plaćenog klijenta. Bez kodiranja, bez predznanja, na srpskom.",
+    "Za 30 dana praviš sajtove uz pomoć AI-a i dolaziš do prvog plaćenog klijenta, a kroz četiri meseca dodaješ SEO, AI automatizacije i napredni web dizajn. Bez kodiranja, bez predznanja, na srpskom.",
   path: "/ai-web-dizajner",
 });
 
@@ -42,7 +42,7 @@ export default function AiWebDizajnerPage() {
         <div className="mx-auto max-w-6xl px-6 py-20 md:py-24">
           <p className="inline-flex items-center gap-2 rounded border border-background/20 px-4 py-1.5 font-medium text-background/80 text-sm">
             <span className="size-2 rounded-full bg-primary" />
-            Mesečno članstvo · {stats.skoolMembers} članova
+            Jedina edukacija · mesečno članstvo · {stats.skoolMembers} članova
           </p>
 
           <h1 className="mt-7 max-w-3xl font-medium text-4xl leading-[1.08] tracking-[-0.02em] md:text-6xl">
@@ -50,9 +50,9 @@ export default function AiWebDizajnerPage() {
           </h1>
 
           <p className="mt-6 max-w-2xl text-background/75 text-lg leading-relaxed">
-            Zajednica u kojoj naučiš da uz veštačku inteligenciju napraviš ceo sajt bez kucanja
-            koda, pronađeš prve klijente i naplatiš im posao. Jedan dan teorije, dvadeset devet dana
-            prakse, uz nedeljne sastanke sa mentorima — sve na srpskom.
+            Prvi mesec ide na jedno: da uz veštačku inteligenciju napraviš ceo sajt bez kucanja koda
+            i dođeš do prvog plaćenog klijenta. Posle toga put ide dalje — SEO, AI automatizacije i
+            napredni web dizajn, mesec po mesec, uz nedeljne sastanke uživo. Sve na srpskom.
           </p>
 
           <div className="mt-9 flex flex-col gap-3 sm:flex-row sm:items-center">
@@ -74,8 +74,8 @@ export default function AiWebDizajnerPage() {
           </div>
 
           <p className="mt-4 text-background/55 text-sm">
-            Ocena zajednice {stats.skoolRating} na {stats.skoolReviews} recenzija · Otkazuješ sam,
-            kad hoćeš
+            Ocena zajednice {stats.skoolRating} na {stats.skoolReviews} recenzija · Otkazuješ sam, u
+            svakom trenutku
           </p>
         </div>
       </section>
@@ -128,9 +128,9 @@ export default function AiWebDizajnerPage() {
       <JsonLd data={faqJsonLd(membershipFaq)} />
       <JsonLd
         data={courseJsonLd({
-          name: "AI Web Dizajner",
+          name: "Postani AI web dizajner",
           description:
-            "Mesečno članstvo u zajednici Nauči Dizajn: izrada sajtova uz pomoć veštačke inteligencije, nalaženje klijenata i naplata projekata.",
+            "Mesečno članstvo u zajednici Nauči Dizajn. Put od četiri meseca: izrada sajtova uz veštačku inteligenciju i dolazak do klijenata, SEO, AI automatizacije i napredni web dizajn.",
           path: "/ai-web-dizajner",
         })}
       />

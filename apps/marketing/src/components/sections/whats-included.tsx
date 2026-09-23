@@ -73,8 +73,8 @@ export function WhatsIncludedSection() {
             Šta dobijaš za članarinu
           </h2>
           <p className="mt-4 text-background/75 text-lg">
-            Sve na jednom mestu, na srpskom. Pola programa je izrada, pola je nalaženje klijenata i
-            naplata — jer prvo bez drugog ne donosi novac.
+            Sve na jednom mestu, na srpskom. Jedna članarina nosi ceo put od četiri meseca — izrada
+            se uvek uči uz nalaženje klijenata i naplatu, jer prvo bez drugog ne donosi novac.
           </p>
         </div>
 

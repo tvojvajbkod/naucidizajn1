@@ -22,7 +22,7 @@ export function HeroSection() {
         </p>
 
         <h1 className="mt-7 max-w-3xl font-medium text-4xl leading-[1.04] tracking-[-0.03em] md:text-[4.75rem]">
-          AI dizajnira. Ti <Accent className="text-primary">zarađuješ</Accent>.
+          AI dizajnira. Ti <Accent tone="lime">zarađuješ</Accent>.
         </h1>
 
         <p className="mt-6 max-w-xl text-background/75 text-lg leading-relaxed">

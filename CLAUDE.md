@@ -158,8 +158,10 @@ Skool). Ono je heroj početne strane i ima svoju punu landing stranu.
 - **Ritam podloga je izmeren, ne pogođen.** Zatečeni sajt je ~46% tamnog,
   27% belog, 21% krem i 2% limeta po visini početne strane. Naš je na 41% / 31%
   / 9% / 3% — namerno blizu. Redosled: hero ink → bela → krem traka
-  (`StatBandSection`) → **ink** (`WhatsIncludedSection`) → **maslinasta**
-  (`TimelineSection`, put od četiri meseca) → **limeta traka**
+  (`StatBandSection`) → **ink** (`WhatsIncludedSection`) → **krem sa tamnim
+  panelom** (`TimelineSection`, put od četiri meseca — sekcija je krem, meseci
+  stoje u tamnozelenom panelu sa prelivom `#16291d → #0f1e15`; ranije je cela
+  sekcija bila maslinasta i stapala se sa ink sekcijom iznad) → **limeta traka**
   (`LimeBandSection`, vodi na besplatan webinar) → bela sa krem panelom → siva
   (`ProofSection`) → **ink** (`MentorsSection`) → limeta kolona sa cenom
   (`MembershipOfferSection`) → **krem** (FAQ) → ink kartica (`CtaSection`) →

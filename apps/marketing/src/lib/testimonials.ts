@@ -13,11 +13,22 @@ export interface Testimonial {
   /** Npr. „i dalje član posle 2 meseca". */
   retention?: string;
   source: "Skool" | "Sajt";
+  /** Koristi se kao ime fajla sa fotografijom. */
+  slug?: string;
+  /**
+   * Putanja do fotografije, npr. „/utisci/milana-srdic.jpg".
+   * Prazno = na sajtu stoji prazno mesto, kao kod mentora.
+   * Fotografija se objavljuje ISKLJUČIVO uz saglasnost osobe sa slike —
+   * lice polaznika nije naš materijal ni kad je utisak javan.
+   * Preporuka: kvadratna slika, najmanje 400 × 400 px, lice u sredini.
+   */
+  photo?: string;
 }
 
 export const testimonials: Testimonial[] = [
   {
     name: "Mario Miladinović",
+    slug: "mario-miladinovic",
     role: "Digital dizajner @ HOLOGRAPHIK®",
     quote:
       "Nakon individualnog mentorstva zaposlio sam se u jednom od najboljih dizajn studija u Evropi.",
@@ -25,12 +36,14 @@ export const testimonials: Testimonial[] = [
   },
   {
     name: "Teodora Đurđenić",
+    slug: "teodora-djurdjenic",
     role: "Junior UI/UX dizajner @ Nordeus",
     quote: "Učenje uz mentorstvo je najveći savet koji mogu da dam — to je novac koji ti se vrati.",
     source: "Sajt",
   },
   {
     name: "Milana Srdić",
+    slug: "milana-srdic",
     quote:
       "Jedna od najboljih investicija u znanje! Podrška u grupi je fantastična, materijali su vrhunski strukturirani, a saveti za monetizaciju rada izuzetno korisni.",
     retention: "i dalje član posle 2 meseca",
@@ -38,6 +51,7 @@ export const testimonials: Testimonial[] = [
   },
   {
     name: "Goran Granić",
+    slug: "goran-granic",
     quote:
       "Sjajna grupa, sjajan predavač. Hvala Nikoli i Teodori na učenju o tome kako napraviti sajt, kreiranju sadržaja i prodaji naučenog i primenjenog. Nastavljamo dalje.",
     retention: "i dalje član posle 2 meseca",

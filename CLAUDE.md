@@ -118,6 +118,15 @@ Skool). Ono je heroj početne strane i ima svoju punu landing stranu.
   stavke ostaju `published: false` i ne prikazuju se. Nikad ne izmišljaj ime,
   klijenta ni iznos zarade — to je obmanjujuće oglašavanje, a i najlakše je za
   proveriti. Upitnik za prikupljanje pravih priča je u projektnoj dokumentaciji.
+- **Utisci su kartice sa licem, izvorom i zadržavanjem** (`sections/proof.tsx`,
+  odluka 25.09.). Naslov bloka je „Šta naši studenti kažu o nama". Svaka kartica
+  ima okruglu sliku (`components/student-photo.tsx`), ime, citat i na dnu
+  oznaku ODAKLE je utisak — „Recenzija na Skool-u" ili „Utisak sa sajta škole".
+  Ta oznaka je poenta, ne ukras: ne sme da tvrdi više nego što znamo.
+  Fotografije se objavljuju SAMO uz saglasnost osobe sa slike, i onda kad je
+  utisak javan; dok je nema, stoji prazan krug. Nikad slika sa stocka uz pravi
+  citat. Utisci bez napisanog teksta idu u niži red sa zvezdicama, da ne prave
+  buku oko onih koji su nešto zaista napisali.
 - **Radovi polaznika traže DVE saglasnosti.** `src/lib/works.ts` — rad ide na
   sajt tek kad je `published: true` I `consent.student` I `consent.client`.
   Klijent je vlasnik svog brenda; prikaz bez pitanja vraća se kao problem

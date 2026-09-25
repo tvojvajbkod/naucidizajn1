@@ -141,6 +141,12 @@ Skool). Ono je heroj početne strane i ima svoju punu landing stranu.
   `prefers-reduced-motion`. Sadržaj ispod koraka (galerija, zaključak, napomena)
   uvučen je za `lg:pl-[6.5rem]` da bi se poklopio sa kolonom koraka — ako menjaš
   širinu trake, menjaj i to uvlačenje.
+- **98,6% je krug koji se puni** (`components/percent-ring.tsx`, odluka 25.09.).
+  Kreće tek kad uđe u vidokrug, broj se penje do cilja, limeta tačka prati vrh
+  luka. Bez JavaScript-a i u HTML-u stoji KONAČNA vrednost, ne nula — zato se
+  početno stanje postavlja na cilj pa vraća na nulu u layout efektu. Poštuje
+  `prefers-reduced-motion`. Vrednost se čita iz `stats.satisfaction`, ne kuca se
+  u komponentu.
 - **Prazno stanje je namerno.** Zid radova se ne prikazuje dok nema objavljenih
   radova, a `/radovi` tada objašnjava zašto. Ne dodavati natpis „uskoro" ni
   slike sa stocka — jedini smisao te stranice je da bude istinita.

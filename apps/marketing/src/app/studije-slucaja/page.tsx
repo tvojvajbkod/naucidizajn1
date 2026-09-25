@@ -57,7 +57,7 @@ export default function StudijeSlucajaPage() {
         </p>
       </section>
 
-      <CtaSection />
+      <CtaSection surface="cream" />
     </main>
   );
 }

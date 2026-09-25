@@ -58,7 +58,7 @@ export default function ONamaPage() {
       </section>
 
       <MentorsSection />
-      <CtaSection />
+      <CtaSection surface="cream" />
     </main>
   );
 }

@@ -55,11 +55,15 @@ export const logo = {
 } as const;
 
 /**
- * Brojke koje stoje na sajtu — sve PROVERENE na izvoru 22.09.2026.
+ * Brojke koje stoje na sajtu.
  *
  * Izvor za `studentsSince2020`, `communityMembers`, `satisfaction`,
- * `mentorshipScore`, `areas` i `hoursOfMaterial`: početna naucidizajn.com.
- * Izvor za `skool*`: skool.com/nauci-dizajn/about.
+ * `mentorshipScore`, `areas` i `hoursOfMaterial`: početna naucidizajn.com,
+ * provereno 22.09.2026.
+ *
+ * `skoolMembers` i `skoolRating` postavila je firma 25.09.2026. (ranije je
+ * tu stajalo 261 i 5,0 prepisano sa skool.com/nauci-dizajn/about). Zaokružen
+ * oblik „250+" je namerno: ne zastareva svake nedelje kao tačan broj.
  *
  * Brojevi članova i recenzija na Skool-u se menjaju iz nedelje u nedelju —
  * proveri ih pre svake veće objave. Ne prepisuj brojke iz starijih dokumenata.
@@ -67,8 +71,8 @@ export const logo = {
 export const stats = {
   studentsSince2020: "4.600+",
   communityMembers: "2.200+",
-  skoolMembers: "261",
-  skoolRating: "5,0",
+  skoolMembers: "250+",
+  skoolRating: "4,9",
   skoolReviews: 16,
   satisfaction: "98,6%",
   mentorshipScore: "9,2 / 10",

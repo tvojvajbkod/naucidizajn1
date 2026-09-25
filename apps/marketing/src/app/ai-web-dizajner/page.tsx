@@ -5,6 +5,7 @@ import { FAQSection } from "@/components/sections/faq";
 import { MembershipOfferSection } from "@/components/sections/membership-offer";
 import { MentorsSection } from "@/components/sections/mentors";
 import { ProofSection } from "@/components/sections/proof";
+import { StatBandSection } from "@/components/sections/stat-band";
 import { TimelineSection } from "@/components/sections/timeline";
 import { WhatsIncludedSection } from "@/components/sections/whats-included";
 import { WorksWallSection } from "@/components/sections/works-wall";
@@ -80,39 +81,45 @@ export default function AiWebDizajnerPage() {
         </div>
       </section>
 
+      {/* Krem traka razdvaja dva tamna bloka — hero i „Šta dobijaš" su oba ink. */}
+      <StatBandSection />
       <WhatsIncludedSection />
       <TimelineSection />
 
-      <section className="mx-auto max-w-6xl px-6 py-20 md:py-24">
-        <h2 className="max-w-2xl font-medium text-3xl text-ink tracking-[-0.02em] md:text-4xl">
-          Da li je ovo za tebe
-        </h2>
-        <p className="mt-4 max-w-2xl text-lg text-muted-foreground">
-          Radije ćemo da odustaneš sada nego da tražiš povraćaj novca za mesec dana.
-        </p>
+      {/* Siva podloga: iznad je maslinasta, ispod bela sa krem panelom. */}
+      <section className="bg-muted/50 py-20 md:py-24">
+        <div className="mx-auto max-w-6xl px-6">
+          <h2 className="max-w-2xl font-medium text-3xl text-ink tracking-[-0.02em] md:text-4xl">
+            Da li je ovo za tebe
+          </h2>
+          <p className="mt-4 max-w-2xl text-lg text-muted-foreground">
+            Radije ćemo da odustaneš sada nego da tražiš povraćaj novca za mesec dana.
+          </p>
 
-        <div className="mt-10 grid gap-5 md:grid-cols-2">
-          <div className="rounded-2xl border bg-card p-7">
-            <h3 className="font-semibold text-ink text-lg">Jeste, ako</h3>
-            <ul className="mt-5 space-y-3.5">
-              {forYou.map((item) => (
-                <li key={item} className="flex items-start gap-3">
-                  <Check className="mt-0.5 size-4 shrink-0 text-ink" />
-                  <span className="text-ink/85">{item}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-          <div className="rounded-2xl border bg-muted/50 p-7">
-            <h3 className="font-semibold text-ink text-lg">Nije, ako</h3>
-            <ul className="mt-5 space-y-3.5">
-              {notForYou.map((item) => (
-                <li key={item} className="flex items-start gap-3">
-                  <X className="mt-0.5 size-4 shrink-0 text-muted-foreground" />
-                  <span className="text-muted-foreground">{item}</span>
-                </li>
-              ))}
-            </ul>
+          <div className="mt-10 grid gap-5 md:grid-cols-2">
+            <div className="rounded-2xl border bg-card p-7">
+              <h3 className="font-semibold text-ink text-lg">Jeste, ako</h3>
+              <ul className="mt-5 space-y-3.5">
+                {forYou.map((item) => (
+                  <li key={item} className="flex items-start gap-3">
+                    <Check className="mt-0.5 size-4 shrink-0 text-ink" />
+                    <span className="text-ink/85">{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            {/* Podloga sekcije je siva, pa ova kartica ide na belo — inače nestane. */}
+            <div className="rounded-2xl border border-dashed bg-background p-7">
+              <h3 className="font-semibold text-ink text-lg">Nije, ako</h3>
+              <ul className="mt-5 space-y-3.5">
+                {notForYou.map((item) => (
+                  <li key={item} className="flex items-start gap-3">
+                    <X className="mt-0.5 size-4 shrink-0 text-muted-foreground" />
+                    <span className="text-muted-foreground">{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
         </div>
       </section>

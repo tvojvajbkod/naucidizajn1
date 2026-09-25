@@ -60,7 +60,7 @@ export default function RadoviPage() {
         )}
       </section>
 
-      <CtaSection />
+      <CtaSection surface="cream" />
     </main>
   );
 }

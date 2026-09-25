@@ -147,7 +147,7 @@ Skool). Ono je heroj početne strane i ima svoju punu landing stranu.
   (`TimelineSection`, put od četiri meseca) → **limeta traka**
   (`LimeBandSection`, vodi na besplatan webinar) → bela sa krem panelom → siva
   (`ProofSection`) → **ink** (`MentorsSection`) → limeta kolona sa cenom
-  (`MembershipOfferSection`) → bela (FAQ) → ink kartica (`CtaSection`) →
+  (`MembershipOfferSection`) → **krem** (FAQ) → ink kartica (`CtaSection`) →
   **ink futer**. Mereno 23.09. posle izbacivanja kurseva: 30% ink, 15%
   maslinasta, 15% siva, 4% krem, 3% limeta.
   Pravila: dugi tamni blok sme da spoji ink i maslinastu (original ima 2.969px
@@ -155,6 +155,16 @@ Skool). Ono je heroj početne strane i ima svoju punu landing stranu.
   traka je jedna po stranici; na tamnim sekcijama tekst je `text-background` /
   `text-background/75`, kartice `bg-background/[0.06]` uz `border-background/15`,
   sitne oznake u limeti. Ako menjaš podloge, prvo izmeri udeo — ne procenjuj.
+- **Dve susedne sekcije ne smeju da izgledaju isto — NI NA JEDNOJ stranici**
+  (odluka 25.09.). Ne važi samo za početnu. Zato: FAQ je na krem podlozi (inače
+  bi Membership → FAQ → CTA bile tri bele zaredom), `CtaSection` ima `surface`
+  („plain" | „cream" | „muted") pa se bira prema sekciji iznad nje,
+  `/ai-web-dizajner` ima krem traku sa brojkom između dva ink bloka i sekciju
+  „Da li je ovo za tebe" na sivoj, a `/utisci` ima tamni hero jer ispod njega
+  stoji siva `ProofSection`. Posle svake izmene podloga pokreni proveru: za
+  svaku stranicu izlistaj `main > *`, uzmi `backgroundColor` i podlogu najvećeg
+  unutrašnjeg panela, i traži dve iste vrednosti zaredom. Prozirna podloga
+  (`rgba(0,0,0,0)`) je BELA — računa se.
 - **Unutrašnji link IDE KROZ `<Link>`, nikad kroz `<a href="/...">`.** Sajt
   živi u podfolderu (`/naucidizajn1`); `<Link>` sam dodaje taj prefiks, obično
   `<a>` ne — i link završi na 404. Greška se ne vidi u razvoju (tamo nema

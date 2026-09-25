@@ -135,7 +135,7 @@ export default async function CaseStudyPage({
         </div>
       </article>
 
-      <CtaSection />
+      <CtaSection surface="cream" />
       <JsonLd
         data={caseStudyJsonLd({
           title: study.title,

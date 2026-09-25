@@ -58,3 +58,26 @@ export const publishedVideos = videoTestimonials.filter(
 
 /** Koliko praznih mesta prikazati dok je sajt predlog. */
 export const videoSlotCount = 3;
+
+/**
+ * Snimak u herou početne strane — iznad dva dugmeta (odluka 25.09.).
+ *
+ * Ovo NIJE utisak polaznika nego snimak same škole (predstavljanje programa
+ * ili isečak sa sastanka). Ako se u njemu vidi neki polaznik, i dalje važi
+ * pravilo o saglasnosti iz ovog fajla.
+ *
+ * [POPUNI] YouTube: upiši `youtubeId`. Fajl: `.mp4` u `public/video/` u `src`,
+ * plus `poster` (`public/video/hero.jpg`, 1920 × 1080). Dok je prazno, u herou
+ * stoji prazno mesto tačnih dimenzija.
+ */
+export const heroVideo: {
+  youtubeId?: string;
+  src?: string;
+  poster?: string;
+  title: string;
+} = {
+  youtubeId: "",
+  src: "",
+  poster: "",
+  title: "Kako izgleda rad u zajednici",
+};

@@ -161,8 +161,10 @@ Skool). Ono je heroj početne strane i ima svoju punu landing stranu.
   (`StatBandSection`) → **ink** (`WhatsIncludedSection`) → **krem sa tamnim
   panelom** (`TimelineSection`, put od četiri meseca — sekcija je krem, meseci
   stoje u tamnozelenom panelu sa prelivom `#16291d → #0f1e15`; ranije je cela
-  sekcija bila maslinasta i stapala se sa ink sekcijom iznad) → **limeta traka**
-  (`LimeBandSection`, vodi na besplatan webinar) → bela sa krem panelom → siva
+  sekcija bila maslinasta i stapala se sa ink sekcijom iznad) → **siva**
+  (`FitCheckSection`, „Da li je ovo za tebe" — od 25.09. stoji i na početnoj,
+  umesto limeta trake koja je postavljala isto pitanje; `LimeBandSection` više
+  nije u upotrebi) → bela sa krem panelom → siva
   (`ProofSection`) → **ink** (`MentorsSection`) → limeta kolona sa cenom
   (`MembershipOfferSection`) → **krem** (FAQ) → ink kartica (`CtaSection`) →
   **ink futer**. Mereno 23.09. posle izbacivanja kurseva: 30% ink, 15%

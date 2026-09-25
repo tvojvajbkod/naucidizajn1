@@ -1,5 +1,6 @@
 import { Accent } from "@/components/accent";
 import { BigStat } from "@/components/big-stat";
+import { HeroVideo } from "@/components/hero-video";
 import { links, membership, stats } from "@/lib/brand";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
@@ -9,29 +10,39 @@ import Link from "next/link";
  * Dva CTA-a, oba iznad preloma — jedan za odlučne, jedan za one koji prvo gledaju.
  * Cena stoji odmah uz dugme; zatečeni sajt ju je krio do Skool checkout-a.
  *
+ * Raspored je CENTRIRAN (odluka 25.09.): naslov, tekst, snimak i dugmad stoje
+ * u jednoj osi po sredini. Ranije je sve bilo levo poravnato, pa je desna
+ * polovina heroja ostajala prazna kad je dodat snimak.
+ *
+ * Snimak je namerno iste širine kao tekst ispod naslova (`max-w-xl`) — kad
+ * bi bio širi, tekst bi izgledao kao natpis ispod slike umesto kao obećanje
+ * iznad nje. Ako menjaš jednu širinu, menjaj obe.
+ *
  * Tipografija prati postojeći sajt: naslov je težine 500 sa vrlo skupljenim
  * razmakom (-0.03em), jedna reč je serifni kurziv, a brojke su kondenzovane.
  */
 export function HeroSection() {
   return (
     <section className="bg-ink text-background">
-      <div className="mx-auto max-w-6xl px-6 py-20 md:py-28">
+      <div className="mx-auto flex max-w-6xl flex-col items-center px-6 py-12 text-center md:py-16">
         <p className="inline-flex items-center gap-2 rounded border border-background/20 px-4 py-1.5 font-medium text-background/80 text-sm">
           <span className="size-2 rounded-full bg-primary" />
           Postani AI web dizajner · mesečno članstvo
         </p>
 
-        <h1 className="mt-7 max-w-3xl font-medium text-4xl leading-[1.04] tracking-[-0.03em] md:text-[4.75rem]">
+        <h1 className="mt-6 max-w-4xl font-medium text-4xl leading-[1.04] tracking-[-0.03em] md:text-[4.75rem]">
           AI dizajnira. Ti <Accent tone="lime">zarađuješ</Accent>.
         </h1>
 
-        <p className="mt-6 max-w-xl text-background/75 text-lg leading-relaxed">
+        <p className="mt-5 max-w-xl text-background/75 text-lg leading-relaxed">
           Za 30 dana naučiš da napraviš ceo sajt pomoću veštačke inteligencije — bez kodiranja i bez
           predznanja — i tačno znaš kome da se javiš i koliko da naplatiš. Kroz četiri meseca uz to
           dolaze SEO, AI automatizacije i napredni web dizajn.
         </p>
 
-        <div className="mt-9 flex flex-col gap-3 sm:flex-row sm:items-center">
+        <HeroVideo />
+
+        <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-center">
           <a
             href={links.skool}
             target="_blank"
@@ -54,7 +65,7 @@ export function HeroSection() {
           Plaćaš mesec po mesec. Otkazuješ sam, iz naloga.
         </p>
 
-        <dl className="mt-16 grid max-w-4xl grid-cols-2 gap-8 border-background/15 border-t pt-10 sm:grid-cols-4">
+        <dl className="mt-14 grid w-full max-w-4xl grid-cols-2 gap-8 border-background/15 border-t pt-10 sm:grid-cols-4">
           <BigStat value={stats.skoolMembers} label="Članova zajednice" />
           <BigStat value={stats.skoolRating} label="Ocena zajednice" />
           <BigStat value={stats.studentsSince2020} label="Polaznika od 2020." />

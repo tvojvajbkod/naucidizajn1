@@ -2,8 +2,8 @@ import { JsonLd, faqJsonLd } from "@/components/json-ld";
 import { CaseStudyTeaserSection } from "@/components/sections/case-study-teaser";
 import { CtaSection } from "@/components/sections/cta";
 import { FAQSection } from "@/components/sections/faq";
+import { FitCheckSection } from "@/components/sections/fit-check";
 import { HeroSection } from "@/components/sections/hero";
-import { LimeBandSection } from "@/components/sections/lime-band";
 import { MembershipOfferSection } from "@/components/sections/membership-offer";
 import { MentorsSection } from "@/components/sections/mentors";
 import { ProofSection } from "@/components/sections/proof";
@@ -30,7 +30,7 @@ export default function HomePage() {
       <StatBandSection />
       <WhatsIncludedSection />
       <TimelineSection />
-      <LimeBandSection />
+      <FitCheckSection />
       <WorksWallSection limit={3} />
       <CaseStudyTeaserSection />
       <ProofSection limit={6} />

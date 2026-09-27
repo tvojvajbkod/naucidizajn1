@@ -151,7 +151,7 @@ export default function PrivacyPage() {
           Politiku možemo menjati; važeća verzija je uvek na ovoj stranici, sa datumom poslednje
           izmene na vrhu. O bitnim izmenama obaveštavamo mejlom one koji su nam ostavili adresu.
           Uslovi pod kojima koristiš naše edukacije opisani su u{" "}
-          <Link href="/uslovi" className="text-ink underline underline-offset-4">
+          <Link href="/uslovi" className="text-foreground underline underline-offset-4">
             Uslovima korišćenja
           </Link>
           .

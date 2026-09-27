@@ -30,7 +30,11 @@ export function SiteNav() {
   return (
     <header className="sticky top-0 z-50 border-border/70 border-b bg-background/85 backdrop-blur">
       <nav className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-6 py-3">
-        <Link href="/" aria-label="Nauči Dizajn — početna" className="flex items-center text-ink">
+        <Link
+          href="/"
+          aria-label="Nauči Dizajn — početna"
+          className="flex items-center text-foreground"
+        >
           <SiteLogo />
         </Link>
 
@@ -41,8 +45,8 @@ export function SiteNav() {
               href={link.href}
               className={
                 link.highlight
-                  ? "flex items-center gap-1.5 font-medium text-ink text-sm hover:text-ink/70"
-                  : "text-ink/70 text-sm hover:text-ink"
+                  ? "flex items-center gap-1.5 font-medium text-foreground text-sm hover:text-foreground/70"
+                  : "text-foreground/70 text-sm hover:text-foreground"
               }
             >
               {link.highlight ? <Sparkles className="size-3.5" /> : null}
@@ -53,7 +57,7 @@ export function SiteNav() {
             href={brandLinks.skool}
             target="_blank"
             rel="noreferrer noopener"
-            className="rounded bg-ink px-5 py-2.5 font-semibold text-background text-sm transition-colors hover:bg-ink/85"
+            className="rounded bg-primary px-5 py-2.5 font-semibold text-primary-foreground text-sm transition-colors hover:bg-glow"
           >
             Pridruži se
           </a>
@@ -68,7 +72,7 @@ export function SiteNav() {
           </SheetTrigger>
           <SheetContent side="right" className="w-72">
             <SheetHeader>
-              <SheetTitle className="flex items-center text-ink">
+              <SheetTitle className="flex items-center text-foreground">
                 <SiteLogo />
               </SheetTitle>
             </SheetHeader>
@@ -78,7 +82,7 @@ export function SiteNav() {
                   key={link.href}
                   href={link.href}
                   onClick={() => setOpen(false)}
-                  className="rounded-lg px-3 py-2.5 font-medium text-ink hover:bg-muted"
+                  className="rounded-lg px-3 py-2.5 font-medium text-foreground hover:bg-muted"
                 >
                   {link.label}
                 </Link>
@@ -87,7 +91,7 @@ export function SiteNav() {
                 href={brandLinks.skool}
                 target="_blank"
                 rel="noreferrer noopener"
-                className="mt-3 rounded bg-ink px-5 py-3 text-center font-semibold text-background"
+                className="mt-3 rounded bg-primary px-5 py-3 text-center font-semibold text-primary-foreground"
               >
                 Pridruži se
               </a>

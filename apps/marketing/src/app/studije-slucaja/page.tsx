@@ -14,9 +14,9 @@ export const metadata = buildMetadata({
 export default function StudijeSlucajaPage() {
   return (
     <main>
-      <section className="border-b bg-muted/40">
+      <section className="border-b bg-panel">
         <div className="mx-auto max-w-6xl px-6 py-16 md:py-20">
-          <h1 className="max-w-3xl font-medium text-4xl text-ink leading-tight tracking-[-0.02em] md:text-5xl">
+          <h1 className="max-w-3xl font-medium text-4xl text-foreground leading-tight tracking-[-0.02em] md:text-5xl">
             Kako posao izgleda kad se raspakuje
           </h1>
           {/* AEO: prvi pasus direktno odgovara na pitanje iz naslova. */}
@@ -34,7 +34,7 @@ export default function StudijeSlucajaPage() {
             <Link
               key={study.slug}
               href={`/studije-slucaja/${study.slug}`}
-              className="group flex flex-col rounded-2xl border bg-card p-7 transition-colors hover:border-ink/30"
+              className="group flex flex-col rounded-2xl border bg-card p-7 transition-colors hover:border-foreground/30"
             >
               {study.kind === "demonstracija" ? (
                 <span className="inline-flex w-fit items-center gap-1.5 rounded bg-muted px-3 py-1 font-medium text-muted-foreground text-xs">
@@ -43,7 +43,9 @@ export default function StudijeSlucajaPage() {
                 </span>
               ) : null}
               <div className="mt-4 flex items-start justify-between gap-4">
-                <h2 className="font-semibold text-ink text-xl leading-snug">{study.title}</h2>
+                <h2 className="font-semibold text-foreground text-xl leading-snug">
+                  {study.title}
+                </h2>
                 <ArrowUpRight className="size-5 shrink-0 text-muted-foreground transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
               </div>
               <p className="mt-3 flex-1 text-muted-foreground leading-relaxed">{study.summary}</p>

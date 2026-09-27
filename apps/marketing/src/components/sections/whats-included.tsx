@@ -119,13 +119,13 @@ export function WhatsIncludedSection() {
   }, []);
 
   return (
-    <section id="sta-dobijas" className="bg-ink py-20 md:py-24">
+    <section id="sta-dobijas" className="bg-panel py-20 md:py-24">
       <div className="mx-auto max-w-6xl px-6">
         <div className="max-w-2xl">
-          <h2 className="font-medium text-3xl text-background tracking-[-0.02em] md:text-4xl">
+          <h2 className="font-medium text-3xl text-foreground tracking-[-0.02em] md:text-4xl">
             Šta <Accent tone="lime">dobijaš</Accent> u Skool zajednici
           </h2>
-          <p className="mt-4 text-background/75 text-lg">
+          <p className="mt-4 text-foreground/75 text-lg">
             Sve na jednom mestu, na srpskom. Jedna članarina nosi ceo put od četiri meseca — izrada
             se uvek uči uz nalaženje klijenata i naplatu, jer prvo bez drugog ne donosi novac.
           </p>
@@ -143,12 +143,12 @@ export function WhatsIncludedSection() {
                 transitionDelay: revealed ? `${index * STEP}ms` : "0ms",
               }}
             >
-              <div className="group h-full rounded-2xl border border-background/15 bg-background/[0.06] p-6 transition duration-200 hover:-translate-y-1 hover:border-background/30 hover:bg-background/[0.1] motion-reduce:translate-none! motion-reduce:transition-colors">
+              <div className="group h-full rounded-2xl border border-border bg-card p-6 transition duration-200 hover:-translate-y-1 hover:border-background/30 hover:bg-background/[0.1] motion-reduce:translate-none! motion-reduce:transition-colors">
                 <div className="flex size-10 items-center justify-center rounded-lg bg-primary transition-transform duration-200 group-hover:scale-110 motion-reduce:scale-100!">
-                  <item.icon className="size-5 text-ink" />
+                  <item.icon className="size-5 text-foreground" />
                 </div>
-                <h3 className="mt-4 font-semibold text-background">{item.title}</h3>
-                <p className="mt-2 text-background/70 text-sm leading-relaxed">
+                <h3 className="mt-4 font-semibold text-foreground">{item.title}</h3>
+                <p className="mt-2 text-foreground/70 text-sm leading-relaxed">
                   {item.description}
                 </p>
               </div>

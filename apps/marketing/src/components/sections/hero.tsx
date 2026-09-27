@@ -22,9 +22,9 @@ import { ArrowRight } from "lucide-react";
  */
 export function HeroSection() {
   return (
-    <section className="bg-ink text-background">
+    <section className="bg-panel text-foreground">
       <div className="mx-auto flex max-w-6xl flex-col items-center px-6 py-12 text-center md:py-16">
-        <p className="inline-flex items-center gap-2 rounded border border-background/20 px-4 py-1.5 font-medium text-background/80 text-sm">
+        <p className="inline-flex items-center gap-2 rounded border border-background/20 px-4 py-1.5 font-medium text-foreground/80 text-sm">
           <span className="size-2 rounded-full bg-primary" />
           Postani AI web dizajner · mesečno članstvo
         </p>
@@ -33,7 +33,7 @@ export function HeroSection() {
           AI dizajnira. Ti <Accent tone="lime">zarađuješ</Accent>.
         </h1>
 
-        <p className="mt-5 max-w-xl text-background/75 text-lg leading-relaxed">
+        <p className="mt-5 max-w-xl text-foreground/75 text-lg leading-relaxed">
           Za 30 dana naučiš da napraviš ceo sajt pomoću veštačke inteligencije — bez kodiranja i bez
           predznanja — i tačno znaš kome da se javiš i koliko da naplatiš. Kroz četiri meseca uz to
           dolaze SEO, AI automatizacije i napredni web dizajn.
@@ -48,18 +48,18 @@ export function HeroSection() {
             href={links.skool}
             target="_blank"
             rel="noreferrer noopener"
-            className="inline-flex items-center justify-center gap-2 rounded bg-primary px-7 py-4 font-semibold text-ink transition-transform hover:scale-[1.02]"
+            className="inline-flex items-center justify-center gap-2 rounded bg-primary px-7 py-4 font-semibold text-primary-foreground transition-transform hover:scale-[1.02]"
           >
             Pridruži se — {membership.price} mesečno
             <ArrowRight className="size-4" />
           </a>
         </div>
 
-        <p className="mt-4 text-background/55 text-sm">
+        <p className="mt-4 text-foreground/55 text-sm">
           Plaćaš mesec po mesec. Otkazuješ sam, iz naloga.
         </p>
 
-        <dl className="mt-14 grid w-full max-w-4xl grid-cols-2 gap-8 border-background/15 border-t pt-10 sm:grid-cols-4">
+        <dl className="mt-14 grid w-full max-w-4xl grid-cols-2 gap-8 border-border border-t pt-10 sm:grid-cols-4">
           <BigStat value={stats.skoolMembers} label="Članova zajednice" />
           <BigStat value={stats.skoolRating} label="Ocena zajednice" />
           <BigStat value={stats.studentsSince2020} label="Polaznika od 2020." />

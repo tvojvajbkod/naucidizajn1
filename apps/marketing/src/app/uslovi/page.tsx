@@ -99,7 +99,7 @@ export default function TermsPage() {
         </p>
         <p>
           Zahtev šalješ na {brand.email}. Postupak i rokovi opisani su na stranici{" "}
-          <Link href="/reklamacije" className="text-ink underline underline-offset-4">
+          <Link href="/reklamacije" className="text-foreground underline underline-offset-4">
             Reklamacije
           </Link>
           .
@@ -165,7 +165,7 @@ export default function TermsPage() {
         <p>
           Reklamaciju šalješ na {brand.email}. Odgovaramo u zakonskom roku od 8 dana od prijema.
           Postupak je opisan na stranici{" "}
-          <Link href="/reklamacije" className="text-ink underline underline-offset-4">
+          <Link href="/reklamacije" className="text-foreground underline underline-offset-4">
             Reklamacije
           </Link>
           .
@@ -185,7 +185,7 @@ export default function TermsPage() {
         </p>
         <p>
           Za sva pitanja: {brand.email}. Obrada podataka o ličnosti uređena je{" "}
-          <Link href="/privatnost" className="text-ink underline underline-offset-4">
+          <Link href="/privatnost" className="text-foreground underline underline-offset-4">
             Politikom privatnosti
           </Link>
           .

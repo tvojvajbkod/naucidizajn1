@@ -17,9 +17,9 @@ export default function RadoviPage() {
 
   return (
     <main>
-      <section className="border-b bg-muted/40">
+      <section className="border-b bg-panel">
         <div className="mx-auto max-w-6xl px-6 py-16 md:py-20">
-          <h1 className="max-w-3xl font-medium text-4xl text-ink leading-tight tracking-[-0.02em] md:text-5xl">
+          <h1 className="max-w-3xl font-medium text-4xl text-foreground leading-tight tracking-[-0.02em] md:text-5xl">
             Radovi polaznika
           </h1>
           {/* AEO: prvi pasus direktno odgovara na pitanje „šta ovde vidim". */}
@@ -36,7 +36,7 @@ export default function RadoviPage() {
           <WorksGallery />
         ) : (
           <div className="max-w-2xl rounded-2xl border bg-card p-8 md:p-10">
-            <h2 className="font-medium text-2xl text-ink tracking-[-0.02em]">
+            <h2 className="font-medium text-2xl text-foreground tracking-[-0.02em]">
               Prvi radovi se pripremaju
             </h2>
             <p className="mt-4 text-muted-foreground leading-relaxed">
@@ -51,7 +51,7 @@ export default function RadoviPage() {
             </p>
             <Link
               href="/studije-slucaja/anatomija-projekta"
-              className="mt-8 inline-flex items-center gap-2 rounded bg-ink px-7 py-3.5 font-semibold text-background transition-colors hover:bg-ink/85"
+              className="mt-8 inline-flex items-center gap-2 rounded bg-primary px-7 py-3.5 font-semibold text-primary-foreground transition-colors hover:bg-glow"
             >
               Pogledaj kako izgleda jedan projekat
               <ArrowRight className="size-4" />

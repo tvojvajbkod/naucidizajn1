@@ -91,7 +91,7 @@ export function CaseSteps({ steps }: { steps: CaseStep[] }) {
         className="-mx-6 sticky top-14 z-30 mb-10 border-b bg-background/90 px-6 py-3 backdrop-blur lg:hidden"
       >
         <div className="flex items-baseline justify-between gap-4">
-          <p className="truncate font-medium text-ink text-sm">{current?.title}</p>
+          <p className="truncate font-medium text-foreground text-sm">{current?.title}</p>
           <p className="shrink-0 text-muted-foreground text-xs tabular-nums">
             {active + 1} / {steps.length}
           </p>
@@ -133,7 +133,7 @@ export function CaseSteps({ steps }: { steps: CaseStep[] }) {
                   }}
                 />
               </svg>
-              <span className="absolute inset-0 flex items-center justify-center font-semibold text-ink text-sm tabular-nums">
+              <span className="absolute inset-0 flex items-center justify-center font-semibold text-foreground text-sm tabular-nums">
                 {active + 1}
               </span>
             </div>
@@ -147,7 +147,7 @@ export function CaseSteps({ steps }: { steps: CaseStep[] }) {
                 <span
                   key={step.label}
                   className={cn(
-                    "-translate-x-1/2 absolute left-1/2 size-2 rounded-full ring-4 ring-background",
+                    "-translate-x-1/2 absolute left-1/2 size-2 rounded-full ring-4 ring-foreground",
                     i <= active ? "bg-primary" : "bg-border",
                   )}
                   style={{
@@ -176,22 +176,22 @@ export function CaseSteps({ steps }: { steps: CaseStep[] }) {
               <span
                 className={cn(
                   "font-semibold text-sm",
-                  i === active ? "text-ink" : "text-muted-foreground",
+                  i === active ? "text-foreground" : "text-muted-foreground",
                 )}
               >
                 {step.label}
               </span>
-              <h2 className="mt-1.5 font-medium text-2xl text-ink tracking-[-0.02em]">
+              <h2 className="mt-1.5 font-medium text-2xl text-foreground tracking-[-0.02em]">
                 {step.title}
               </h2>
               <p className="mt-4 text-lg text-muted-foreground leading-relaxed">{step.body}</p>
 
               {step.snippet ? (
-                <div className="mt-6 overflow-hidden rounded-2xl border bg-muted/50">
-                  <p className="border-b bg-muted px-5 py-2.5 font-semibold text-ink text-xs uppercase tracking-wide">
+                <div className="mt-6 overflow-hidden rounded-2xl border bg-panel">
+                  <p className="border-b bg-muted px-5 py-2.5 font-semibold text-foreground text-xs uppercase tracking-wide">
                     {step.snippetLabel ?? "Primer"}
                   </p>
-                  <pre className="overflow-x-auto whitespace-pre-wrap px-5 py-5 font-sans text-ink/85 text-sm leading-relaxed">
+                  <pre className="overflow-x-auto whitespace-pre-wrap px-5 py-5 font-sans text-foreground/85 text-sm leading-relaxed">
                     <code className="font-sans">{step.snippet}</code>
                   </pre>
                 </div>

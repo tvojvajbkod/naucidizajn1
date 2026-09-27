@@ -8,7 +8,7 @@ import { useEffect, useLayoutEffect, useRef, useState } from "react";
 /**
  * Put kroz program — četiri meseca, jedan ispod drugog.
  *
- * Boje (odluka 25.09.): sekcija je KREM, a meseci stoje u tamnozelenom panelu
+ * Boje (odluka 25.09.): sekcija je KREM, a meseci stoje u tamnom panelu
  * sa prelivom. Ranije je cela sekcija bila maslinasta i stapala se sa tamnom
  * sekcijom iznad („Šta dobijaš"). Krem okvir razdvaja ta dva bloka, a tamni
  * panel drži program kao jednu celinu.
@@ -67,15 +67,15 @@ function MonthRow({ month }: { month: ProgramMonth }) {
       <div className="grid gap-4 md:grid-cols-[7rem_1fr] md:gap-10">
         <span className="font-semibold text-primary text-sm md:pt-1">{month.label}</span>
         <div>
-          <h3 className="font-semibold text-background text-xl md:text-2xl">{month.title}</h3>
-          <p className="mt-2 font-medium text-background/85 leading-relaxed">{month.outcome}</p>
-          <p className="mt-3 text-background/65 leading-relaxed">{month.body}</p>
+          <h3 className="font-semibold text-foreground text-xl md:text-2xl">{month.title}</h3>
+          <p className="mt-2 font-medium text-foreground/85 leading-relaxed">{month.outcome}</p>
+          <p className="mt-3 text-foreground/65 leading-relaxed">{month.body}</p>
 
           <ul className="mt-5 grid gap-2.5 sm:grid-cols-2">
             {month.items.map((item, index) => (
               <li
                 key={item}
-                className="flex items-start gap-2.5 text-background/75 text-sm leading-relaxed motion-reduce:transition-none"
+                className="flex items-start gap-2.5 text-foreground/75 text-sm leading-relaxed motion-reduce:transition-none"
                 style={{
                   opacity: shown ? 1 : 0,
                   transform: shown ? "none" : "translateY(6px)",
@@ -96,26 +96,26 @@ function MonthRow({ month }: { month: ProgramMonth }) {
 
 export function TimelineSection() {
   return (
-    <section id="program" className="scroll-mt-20 bg-cream py-20 md:py-24">
+    <section id="program" className="scroll-mt-20 py-20 md:py-24">
       <div className="mx-auto max-w-6xl px-6">
         <div className="max-w-2xl">
-          <h2 className="font-medium text-3xl text-ink tracking-[-0.02em] md:text-4xl">
+          <h2 className="font-medium text-3xl text-foreground tracking-[-0.02em] md:text-4xl">
             <Accent>Tvoj put</Accent> za naredna 4 meseca
           </h2>
-          <p className="mt-4 text-ink/70 text-lg">
+          <p className="mt-4 text-foreground/70 text-lg">
             Svaki mesec ima svoju temu i svoj ishod. Ne biraš sam šta ćeš učiti i ne vrtiš se u krug
             — znaš gde si i šta sledi.
           </p>
         </div>
 
         {/* Tamnozeleni panel sa prelivom — program kao jedna celina na krem podlozi. */}
-        <ol className="mt-12 divide-y divide-background/10 overflow-hidden rounded-3xl bg-[linear-gradient(180deg,#16291d_0%,#0f1e15_100%)]">
+        <ol className="mt-12 divide-y divide-border overflow-hidden rounded-3xl bg-[linear-gradient(180deg,#18181c_0%,#101014_100%)]">
           {programMonths.map((month) => (
             <MonthRow key={month.label} month={month} />
           ))}
         </ol>
 
-        <p className="mt-6 text-ink/60 text-sm">
+        <p className="mt-6 text-foreground/60 text-sm">
           Raspored je okvir, ne rok. Članstvo je mesečno i otkazuješ ga sam, u svakom trenutku — ako
           ti treba više vremena za neki mesec, niko te ne gura dalje.
         </p>

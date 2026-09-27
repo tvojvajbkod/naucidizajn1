@@ -52,9 +52,9 @@ const webinarFaq: FaqItem[] = [
 export default function WebinarPage() {
   return (
     <main>
-      <section className="bg-ink text-background">
+      <section className="bg-panel text-foreground">
         <div className="mx-auto max-w-6xl px-6 py-20 md:py-24">
-          <p className="inline-flex items-center gap-2 rounded border border-background/20 px-4 py-1.5 font-medium text-background/80 text-sm">
+          <p className="inline-flex items-center gap-2 rounded border border-background/20 px-4 py-1.5 font-medium text-foreground/80 text-sm">
             <Video className="size-3.5" />
             Besplatan webinar · Zoom
           </p>
@@ -63,7 +63,7 @@ export default function WebinarPage() {
             AI dizajnira. <span className="text-primary">Ti zarađuješ.</span>
           </h1>
 
-          <p className="mt-6 max-w-2xl text-background/75 text-lg leading-relaxed">
+          <p className="mt-6 max-w-2xl text-foreground/75 text-lg leading-relaxed">
             Za 45 minuta razumeš tri stvari: zašto je baš sada trenutak, gde su klijenti koji
             plaćaju i kako izgleda put do prve zarade. Bez predznanja, bez kodiranja — dovoljno je
             da dođeš i slušaš.
@@ -72,12 +72,12 @@ export default function WebinarPage() {
           <div className="mt-9 flex flex-col gap-3 sm:flex-row sm:items-center">
             <a
               href="#prijava"
-              className="inline-flex items-center justify-center gap-2 rounded bg-primary px-7 py-3.5 font-semibold text-ink transition-transform hover:scale-[1.02]"
+              className="inline-flex items-center justify-center gap-2 rounded bg-primary px-7 py-3.5 font-semibold text-primary-foreground transition-transform hover:scale-[1.02]"
             >
               Rezerviši mesto, besplatno
               <ArrowRight className="size-4" />
             </a>
-            <span className="inline-flex items-center gap-2 text-background/60 text-sm">
+            <span className="inline-flex items-center gap-2 text-foreground/60 text-sm">
               <Clock className="size-4" />
               45 minuta · uživo, uz pitanja
             </span>
@@ -86,23 +86,23 @@ export default function WebinarPage() {
       </section>
 
       <section className="mx-auto max-w-6xl px-6 py-20 md:py-24">
-        <h2 className="max-w-2xl font-medium text-3xl text-ink tracking-[-0.02em] md:text-4xl">
+        <h2 className="max-w-2xl font-medium text-3xl text-foreground tracking-[-0.02em] md:text-4xl">
           Tri stvari koje ćeš razumeti
         </h2>
         <div className="mt-10 grid gap-5 md:grid-cols-3">
           {topics.map((topic, index) => (
             <div key={topic.title} className="rounded-2xl border bg-card p-7">
               <span className="font-medium text-3xl text-muted-foreground/50">{index + 1}</span>
-              <h3 className="mt-3 font-semibold text-ink text-lg">{topic.title}</h3>
+              <h3 className="mt-3 font-semibold text-foreground text-lg">{topic.title}</h3>
               <p className="mt-2.5 text-muted-foreground leading-relaxed">{topic.body}</p>
             </div>
           ))}
         </div>
       </section>
 
-      <section id="prijava" className="scroll-mt-24 bg-muted/50 py-20 md:py-24">
+      <section id="prijava" className="scroll-mt-24 bg-panel py-20 md:py-24">
         <div className="mx-auto max-w-3xl px-6">
-          <h2 className="font-medium text-3xl text-ink tracking-[-0.02em] md:text-4xl">
+          <h2 className="font-medium text-3xl text-foreground tracking-[-0.02em] md:text-4xl">
             Rezerviši mesto
           </h2>
           <p className="mt-4 text-lg text-muted-foreground leading-relaxed">
@@ -118,7 +118,7 @@ export default function WebinarPage() {
 
       <section className="mx-auto max-w-3xl px-6 py-20">
         <div className="rounded-3xl border bg-card p-8 text-center md:p-12">
-          <h2 className="font-medium text-2xl text-ink tracking-[-0.02em] md:text-3xl">
+          <h2 className="font-medium text-2xl text-foreground tracking-[-0.02em] md:text-3xl">
             Ne čekaš webinar da bi počeo
           </h2>
           <p className="mx-auto mt-4 max-w-lg text-muted-foreground leading-relaxed">
@@ -130,7 +130,7 @@ export default function WebinarPage() {
             href={links.skool}
             target="_blank"
             rel="noreferrer noopener"
-            className="mt-8 inline-flex items-center justify-center gap-2 rounded bg-ink px-7 py-3.5 font-semibold text-background transition-colors hover:bg-ink/85"
+            className="mt-8 inline-flex items-center justify-center gap-2 rounded bg-primary px-7 py-3.5 font-semibold text-primary-foreground transition-colors hover:bg-glow"
           >
             Pridruži se — {membership.price} mesečno
             <ArrowRight className="size-4" />

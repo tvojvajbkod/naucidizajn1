@@ -13,9 +13,9 @@ export const metadata = buildMetadata({
 export default function ONamaPage() {
   return (
     <main>
-      <section className="border-b bg-muted/40">
+      <section className="border-b bg-panel">
         <div className="mx-auto max-w-6xl px-6 py-16 md:py-20">
-          <h1 className="max-w-3xl font-medium text-4xl text-ink leading-tight tracking-[-0.02em] md:text-5xl">
+          <h1 className="max-w-3xl font-medium text-4xl text-foreground leading-tight tracking-[-0.02em] md:text-5xl">
             Najbolja online edukacija na našem jeziku — dostupna svima
           </h1>
           {/* AEO: prvi pasus odgovara na „šta je Nauči Dizajn". */}
@@ -30,27 +30,27 @@ export default function ONamaPage() {
       </section>
 
       <section className="mx-auto max-w-3xl px-6 py-16 md:py-20">
-        <h2 className="font-medium text-2xl text-ink tracking-[-0.02em] md:text-3xl">
+        <h2 className="font-medium text-2xl text-foreground tracking-[-0.02em] md:text-3xl">
           U šta verujemo
         </h2>
         <div className="mt-8 space-y-6 text-lg text-muted-foreground leading-relaxed">
           <p>
-            <strong className="text-ink">Uči se radeći.</strong> Snimci su najlakši deo. Ono što
-            pravi razliku su zadaci koji liče na prave projekte i neko ko ih pregleda i vrati na
+            <strong className="text-foreground">Uči se radeći.</strong> Snimci su najlakši deo. Ono
+            što pravi razliku su zadaci koji liče na prave projekte i neko ko ih pregleda i vrati na
             doradu.
           </p>
           <p>
-            <strong className="text-ink">Predaju ljudi iz prakse.</strong> Dizajn za klijente radi
-            se svakog dana, ne predaje iz udžbenika. Zato se gradivo menja kad se promene alati, a
-            ne na svakih pet godina.
+            <strong className="text-foreground">Predaju ljudi iz prakse.</strong> Dizajn za klijente
+            radi se svakog dana, ne predaje iz udžbenika. Zato se gradivo menja kad se promene
+            alati, a ne na svakih pet godina.
           </p>
           <p>
-            <strong className="text-ink">Znanje bez klijenata ne plaća račune.</strong> Zato dobar
-            deo programa govori o tome kako se dolazi do posla, koliko se naplaćuje i kako se
+            <strong className="text-foreground">Znanje bez klijenata ne plaća račune.</strong> Zato
+            dobar deo programa govori o tome kako se dolazi do posla, koliko se naplaćuje i kako se
             razgovara sa klijentom.
           </p>
           <p>
-            <strong className="text-ink">Bez obećanja koja ne možemo da održimo.</strong> Ne
+            <strong className="text-foreground">Bez obećanja koja ne možemo da održimo.</strong> Ne
             garantujemo zaposlenje ni zaradu. Garantujemo sistem, ljude koji ga koriste i to da
             članstvo otkazuješ sam, u svakom trenutku.
           </p>
@@ -58,7 +58,7 @@ export default function ONamaPage() {
       </section>
 
       <MentorsSection />
-      <CtaSection surface="cream" />
+      <CtaSection />
     </main>
   );
 }

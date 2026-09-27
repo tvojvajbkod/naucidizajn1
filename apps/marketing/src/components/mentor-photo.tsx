@@ -13,7 +13,7 @@ import Image from "next/image";
  */
 export function MentorPhoto({ mentor }: { mentor: Mentor }) {
   return (
-    <div className="relative aspect-[4/5] w-full overflow-hidden rounded-xl bg-background/10">
+    <div className="relative aspect-[4/5] w-full overflow-hidden rounded-xl bg-foreground/[0.06]">
       {mentor.photo ? (
         <Image
           src={mentor.photo}
@@ -25,11 +25,11 @@ export function MentorPhoto({ mentor }: { mentor: Mentor }) {
       ) : (
         <div className="flex h-full flex-col items-center justify-center gap-3 border border-background/20 border-dashed px-5 text-center">
           <span className="flex size-11 items-center justify-center rounded-full bg-primary">
-            <ImagePlus className="size-5 text-ink" />
+            <ImagePlus className="size-5 text-foreground" />
           </span>
-          <span className="font-medium text-background/70 text-sm">Mesto za fotografiju</span>
+          <span className="font-medium text-foreground/70 text-sm">Mesto za fotografiju</span>
           {isProposal ? (
-            <span className="text-background/40 text-xs leading-relaxed">
+            <span className="text-foreground/40 text-xs leading-relaxed">
               uspravna, min. 800 × 1000 px
               <br />
               <code className="font-sans">/mentori/{mentor.slug}.jpg</code>

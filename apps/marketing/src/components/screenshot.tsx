@@ -31,14 +31,14 @@ export function Screenshot({
         <span className="size-2.5 rounded-full bg-border" />
         <span className="size-2.5 rounded-full bg-border" />
         {url ? (
-          <span className="ml-2 truncate rounded-md bg-background px-2.5 py-1 text-muted-foreground text-xs">
+          <span className="ml-2 truncate rounded-md bg-card px-2.5 py-1 text-muted-foreground text-xs">
             {url}
           </span>
         ) : null}
       </div>
 
       {/* 16:10 okvir — snimci se seku na vrhu strane, kao u pregledaču. */}
-      <div className="relative aspect-[16/10] w-full bg-muted/50">
+      <div className="relative aspect-[16/10] w-full bg-panel">
         <Image
           src={src}
           alt={alt}

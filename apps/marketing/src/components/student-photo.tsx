@@ -25,7 +25,7 @@ export function StudentPhoto({ item }: { item: Testimonial }) {
 
   return (
     <div
-      className="flex size-16 items-center justify-center rounded-full border border-border border-dashed bg-muted/60"
+      className="flex size-16 items-center justify-center rounded-full border border-border border-dashed bg-panel"
       title={
         isProposal && item.slug
           ? `Mesto za fotografiju — /utisci/${item.slug}.jpg, uz saglasnost polaznika`

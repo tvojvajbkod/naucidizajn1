@@ -87,7 +87,7 @@ function PersonAvatar({ photo }: { photo?: string }) {
 function AiAvatar() {
   return (
     <div className="flex size-10 shrink-0 items-center justify-center rounded-full bg-primary">
-      <Sparkles className="size-5 text-ink" aria-hidden="true" />
+      <Sparkles className="size-5 text-foreground" aria-hidden="true" />
     </div>
   );
 }
@@ -125,7 +125,7 @@ export function ChatDemoSection() {
     <section id="kako-pravis" className="py-20 md:py-24">
       <div className="mx-auto max-w-6xl px-6">
         <div className="mx-auto max-w-2xl text-center">
-          <h2 className="font-medium text-3xl text-ink tracking-[-0.02em] md:text-4xl">
+          <h2 className="font-medium text-3xl text-foreground tracking-[-0.02em] md:text-4xl">
             Kako ti praviš <Accent>sajt</Accent>
           </h2>
           <p className="mt-4 text-lg text-muted-foreground leading-relaxed">
@@ -137,7 +137,7 @@ export function ChatDemoSection() {
 
         <div
           ref={ref}
-          className="mx-auto mt-12 max-w-3xl space-y-5 rounded-3xl border bg-muted/40 p-6 md:p-10"
+          className="mx-auto mt-12 max-w-3xl space-y-5 rounded-3xl border bg-panel p-6 md:p-10"
         >
           {messages.map((message, index) => {
             const mine = message.from === "covek";
@@ -158,8 +158,8 @@ export function ChatDemoSection() {
                 <p
                   className={`max-w-[85%] rounded-2xl px-5 py-3.5 leading-relaxed ${
                     mine
-                      ? "rounded-br-sm bg-ink text-background"
-                      : "rounded-bl-sm border bg-background text-ink/85"
+                      ? "rounded-br-sm border border-primary/35 bg-primary/10 text-foreground"
+                      : "rounded-bl-sm border bg-card text-foreground/85"
                   }`}
                 >
                   {message.text}

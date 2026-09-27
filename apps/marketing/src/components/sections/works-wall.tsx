@@ -23,7 +23,7 @@ export function WorksWallSection({
     <section id="radovi" className="mx-auto max-w-6xl px-6 py-20 md:py-24">
       {heading ? (
         <div className="max-w-2xl">
-          <h2 className="font-medium text-3xl text-ink tracking-[-0.02em] md:text-4xl">
+          <h2 className="font-medium text-3xl text-foreground tracking-[-0.02em] md:text-4xl">
             Sajtovi koje su napravili polaznici
           </h2>
           <p className="mt-4 text-lg text-muted-foreground">
@@ -43,13 +43,13 @@ export function WorksWallSection({
             />
             <div className="mt-4">
               <div className="flex items-start justify-between gap-3">
-                <h3 className="font-semibold text-ink">{work.client}</h3>
+                <h3 className="font-semibold text-foreground">{work.client}</h3>
                 {work.url ? (
                   <a
                     href={work.url}
                     target="_blank"
                     rel="noreferrer noopener"
-                    className="inline-flex shrink-0 items-center gap-1 text-muted-foreground text-sm hover:text-ink"
+                    className="inline-flex shrink-0 items-center gap-1 text-muted-foreground text-sm hover:text-foreground"
                   >
                     Otvori
                     <ArrowUpRight className="size-3.5" />
@@ -62,7 +62,7 @@ export function WorksWallSection({
                 {work.duration ? ` · ${work.duration}` : ""}
               </p>
               <p className="mt-2.5 text-muted-foreground text-sm leading-relaxed">{work.brief}</p>
-              <p className="mt-3 font-medium text-ink text-sm">Autor: {work.author}</p>
+              <p className="mt-3 font-medium text-foreground text-sm">Autor: {work.author}</p>
             </div>
           </article>
         ))}

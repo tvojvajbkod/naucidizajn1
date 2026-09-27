@@ -122,7 +122,7 @@ export function PercentRing({
             r={RADIUS}
             fill="none"
             strokeWidth={STROKE}
-            className="stroke-ink/10"
+            className="stroke-foreground/10"
           />
           <circle
             cx={SIZE / 2}
@@ -134,18 +134,18 @@ export function PercentRing({
             transform={`rotate(180 ${SIZE / 2} ${SIZE / 2})`}
             strokeDasharray={CIRCUMFERENCE}
             strokeDashoffset={CIRCUMFERENCE * (1 - progress)}
-            className="stroke-ink"
+            className="stroke-foreground"
           />
           {/* Limeta tačka na vrhu luka — jedini akcenat, kao i drugde na sajtu. */}
           <circle cx={dotX} cy={dotY} r={STROKE / 2 + 3} className="fill-primary" />
         </svg>
 
-        <span className="pointer-events-none absolute inset-0 flex items-center justify-center font-display text-[3.25rem] text-ink uppercase leading-none tracking-tight md:text-[4rem]">
+        <span className="pointer-events-none absolute inset-0 flex items-center justify-center font-display text-[3.25rem] text-foreground uppercase leading-none tracking-tight md:text-[4rem]">
           {format(shown, decimals)}%
         </span>
       </div>
 
-      <p className="mt-6 max-w-sm text-center text-ink/60 md:text-left">{label}</p>
+      <p className="mt-6 max-w-sm text-center text-foreground/60 md:text-left">{label}</p>
     </div>
   );
 }

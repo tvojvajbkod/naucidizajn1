@@ -7,7 +7,7 @@ import { useEffect, useLayoutEffect, useRef, useState } from "react";
 /**
  * „Da li je ovo za tebe" — dve kolone, pozvani i nepozvani.
  *
- * Dizajn (odluka 25.09.): kartica sa razlozima DA stoji u tamnozelenom panelu
+ * Dizajn (odluka 25.09.): kartica sa razlozima DA stoji u tamnom panelu
  * sa limeta kvačicama, kartica sa razlozima NE je tiha — isprekidana ivica bez
  * podloge. Poruka se vidi pre nego što se pročita: jedna strana je pozvana,
  * druga nije. Ranije su obe bile iste bele kartice, pa sekcija nije govorila
@@ -85,9 +85,9 @@ export function FitCheckSection() {
   }, []);
 
   return (
-    <section className="bg-muted/50 py-20 md:py-24">
+    <section className="py-20 md:py-24">
       <div className="mx-auto max-w-6xl px-6">
-        <h2 className="max-w-2xl font-medium text-3xl text-ink tracking-[-0.02em] md:text-4xl">
+        <h2 className="max-w-2xl font-medium text-3xl text-foreground tracking-[-0.02em] md:text-4xl">
           Da li je ovo za <Accent>tebe</Accent>
         </h2>
         <p className="mt-4 max-w-2xl text-lg text-muted-foreground">
@@ -95,8 +95,8 @@ export function FitCheckSection() {
         </p>
 
         <div ref={ref} className="mt-10 grid gap-5 md:grid-cols-2">
-          <div className="rounded-2xl bg-[linear-gradient(180deg,#16291d_0%,#0f1e15_100%)] p-7">
-            <h3 className="font-semibold text-background text-lg">Jeste, ako</h3>
+          <div className="rounded-2xl bg-[linear-gradient(180deg,#18181c_0%,#101014_100%)] p-7">
+            <h3 className="font-semibold text-foreground text-lg">Jeste, ako</h3>
             <ul className="mt-5 space-y-3.5">
               {forYou.map((item, index) => (
                 <li
@@ -105,15 +105,15 @@ export function FitCheckSection() {
                   style={revealStyle(shown, index * STEP)}
                 >
                   <Check className="mt-0.5 size-4 shrink-0 text-primary" aria-hidden="true" />
-                  <span className="text-background/85">{item}</span>
+                  <span className="text-foreground/85">{item}</span>
                 </li>
               ))}
             </ul>
           </div>
 
           {/* Tiha strana: bez podloge, samo isprekidana ivica — namerno slabija. */}
-          <div className="rounded-2xl border border-ink/20 border-dashed p-7">
-            <h3 className="font-semibold text-ink text-lg">Nije, ako</h3>
+          <div className="rounded-2xl border border-foreground/20 border-dashed p-7">
+            <h3 className="font-semibold text-foreground text-lg">Nije, ako</h3>
             <ul className="mt-5 space-y-3.5">
               {notForYou.map((item, index) => (
                 <li

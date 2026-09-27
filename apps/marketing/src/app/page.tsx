@@ -39,7 +39,7 @@ export default function HomePage() {
       <ProofSection limit={6} />
       <MentorsSection />
       <FAQSection />
-      <CtaSection />
+      <CtaSection surface="panel" />
       <JsonLd data={faqJsonLd(membershipFaq)} />
     </main>
   );

@@ -74,7 +74,7 @@ function Bubble({
       }}
     >
       <div
-        className={`rounded-2xl rounded-tl-sm border bg-background px-5 py-4 ${
+        className={`rounded-2xl rounded-tl-sm border bg-card px-5 py-4 ${
           mentor ? "border-primary" : ""
         }`}
       >
@@ -82,7 +82,7 @@ function Bubble({
           {mentor ? <span className="size-2 rounded-full bg-primary" aria-hidden="true" /> : null}
           {answer.role}
         </p>
-        <p className="mt-2 text-ink/85 leading-relaxed">{answer.text}</p>
+        <p className="mt-2 text-foreground/85 leading-relaxed">{answer.text}</p>
       </div>
     </li>
   );
@@ -101,7 +101,7 @@ function CaseBlock({
 }) {
   return (
     <div>
-      <h3 className="font-medium text-ink text-xl tracking-[-0.01em]">{item.problem}</h3>
+      <h3 className="font-medium text-foreground text-xl tracking-[-0.01em]">{item.problem}</h3>
       {typeof item.replyMinutes === "number" ? (
         <p className="mt-1 text-muted-foreground text-sm">
           Prvi odgovor je stigao za {item.replyMinutes} min.
@@ -168,9 +168,9 @@ export function CommunityHelpSection() {
   }, [active, interactive]);
 
   return (
-    <section id="zajednica" className="py-20 md:py-24">
+    <section id="zajednica" className="bg-panel py-20 md:py-24">
       <div className="mx-auto max-w-3xl px-6">
-        <h2 className="font-medium text-3xl text-ink tracking-[-0.02em] md:text-4xl">
+        <h2 className="font-medium text-3xl text-foreground tracking-[-0.02em] md:text-4xl">
           Kad zapneš — tu je <Accent>podrška zajednice</Accent>
         </h2>
         <p className="mt-4 text-lg text-muted-foreground leading-relaxed">
@@ -190,8 +190,8 @@ export function CommunityHelpSection() {
                 onClick={() => setActive(index)}
                 className={`rounded-full border px-4 py-2 text-sm transition-colors ${
                   on
-                    ? "border-ink bg-ink text-background"
-                    : "border-border bg-background text-ink hover:border-ink/40"
+                    ? "border-primary bg-primary text-primary-foreground"
+                    : "border-border bg-card text-foreground hover:border-foreground/40"
                 }`}
               >
                 {item.problem}

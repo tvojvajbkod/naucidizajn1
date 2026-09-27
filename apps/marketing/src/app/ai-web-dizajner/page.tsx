@@ -27,9 +27,9 @@ export const metadata = buildMetadata({
 export default function AiWebDizajnerPage() {
   return (
     <main>
-      <section className="bg-ink text-background">
+      <section className="bg-panel text-foreground">
         <div className="mx-auto max-w-6xl px-6 py-20 md:py-24">
-          <p className="inline-flex items-center gap-2 rounded border border-background/20 px-4 py-1.5 font-medium text-background/80 text-sm">
+          <p className="inline-flex items-center gap-2 rounded border border-background/20 px-4 py-1.5 font-medium text-foreground/80 text-sm">
             <span className="size-2 rounded-full bg-primary" />
             Jedina edukacija · mesečno članstvo · {stats.skoolMembers} članova
           </p>
@@ -38,7 +38,7 @@ export default function AiWebDizajnerPage() {
             Postani AI web dizajner <span className="text-primary">za 30 dana</span>
           </h1>
 
-          <p className="mt-6 max-w-2xl text-background/75 text-lg leading-relaxed">
+          <p className="mt-6 max-w-2xl text-foreground/75 text-lg leading-relaxed">
             Prvi mesec ide na jedno: da uz veštačku inteligenciju napraviš ceo sajt bez kucanja koda
             i dođeš do prvog plaćenog klijenta. Posle toga put ide dalje — SEO, AI automatizacije i
             napredni web dizajn, mesec po mesec, uz nedeljne sastanke uživo. Sve na srpskom.
@@ -49,28 +49,28 @@ export default function AiWebDizajnerPage() {
               href={links.skool}
               target="_blank"
               rel="noreferrer noopener"
-              className="inline-flex items-center justify-center gap-2 rounded bg-primary px-7 py-3.5 font-semibold text-ink transition-transform hover:scale-[1.02]"
+              className="inline-flex items-center justify-center gap-2 rounded bg-primary px-7 py-3.5 font-semibold text-primary-foreground transition-transform hover:scale-[1.02]"
             >
               Pridruži se — {membership.price} mesečno
               <ArrowRight className="size-4" />
             </a>
             <Link
               href="/webinar"
-              className="inline-flex items-center justify-center rounded border border-background/25 px-7 py-3.5 font-semibold text-background transition-colors hover:bg-background/10"
+              className="inline-flex items-center justify-center rounded border border-foreground/25 px-7 py-3.5 font-semibold text-foreground transition-colors hover:bg-foreground/[0.06]"
             >
               Prvo besplatan webinar
             </Link>
           </div>
 
-          <p className="mt-4 text-background/55 text-sm">
+          <p className="mt-4 text-foreground/55 text-sm">
             Ocena zajednice {stats.skoolRating} na {stats.skoolReviews} recenzija · Otkazuješ sam, u
             svakom trenutku
           </p>
         </div>
       </section>
 
-      {/* Krem traka razdvaja dva tamna bloka — hero i „Šta dobijaš" su oba ink. */}
-      <StatBandSection />
+      {/* Traka sa brojkom ide u osnovnoj boji jer je hero iznad nje već panel. */}
+      <StatBandSection surface="plain" />
       <WhatsIncludedSection />
       <TimelineSection />
 

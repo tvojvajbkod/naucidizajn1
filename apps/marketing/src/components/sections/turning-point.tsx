@@ -27,7 +27,7 @@ export function TurningPointSection() {
   return (
     <section className="mx-auto max-w-6xl px-6 py-20 md:py-24">
       <div className="max-w-2xl">
-        <h2 className="font-medium text-3xl text-ink tracking-[-0.02em] md:text-4xl">
+        <h2 className="font-medium text-3xl text-foreground tracking-[-0.02em] md:text-4xl">
           Zašto je pravo vreme da <Accent>baš sada</Accent> kreneš sa AI web dizajnom
         </h2>
         <p className="mt-4 text-lg text-muted-foreground">
@@ -40,9 +40,9 @@ export function TurningPointSection() {
         {points.map((point) => (
           <div key={point.title} className="rounded-2xl border bg-card p-7">
             <div className="flex size-11 items-center justify-center rounded-xl bg-primary">
-              <point.icon className="size-5 text-ink" />
+              <point.icon className="size-5 text-foreground" />
             </div>
-            <h3 className="mt-5 font-semibold text-ink text-lg">{point.title}</h3>
+            <h3 className="mt-5 font-semibold text-foreground text-lg">{point.title}</h3>
             <p className="mt-2.5 text-muted-foreground leading-relaxed">{point.body}</p>
           </div>
         ))}

@@ -20,18 +20,20 @@ export function FAQSection({
   description?: string;
 }) {
   return (
-    <section id="pitanja" className="bg-cream py-20 md:py-24">
+    <section id="pitanja" className="py-20 md:py-24">
       <div className="mx-auto max-w-3xl px-6">
-        <h2 className="font-medium text-3xl text-ink tracking-[-0.02em] md:text-4xl">{title}</h2>
-        <p className="mt-4 text-lg text-ink/65">{description}</p>
+        <h2 className="font-medium text-3xl text-foreground tracking-[-0.02em] md:text-4xl">
+          {title}
+        </h2>
+        <p className="mt-4 text-lg text-foreground/65">{description}</p>
 
         <Accordion type="single" collapsible className="mt-10 w-full">
           {items.map((item) => (
             <AccordionItem key={item.question} value={item.question}>
-              <AccordionTrigger className="text-left font-semibold text-base text-ink">
+              <AccordionTrigger className="text-left font-semibold text-base text-foreground">
                 {item.question}
               </AccordionTrigger>
-              <AccordionContent className="text-base text-ink/70 leading-relaxed">
+              <AccordionContent className="text-base text-foreground/70 leading-relaxed">
                 {item.answer}
               </AccordionContent>
             </AccordionItem>

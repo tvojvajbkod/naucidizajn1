@@ -21,7 +21,7 @@ export function HeroVideo() {
   const hasVideo = Boolean(heroVideo.youtubeId || heroVideo.src);
 
   return (
-    <div className="mt-8 w-full max-w-xl overflow-hidden rounded-2xl border border-background/15 bg-background/[0.06]">
+    <div className="mt-8 w-full max-w-xl overflow-hidden rounded-2xl border border-border bg-card">
       <div className="relative aspect-video w-full">
         {hasVideo && playing && heroVideo.youtubeId ? (
           <iframe
@@ -57,20 +57,20 @@ export function HeroVideo() {
                 className="object-cover"
               />
             ) : null}
-            <span className="absolute inset-0 flex items-center justify-center bg-ink/25">
+            <span className="absolute inset-0 flex items-center justify-center bg-page/60">
               <span className="flex size-16 items-center justify-center rounded-full bg-primary transition-transform group-hover:scale-105">
-                <Play className="size-6 fill-ink text-ink" />
+                <Play className="size-6 fill-foreground text-foreground" />
               </span>
             </span>
           </button>
         ) : (
           <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 border border-background/20 border-dashed px-6 text-center">
             <span className="flex size-14 items-center justify-center rounded-full bg-primary">
-              <Video className="size-6 text-ink" aria-hidden="true" />
+              <Video className="size-6 text-foreground" aria-hidden="true" />
             </span>
-            <span className="font-medium text-background/70 text-sm">Mesto za video</span>
+            <span className="font-medium text-foreground/70 text-sm">Mesto za video</span>
             {isProposal ? (
-              <span className="text-background/40 text-xs leading-relaxed">
+              <span className="text-foreground/40 text-xs leading-relaxed">
                 vodoravan snimak 16:9
                 <br />
                 YouTube link ili <code className="font-sans">/video/hero.mp4</code>

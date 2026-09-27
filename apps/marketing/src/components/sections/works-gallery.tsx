@@ -29,8 +29,8 @@ export function WorksGallery() {
               className={cn(
                 "rounded border px-4 py-2 font-medium text-sm transition-colors",
                 active === category
-                  ? "border-ink bg-ink text-background"
-                  : "text-ink/70 hover:bg-muted",
+                  ? "border-primary bg-primary text-primary-foreground"
+                  : "text-foreground/70 hover:bg-muted",
               )}
             >
               {category}
@@ -49,13 +49,13 @@ export function WorksGallery() {
             />
             <div className="mt-4">
               <div className="flex items-start justify-between gap-3">
-                <h2 className="font-semibold text-ink">{work.client}</h2>
+                <h2 className="font-semibold text-foreground">{work.client}</h2>
                 {work.url ? (
                   <a
                     href={work.url}
                     target="_blank"
                     rel="noreferrer noopener"
-                    className="inline-flex shrink-0 items-center gap-1 text-muted-foreground text-sm hover:text-ink"
+                    className="inline-flex shrink-0 items-center gap-1 text-muted-foreground text-sm hover:text-foreground"
                   >
                     Otvori
                     <ArrowUpRight className="size-3.5" />
@@ -68,7 +68,7 @@ export function WorksGallery() {
                 {work.duration ? ` · ${work.duration}` : ""}
               </p>
               <p className="mt-2.5 text-muted-foreground text-sm leading-relaxed">{work.brief}</p>
-              <p className="mt-3 font-medium text-ink text-sm">Autor: {work.author}</p>
+              <p className="mt-3 font-medium text-foreground text-sm">Autor: {work.author}</p>
             </div>
           </article>
         ))}

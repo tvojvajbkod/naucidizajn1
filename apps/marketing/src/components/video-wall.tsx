@@ -17,7 +17,7 @@ function VideoCard({ item }: { item: VideoTestimonial }) {
 
   return (
     <figure className="mx-auto w-full max-w-[300px]">
-      <div className="relative aspect-[9/16] w-full overflow-hidden rounded-2xl border bg-ink">
+      <div className="relative aspect-[9/16] w-full overflow-hidden rounded-2xl border bg-card">
         {playing && item.youtubeId ? (
           <iframe
             src={`https://www.youtube-nocookie.com/embed/${item.youtubeId}?autoplay=1&rel=0`}
@@ -52,9 +52,9 @@ function VideoCard({ item }: { item: VideoTestimonial }) {
                 className="object-cover"
               />
             ) : null}
-            <span className="absolute inset-0 flex items-center justify-center bg-ink/25">
+            <span className="absolute inset-0 flex items-center justify-center bg-page/60">
               <span className="flex size-16 items-center justify-center rounded-full bg-primary transition-transform group-hover:scale-105">
-                <Play className="size-6 fill-ink text-ink" />
+                <Play className="size-6 fill-foreground text-foreground" />
               </span>
             </span>
           </button>
@@ -62,7 +62,7 @@ function VideoCard({ item }: { item: VideoTestimonial }) {
       </div>
 
       <figcaption className="mt-3.5">
-        <span className="block font-semibold text-ink">{item.name}</span>
+        <span className="block font-semibold text-foreground">{item.name}</span>
         {item.role ? (
           <span className="block text-muted-foreground text-sm">{item.role}</span>
         ) : null}
@@ -78,12 +78,12 @@ function VideoCard({ item }: { item: VideoTestimonial }) {
 function EmptySlot({ index }: { index: number }) {
   return (
     <figure className="mx-auto w-full max-w-[300px]">
-      <div className="flex aspect-[9/16] w-full flex-col items-center justify-center gap-3 rounded-2xl border border-ink/20 border-dashed bg-cream/50 px-6 text-center">
+      <div className="flex aspect-[9/16] w-full flex-col items-center justify-center gap-3 rounded-2xl border border-foreground/20 border-dashed bg-panel/50 px-6 text-center">
         <span className="flex size-14 items-center justify-center rounded-full bg-primary">
-          <Video className="size-6 text-ink" />
+          <Video className="size-6 text-foreground" />
         </span>
-        <span className="font-medium text-ink">Mesto za video utisak {index}</span>
-        <span className="text-ink/50 text-xs leading-relaxed">
+        <span className="font-medium text-foreground">Mesto za video utisak {index}</span>
+        <span className="text-foreground/50 text-xs leading-relaxed">
           uspravan snimak 9:16, do 60 sekundi
           <br />
           YouTube link ili <code className="font-sans">/video/ime.mp4</code>

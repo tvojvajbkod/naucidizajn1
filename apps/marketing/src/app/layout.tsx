@@ -67,7 +67,7 @@ export const viewport = {
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="sr">
-      <body className="flex min-h-screen flex-col bg-paper font-sans text-ink antialiased">
+      <body className="flex min-h-screen flex-col bg-page font-sans text-foreground antialiased">
         <SiteNav />
         <div className="flex-1">{children}</div>
         <SiteFooter />

@@ -101,11 +101,11 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
         dangerouslySetInnerHTML={{ __html: articleLdJson }}
       />
       {post.publishedAt ? (
-        <p className="text-ink/40 text-sm">
+        <p className="text-foreground/40 text-sm">
           {new Date(post.publishedAt).toLocaleDateString("sr-RS")}
         </p>
       ) : null}
-      <h1 className="mt-2 font-medium text-4xl text-ink">{post.title}</h1>
+      <h1 className="mt-2 font-medium text-4xl text-foreground">{post.title}</h1>
       <article className="blog-article mt-8">
         <ReactMarkdown remarkPlugins={[remarkGfm]}>{post.content}</ReactMarkdown>
       </article>

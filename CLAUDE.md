@@ -152,28 +152,53 @@ Skool). Ono je heroj početne strane i ima svoju punu landing stranu.
   slike sa stocka — jedini smisao te stranice je da bude istinita.
 - **Vizuelni jezik je izmeren sa postojećeg sajta, ne pogođen.** Naslovi su
   težine 500 sa razmakom `-0.02em` (`-0.03em` za hero), dugmad imaju radijus
-  4px (`rounded`), kartice 12px. Par dugmadi je limeta sa ink tekstom
-  (primarno) i maslinasto `bg-olive` sa limeta tekstom (sekundarno) — ne
+  4px (`rounded`), kartice 12px. Par dugmadi je limeta sa tamnim tekstom
+  (primarno) i `bg-secondary` sa limeta tekstom i okvirom (sekundarno) — ne
   outline. Ne vraćaj `rounded-full` i ne vraćaj `font-bold` na naslove.
-- **Ritam podloga je izmeren, ne pogođen.** Zatečeni sajt je ~46% tamnog,
-  27% belog, 21% krem i 2% limeta po visini početne strane. Naš je na 41% / 31%
-  / 9% / 3% — namerno blizu. Redosled: hero ink → bela → krem traka
-  (`StatBandSection`) → **ink** (`WhatsIncludedSection`) → **krem sa tamnim
-  panelom** (`TimelineSection`, put od četiri meseca — sekcija je krem, meseci
-  stoje u tamnozelenom panelu sa prelivom `#16291d → #0f1e15`; ranije je cela
-  sekcija bila maslinasta i stapala se sa ink sekcijom iznad) → **siva**
-  (`FitCheckSection`, „Da li je ovo za tebe" — od 25.09. stoji i na početnoj,
-  umesto limeta trake koja je postavljala isto pitanje; `LimeBandSection` više
-  nije u upotrebi) → bela sa krem panelom → siva
-  (`ProofSection`) → **ink** (`MentorsSection`) → limeta kolona sa cenom
-  (`MembershipOfferSection`) → **krem** (FAQ) → ink kartica (`CtaSection`) →
-  **ink futer**. Mereno 23.09. posle izbacivanja kurseva: 30% ink, 15%
-  maslinasta, 15% siva, 4% krem, 3% limeta.
-  Pravila: dugi tamni blok sme da spoji ink i maslinastu (original ima 2.969px
-  neprekidno tamnog), ali dve ISTE podloge nikad ne idu jedna do druge; limeta
-  traka je jedna po stranici; na tamnim sekcijama tekst je `text-background` /
-  `text-background/75`, kartice `bg-background/[0.06]` uz `border-background/15`,
-  sitne oznake u limeti. Ako menjaš podloge, prvo izmeri udeo — ne procenjuj.
+- **Paleta je tamna (odluka 27.09.).** Sajt je prešao sa svetle (bela / krem /
+  ink) na tamnu paletu koju je dostavila firma. Vrednosti stoje na jednom mestu,
+  u `src/app/globals.css`, i odatle ih vuče ceo sajt:
+
+  | Uloga | Boja | Klasa |
+  |---|---|---|
+  | Glavna pozadina strane | `#0B0B0D` | `bg-page` (podrazumevano na `<body>`) |
+  | Sekundarna pozadina sekcije | `#141417` | `bg-panel` |
+  | Kartice i izdvojeni paneli | `#18181C` | `bg-card` |
+  | Okviri i razdelnici | `#29292E` | `border` |
+  | Glavni tekst | `#F5F5F2` | `text-foreground` |
+  | Sekundarni tekst | `#A5A5AA` | `text-muted-foreground` |
+  | Akcenat | `#B7FF00` | `text-primary` / `bg-primary` |
+  | Hover na akcentu | `#D4FF66` | `hover:bg-glow` |
+  | Sekundarno dugme | `#1A1A1E` | `bg-secondary` uz `border` |
+
+  Stari nazivi `bg-cream` i `bg-ink` su ostali kao aliasi da starije klase ne
+  puknu, ali oba sada pokazuju na `#141417`. **U novom kodu koristi `bg-panel`,
+  `bg-card` i `bg-page`** — `cream`/`ink` zbunjuju jer im imena više ne opisuju
+  boju.
+
+  Tri pravila koja se ne smeju prekršiti:
+  1. **Na limeti tekst je uvek taman** (`text-primary-foreground`). Svetli tekst
+     na `#B7FF00` ima kontrast 1,1:1 i doslovno se ne vidi. Isto važi i za dugme
+     unutar limeta kolone — ono je obrnuto: tamno sa limeta slovima.
+  2. **Limeta je akcenat, ne podloga za tekst.** Jedna limeta površina po
+     stranici (kolona sa cenom), plus dugmad i sitne oznake. Ako limeta zauzme
+     ceo pasus ili ceo oblačić, prestaje da bude akcenat.
+  3. **Dve susedne sekcije ne smeju da imaju istu podlogu.** Sekcije se smenjuju
+     `page → panel → page → …`; futer je `bg-card` da se ne stopi sa panel
+     sekcijom iznad njega. Neke sekcije zato imaju `surface` prop
+     (`StatBandSection`, `CtaSection`) — na `/` i na `/ai-web-dizajner` isti
+     sastojak stoji na različitoj podlozi.
+
+  Provera posle svake izmene boja (obe moraju da prođu):
+  - **kontrast** — za svaki element sa tekstom izračunaj odnos boje slova i prve
+    neprovidne podloge iznad njega; sve ispod 4,5:1 (3:1 za tekst ≥ 24px) je
+    greška, ne stvar ukusa;
+  - **ritam** — izlistaj `main > *` za svaku stranicu, uzmi `backgroundColor` i
+    podlogu najvećeg unutrašnjeg panela, i traži dve iste vrednosti zaredom.
+    Prozirna podloga (`rgba(0,0,0,0)`) je boja strane — računa se.
+  Skripta koja radi oboje odjednom: `/opt/node-tools/audit.mjs` (Playwright,
+  prolazi kroz sve stranice). Gradijente ne vidi, pa panel sa prelivom
+  (`TimelineSection`, `FitCheckSection`) proveri i okom.
 - **Centrirano je rezervisano za dva trenutka** (odluka 27.09.): hero i sekcija
   sa prepiskom („Kako ti praviš sajt", `chat-demo.tsx`). Tamo je i sadržaj ispod
   naslova simetričan, pa centriranje ima smisla. SVE ostale sekcije su levo

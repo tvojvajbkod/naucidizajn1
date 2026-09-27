@@ -6,66 +6,94 @@
 
 :root {
   --radius: 0.75rem;
-  /* Nauči Dizajn brend */
-  --brand-olive: #3a4021;
-  --brand-lime-ink: #232421;
-  --brand-cream: #f2efe6;
-  --brand-lime: #dbff00;
-  --background: #ffffff;
-  --foreground: #232421;
-  --card: #ffffff;
-  --card-foreground: #232421;
-  --popover: #ffffff;
-  --popover-foreground: #232421;
-  --primary: #dbff00;
-  --primary-foreground: #232421;
-  --secondary: #ecf0ef;
-  --secondary-foreground: #232421;
-  --muted: #ecf0ef;
-  --muted-foreground: #5c5f58;
-  --accent: #f2f7d9;
-  --accent-foreground: #232421;
-  --destructive: #dc2626;
-  --border: #e2e5e1;
-  --input: #d6dad4;
-  --ring: #dbff00;
-  --sidebar: #f6f8f6;
-  --sidebar-foreground: #232421;
-  --sidebar-primary: #dbff00;
-  --sidebar-primary-foreground: #232421;
-  --sidebar-accent: #f2f7d9;
-  --sidebar-accent-foreground: #232421;
-  --sidebar-border: #e2e5e1;
-  --sidebar-ring: #dbff00;
+  /* ------------------------------------------------------------------
+     Paleta (odluka 27.09.) — tamna podloga, neonska limeta kao akcenat.
+     Vrednosti su preuzete iz predloga koji je poslala Nauči Dizajn firma;
+     ne menjaj ih ovde nasumično, jer ceo sajt vuče boje odavde.
+
+       #0B0B0D  glavna pozadina strane
+       #141417  sekundarna pozadina — sekcija koja se smenjuje sa glavnom
+       #18181C  kartice i izdvojeni paneli
+       #29292E  okviri i razdelnici
+       #F5F5F2  glavni tekst
+       #A5A5AA  sekundarni tekst
+       #B7FF00  akcenat — dugmad, linkovi, naglašene reči
+       #8FCC00  tamnija zelena — ikone i sekundarni akcenti
+       #D4FF66  svetla zelena — hover i glow
+       #1A1A1E  sekundarno dugme
+
+     Kontrast (proveren, WCAG AA traži 4.5:1 za tekst):
+       #F5F5F2 na #0B0B0D = 18.1:1 · #A5A5AA na #0B0B0D = 8.2:1
+       #B7FF00 na #0B0B0D = 14.6:1 · #0B0B0D na #B7FF00 = 14.6:1
+     ------------------------------------------------------------------ */
+  --brand-page: #0b0b0d;
+  --brand-panel: #141417;
+  --brand-card: #18181c;
+  --brand-lime: #b7ff00;
+  --brand-lime-dark: #8fcc00;
+  --brand-lime-glow: #d4ff66;
+  --brand-lime-ink: #0b0b0d;
+  --brand-olive: #1a1a1e;
+  /* „cream" je stari naziv iz svetle verzije; sada je to panel podloga.
+     Ostavljen je da starije klase `bg-cream` ne bi pukle. */
+  --brand-cream: #141417;
+  --background: #0b0b0d;
+  --foreground: #f5f5f2;
+  --card: #18181c;
+  --card-foreground: #f5f5f2;
+  --popover: #18181c;
+  --popover-foreground: #f5f5f2;
+  --primary: #b7ff00;
+  --primary-foreground: #0b0b0d;
+  --secondary: #1a1a1e;
+  --secondary-foreground: #f5f5f2;
+  --muted: #141417;
+  --muted-foreground: #a5a5aa;
+  --accent: #1a2400;
+  --accent-foreground: #d4ff66;
+  --destructive: #ef4444;
+  --border: #29292e;
+  --input: #29292e;
+  --ring: #b7ff00;
+  --sidebar: #0b0b0d;
+  --sidebar-foreground: #f5f5f2;
+  --sidebar-primary: #b7ff00;
+  --sidebar-primary-foreground: #0b0b0d;
+  --sidebar-accent: #1a2400;
+  --sidebar-accent-foreground: #d4ff66;
+  --sidebar-border: #29292e;
+  --sidebar-ring: #b7ff00;
 }
 
 .dark {
-  --background: #1a1b19;
-  --foreground: #f4f5f2;
-  --card: #232421;
-  --card-foreground: #f4f5f2;
-  --popover: #232421;
-  --popover-foreground: #f4f5f2;
-  --primary: #dbff00;
-  --primary-foreground: #232421;
-  --secondary: #313330;
-  --secondary-foreground: #f4f5f2;
-  --muted: #313330;
-  --muted-foreground: #a8aca4;
-  --accent: #3a4021;
-  --accent-foreground: #f4f5f2;
+  /* Sajt je tamni i bez `.dark` klase; ovo ostaje da moduli koji je koriste
+     ne bi dobili drugačije boje. */
+  --background: #0b0b0d;
+  --foreground: #f5f5f2;
+  --card: #18181c;
+  --card-foreground: #f5f5f2;
+  --popover: #18181c;
+  --popover-foreground: #f5f5f2;
+  --primary: #b7ff00;
+  --primary-foreground: #0b0b0d;
+  --secondary: #1a1a1e;
+  --secondary-foreground: #f5f5f2;
+  --muted: #141417;
+  --muted-foreground: #a5a5aa;
+  --accent: #1a2400;
+  --accent-foreground: #d4ff66;
   --destructive: #ef4444;
-  --border: #34362f;
-  --input: #3d403a;
-  --ring: #dbff00;
-  --sidebar: #141512;
-  --sidebar-foreground: #f4f5f2;
-  --sidebar-primary: #dbff00;
-  --sidebar-primary-foreground: #232421;
-  --sidebar-accent: #3a4021;
-  --sidebar-accent-foreground: #f4f5f2;
-  --sidebar-border: #34362f;
-  --sidebar-ring: #dbff00;
+  --border: #29292e;
+  --input: #29292e;
+  --ring: #b7ff00;
+  --sidebar: #0b0b0d;
+  --sidebar-foreground: #f5f5f2;
+  --sidebar-primary: #b7ff00;
+  --sidebar-primary-foreground: #0b0b0d;
+  --sidebar-accent: #1a2400;
+  --sidebar-accent-foreground: #d4ff66;
+  --sidebar-border: #29292e;
+  --sidebar-ring: #b7ff00;
 }
 
 @theme inline {
@@ -96,11 +124,16 @@
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
   /* legacy brend aliasi — stariji kod i moduli koriste ink/paper */
-  --color-ink: var(--foreground);
+  --color-ink: var(--brand-panel);
   --color-paper: var(--background);
   --color-olive: var(--brand-olive);
   --color-cream: var(--brand-cream);
   --color-lime: var(--brand-lime);
+  /* Tri podloge sajta. Sekcije se smenjuju `page` → `panel` → `page`… */
+  --color-page: var(--brand-page);
+  --color-panel: var(--brand-panel);
+  --color-glow: var(--brand-lime-glow);
+  --color-lime-dark: var(--brand-lime-dark);
   --font-sans: Archivo, ui-sans-serif, system-ui, sans-serif;
   /* Serifni kurziv — akcenat u naslovima, potez preuzet sa postojećeg sajta. */
   --font-accent: "Instrument Serif", ui-serif, Georgia, serif;

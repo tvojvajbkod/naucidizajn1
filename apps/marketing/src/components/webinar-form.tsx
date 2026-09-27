@@ -68,12 +68,14 @@ export function WebinarForm() {
 
   if (state === "done") {
     return (
-      <div className="rounded-2xl border border-ink/10 bg-cream p-8 text-center md:p-10">
+      <div className="rounded-2xl border border-foreground/10 bg-panel p-8 text-center md:p-10">
         <span className="mx-auto flex size-12 items-center justify-center rounded-full bg-primary">
-          <Check className="size-6 text-ink" />
+          <Check className="size-6 text-foreground" />
         </span>
-        <h3 className="mt-5 font-medium text-2xl text-ink tracking-[-0.02em]">Prijava je stigla</h3>
-        <p className="mx-auto mt-3 max-w-md text-ink/70 leading-relaxed">
+        <h3 className="mt-5 font-medium text-2xl text-foreground tracking-[-0.02em]">
+          Prijava je stigla
+        </h3>
+        <p className="mx-auto mt-3 max-w-md text-foreground/70 leading-relaxed">
           {forms.webinar
             ? `Termin i link šaljemo na ${email}. Ako poruka ne stigne za nekoliko minuta, pogledaj i „Promocije" ili spam.`
             : "Ostalo je još samo da pošalješ poruku koja ti se upravo otvorila u mejlu."}
@@ -83,28 +85,31 @@ export function WebinarForm() {
   }
 
   return (
-    <form onSubmit={onSubmit} className="rounded-2xl border border-ink/10 bg-cream p-7 md:p-9">
+    <form
+      onSubmit={onSubmit}
+      className="rounded-2xl border border-foreground/10 bg-panel p-7 md:p-9"
+    >
       <div className="grid gap-4 sm:grid-cols-2">
         <label className="block">
-          <span className="font-medium text-ink text-sm">Ime i prezime</span>
+          <span className="font-medium text-foreground text-sm">Ime i prezime</span>
           <input
             type="text"
             name="name"
             required
             autoComplete="name"
             placeholder="Marko Marković"
-            className="mt-2 h-11 w-full rounded border border-ink/15 bg-background px-3.5 text-ink outline-none placeholder:text-ink/35 focus:border-ink/40"
+            className="mt-2 h-11 w-full rounded border border-foreground/15 bg-card px-3.5 text-foreground outline-none placeholder:text-foreground/35 focus:border-foreground/40"
           />
         </label>
         <label className="block">
-          <span className="font-medium text-ink text-sm">Email</span>
+          <span className="font-medium text-foreground text-sm">Email</span>
           <input
             type="email"
             name="email"
             required
             autoComplete="email"
             placeholder="marko@primer.rs"
-            className="mt-2 h-11 w-full rounded border border-ink/15 bg-background px-3.5 text-ink outline-none placeholder:text-ink/35 focus:border-ink/40"
+            className="mt-2 h-11 w-full rounded border border-foreground/15 bg-card px-3.5 text-foreground outline-none placeholder:text-foreground/35 focus:border-foreground/40"
           />
         </label>
       </div>
@@ -126,10 +131,10 @@ export function WebinarForm() {
           required
           className="mt-1 size-4 shrink-0 accent-ink"
         />
-        <span className="text-ink/70 text-sm leading-relaxed">
+        <span className="text-foreground/70 text-sm leading-relaxed">
           Saglasan sam da mi pošaljete termin webinara i snimak. Adresu ne dajemo nikome i
           odjavljuješ se jednim klikom —{" "}
-          <Link href="/privatnost" className="text-ink underline underline-offset-4">
+          <Link href="/privatnost" className="text-foreground underline underline-offset-4">
             politika privatnosti
           </Link>
           .
@@ -139,7 +144,7 @@ export function WebinarForm() {
       <button
         type="submit"
         disabled={state === "sending"}
-        className="mt-7 inline-flex h-12 w-full items-center justify-center gap-2 rounded bg-ink px-7 font-semibold text-background transition-colors hover:bg-ink/85 disabled:opacity-60"
+        className="mt-7 inline-flex h-12 w-full items-center justify-center gap-2 rounded bg-primary px-7 font-semibold text-primary-foreground transition-colors hover:bg-glow disabled:opacity-60"
       >
         {state === "sending" ? (
           "Šaljem…"
@@ -166,12 +171,12 @@ export function WebinarForm() {
         </p>
       ) : null}
 
-      <p className="mt-4 text-ink/50 text-xs leading-relaxed">
+      <p className="mt-4 text-foreground/50 text-xs leading-relaxed">
         Bez naplate i bez unosa kartice. Šaljemo samo poruke o webinaru.
         {isProposal && !forms.webinar ? (
           <>
             {" "}
-            <span className="text-ink/70">
+            <span className="text-foreground/70">
               [POPUNI] Kad firma otvori nalog na servisu za forme, adresa se upisuje u{" "}
               <code className="font-sans">forms.webinar</code> i prijave počinju da stižu same.
             </span>

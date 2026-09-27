@@ -180,6 +180,12 @@ Skool). Ono je heroj početne strane i ima svoju punu landing stranu.
   poravnate — naslov, uvod, kartice i spiskovi. Razlog nije ukus nego čitanje:
   čim pasus pređe tri reda ili ispod njega dođe spisak, centriran tekst usporava
   jer levi rub postaje nazubljen. Ne centriraj „da bude ujednačeno".
+- **Cena NIJE na početnoj** (odluka 27.09.). `MembershipOfferSection` je
+  skinuta sa `/` jer je „Šta je uključeno" ponavljalo sekciju „Šta dobijaš u
+  Skool zajednici", a iznos je ionako u herou i u završnom CTA-u. Sekcija i
+  dalje postoji i stoji na `/ai-web-dizajner#cena` — tamo vodi i link „Cena i
+  uslovi" iz futera, pa se ne sme brisati komponenta, samo njen poziv sa
+  početne. Uslovi otkazivanja se na početnoj čitaju u FAQ-u.
 - **Dve sekcije sa oblačićima moraju da ostanu različite** (odluka 27.09.).
   Na početnoj postoje dve: „Kako ti praviš sajt" (`chat-demo.tsx`) je prepiska
   čoveka i AI-a — avatari, naizmenične strane, jedan okvir oko svega, centrirano;

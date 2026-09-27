@@ -6,7 +6,6 @@ import { CtaSection } from "@/components/sections/cta";
 import { FAQSection } from "@/components/sections/faq";
 import { FitCheckSection } from "@/components/sections/fit-check";
 import { HeroSection } from "@/components/sections/hero";
-import { MembershipOfferSection } from "@/components/sections/membership-offer";
 import { MentorsSection } from "@/components/sections/mentors";
 import { ProofSection } from "@/components/sections/proof";
 import { StatBandSection } from "@/components/sections/stat-band";
@@ -39,7 +38,6 @@ export default function HomePage() {
       <CaseStudyTeaserSection />
       <ProofSection limit={6} />
       <MentorsSection />
-      <MembershipOfferSection />
       <FAQSection />
       <CtaSection />
       <JsonLd data={faqJsonLd(membershipFaq)} />

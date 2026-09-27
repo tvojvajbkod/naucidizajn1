@@ -25,7 +25,7 @@ export function MentorPhoto({ mentor }: { mentor: Mentor }) {
       ) : (
         <div className="flex h-full flex-col items-center justify-center gap-3 border border-background/20 border-dashed px-5 text-center">
           <span className="flex size-11 items-center justify-center rounded-full bg-primary">
-            <ImagePlus className="size-5 text-foreground" />
+            <ImagePlus className="size-5 text-primary-foreground" />
           </span>
           <span className="font-medium text-foreground/70 text-sm">Mesto za fotografiju</span>
           {isProposal ? (

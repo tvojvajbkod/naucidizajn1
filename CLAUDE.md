@@ -177,9 +177,15 @@ Skool). Ono je heroj početne strane i ima svoju punu landing stranu.
   boju.
 
   Tri pravila koja se ne smeju prekršiti:
-  1. **Na limeti tekst je uvek taman** (`text-primary-foreground`). Svetli tekst
-     na `#B7FF00` ima kontrast 1,1:1 i doslovno se ne vidi. Isto važi i za dugme
-     unutar limeta kolone — ono je obrnuto: tamno sa limeta slovima.
+  1. **Na limeti je sve tamno** (`text-primary-foreground`) — i tekst i **ikone**.
+     Svetlo na `#B7FF00` ima kontrast 1,1:1 i doslovno se ne vidi. Ovo posebno
+     važi za limeta pločice sa ikonom u karticama (`turning-point`,
+     `whats-included`, dugme za video, znak AI-a u prepisci): ikona ide
+     `text-primary-foreground`, a `Play` i slične pune ikone i
+     `fill-primary-foreground`. Isto važi i za dugme unutar limeta kolone — ono
+     je obrnuto: tamno sa limeta slovima.
+     Automatska provera kontrasta gleda samo tekst, ne SVG ikone, pa se limeta
+     pločice proveravaju okom posle svake izmene boja.
   2. **Limeta je akcenat, ne podloga za tekst.** Jedna limeta površina po
      stranici (kolona sa cenom), plus dugmad i sitne oznake. Ako limeta zauzme
      ceo pasus ili ceo oblačić, prestaje da bude akcenat.

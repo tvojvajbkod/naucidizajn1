@@ -70,7 +70,7 @@ export function WebinarForm() {
     return (
       <div className="rounded-2xl border border-foreground/10 bg-panel p-8 text-center md:p-10">
         <span className="mx-auto flex size-12 items-center justify-center rounded-full bg-primary">
-          <Check className="size-6 text-foreground" />
+          <Check className="size-6 text-primary-foreground" />
         </span>
         <h3 className="mt-5 font-medium text-2xl text-foreground tracking-[-0.02em]">
           Prijava je stigla

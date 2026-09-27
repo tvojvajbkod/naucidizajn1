@@ -59,14 +59,14 @@ export function HeroVideo() {
             ) : null}
             <span className="absolute inset-0 flex items-center justify-center bg-page/60">
               <span className="flex size-16 items-center justify-center rounded-full bg-primary transition-transform group-hover:scale-105">
-                <Play className="size-6 fill-foreground text-foreground" />
+                <Play className="size-6 fill-primary-foreground text-primary-foreground" />
               </span>
             </span>
           </button>
         ) : (
           <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 border border-background/20 border-dashed px-6 text-center">
             <span className="flex size-14 items-center justify-center rounded-full bg-primary">
-              <Video className="size-6 text-foreground" aria-hidden="true" />
+              <Video className="size-6 text-primary-foreground" aria-hidden="true" />
             </span>
             <span className="font-medium text-foreground/70 text-sm">Mesto za video</span>
             {isProposal ? (

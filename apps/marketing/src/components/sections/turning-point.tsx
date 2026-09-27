@@ -40,7 +40,7 @@ export function TurningPointSection() {
         {points.map((point) => (
           <div key={point.title} className="rounded-2xl border bg-card p-7">
             <div className="flex size-11 items-center justify-center rounded-xl bg-primary">
-              <point.icon className="size-5 text-foreground" />
+              <point.icon className="size-5 text-primary-foreground" />
             </div>
             <h3 className="mt-5 font-semibold text-foreground text-lg">{point.title}</h3>
             <p className="mt-2.5 text-muted-foreground leading-relaxed">{point.body}</p>

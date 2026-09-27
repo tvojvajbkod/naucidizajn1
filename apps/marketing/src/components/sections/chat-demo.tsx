@@ -87,7 +87,7 @@ function PersonAvatar({ photo }: { photo?: string }) {
 function AiAvatar() {
   return (
     <div className="flex size-10 shrink-0 items-center justify-center rounded-full bg-primary">
-      <Sparkles className="size-5 text-foreground" aria-hidden="true" />
+      <Sparkles className="size-5 text-primary-foreground" aria-hidden="true" />
     </div>
   );
 }

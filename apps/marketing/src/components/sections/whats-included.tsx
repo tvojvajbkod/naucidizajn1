@@ -145,7 +145,7 @@ export function WhatsIncludedSection() {
             >
               <div className="group h-full rounded-2xl border border-border bg-card p-6 transition duration-200 hover:-translate-y-1 hover:border-background/30 hover:bg-background/[0.1] motion-reduce:translate-none! motion-reduce:transition-colors">
                 <div className="flex size-10 items-center justify-center rounded-lg bg-primary transition-transform duration-200 group-hover:scale-110 motion-reduce:scale-100!">
-                  <item.icon className="size-5 text-foreground" />
+                  <item.icon className="size-5 text-primary-foreground" />
                 </div>
                 <h3 className="mt-4 font-semibold text-foreground">{item.title}</h3>
                 <p className="mt-2 text-foreground/70 text-sm leading-relaxed">

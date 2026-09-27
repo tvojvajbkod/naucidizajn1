@@ -54,7 +54,7 @@ function VideoCard({ item }: { item: VideoTestimonial }) {
             ) : null}
             <span className="absolute inset-0 flex items-center justify-center bg-page/60">
               <span className="flex size-16 items-center justify-center rounded-full bg-primary transition-transform group-hover:scale-105">
-                <Play className="size-6 fill-foreground text-foreground" />
+                <Play className="size-6 fill-primary-foreground text-primary-foreground" />
               </span>
             </span>
           </button>
@@ -80,7 +80,7 @@ function EmptySlot({ index }: { index: number }) {
     <figure className="mx-auto w-full max-w-[300px]">
       <div className="flex aspect-[9/16] w-full flex-col items-center justify-center gap-3 rounded-2xl border border-foreground/20 border-dashed bg-panel/50 px-6 text-center">
         <span className="flex size-14 items-center justify-center rounded-full bg-primary">
-          <Video className="size-6 text-foreground" />
+          <Video className="size-6 text-primary-foreground" />
         </span>
         <span className="font-medium text-foreground">Mesto za video utisak {index}</span>
         <span className="text-foreground/50 text-xs leading-relaxed">

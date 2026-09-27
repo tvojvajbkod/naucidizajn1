@@ -1,5 +1,6 @@
 import { JsonLd, faqJsonLd } from "@/components/json-ld";
 import { CaseStudyTeaserSection } from "@/components/sections/case-study-teaser";
+import { ChatDemoSection } from "@/components/sections/chat-demo";
 import { CtaSection } from "@/components/sections/cta";
 import { FAQSection } from "@/components/sections/faq";
 import { FitCheckSection } from "@/components/sections/fit-check";
@@ -28,6 +29,7 @@ export default function HomePage() {
       <HeroSection />
       <TurningPointSection />
       <StatBandSection />
+      <ChatDemoSection />
       <WhatsIncludedSection />
       <TimelineSection />
       <FitCheckSection />

@@ -80,7 +80,7 @@ export function ProofSection({ limit }: { limit?: number }) {
       <div className="mx-auto max-w-6xl px-6">
         <div className="max-w-2xl">
           <h2 className="font-medium text-3xl text-ink tracking-[-0.02em] md:text-4xl">
-            Šta kažu ljudi koji plaćaju
+            Šta kažu naši studenti
           </h2>
           <p className="mt-4 text-lg text-muted-foreground">
             Ocena zajednice je {stats.skoolRating} na {stats.skoolReviews} recenzija. Uz svaku stoji
@@ -102,11 +102,10 @@ export function ProofSection({ limit }: { limit?: number }) {
 
         <VideoWall />
 
-        <h3 className="mt-16 font-medium text-2xl text-ink tracking-[-0.02em] md:text-3xl">
-          Šta naši studenti kažu o nama
-        </h3>
-
-        <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        {/* Bez međunaslova (odluka 27.09.): naslov sekcije već kaže da su ovo
+            utisci studenata, pa bi „Šta naši studenti kažu o nama" bila ista
+            rečenica dva puta. Kartice idu odmah ispod video trake. */}
+        <div className="mt-16 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {written.map((item) => (
             <StudentCard key={item.name} item={item} />
           ))}

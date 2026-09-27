@@ -3,7 +3,7 @@
  *
  * Najjači dokaz koji sajt može da ima — čovek koji govori svojim licem i imenom
  * teže se falsifikuje od teksta u navodnicima. Zato video traka stoji na vrhu
- * sekcije „Šta kažu ljudi koji plaćaju", dakle neposredno pre cene.
+ * sekcije „Šta kažu naši studenti“, dakle neposredno pre cene.
  *
  * Pravila su ista kao za radove polaznika:
  * - ništa se ne izmišlja — ni ime, ni rečenica, ni rezultat,

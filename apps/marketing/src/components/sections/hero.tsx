@@ -3,12 +3,11 @@ import { BigStat } from "@/components/big-stat";
 import { HeroVideo } from "@/components/hero-video";
 import { links, membership, stats } from "@/lib/brand";
 import { ArrowRight } from "lucide-react";
-import Link from "next/link";
 
 /**
  * Hero je AI-first: najnovija ponuda je ono što posetilac vidi prvo.
- * Dva CTA-a, oba iznad preloma — jedan za odlučne, jedan za one koji prvo gledaju.
- * Cena stoji odmah uz dugme; zatečeni sajt ju je krio do Skool checkout-a.
+ * Jedno dugme, i cena stoji odmah uz njega; zatečeni sajt ju je krio do Skool
+ * checkout-a.
  *
  * Raspored je CENTRIRAN (odluka 25.09.): naslov, tekst, snimak i dugmad stoje
  * u jednoj osi po sredini. Ranije je sve bilo levo poravnato, pa je desna
@@ -42,7 +41,9 @@ export function HeroSection() {
 
         <HeroVideo />
 
-        <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-center">
+        {/* Jedno dugme, ne dva: sekundarno („Vidi kako izgleda iznutra") uklonjeno
+            25.09. — ista stranica se otvara iz navigacije. */}
+        <div className="mt-8 flex justify-center">
           <a
             href={links.skool}
             target="_blank"
@@ -52,13 +53,6 @@ export function HeroSection() {
             Pridruži se — {membership.price} mesečno
             <ArrowRight className="size-4" />
           </a>
-          {/* Sekundarno dugme je maslinasto sa limeta tekstom — par preuzet sa postojećeg sajta. */}
-          <Link
-            href="/ai-web-dizajner"
-            className="inline-flex items-center justify-center rounded bg-olive px-7 py-4 font-semibold text-primary transition-colors hover:bg-olive/85"
-          >
-            Vidi kako izgleda iznutra
-          </Link>
         </div>
 
         <p className="mt-4 text-background/55 text-sm">

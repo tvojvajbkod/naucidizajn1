@@ -1,5 +1,6 @@
 "use client";
 
+import { Accent } from "@/components/accent";
 import {
   Calculator,
   CalendarDays,
@@ -122,7 +123,7 @@ export function WhatsIncludedSection() {
       <div className="mx-auto max-w-6xl px-6">
         <div className="max-w-2xl">
           <h2 className="font-medium text-3xl text-background tracking-[-0.02em] md:text-4xl">
-            Šta dobijaš
+            Šta <Accent tone="lime">dobijaš</Accent> u Skool zajednici
           </h2>
           <p className="mt-4 text-background/75 text-lg">
             Sve na jednom mestu, na srpskom. Jedna članarina nosi ceo put od četiri meseca — izrada

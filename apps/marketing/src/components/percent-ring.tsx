@@ -6,7 +6,8 @@ import { useEffect, useLayoutEffect, useRef, useState } from "react";
  * Procenat kao krug koji se ispunjava, sa brojem koji broji do cilja.
  *
  * Kreće tek kad krug uđe u vidokrug — animacija koja se odigra dok je posetilac
- * na vrhu strane nije viđena ni jednom.
+ * na vrhu strane nije viđena ni jednom. Luk se puni od leve strane, preko vrha,
+ * nadesno — kao da se čita.
  *
  * Pravila:
  * - Bez JavaScript-a i pre hidracije na ekranu stoji KONAČNA vrednost, ne nula.
@@ -101,7 +102,9 @@ export function PercentRing({
   }, [target]);
 
   const progress = target > 0 ? Math.min(1, shown / target) * (target / 100) : 0;
-  const angle = (progress * 360 - 90) * (Math.PI / 180);
+  // Luk kreće sa LEVE strane (9 sati) i ide preko vrha nadesno — odluka 27.09.
+  // Ranije je kretao sa vrha. Zato je i ugao tačke pomeren za 180°.
+  const angle = (progress * 360 + 180) * (Math.PI / 180);
   const dotX = SIZE / 2 + RADIUS * Math.cos(angle);
   const dotY = SIZE / 2 + RADIUS * Math.sin(angle);
 
@@ -128,7 +131,7 @@ export function PercentRing({
             fill="none"
             strokeWidth={STROKE}
             strokeLinecap="round"
-            transform={`rotate(-90 ${SIZE / 2} ${SIZE / 2})`}
+            transform={`rotate(180 ${SIZE / 2} ${SIZE / 2})`}
             strokeDasharray={CIRCUMFERENCE}
             strokeDashoffset={CIRCUMFERENCE * (1 - progress)}
             className="stroke-ink"

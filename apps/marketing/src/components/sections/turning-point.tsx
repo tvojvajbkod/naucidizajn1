@@ -28,7 +28,7 @@ export function TurningPointSection() {
     <section className="mx-auto max-w-6xl px-6 py-20 md:py-24">
       <div className="max-w-2xl">
         <h2 className="font-medium text-3xl text-ink tracking-[-0.02em] md:text-4xl">
-          Zašto baš <Accent>sad</Accent>
+          Zašto je pravo vreme da <Accent>baš sada</Accent> kreneš sa AI web dizajnom
         </h2>
         <p className="mt-4 text-lg text-muted-foreground">
           Web dizajn se u poslednje dve godine promenio više nego u prethodnih deset. Evo šta je

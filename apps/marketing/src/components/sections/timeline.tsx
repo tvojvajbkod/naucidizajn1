@@ -1,5 +1,6 @@
 "use client";
 
+import { Accent } from "@/components/accent";
 import { type ProgramMonth, programMonths } from "@/lib/program";
 import { Check } from "lucide-react";
 import { useEffect, useLayoutEffect, useRef, useState } from "react";
@@ -99,7 +100,7 @@ export function TimelineSection() {
       <div className="mx-auto max-w-6xl px-6">
         <div className="max-w-2xl">
           <h2 className="font-medium text-3xl text-ink tracking-[-0.02em] md:text-4xl">
-            Tvoj put za naredna 4 meseca
+            <Accent>Tvoj put</Accent> za naredna 4 meseca
           </h2>
           <p className="mt-4 text-ink/70 text-lg">
             Svaki mesec ima svoju temu i svoj ishod. Ne biraš sam šta ćeš učiti i ne vrtiš se u krug

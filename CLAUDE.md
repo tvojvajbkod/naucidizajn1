@@ -183,7 +183,7 @@ Skool). Ono je heroj početne strane i ima svoju punu landing stranu.
 - **Dve sekcije sa oblačićima moraju da ostanu različite** (odluka 27.09.).
   Na početnoj postoje dve: „Kako ti praviš sajt" (`chat-demo.tsx`) je prepiska
   čoveka i AI-a — avatari, naizmenične strane, jedan okvir oko svega, centrirano;
-  „Kad zapneš, ne zapinješ sam" (`community-help.tsx`) je zajednica — dugmad sa
+  „Kad zapneš — tu je podrška zajednice" (`community-help.tsx`) je zajednica — dugmad sa
   problemima, bez avatara, oblačići su kartice sa ulogom u zaglavlju, levo
   poravnato. Razdvojene su sa tri sekcije između. Ako neko menja jednu, mora da
   proveri da ne postaje kopija druge.

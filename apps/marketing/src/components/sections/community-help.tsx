@@ -171,7 +171,7 @@ export function CommunityHelpSection() {
     <section id="zajednica" className="py-20 md:py-24">
       <div className="mx-auto max-w-3xl px-6">
         <h2 className="font-medium text-3xl text-ink tracking-[-0.02em] md:text-4xl">
-          Kad zapneš, <Accent>ne zapinješ sam</Accent>
+          Kad zapneš — tu je <Accent>podrška zajednice</Accent>
         </h2>
         <p className="mt-4 text-lg text-muted-foreground leading-relaxed">
           Svaki posao donese nešto što ne znaš. U zajednici pitaš, i odgovor ne stiže od jedne osobe

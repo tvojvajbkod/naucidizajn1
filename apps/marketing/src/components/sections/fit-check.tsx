@@ -91,7 +91,7 @@ export function FitCheckSection() {
           Da li je ovo za <Accent>tebe</Accent>
         </h2>
         <p className="mt-4 max-w-2xl text-lg text-muted-foreground">
-          Radije ćemo da odustaneš sada nego da tražiš povraćaj novca za mesec dana.
+          Razmisli, i daj iskren odgovor sebi.
         </p>
 
         <div ref={ref} className="mt-10 grid gap-5 md:grid-cols-2">

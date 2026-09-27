@@ -18,7 +18,7 @@ export function CaseStudyTeaserSection() {
           <div>
             <p className="font-medium text-ink/60 text-sm">Bez uvijanja</p>
             <h2 className="mt-3 font-medium text-3xl text-ink tracking-[-0.02em] md:text-4xl">
-              Pogledaj ceo posao pre nego što platiš išta
+              Pogledaj celi postupak pre nego što doneseš odluku
             </h2>
             <p className="mt-4 text-ink/70 text-lg leading-relaxed">
               Raspakovali smo jedan projekat od prve poruke klijentu do naplate — sa doslovnim

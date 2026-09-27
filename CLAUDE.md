@@ -174,6 +174,27 @@ Skool). Ono je heroj početne strane i ima svoju punu landing stranu.
   traka je jedna po stranici; na tamnim sekcijama tekst je `text-background` /
   `text-background/75`, kartice `bg-background/[0.06]` uz `border-background/15`,
   sitne oznake u limeti. Ako menjaš podloge, prvo izmeri udeo — ne procenjuj.
+- **Centrirano je rezervisano za dva trenutka** (odluka 27.09.): hero i sekcija
+  sa prepiskom („Kako ti praviš sajt", `chat-demo.tsx`). Tamo je i sadržaj ispod
+  naslova simetričan, pa centriranje ima smisla. SVE ostale sekcije su levo
+  poravnate — naslov, uvod, kartice i spiskovi. Razlog nije ukus nego čitanje:
+  čim pasus pređe tri reda ili ispod njega dođe spisak, centriran tekst usporava
+  jer levi rub postaje nazubljen. Ne centriraj „da bude ujednačeno".
+- **Dve sekcije sa oblačićima moraju da ostanu različite** (odluka 27.09.).
+  Na početnoj postoje dve: „Kako ti praviš sajt" (`chat-demo.tsx`) je prepiska
+  čoveka i AI-a — avatari, naizmenične strane, jedan okvir oko svega, centrirano;
+  „Kad zapneš, ne zapinješ sam" (`community-help.tsx`) je zajednica — dugmad sa
+  problemima, bez avatara, oblačići su kartice sa ulogom u zaglavlju, levo
+  poravnato. Razdvojene su sa tri sekcije između. Ako neko menja jednu, mora da
+  proveri da ne postaje kopija druge.
+  `community-help.tsx` još: bez skripte prikazuje SVA tri slučaja sa svim
+  odgovorima (sadržaj mora da se čita i kad JS ne radi), pa se tek na montiranju
+  svodi na izabrani; `prefers-reduced-motion` preskače kucanje i odmah prikaže
+  odgovore; visina oblačića je rezervisana i dok su nevidljivi, da strana ne
+  poskoči. Sadržaj je u `src/lib/community.ts` — uloge umesto imena, bez
+  izmišljenih zarada, i ispod sekcije stoji da su pitanja i odgovori primeri dok
+  ne stignu prave poruke uz saglasnost autora. `replyMinutes` se popunjava samo
+  stvarnim brojem iz Skool-a; prazno = ne prikazuje se.
 - **Dve susedne sekcije ne smeju da izgledaju isto — NI NA JEDNOJ stranici**
   (odluka 25.09.). Ne važi samo za početnu. Zato: FAQ je na krem podlozi (inače
   bi Membership → FAQ → CTA bile tri bele zaredom), `CtaSection` ima `surface`

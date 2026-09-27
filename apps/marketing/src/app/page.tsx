@@ -1,6 +1,7 @@
 import { JsonLd, faqJsonLd } from "@/components/json-ld";
 import { CaseStudyTeaserSection } from "@/components/sections/case-study-teaser";
 import { ChatDemoSection } from "@/components/sections/chat-demo";
+import { CommunityHelpSection } from "@/components/sections/community-help";
 import { CtaSection } from "@/components/sections/cta";
 import { FAQSection } from "@/components/sections/faq";
 import { FitCheckSection } from "@/components/sections/fit-check";
@@ -32,6 +33,7 @@ export default function HomePage() {
       <ChatDemoSection />
       <WhatsIncludedSection />
       <TimelineSection />
+      <CommunityHelpSection />
       <FitCheckSection />
       <WorksWallSection limit={3} />
       <CaseStudyTeaserSection />

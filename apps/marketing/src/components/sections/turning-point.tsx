@@ -8,17 +8,17 @@ import { Clock, TrendingUp, Users } from "lucide-react";
 const points = [
   {
     icon: Clock,
-    title: "Izrada više nije usko grlo",
+    title: "Štedi vreme",
     body: "Ono što je nekad tražilo mesece učenja alata sada staje u nekoliko sati rada sa AI-em. Vreme koje si trošio na izradu sada ide na traženje klijenata.",
   },
   {
     icon: Users,
-    title: "Ogroman broj firmi još nema pristojan sajt",
+    title: "Veliki broj firmi još nema pristojan sajt, ili nema sajt uopšte",
     body: "Male firme, zanatlije i lokalne usluge posluju sa stranicom na Instagramu ili sajtom od pre deset godina. To je tržište koje ne traži agenciju, nego nekoga ko je dostupan i brz.",
   },
   {
     icon: TrendingUp,
-    title: "Prednost ima onaj ko prvi uđe",
+    title: "Prednost ima onaj ko prvi savlada veštinu",
     body: "Alati su svima dostupni, ali malo ko zna kako da od njih napravi uslugu koja se naplaćuje. Ta razlika se neće držati zauvek.",
   },
 ];

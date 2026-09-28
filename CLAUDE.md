@@ -231,6 +231,16 @@ Skool). Ono je heroj početne strane i ima svoju punu landing stranu.
     nabrajanje, neka prvo obriše sekciju gore.
   Nova landing strana se pravi samo ako postoji DRUGA publika ili druga ponuda,
   ne zato što „treba nam još jedna stranica".
+- **Postupak se prikazuje kao tok, ne kao spisak** (odluka 28.09.).
+  `components/ui/how-it-works.tsx` crta korake sa brojevima na liniji —
+  vodoravno na računaru, uspravno na telefonu. Linija se crta PO KORAKU (svaki
+  korak ima segment do sledećeg), ne kao jedna linija preko celog niza, jer bi
+  inače virila iza poslednjeg broja.
+  Uz svaki korak ide jedna rečenica iz polja `short` u `case-studies.ts` —
+  posebno napisana, nije skraćeni `body`. Ceo tekst koraka ostaje na stranici
+  studije slučaja; ovo je najava, ne sam postupak.
+  Na početnoj se prikazuje pet od sedam koraka. Nije zbog prostora nego zbog
+  razloga da se klikne: poslednja dva su cena i naplata.
 - **Podloga je preliv, ne ravna boja** (odluka 28.09.).
   `components/ui/elegant-dark-pattern.tsx` (`DarkGradientBg`) obavija ceo sajt u
   `layout.tsx` i crta ambijent: blagi preliv odozgo nadole, tri vrlo slaba

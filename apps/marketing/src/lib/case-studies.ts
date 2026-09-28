@@ -33,6 +33,12 @@ export interface CaseStep {
   /** Npr. „Dan 1" ili „Korak 2". */
   label: string;
   title: string;
+  /**
+   * Jedna rečenica koja ceo korak svede na ono što se pamti. Koristi je prikaz
+   * postupka na početnoj (`HowItWorks`), gde nema mesta za ceo pasus.
+   * Nije skraćeni `body` — piše se posebno, da se čita sama za sebe.
+   */
+  short?: string;
   body: string;
   /** Doslovan prompt ili poruka, kad ih korak ima. */
   snippet?: string;
@@ -85,11 +91,13 @@ const demonstracija: CaseStudy = {
     {
       label: "Korak 1",
       title: "Nalaženje klijenta kome sajt stvarno fali",
+      short: "Uzak profil umesto „bilo ko kome treba sajt“.",
       body: "Ne tražiš „bilo koga kome treba sajt“, nego uzak profil: zanatska radnja ili lokalna usluga koja već prodaje preko Instagrama, ima objavljene radove i fotografije, i dobija poruke sa pitanjem o ceni. Takav klijent ima dokaz da tražnja postoji i muku koju sajt rešava — ne moraš da ga ubeđuješ da mu internet treba. Praktično: pretraga po lokaciji i delatnosti, pa lista od trideset naloga koji ispunjavaju sva tri uslova.",
     },
     {
       label: "Korak 2",
       title: "Prva poruka",
+      short: "Kratka i konkretna, sa jednom stvari koju si stvarno video.",
       body: "Kratka, konkretna i bez pohvala koje zvuče kao šablon. Pomeni jednu stvar koju si stvarno video na njegovom profilu, imenuj problem koji mu to pravi i ponudi nešto malo. Cilj prve poruke nije prodaja nego odgovor.",
       snippetLabel: "Poruka",
       snippet:
@@ -98,11 +106,13 @@ const demonstracija: CaseStudy = {
     {
       label: "Korak 3",
       title: "Šta pitaš pre nego što otvoriš alat",
+      short: "Pet pitanja, ne petnaest.",
       body: "Pet pitanja, ne petnaest. Koje poslove najviše želi da radi, koje najmanje; koliko otprilike košta najčešći posao; ima li fotografije u pristojnoj rezoluciji; šta ljudi najčešće pitaju; kako želi da ga kontaktiraju. Odgovori na ovih pet pitanja su ceo sadržaj sajta — sve ostalo je oblik.",
     },
     {
       label: "Korak 4",
       title: "Prompt za strukturu",
+      short: "Prvi prompt traži redosled, ne izgled.",
       body: "Prvi prompt ne traži izgled nego redosled. AI dobro sklapa strukturu kad mu daš stvarne odgovore klijenta umesto opšteg opisa delatnosti. Loš prompt je „napravi sajt za stolara“ — dobija se isto što i svi drugi. Dobar prompt nosi ograničenja i rečenice klijenta.",
       snippetLabel: "Prompt",
       snippet:
@@ -111,16 +121,19 @@ const demonstracija: CaseStudy = {
     {
       label: "Korak 5",
       title: "Izrada i ono što AI ne radi umesto tebe",
+      short: "Struktura stiže brzo; izbor i provera ostaju na tebi.",
       body: "Struktura i tekst dolaze brzo. Ono što ostaje na tebi: izbor fotografija koje se ne ponavljaju, čitljivost cenovnika, redosled na mobilnom telefonu — jer će osamdeset odsto ljudi sajt otvoriti na telefonu — i provera da forma zaista stiže na mejl koji klijent otvara. Ovo je deo gde se razdvajaju oni koji su naučili alat od onih koji su naučili posao.",
     },
     {
       label: "Korak 6",
       title: "Kako se dolazi do cene",
+      short: "Cena izlazi iz vrednosti za klijenta, ne iz tvojih sati.",
       body: "Cena ne izlazi iz tvojih sati nego iz vrednosti za klijenta, ograničene onim što tržište podnosi. Računica: ako mu jedan prosečan posao donosi 1.500–3.000 € i sajt mu godišnje donese makar dva upita koja bi inače propao, sajt se isplatio višestruko. Zato je raspon 300–600 € za jednostranu izradu razuman u regionu — ispod toga radiš ispod cene, iznad toga za ovaj obim klijent traži agenciju. Ključna rečenica u ponudi nije cena nego šta je u nju uključeno i šta nije.",
     },
     {
       label: "Korak 7",
       title: "Predaja i naplata",
+      short: "Pola unapred, pola po predaji.",
       body: "Pola unapred, pola po predaji — standard koji te štiti i klijentu deluje ozbiljno. Uz sajt ide kratko uputstvo kako da sam menja cenovnik i dodaje fotografije, jer klijent koji ume sam da promeni cenu neće te zvati za svaku sitnicu, a tebe će preporučiti. Poslednji korak koji svi preskaču: traži da ti napiše dve rečenice utiska dok je zadovoljan. To je tvoj sledeći klijent.",
     },
   ],

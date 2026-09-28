@@ -125,22 +125,21 @@ function CaseBlock({
 }
 
 export function CommunityHelpSection() {
-  /** Dok je `false`, na strani stoje svi slučajevi — tako izgleda bez skripte. */
-  const [interactive, setInteractive] = useState(false);
   const [active, setActive] = useState(0);
-  const [shownCount, setShownCount] = useState(0);
+  /** Počinje sa SVIM odgovorima vidljivim: tako izgleda i bez skripte. */
+  const [shownCount, setShownCount] = useState(communityCases[0]?.answers.length ?? 0);
   const [typing, setTyping] = useState(false);
   const timers = useRef<number[]>([]);
   const activeCase = communityCases[active];
 
+  /** Sakrij ih pre prvog iscrtavanja, da se ne vidi treptaj. */
   useIsoLayoutEffect(() => {
-    setInteractive(true);
+    if (prefersReducedMotion()) return;
+    setShownCount(0);
   }, []);
 
   /** Pusti odgovore za izabrani slučaj. */
   useEffect(() => {
-    if (!interactive) return;
-
     for (const id of timers.current) window.clearTimeout(id);
     timers.current = [];
 
@@ -165,10 +164,10 @@ export function CommunityHelpSection() {
       for (const id of timers.current) window.clearTimeout(id);
       timers.current = [];
     };
-  }, [active, interactive]);
+  }, [active]);
 
   return (
-    <section id="zajednica" className="bg-panel py-20 md:py-24">
+    <section id="zajednica" className="scroll-mt-20 bg-panel py-20 md:py-24">
       <div className="mx-auto max-w-3xl px-6">
         <h2 className="font-medium text-3xl text-foreground tracking-[-0.02em] md:text-4xl">
           Kad zapneš — tu je <Accent>podrška zajednice</Accent>
@@ -181,7 +180,7 @@ export function CommunityHelpSection() {
 
         <div className="mt-8 flex flex-wrap gap-2.5">
           {communityCases.map((item, index) => {
-            const on = interactive && index === active;
+            const on = index === active;
             return (
               <button
                 key={item.problem}
@@ -201,15 +200,20 @@ export function CommunityHelpSection() {
         </div>
 
         <div className="mt-8">
-          {interactive && activeCase ? (
+          {activeCase ? (
             <CaseBlock key={active} item={activeCase} shownCount={shownCount} typing={typing} />
-          ) : (
-            <div className="space-y-10">
-              {communityCases.map((item) => (
+          ) : null}
+
+          {/* Bez skripte dugmad ne rade, pa ostali slučajevi stoje ovde.
+              Pregledač sa skriptom ovo ne iscrtava — zato sekcija ne menja
+              visinu posle hidracije (vidi objašnjenje na vrhu fajla). */}
+          <noscript>
+            <div className="space-y-10 pt-10">
+              {communityCases.slice(1).map((item) => (
                 <CaseBlock key={item.problem} item={item} shownCount={-1} typing={false} />
               ))}
             </div>
-          )}
+          </noscript>
         </div>
 
         <p className="mt-8 text-muted-foreground text-sm">

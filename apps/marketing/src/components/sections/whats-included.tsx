@@ -119,7 +119,7 @@ export function WhatsIncludedSection() {
   }, []);
 
   return (
-    <section id="sta-dobijas" className="bg-panel py-20 md:py-24">
+    <section id="sta-dobijas" className="scroll-mt-20 bg-panel py-20 md:py-24">
       <div className="mx-auto max-w-6xl px-6">
         <div className="max-w-2xl">
           <h2 className="font-medium text-3xl text-foreground tracking-[-0.02em] md:text-4xl">

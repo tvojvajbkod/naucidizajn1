@@ -246,6 +246,22 @@ Skool). Ono je heroj početne strane i ima svoju punu landing stranu.
   studije slučaja; ovo je najava, ne sam postupak.
   Na početnoj se prikazuje pet od sedam koraka. Nije zbog prostora nego zbog
   razloga da se klikne: poslednja dva su cena i naplata.
+- **Sekcija sme da menja providnost i pomeraj posle montiranja, ali NE i
+  visinu** (pravilo iz greške, 28.09.). Sekcija „Kad zapneš" je sa servera
+  slala sva tri slučaja, pa se posle hidracije skupljala za oko 840px. Next
+  skroluje na sidro (`/#cena`) PRE hidracije, pa je klik na „Cena" u meniju sa
+  druge stranice završavao na FAQ-u, 840px niže. Rešenje: vidljivi DOM pre i
+  posle hidracije je isti, a sadržaj za posetioca bez skripte stoji u
+  `<noscript>` — to se u pregledaču sa skriptom ne iscrtava i ne zauzima
+  visinu. Animacije pojavljivanja (providnost + `translateY`) su u redu jer
+  mesto ostaje zauzeto.
+  Provera: iz `/radovi` klikni „Cena" u meniju i izmeri
+  `document.getElementById("cena").getBoundingClientRect().top` posle 2-3 s —
+  mora da bude ~80 (visina lepljivog zaglavlja), ne negativan broj.
+- **Svako sidro ima `scroll-mt-20`.** Zaglavlje je lepljivo i visoko 56px; bez
+  odmaka naslov sekcije završi ispod njega. Važi za `#cena`, `#program`,
+  `#pitanja`, `#zajednica`, `#sta-dobijas`, `#utisci`, `#mentori`,
+  `#kako-pravis`.
 - **Podloga je preliv, ne ravna boja** (odluka 28.09.).
   `components/ui/elegant-dark-pattern.tsx` (`DarkGradientBg`) obavija ceo sajt u
   `layout.tsx` i crta ambijent: blagi preliv odozgo nadole, tri vrlo slaba

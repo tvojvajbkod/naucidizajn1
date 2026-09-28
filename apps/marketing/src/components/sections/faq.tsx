@@ -30,7 +30,10 @@ export function FAQSection({
   surface?: "plain" | "panel";
 }) {
   return (
-    <section id="pitanja" className={`py-20 md:py-24 ${surface === "panel" ? "bg-panel" : ""}`}>
+    <section
+      id="pitanja"
+      className={`scroll-mt-20 py-20 md:py-24 ${surface === "panel" ? "bg-panel" : ""}`}
+    >
       <div className="mx-auto max-w-3xl px-6">
         <h2 className="font-medium text-3xl text-foreground tracking-[-0.02em] md:text-4xl">
           {title}

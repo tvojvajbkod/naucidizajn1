@@ -35,7 +35,7 @@ const steps: Array<{ title: string; body: string }> = [
 
 export function MembershipOfferSection() {
   return (
-    <section id="cena" className="mx-auto max-w-6xl px-6 py-20 md:py-24">
+    <section id="cena" className="mx-auto max-w-6xl scroll-mt-20 px-6 py-20 md:py-24">
       <div className="overflow-hidden rounded-3xl border bg-card">
         <div className="grid md:grid-cols-2">
           {/* Kolona je bila PUNA limeta i bola je oči (izmena 28.09., na osnovu

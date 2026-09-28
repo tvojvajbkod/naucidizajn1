@@ -38,36 +38,41 @@ export function MembershipOfferSection() {
     <section id="cena" className="mx-auto max-w-6xl px-6 py-20 md:py-24">
       <div className="overflow-hidden rounded-3xl border bg-card">
         <div className="grid md:grid-cols-2">
-          {/* Jedina limeta površina na stranici. Tekst na njoj MORA biti taman
-              (`text-primary-foreground`) — svetli tekst na limeti ima kontrast
-              1,1:1 i ne može da se pročita. Dugme je ovde obrnuto: tamno sa
-              limeta slovima, jer limeta na limeti nestaje. */}
-          <div className="bg-primary p-8 md:p-12">
-            <p className="font-medium text-primary-foreground/70 text-sm">
+          {/* Kolona je bila PUNA limeta i bola je oči (izmena 28.09., na osnovu
+              utiska firme). Sada je prigušena tamnozelena `#16210B`: ponuda se
+              i dalje izdvaja od ostatka strane, ali limeta je vraćena tamo gde
+              treba da udari — na cenu i na dugme.
+
+              Tekst je ovde SVETAO, jer je podloga tamna. Ne vraćaj
+              `text-primary-foreground` na ovu kolonu: to je skoro crna boja i
+              na ovom prelivu se ne vidi. Ako neko ikad vrati punu limetu, ceo
+              tekst u koloni mora nazad u tamno. */}
+          <div className="bg-[radial-gradient(520px_260px_at_20%_-10%,rgba(183,255,0,0.22),transparent_66%),linear-gradient(180deg,#1a2410_0%,#101216_78%)] p-8 md:p-12">
+            <p className="font-medium text-foreground/70 text-sm">
               Članstvo · Postani AI web dizajner
             </p>
             <p className="mt-4 flex items-baseline gap-2">
-              <span className="font-medium text-5xl text-primary-foreground tracking-[-0.02em]">
+              <span className="font-medium text-5xl text-primary tracking-[-0.02em]">
                 {membership.price}
               </span>
-              <span className="text-lg text-primary-foreground/75">{membership.period}</span>
+              <span className="text-foreground/75 text-lg">{membership.period}</span>
             </p>
-            <p className="mt-3 text-primary-foreground/70 text-sm">{membership.priceNote}</p>
+            <p className="mt-3 text-foreground/70 text-sm">{membership.priceNote}</p>
 
             <a
               href={links.skool}
               target="_blank"
               rel="noreferrer noopener"
-              className="mt-8 inline-flex w-full items-center justify-center gap-2 rounded bg-primary-foreground px-6 py-3.5 font-semibold text-primary transition-colors hover:bg-panel"
+              className="mt-8 inline-flex w-full items-center justify-center gap-2 rounded bg-primary px-6 py-3.5 font-semibold text-primary-foreground transition-colors hover:bg-glow"
             >
               Pridruži se zajednici
               <ArrowRight className="size-4" />
             </a>
 
-            <div className="mt-6 flex gap-3 rounded-xl bg-primary-foreground/[0.08] p-4">
-              <Info className="mt-0.5 size-4 shrink-0 text-primary-foreground/70" />
-              <p className="text-primary-foreground/80 text-sm leading-relaxed">
-                <strong className="font-semibold text-primary-foreground">
+            <div className="mt-6 flex gap-3 rounded-xl border border-foreground/10 bg-foreground/[0.06] p-4">
+              <Info className="mt-0.5 size-4 shrink-0 text-foreground/60" />
+              <p className="text-foreground/80 text-sm leading-relaxed">
+                <strong className="font-semibold text-foreground">
                   Otkazuješ sam, u svakom trenutku.
                 </strong>{" "}
                 Pretplatu gasiš iz svog naloga — bez poziva, mejla i objašnjenja. Ostaje aktivna do

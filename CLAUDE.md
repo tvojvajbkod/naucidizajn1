@@ -177,6 +177,11 @@ Skool). Ono je heroj početne strane i ima svoju punu landing stranu.
   boju.
 
   Tri pravila koja se ne smeju prekršiti:
+  0. **Nema više pune limeta površine** (izmena 28.09.): kolona sa cenom je
+     bola oči. Sada je preliv — zeleni sjaj odozgo koji se gasi ka dnu
+     (`membership-offer.tsx`), sa SVETLIM tekstom, a limeta je ostala na ceni i
+     na dugmetu. Pravilo ispod i dalje važi za svaku limeta površinu koja bi se
+     ikad vratila (dugmad, sitne oznake).
   1. **Na limeti je sve tamno** (`text-primary-foreground`) — i tekst i **ikone**.
      Svetlo na `#B7FF00` ima kontrast 1,1:1 i doslovno se ne vidi. Ovo posebno
      važi za limeta pločice sa ikonom u karticama (`turning-point`,

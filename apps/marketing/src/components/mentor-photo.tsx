@@ -1,3 +1,4 @@
+import { assetPath } from "@/lib/asset";
 import { isProposal } from "@/lib/brand";
 import type { Mentor } from "@/lib/testimonials";
 import { ImagePlus } from "lucide-react";
@@ -16,7 +17,7 @@ export function MentorPhoto({ mentor }: { mentor: Mentor }) {
     <div className="relative aspect-[4/5] w-full overflow-hidden rounded-xl bg-foreground/[0.06]">
       {mentor.photo ? (
         <Image
-          src={mentor.photo}
+          src={assetPath(mentor.photo)}
           alt={`${mentor.name}, ${mentor.role}`}
           fill
           sizes="(max-width: 768px) 100vw, 33vw"

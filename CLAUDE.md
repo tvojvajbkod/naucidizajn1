@@ -314,6 +314,17 @@ Skool). Ono je heroj početne strane i ima svoju punu landing stranu.
   svaku stranicu izlistaj `main > *`, uzmi `backgroundColor` i podlogu najvećeg
   unutrašnjeg panela, i traži dve iste vrednosti zaredom. Prozirna podloga
   (`rgba(0,0,0,0)`) je BELA — računa se.
+- **Slika iz `public/` IDE KROZ `assetPath()`** (pravilo iz greške, 28.09.).
+  Ista zamka kao `<Link>`: sajt živi u podfolderu `/naucidizajn1`, `<Link>` ga
+  dodaje sam, ali `next/image` u statičkom izvozu NE — tamo je
+  `images.unoptimized: true`, pa Next služi `src` onakav kakav je dobio. Slika
+  upisana kao „/blog/slika.jpg" završi na 404, i to SAMO na objavljenom sajtu;
+  u razvoju, gde podfoldera nema, izgleda ispravno.
+  `src/lib/asset.ts` dodaje podfolder; koristi se svuda gde `src` dolazi iz
+  našeg sadržaja (`page-image`, `mentor-photo`, `student-photo`, `video-wall`,
+  `hero-video`, `site-logo`, `screenshot`, `chat-demo`, blog).
+  Provera pre objave: otvori objavljenu stranu sa slikom i pogledaj mrežne
+  zahteve — nijedan ne sme da bude 404 na putanji bez podfoldera.
 - **Unutrašnji link IDE KROZ `<Link>`, nikad kroz `<a href="/...">`.** Sajt
   živi u podfolderu (`/naucidizajn1`); `<Link>` sam dodaje taj prefiks, obično
   `<a>` ne — i link završi na 404. Greška se ne vidi u razvoju (tamo nema

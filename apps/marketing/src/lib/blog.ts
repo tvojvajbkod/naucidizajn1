@@ -16,12 +16,25 @@ import { createClient } from "@supabase/supabase-js";
  * ispraviti iz admin portala bez novog deploy-a.
  */
 
+/** Naslovna slika objave. Stoji u zaglavlju teksta i na kartici u spisku. */
+export interface BlogCover {
+  /** Putanja u `public/`, npr. „/blog/ime-objave.jpg". */
+  src: string;
+  /**
+   * Opis za čitače ekrana i za slučaj da se slika ne učita. Piše ŠTA SE VIDI,
+   * bez reči „slika" — to čitač ekrana već kaže.
+   */
+  alt: string;
+}
+
 export interface BlogPost {
   slug: string;
   title: string;
   description: string;
   content: string;
   publishedAt: string | null;
+  /** Objave iz baze je nemaju; postavlja se samo za objave iz `posts.ts`. */
+  cover?: BlogCover;
 }
 
 interface PostRow {

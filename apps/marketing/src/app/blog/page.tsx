@@ -1,8 +1,10 @@
 import { Accent } from "@/components/accent";
 import { CtaSection } from "@/components/sections/cta";
+import { assetPath } from "@/lib/asset";
 import { getPublishedPosts } from "@/lib/blog";
 import { buildMetadata } from "@/lib/seo";
 import { ArrowRight } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 
 export const metadata = buildMetadata({
@@ -49,19 +51,34 @@ export default async function BlogPage() {
               <li key={post.slug}>
                 <Link
                   href={`/blog/${post.slug}`}
-                  className="group flex h-full flex-col rounded-2xl border bg-card p-7 transition-colors hover:border-primary/40"
+                  className="group flex h-full flex-col overflow-hidden rounded-2xl border bg-card transition-colors hover:border-primary/40"
                 >
-                  {post.publishedAt ? (
-                    <p className="text-muted-foreground text-sm">{formatDate(post.publishedAt)}</p>
+                  {post.cover ? (
+                    <div className="relative aspect-[16/9] w-full overflow-hidden border-b">
+                      <Image
+                        src={assetPath(post.cover.src)}
+                        alt={post.cover.alt}
+                        fill
+                        sizes="(min-width: 768px) 50vw, 100vw"
+                        className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+                      />
+                    </div>
                   ) : null}
-                  <h2 className="mt-3 font-medium text-foreground text-xl leading-snug tracking-[-0.01em]">
-                    {post.title}
-                  </h2>
-                  <p className="mt-3 text-muted-foreground leading-relaxed">{post.description}</p>
-                  <span className="mt-6 inline-flex items-center gap-2 font-medium text-primary text-sm">
-                    Pročitaj
-                    <ArrowRight className="size-4 transition-transform group-hover:translate-x-0.5" />
-                  </span>
+                  <div className="flex flex-1 flex-col p-7">
+                    {post.publishedAt ? (
+                      <p className="text-muted-foreground text-sm">
+                        {formatDate(post.publishedAt)}
+                      </p>
+                    ) : null}
+                    <h2 className="mt-3 font-medium text-foreground text-xl leading-snug tracking-[-0.01em]">
+                      {post.title}
+                    </h2>
+                    <p className="mt-3 text-muted-foreground leading-relaxed">{post.description}</p>
+                    <span className="mt-6 inline-flex items-center gap-2 font-medium text-primary text-sm">
+                      Pročitaj
+                      <ArrowRight className="size-4 transition-transform group-hover:translate-x-0.5" />
+                    </span>
+                  </div>
                 </Link>
               </li>
             ))}

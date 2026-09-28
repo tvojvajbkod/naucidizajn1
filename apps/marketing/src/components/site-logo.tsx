@@ -1,3 +1,4 @@
+import { assetPath } from "@/lib/asset";
 import { isProposal, logo } from "@/lib/brand";
 import { cn } from "@repo/ui";
 import Image from "next/image";
@@ -13,7 +14,7 @@ export function SiteLogo({ className }: { className?: string }) {
   if (logo.src) {
     return (
       <Image
-        src={logo.src}
+        src={assetPath(logo.src)}
         alt={logo.alt}
         width={logo.width}
         height={logo.height}

@@ -1,5 +1,6 @@
 "use client";
 
+import { assetPath } from "@/lib/asset";
 import { isProposal } from "@/lib/brand";
 import { type VideoTestimonial, publishedVideos, videoSlotCount } from "@/lib/videos";
 import { Play, Video } from "lucide-react";
@@ -45,7 +46,7 @@ function VideoCard({ item }: { item: VideoTestimonial }) {
           >
             {item.poster ? (
               <Image
-                src={item.poster}
+                src={assetPath(item.poster)}
                 alt=""
                 fill
                 sizes="(max-width: 768px) 100vw, 33vw"

@@ -1,3 +1,4 @@
+import { assetPath } from "@/lib/asset";
 import { isProposal } from "@/lib/brand";
 import { ImagePlus } from "lucide-react";
 import Image from "next/image";
@@ -36,7 +37,7 @@ export function PageImage({
     return (
       <div className="relative aspect-[3/2] w-full overflow-hidden rounded-xl border">
         <Image
-          src={src}
+          src={assetPath(src)}
           alt={alt ?? ""}
           fill
           sizes="(min-width: 768px) 40vw, 100vw"

@@ -1,6 +1,7 @@
 "use client";
 
 import { Accent } from "@/components/accent";
+import { assetPath } from "@/lib/asset";
 import { isProposal } from "@/lib/brand";
 import { Sparkles, UserRound } from "lucide-react";
 import Image from "next/image";
@@ -68,7 +69,7 @@ function PersonAvatar({ photo }: { photo?: string }) {
   if (photo) {
     return (
       <div className="relative size-10 shrink-0 overflow-hidden rounded-full">
-        <Image src={photo} alt="" fill sizes="40px" className="object-cover" />
+        <Image src={assetPath(photo)} alt="" fill sizes="40px" className="object-cover" />
       </div>
     );
   }

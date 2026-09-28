@@ -17,6 +17,9 @@ import type { BlogPost } from "@/lib/blog";
  *    piše se u `title`, ne u tekstu.
  * 4. `publishedAt` je `YYYY-MM-DD`. Objave se ređaju po tom datumu, najnovija
  *    prva.
+ * 5. `cover` je naslovna slika — fajl u `public/blog/`, odnos stranica 16:9,
+ *    širina oko 1600 px. Nije obavezna: bez nje objava izgleda uredno, samo
+ *    bez slike. `alt` piše šta se na slici vidi.
  *
  * ŠTA SE NE SME
  * - Ne izmišljaj brojke, imena polaznika ni tuđe rezultate. Isto pravilo kao za
@@ -32,6 +35,10 @@ export const localPosts: BlogPost[] = [
     description:
       "Umesto slanja ponuda u prazno, klijenti se traže na mapi — lokalne firme koje nemaju sajt ili imaju zastareo. Postupak u četiri koraka.",
     publishedAt: "2026-09-28",
+    cover: {
+      src: "/blog/klijenti-preko-google-mapa.jpg",
+      alt: "Laptop sa otvorenom mapom grada i spiskom lokalnih firmi pored naslova teksta",
+    },
     content: `Većina početnika i frilensera u web dizajnu pravi istu grešku kada je u pitanju pronalazak prvih klijenata: otvaraju društvene mreže, šalju generičke poruke u prazno ili se nadaju da će ih neko sam kontaktirati.
 
 Postoji jednostavan, a izuzetno efikasan trik koji ubrzava pronalazak klijenata koji zaista imaju i novac i potrebu za novim sajtom — korišćenje Google Mapa.

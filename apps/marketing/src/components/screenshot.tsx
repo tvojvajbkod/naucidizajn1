@@ -1,3 +1,4 @@
+import { assetPath } from "@/lib/asset";
 import { cn } from "@repo/ui";
 import Image from "next/image";
 
@@ -40,7 +41,7 @@ export function Screenshot({
       {/* 16:10 okvir — snimci se seku na vrhu strane, kao u pregledaču. */}
       <div className="relative aspect-[16/10] w-full bg-panel">
         <Image
-          src={src}
+          src={assetPath(src)}
           alt={alt}
           fill
           priority={priority}

@@ -1,10 +1,12 @@
 import { CtaSection } from "@/components/sections/cta";
+import { assetPath } from "@/lib/asset";
 import { getPost, getPublishedPosts } from "@/lib/blog";
 import { brand } from "@/lib/brand";
 import { ogImage } from "@/lib/seo";
 import { marketingEnv } from "@repo/config/marketing-env";
 import { ArrowLeft } from "lucide-react";
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import ReactMarkdown from "react-markdown";
@@ -127,6 +129,21 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
           </h1>
           {post.description ? (
             <p className="mt-5 text-lg text-muted-foreground leading-relaxed">{post.description}</p>
+          ) : null}
+
+          {/* Naslovna slika stoji ISPOD naslova, ne iznad: naslov i datum su ono
+              zbog čega je čitalac kliknuo, pa ne treba da ih gura niže. */}
+          {post.cover ? (
+            <div className="relative mt-9 aspect-[16/9] w-full overflow-hidden rounded-2xl border">
+              <Image
+                src={assetPath(post.cover.src)}
+                alt={post.cover.alt}
+                fill
+                sizes="(min-width: 768px) 768px, 100vw"
+                className="object-cover"
+                priority
+              />
+            </div>
           ) : null}
         </div>
       </section>

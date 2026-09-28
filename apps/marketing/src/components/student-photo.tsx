@@ -1,3 +1,4 @@
+import { assetPath } from "@/lib/asset";
 import { isProposal } from "@/lib/brand";
 import type { Testimonial } from "@/lib/testimonials";
 import { UserRound } from "lucide-react";
@@ -18,7 +19,13 @@ export function StudentPhoto({ item }: { item: Testimonial }) {
   if (item.photo) {
     return (
       <div className="relative size-16 overflow-hidden rounded-full">
-        <Image src={item.photo} alt={item.name} fill sizes="64px" className="object-cover" />
+        <Image
+          src={assetPath(item.photo)}
+          alt={item.name}
+          fill
+          sizes="64px"
+          className="object-cover"
+        />
       </div>
     );
   }

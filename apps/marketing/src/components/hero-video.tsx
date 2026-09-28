@@ -1,5 +1,6 @@
 "use client";
 
+import { assetPath } from "@/lib/asset";
 import { isProposal } from "@/lib/brand";
 import { heroVideo } from "@/lib/videos";
 import { Play, Video } from "lucide-react";
@@ -50,7 +51,7 @@ export function HeroVideo() {
           >
             {heroVideo.poster ? (
               <Image
-                src={heroVideo.poster}
+                src={assetPath(heroVideo.poster)}
                 alt=""
                 fill
                 sizes="(max-width: 768px) 100vw, 40vw"

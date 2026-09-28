@@ -13,7 +13,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const base = marketingEnv().NEXT_PUBLIC_MARKETING_URL;
   const entries: MetadataRoute.Sitemap = [
     { url: base, changeFrequency: "weekly", priority: 1 },
-    { url: `${base}/ai-web-dizajner`, changeFrequency: "weekly", priority: 0.95 },
     { url: `${base}/studije-slucaja`, changeFrequency: "monthly", priority: 0.85 },
     { url: `${base}/radovi`, changeFrequency: "weekly", priority: 0.8 },
     { url: `${base}/webinar`, changeFrequency: "weekly", priority: 0.7 },

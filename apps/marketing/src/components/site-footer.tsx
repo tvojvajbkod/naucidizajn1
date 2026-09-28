@@ -6,9 +6,9 @@ const columns: Array<{ title: string; items: Array<{ href: string; label: string
   {
     title: "Edukacija",
     items: [
-      { href: "/ai-web-dizajner", label: "AI Web Dizajner" },
-      { href: "/ai-web-dizajner#program", label: "Program po mesecima" },
-      { href: "/ai-web-dizajner#cena", label: "Cena i uslovi" },
+      { href: "/", label: "Postani AI web dizajner" },
+      { href: "/#program", label: "Program po mesecima" },
+      { href: "/#cena", label: "Cena i uslovi" },
       { href: "/webinar", label: "Besplatan webinar" },
     ],
   },

@@ -9,9 +9,9 @@ import { stats } from "@/lib/brand";
  * i to je ono što se pamti sa te stranice.
  *
  * `surface` postoji zbog pravila da dve susedne sekcije ne smeju da izgledaju
- * isto: na početnoj ova traka stoji između dve strane u osnovnoj boji, pa je
- * panel; na `/ai-web-dizajner` stoji odmah ispod hero-a koji je već panel, pa
- * tamo ide u osnovnoj boji.
+ * isto: na početnoj ova traka stoji između dve sekcije u osnovnoj boji, pa je
+ * panel. Ostaje kao prekidač za slučaj da traka jednom stane odmah ispod neke
+ * panel sekcije — tada ide u osnovnoj boji.
  */
 export function StatBandSection({
   surface = "panel",

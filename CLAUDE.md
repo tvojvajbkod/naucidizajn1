@@ -211,12 +211,26 @@ Skool). Ono je heroj početne strane i ima svoju punu landing stranu.
   poravnate — naslov, uvod, kartice i spiskovi. Razlog nije ukus nego čitanje:
   čim pasus pređe tri reda ili ispod njega dođe spisak, centriran tekst usporava
   jer levi rub postaje nazubljen. Ne centriraj „da bude ujednačeno".
-- **Cena NIJE na početnoj** (odluka 27.09.). `MembershipOfferSection` je
-  skinuta sa `/` jer je „Šta je uključeno" ponavljalo sekciju „Šta dobijaš u
-  Skool zajednici", a iznos je ionako u herou i u završnom CTA-u. Sekcija i
-  dalje postoji i stoji na `/ai-web-dizajner#cena` — tamo vodi i link „Cena i
-  uslovi" iz futera, pa se ne sme brisati komponenta, samo njen poziv sa
-  početne. Uslovi otkazivanja se na početnoj čitaju u FAQ-u.
+- **Sajt ima JEDNU stranu ponude — početnu** (odluka 28.09.). Ovo poništava
+  jučerašnje pravilo „cena nije na početnoj". Do 28.09. su postojale dve strane
+  o istoj edukaciji: `/` i `/ai-web-dizajner`. Druga je bila podskup prve plus
+  cena, pa je posetilac kroz meni dobijao dva puta skoro isti sadržaj napisan
+  malo drugačije — i delovalo je da negde postoji još nešto što nije pročitao.
+  Sada:
+  - ceo sadržaj je na `/`, uključujući `MembershipOfferSection` (`#cena`);
+  - `/ai-web-dizajner` je ostala kao strana koja PREUSMERAVA na `/`
+    (`components/redirect-home.tsx`, `noindex`, kanonski link na `/`, plus
+    vidljiv link za posetioca bez JavaScript-a). Adresa se ne briše jer je
+    mogla da ode u oglas ili u bio na Instagramu; statički izvoz nema server
+    koji bi vratio 301, pa preusmerenje radi u pregledaču;
+  - meni i futer vode na `/#program` i `/#cena`; stavka „AI Web Dizajner" je
+    skinuta iz menija jer bi vodila na stranu na kojoj posetilac već stoji.
+  - **Desna kolona u sekciji sa cenom NIJE spisak „šta dobijaš"** nego „Kako
+    ide upis" — četiri koraka. Nabrajanje je bilo isto kao sekcija „Šta dobijaš
+    u Skool zajednici" i bilo je izvor osećaja duplog sadržaja. Ko bude vraćao
+    nabrajanje, neka prvo obriše sekciju gore.
+  Nova landing strana se pravi samo ako postoji DRUGA publika ili druga ponuda,
+  ne zato što „treba nam još jedna stranica".
 - **Podloga je preliv, ne ravna boja** (odluka 28.09.).
   `components/ui/elegant-dark-pattern.tsx` (`DarkGradientBg`) obavija ceo sajt u
   `layout.tsx` i crta ambijent: blagi preliv odozgo nadole, tri vrlo slaba

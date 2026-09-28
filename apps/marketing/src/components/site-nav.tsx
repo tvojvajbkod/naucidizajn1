@@ -11,16 +11,21 @@ import { useState } from "react";
  * Navigacija prati jednu ponudu. Od 23.09.2026. Nauči Dizajn ima samo
  * edukaciju „Postani AI web dizajner" — kursevi, mentorstvo 1-1 i stranica sa
  * cenama su uklonjeni namerno, ne greškom. Cena sada stoji na samoj ponudi.
+ *
+ * Od 28.09. početna JESTE strana te edukacije, pa je stavka „AI Web Dizajner"
+ * skinuta iz menija: vodila bi na stranu na kojoj posetilac već stoji, a logo
+ * levo ionako vraća na početnu. Umesto nje stoji „Cena", jer je to pitanje sa
+ * kojim ljudi najčešće dolaze.
  */
 const links: Array<{ href: string; label: string; highlight?: boolean }> = [
-  { href: "/ai-web-dizajner", label: "AI Web Dizajner", highlight: true },
-  { href: "/ai-web-dizajner#program", label: "Program" },
+  { href: "/#program", label: "Program" },
   // Vodi PRAVO na studiju slučaja, ne na spisak: postoji samo jedna, pa je
   // međukorak sa jednom karticom bio klik bez sadržaja. Spisak ostaje u futeru
   // i biće koristan kad stignu prave priče polaznika.
   { href: "/studije-slucaja/anatomija-projekta", label: "Anatomija projekta" },
   { href: "/radovi", label: "Radovi" },
   { href: "/utisci", label: "Utisci" },
+  { href: "/#cena", label: "Cena" },
   // @ludus:inject:nav:links
 ];
 

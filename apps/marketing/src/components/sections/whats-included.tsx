@@ -64,9 +64,9 @@ const items: Item[] = [
     icon: Handshake,
   },
   {
-    title: "Grupni sastanak svake nedelje",
+    title: "Mentorski sastanak ponedeljkom",
     description:
-      "Uživo, sa mentorima. Pokazuješ šta si uradio, dobijaš ispravke. Sastanci se snimaju, pa propušten termin nije propušteno gradivo.",
+      "Svakog ponedeljka u 19 h, uživo sa mentorima. Pokazuješ šta si uradio i dobijaš ispravke. Sastanci se snimaju, pa propušten termin nije propušteno gradivo.",
     icon: CalendarDays,
   },
 ];

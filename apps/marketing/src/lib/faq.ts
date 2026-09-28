@@ -16,12 +16,12 @@ export interface FaqItem {
   answer: string;
 }
 
-/** Pitanja o edukaciji — stoje na početnoj i na /ai-web-dizajner. */
+/** Pitanja o edukaciji — stoje na početnoj i na /webinar. */
 export const membershipFaq: FaqItem[] = [
   {
     question: "Šta tačno dobijam za 99 dolara mesečno?",
     answer:
-      "Pristup celoj edukaciji „Postani AI web dizajner“: sistem za izradu sajtova pomoću AI-a, biblioteku promptova, materijal o tome gde se nalaze klijenti i kako im se piše, kalkulator cene projekta, SEO i AI automatizacije, napredni web dizajn, grupni sastanak svake nedelje i pomoć mentora. Plaćaš mesec po mesec — nema ugovora na godinu dana.",
+      "Pristup celoj edukaciji „Postani AI web dizajner“: sistem za izradu sajtova pomoću AI-a, biblioteku promptova, materijal o tome gde se nalaze klijenti i kako im se piše, kalkulator cene projekta, SEO i AI automatizacije, napredni web dizajn, mentorski sastanak uživo svakog ponedeljka u 19 h i pomoć mentora. Plaćaš mesec po mesec — nema ugovora na godinu dana.",
   },
   {
     question: "Mogu li da otkažem kad hoću?",

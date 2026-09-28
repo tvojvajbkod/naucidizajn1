@@ -1,5 +1,6 @@
 import { SiteFooter } from "@/components/site-footer";
 import { SiteNav } from "@/components/site-nav";
+import { DarkGradientBg } from "@/components/ui/elegant-dark-pattern";
 import { marketingEnv } from "@repo/config/marketing-env";
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
@@ -59,18 +60,21 @@ export const metadata: Metadata = {
   ...(isProposal ? { robots: { index: false, follow: false } } : {}),
 };
 
-/** Boja trake pregledača na telefonu — ista kao hero. */
+/** Boja trake pregledača na telefonu — ista kao podloga sajta. */
 export const viewport = {
-  themeColor: "#232421",
+  themeColor: "#0b0b0d",
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="sr">
-      <body className="flex min-h-screen flex-col bg-page font-sans text-foreground antialiased">
-        <SiteNav />
-        <div className="flex-1">{children}</div>
-        <SiteFooter />
+      <body className="bg-page font-sans text-foreground antialiased">
+        {/* Preliv stoji iza SVEGA — i iza zaglavlja, koje je poluprovidno. */}
+        <DarkGradientBg className="flex min-h-screen flex-col">
+          <SiteNav />
+          <div className="flex-1">{children}</div>
+          <SiteFooter />
+        </DarkGradientBg>
         <JsonLd data={organizationJsonLd()} />
         {/* @ludus:inject:seo:jsonld */}
         <ConsentBanner />

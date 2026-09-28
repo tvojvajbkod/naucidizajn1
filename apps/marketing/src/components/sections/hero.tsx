@@ -21,10 +21,15 @@ import { ArrowRight } from "lucide-react";
  * razmakom (-0.03em), jedna reč je serifni kurziv, a brojke su kondenzovane.
  */
 export function HeroSection() {
+  // Hero ima svoj sjaj. Preliv iz `DarkGradientBg` stoji iza cele strane, ali
+  // ga neprovidne panel sekcije prekrivaju — a baš iza heroja sjaj najviše
+  // znači. Zato je ovde podloga sama po sebi preliv: limeta odozgo (12%, isti
+  // gornji prag za ambijent) na panel tonu. Hero tako ostaje površina
+  // različita od sekcije ispod, pa ritam podloga i dalje važi.
   return (
-    <section className="bg-panel text-foreground">
+    <section className="relative overflow-hidden bg-[radial-gradient(760px_380px_at_50%_2%,rgba(183,255,0,0.16),transparent_62%),radial-gradient(1400px_760px_at_50%_-14%,rgba(143,204,0,0.13),transparent_68%),linear-gradient(180deg,#191c16_0%,#0f0f13_78%,#0b0b0d_100%)] text-foreground">
       <div className="mx-auto flex max-w-6xl flex-col items-center px-6 py-12 text-center md:py-16">
-        <p className="inline-flex items-center gap-2 rounded border border-background/20 px-4 py-1.5 font-medium text-foreground/80 text-sm">
+        <p className="inline-flex items-center gap-2 rounded border border-border px-4 py-1.5 font-medium text-foreground/80 text-sm">
           <span className="size-2 rounded-full bg-primary" />
           Postani AI web dizajner · mesečno članstvo
         </p>

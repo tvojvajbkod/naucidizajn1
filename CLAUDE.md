@@ -217,6 +217,21 @@ Skool). Ono je heroj početne strane i ima svoju punu landing stranu.
   dalje postoji i stoji na `/ai-web-dizajner#cena` — tamo vodi i link „Cena i
   uslovi" iz futera, pa se ne sme brisati komponenta, samo njen poziv sa
   početne. Uslovi otkazivanja se na početnoj čitaju u FAQ-u.
+- **Podloga je preliv, ne ravna boja** (odluka 28.09.).
+  `components/ui/elegant-dark-pattern.tsx` (`DarkGradientBg`) obavija ceo sajt u
+  `layout.tsx` i crta ambijent: blagi preliv odozgo nadole, tri vrlo slaba
+  limeta sjaja u uglovima, mrežicu na 72px i zrno. Sve boje su iz palete; sjaj
+  nigde ne prelazi ~12% prozirnosti, jer preko toga podloga prestaje da bude
+  neutralna i limeta počinje da se takmiči sa dugmadima.
+  Sloj je `absolute` preko cele visine strane, NE `fixed` — sa `fixed` bi sjaj
+  stajao zakovan na vrhu ekrana i pratio čitaoca kao mrlja.
+  Vidi se samo kroz sekcije bez svoje podloge; `bg-panel` i `bg-card` ga
+  prekrivaju, i tako treba: paneli su čitljive površine, preliv je vazduh.
+  **Hero ima svoj, jači sjaj** (do ~16%) upisan u sopstvenu podlogu, jer bi ga
+  inače panel sekcija prekrila baš tamo gde sjaj nešto znači.
+  Automatska provera ritma ovo ne vidi: podloga od preliva se čita kao
+  `rgba(0,0,0,0)`, pa hero i sekcija ispod njega izgledaju „isto" u izveštaju.
+  To je lažna uzbuna — proveri okom.
 - **Dve sekcije sa oblačićima moraju da ostanu različite** (odluka 27.09.).
   Na početnoj postoje dve: „Kako ti praviš sajt" (`chat-demo.tsx`) je prepiska
   čoveka i AI-a — avatari, naizmenične strane, jedan okvir oko svega, centrirano;

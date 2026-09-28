@@ -1,3 +1,4 @@
+import { Accent } from "@/components/accent";
 import { MentorPhoto } from "@/components/mentor-photo";
 import { featuredMentors } from "@/lib/testimonials";
 
@@ -15,7 +16,7 @@ export function MentorsSection() {
       <div className="mx-auto max-w-6xl px-6">
         <div className="max-w-2xl">
           <h2 className="font-medium text-3xl text-foreground tracking-[-0.02em] md:text-4xl">
-            Ko te vodi na tvom putu?
+            Ko te vodi <Accent>na tvom putu</Accent>?
           </h2>
           <p className="mt-4 text-foreground/75 text-lg">
             Ne predaje se iz udžbenika. Gradivo se menja kad se promene alati — zato se sastanci i

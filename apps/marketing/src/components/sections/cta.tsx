@@ -1,6 +1,8 @@
+import { Accent } from "@/components/accent";
 import { links, membership } from "@/lib/brand";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
+import type { ReactNode } from "react";
 
 /**
  * Podloga ispod tamne kartice.
@@ -18,11 +20,16 @@ const surfaces = {
 } as const;
 
 export function CtaSection({
-  title = "Prvi sajt možeš da napraviš ove nedelje",
+  title = (
+    <>
+      Prvi sajt možeš da napraviš <Accent>ove nedelje</Accent>
+    </>
+  ),
   body = "Zajednica te čeka sa gotovim sistemom, promptovima i ljudima koji su prošli isti put pre nekoliko meseci.",
   surface = "plain",
 }: {
-  title?: string;
+  /** Prima i tekst i JSX, jer podrazumevani naslov ima naglašenu reč. */
+  title?: ReactNode;
   body?: string;
   surface?: keyof typeof surfaces;
 }) {

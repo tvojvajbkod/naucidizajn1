@@ -1,3 +1,4 @@
+import { Accent } from "@/components/accent";
 import { StudentPhoto } from "@/components/student-photo";
 import { VideoWall } from "@/components/video-wall";
 import { links, stats } from "@/lib/brand";
@@ -80,7 +81,7 @@ export function ProofSection({ limit }: { limit?: number }) {
       <div className="mx-auto max-w-6xl px-6">
         <div className="max-w-2xl">
           <h2 className="font-medium text-3xl text-foreground tracking-[-0.02em] md:text-4xl">
-            Šta kažu naši studenti
+            Šta kažu <Accent>naši studenti</Accent>
           </h2>
           <p className="mt-4 text-lg text-muted-foreground">
             Ocena zajednice je {stats.skoolRating} na {stats.skoolReviews} recenzija. Uz svaku stoji

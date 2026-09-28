@@ -1,3 +1,4 @@
+import { Accent } from "@/components/accent";
 import { CtaSection } from "@/components/sections/cta";
 import { MentorsSection } from "@/components/sections/mentors";
 import { brand, stats } from "@/lib/brand";
@@ -31,7 +32,7 @@ export default function ONamaPage() {
 
       <section className="mx-auto max-w-3xl px-6 py-16 md:py-20">
         <h2 className="font-medium text-2xl text-foreground tracking-[-0.02em] md:text-3xl">
-          U šta verujemo
+          U šta <Accent>verujemo</Accent>
         </h2>
         <div className="mt-8 space-y-6 text-lg text-muted-foreground leading-relaxed">
           <p>

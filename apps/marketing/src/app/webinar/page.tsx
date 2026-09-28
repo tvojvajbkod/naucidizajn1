@@ -1,3 +1,4 @@
+import { Accent } from "@/components/accent";
 import { JsonLd, faqJsonLd } from "@/components/json-ld";
 import { FAQSection } from "@/components/sections/faq";
 import { WebinarForm } from "@/components/webinar-form";
@@ -87,7 +88,7 @@ export default function WebinarPage() {
 
       <section className="mx-auto max-w-6xl px-6 py-20 md:py-24">
         <h2 className="max-w-2xl font-medium text-3xl text-foreground tracking-[-0.02em] md:text-4xl">
-          Tri stvari koje ćeš razumeti
+          <Accent>Tri stvari</Accent> koje ćeš razumeti
         </h2>
         <div className="mt-10 grid gap-5 md:grid-cols-3">
           {topics.map((topic, index) => (
@@ -103,7 +104,7 @@ export default function WebinarPage() {
       <section id="prijava" className="scroll-mt-24 bg-panel py-20 md:py-24">
         <div className="mx-auto max-w-3xl px-6">
           <h2 className="font-medium text-3xl text-foreground tracking-[-0.02em] md:text-4xl">
-            Rezerviši mesto
+            Rezerviši <Accent>mesto</Accent>
           </h2>
           <p className="mt-4 text-lg text-muted-foreground leading-relaxed">
             Dva podatka i gotovo. Termin i link za Zoom stižu na mejl, zajedno sa snimkom ako ne
@@ -119,7 +120,7 @@ export default function WebinarPage() {
       <section className="mx-auto max-w-3xl px-6 py-20">
         <div className="rounded-3xl border bg-card p-8 text-center md:p-12">
           <h2 className="font-medium text-2xl text-foreground tracking-[-0.02em] md:text-3xl">
-            Ne čekaš webinar da bi počeo
+            Ne čekaš webinar <Accent>da bi počeo</Accent>
           </h2>
           <p className="mx-auto mt-4 max-w-lg text-muted-foreground leading-relaxed">
             Ako ti je već jasno da hoćeš da kreneš, članstvo ti otvara ceo materijal i{" "}
@@ -140,7 +141,11 @@ export default function WebinarPage() {
 
       <FAQSection
         items={webinarFaq}
-        title="Pitanja o webinaru"
+        title={
+          <>
+            Pitanja o <Accent>webinaru</Accent>
+          </>
+        }
         description="Termin, snimak i šta te čeka na kraju."
       />
       <JsonLd data={faqJsonLd(webinarFaq)} />

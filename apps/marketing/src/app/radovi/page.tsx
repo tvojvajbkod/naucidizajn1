@@ -1,3 +1,4 @@
+import { Accent } from "@/components/accent";
 import { CtaSection } from "@/components/sections/cta";
 import { WorksGallery } from "@/components/sections/works-gallery";
 import { buildMetadata } from "@/lib/seo";
@@ -37,7 +38,7 @@ export default function RadoviPage() {
         ) : (
           <div className="max-w-2xl rounded-2xl border bg-card p-8 md:p-10">
             <h2 className="font-medium text-2xl text-foreground tracking-[-0.02em]">
-              Prvi radovi se pripremaju
+              <Accent>Prvi radovi</Accent> se pripremaju
             </h2>
             <p className="mt-4 text-muted-foreground leading-relaxed">
               Sajtove polaznika objavljujemo tek kad dobijemo dozvolu i od polaznika i od njegovog

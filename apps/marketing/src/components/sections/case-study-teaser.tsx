@@ -1,3 +1,4 @@
+import { Accent } from "@/components/accent";
 import HowItWorks from "@/components/ui/how-it-works";
 import { caseStudies } from "@/lib/case-studies";
 import { ArrowRight } from "lucide-react";
@@ -28,7 +29,7 @@ export function CaseStudyTeaserSection() {
           <div className="max-w-3xl">
             <p className="font-medium text-foreground/60 text-sm">Bez uvijanja</p>
             <h2 className="mt-3 font-medium text-3xl text-foreground tracking-[-0.02em] md:text-4xl">
-              Pogledaj celi postupak pre nego što doneseš odluku
+              Pogledaj <Accent>celi postupak</Accent> pre nego što doneseš odluku
             </h2>
             <p className="mt-4 text-foreground/70 text-lg leading-relaxed">
               Raspakovali smo jedan projekat od prve poruke klijentu do naplate — sa doslovnim

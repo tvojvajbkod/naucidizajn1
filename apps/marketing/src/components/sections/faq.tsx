@@ -1,6 +1,8 @@
+import { Accent } from "@/components/accent";
 import type { FaqItem } from "@/lib/faq";
 import { membershipFaq } from "@/lib/faq";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@repo/ui";
+import type { ReactNode } from "react";
 
 /**
  * FAQ accordion. Pitanja žive u src/lib/faq.ts da bi isti niz mogao da hrani
@@ -13,12 +15,17 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@r
  */
 export function FAQSection({
   items = membershipFaq,
-  title = "Pitanja koja ljudi zaista postavljaju",
+  title = (
+    <>
+      Pitanja koja ljudi <Accent>zaista</Accent> postavljaju
+    </>
+  ),
   description = "Bez uvijanja. Ako nešto ovde ne piše, piši nam i dopunićemo.",
   surface = "plain",
 }: {
   items?: FaqItem[];
-  title?: string;
+  /** Prima i tekst i JSX, jer podrazumevani naslov ima naglašenu reč. */
+  title?: ReactNode;
   description?: string;
   surface?: "plain" | "panel";
 }) {

@@ -1,3 +1,4 @@
+import { Accent } from "@/components/accent";
 import { Screenshot } from "@/components/screenshot";
 import { publishedWorks } from "@/lib/works";
 import { ArrowUpRight } from "lucide-react";
@@ -24,7 +25,7 @@ export function WorksWallSection({
       {heading ? (
         <div className="max-w-2xl">
           <h2 className="font-medium text-3xl text-foreground tracking-[-0.02em] md:text-4xl">
-            Sajtovi koje su napravili polaznici
+            Sajtovi koje su napravili <Accent>polaznici</Accent>
           </h2>
           <p className="mt-4 text-lg text-muted-foreground">
             Pravi klijenti, pravi sajtovi, plaćen posao. Svaki rad je objavljen uz saglasnost

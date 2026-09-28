@@ -1,8 +1,11 @@
+import { CtaSection } from "@/components/sections/cta";
 import { getPost, getPublishedPosts } from "@/lib/blog";
 import { brand } from "@/lib/brand";
 import { ogImage } from "@/lib/seo";
 import { marketingEnv } from "@repo/config/marketing-env";
+import { ArrowLeft } from "lucide-react";
 import type { Metadata } from "next";
+import Link from "next/link";
 import { notFound } from "next/navigation";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
@@ -94,21 +97,45 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
   const articleLdJson = JSON.stringify(articleLd).replace(/</g, "\\u003c");
 
   return (
-    <main className="mx-auto max-w-3xl px-6 py-16">
+    <main>
       <script
         type="application/ld+json"
         // biome-ignore lint/security/noDangerouslySetInnerHtml: JSON.stringify + escape, bez sirovog HTML-a
         dangerouslySetInnerHTML={{ __html: articleLdJson }}
       />
-      {post.publishedAt ? (
-        <p className="text-foreground/40 text-sm">
-          {new Date(post.publishedAt).toLocaleDateString("sr-RS")}
-        </p>
-      ) : null}
-      <h1 className="mt-2 font-medium text-4xl text-foreground">{post.title}</h1>
-      <article className="blog-article mt-8">
+
+      <section className="border-b bg-panel">
+        <div className="mx-auto max-w-3xl px-6 py-14 md:py-16">
+          <Link
+            href="/blog"
+            className="mb-7 inline-flex w-fit items-center gap-2 text-muted-foreground text-sm hover:text-foreground"
+          >
+            <ArrowLeft className="size-4" />
+            Svi tekstovi
+          </Link>
+          {post.publishedAt ? (
+            <p className="text-muted-foreground text-sm">
+              {new Date(post.publishedAt).toLocaleDateString("sr-Latn-RS", {
+                day: "numeric",
+                month: "long",
+                year: "numeric",
+              })}
+            </p>
+          ) : null}
+          <h1 className="mt-3 font-medium text-3xl text-foreground leading-tight tracking-[-0.02em] md:text-[2.75rem]">
+            {post.title}
+          </h1>
+          {post.description ? (
+            <p className="mt-5 text-lg text-muted-foreground leading-relaxed">{post.description}</p>
+          ) : null}
+        </div>
+      </section>
+
+      <article className="blog-article mx-auto max-w-3xl px-6 py-14">
         <ReactMarkdown remarkPlugins={[remarkGfm]}>{post.content}</ReactMarkdown>
       </article>
+
+      <CtaSection surface="panel" />
     </main>
   );
 }

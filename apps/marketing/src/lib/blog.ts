@@ -1,10 +1,19 @@
+import { localPosts } from "@/lib/posts";
 import { marketingEnv } from "@repo/config/marketing-env";
 import { createClient } from "@supabase/supabase-js";
 
 /**
- * Blog objave iz Supabase — anon klijent, RLS pušta isključivo objavljene
- * (`published = true`). Marketing radi i BEZ Supabase ključeva (poseban Vercel
- * projekat) — tada je blog prazan, to je očekivan fallback, ne greška.
+ * Blog objave — dva izvora, namerno.
+ *
+ * 1. `lib/posts.ts` — objave koje žive u repozitorijumu i ulaze u build. Ovo je
+ *    izvor koji radi na GitHub Pages-u, gde nema Supabase ključeva.
+ * 2. Supabase — objave iz admin portala. Anon klijent, RLS pušta isključivo
+ *    objavljene (`published = true`). Bez ključeva se ovaj izvor preskače; to
+ *    je očekivano stanje, ne greška.
+ *
+ * Spisak je spoj oba, poređan po datumu (najnovija prva). Ako isti `slug`
+ * postoji na oba mesta, pobeđuje objava iz baze — tako se tekst iz koda može
+ * ispraviti iz admin portala bez novog deploy-a.
  */
 
 export interface BlogPost {
@@ -45,10 +54,15 @@ function toPost(row: PostRow): BlogPost {
   };
 }
 
+/** Najnovija prva. Objave bez datuma idu na kraj. */
+function byDateDesc(a: BlogPost, b: BlogPost): number {
+  return (b.publishedAt ?? "").localeCompare(a.publishedAt ?? "");
+}
+
 export async function getPublishedPosts(): Promise<BlogPost[]> {
   const supabase = blogClient();
   if (!supabase) {
-    return [];
+    return [...localPosts].sort(byDateDesc);
   }
   const { data, error } = await supabase
     .from("posts")
@@ -57,7 +71,9 @@ export async function getPublishedPosts(): Promise<BlogPost[]> {
   if (error) {
     throw new Error(`Čitanje blog objava nije uspelo: ${error.message}`);
   }
-  return ((data ?? []) as PostRow[]).map(toPost);
+  const fromDb = ((data ?? []) as PostRow[]).map(toPost);
+  const dbSlugs = new Set(fromDb.map((post) => post.slug));
+  return [...fromDb, ...localPosts.filter((post) => !dbSlugs.has(post.slug))].sort(byDateDesc);
 }
 
 export async function getPost(slug: string): Promise<BlogPost | null> {
@@ -65,9 +81,11 @@ export async function getPost(slug: string): Promise<BlogPost | null> {
   if (!/^[a-z0-9-]+$/.test(slug)) {
     return null;
   }
+  const local = localPosts.find((post) => post.slug === slug) ?? null;
+
   const supabase = blogClient();
   if (!supabase) {
-    return null;
+    return local;
   }
   const { data, error } = await supabase
     .from("posts")
@@ -77,5 +95,5 @@ export async function getPost(slug: string): Promise<BlogPost | null> {
   if (error) {
     throw new Error(`Čitanje blog objave nije uspelo: ${error.message}`);
   }
-  return data ? toPost(data as PostRow) : null;
+  return data ? toPost(data as PostRow) : local;
 }

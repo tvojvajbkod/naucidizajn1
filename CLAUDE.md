@@ -236,6 +236,18 @@ Skool). Ono je heroj početne strane i ima svoju punu landing stranu.
     nabrajanje, neka prvo obriše sekciju gore.
   Nova landing strana se pravi samo ako postoji DRUGA publika ili druga ponuda,
   ne zato što „treba nam još jedna stranica".
+- **Blog ima DVA izvora objava** (odluka 28.09.). `src/lib/posts.ts` su objave
+  koje žive u repozitorijumu i ulaze u build — to je jedini izvor koji radi na
+  GitHub Pages-u, gde nema Supabase ključeva. Supabase blog (admin portal)
+  ostaje za Vercel postavku. `lib/blog.ts` spaja oba i ređa po datumu; ako isti
+  `slug` postoji na oba mesta, pobeđuje objava iz baze.
+  Nova objava = nova stavka u `posts.ts`: `slug` bez kvačica, `description` kao
+  jedna rečenica za karticu i pretragu, `content` u Markdown-u sa naslovima od
+  `##` naniže, `publishedAt` kao `YYYY-MM-DD`.
+  **Datumi idu kroz `toLocaleDateString("sr-Latn-RS", …)`** — bez `Latn` Node
+  ispisuje ćirilicom, a sajt je latinični.
+  `app/blog/blog.css` prati tamnu paletu: tekst je `--color-foreground`, ne
+  `--color-ink` (taj token je sada podloga panela, pa je tekst bio nevidljiv).
 - **Postupak se prikazuje kao tok, ne kao spisak** (odluka 28.09.).
   `components/ui/how-it-works.tsx` crta korake sa brojevima na liniji —
   vodoravno na računaru, uspravno na telefonu. Linija se crta PO KORAKU (svaki

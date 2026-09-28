@@ -26,6 +26,7 @@ const links: Array<{ href: string; label: string; highlight?: boolean }> = [
   { href: "/radovi", label: "Radovi" },
   { href: "/utisci", label: "Utisci" },
   { href: "/#cena", label: "Cena" },
+  { href: "/blog", label: "Blog" },
   // @ludus:inject:nav:links
 ];
 
@@ -43,15 +44,18 @@ export function SiteNav() {
           <SiteLogo />
         </Link>
 
-        <div className="hidden items-center gap-7 md:flex">
+        {/* `py-2.5` nije ukras: na tabletu se vidi ova, „računarska" navigacija,
+            a po njoj se kuca prstom. Bez odmaka meta je visoka 20px, što je
+            upola manje od preporučenih 40px. Razmak je zato gap-6, ne gap-7. */}
+        <div className="hidden items-center gap-6 md:flex">
           {links.map((link) => (
             <Link
               key={link.href}
               href={link.href}
               className={
                 link.highlight
-                  ? "flex items-center gap-1.5 font-medium text-foreground text-sm hover:text-foreground/70"
-                  : "text-foreground/70 text-sm hover:text-foreground"
+                  ? "flex items-center gap-1.5 py-2.5 font-medium text-foreground text-sm hover:text-foreground/70"
+                  : "py-2.5 text-foreground/70 text-sm hover:text-foreground"
               }
             >
               {link.highlight ? <Sparkles className="size-3.5" /> : null}

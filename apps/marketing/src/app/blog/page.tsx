@@ -1,11 +1,14 @@
+import { Accent } from "@/components/accent";
+import { CtaSection } from "@/components/sections/cta";
 import { getPublishedPosts } from "@/lib/blog";
 import { buildMetadata } from "@/lib/seo";
-import { Card, CardDescription, CardHeader, CardTitle } from "@repo/ui";
+import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 
 export const metadata = buildMetadata({
   title: "Blog",
-  description: "Tekstovi i vodiči o web dizajnu, AI alatima i dolasku do klijenata.",
+  description:
+    "Tekstovi o web dizajnu uz AI, dolasku do klijenata i naplati — iz prakse Nauči Dizajna, na srpskom.",
   path: "/blog",
 });
 
@@ -13,33 +16,71 @@ export const metadata = buildMetadata({
 export const revalidate = 60;
 
 function formatDate(value: string | null): string {
-  return value ? new Date(value).toLocaleDateString("sr-RS") : "";
+  if (!value) return "";
+  return new Date(value).toLocaleDateString("sr-Latn-RS", {
+    day: "numeric",
+    month: "long",
+    year: "numeric",
+  });
 }
 
 export default async function BlogPage() {
   const posts = await getPublishedPosts();
 
   return (
-    <main className="mx-auto max-w-3xl px-6 py-16">
-      <h1 className="font-medium text-4xl text-foreground">Blog</h1>
-      <div className="mt-10 space-y-4">
-        {posts.map((post) => (
-          <Link key={post.slug} href={`/blog/${post.slug}`} className="block">
-            <Card className="transition-shadow hover:shadow-md">
-              <CardHeader>
-                <p className="text-muted-foreground text-sm">{formatDate(post.publishedAt)}</p>
-                <CardTitle>{post.title}</CardTitle>
-                <CardDescription>{post.description}</CardDescription>
-              </CardHeader>
-            </Card>
-          </Link>
-        ))}
-        {posts.length === 0 ? (
-          <p className="text-foreground/50">
-            Još nema tekstova — dodaj prvi u admin portalu (/admin/blog).
+    <main>
+      <section className="border-b bg-panel">
+        <div className="mx-auto max-w-6xl px-6 py-16 md:py-20">
+          <h1 className="max-w-3xl font-medium text-4xl text-foreground leading-tight tracking-[-0.02em] md:text-5xl">
+            Blog
+          </h1>
+          <p className="mt-5 max-w-2xl text-lg text-muted-foreground leading-relaxed">
+            Kratki tekstovi iz prakse: kako se dolazi do klijenata, kako se radi uz AI i kako se
+            posao naplaćuje. Bez opštih saveta — svaki tekst ima postupak koji možeš da primeniš
+            istog dana.
           </p>
-        ) : null}
-      </div>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-6xl px-6 py-16">
+        {posts.length > 0 ? (
+          <ul className="grid gap-5 md:grid-cols-2">
+            {posts.map((post) => (
+              <li key={post.slug}>
+                <Link
+                  href={`/blog/${post.slug}`}
+                  className="group flex h-full flex-col rounded-2xl border bg-card p-7 transition-colors hover:border-primary/40"
+                >
+                  {post.publishedAt ? (
+                    <p className="text-muted-foreground text-sm">{formatDate(post.publishedAt)}</p>
+                  ) : null}
+                  <h2 className="mt-3 font-medium text-foreground text-xl leading-snug tracking-[-0.01em]">
+                    {post.title}
+                  </h2>
+                  <p className="mt-3 text-muted-foreground leading-relaxed">{post.description}</p>
+                  <span className="mt-6 inline-flex items-center gap-2 font-medium text-primary text-sm">
+                    Pročitaj
+                    <ArrowRight className="size-4 transition-transform group-hover:translate-x-0.5" />
+                  </span>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        ) : (
+          /* Prazno stanje je namerno i objašnjeno — isto pravilo kao na /radovi. */
+          <div className="max-w-2xl rounded-2xl border bg-card p-8 md:p-10">
+            <h2 className="font-medium text-2xl text-foreground tracking-[-0.02em]">
+              <Accent>Prvi tekst</Accent> se piše
+            </h2>
+            <p className="mt-4 text-muted-foreground leading-relaxed">
+              Ovde će stajati tekstovi iz prakse. Dok ih nema, ceo postupak od prve poruke klijentu
+              do naplate možeš da pročitaš u studiji slučaja.
+            </p>
+          </div>
+        )}
+      </section>
+
+      <CtaSection surface="panel" />
     </main>
   );
 }

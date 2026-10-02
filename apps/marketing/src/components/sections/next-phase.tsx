@@ -11,9 +11,9 @@ import { Check } from "lucide-react";
  * ivici, nikad kao puna površina iza teksta.
  *
  * Podloga je `bg-card` (#18181C) — različita i od `ThirtyDaysSection` iznad
- * (providna, `bg-page`) i od `StatBandSection` ispod (`bg-panel`), pa sekcija
- * stane između njih bez diranja ijedne druge sekcije na stranici (pravilo: dve
- * susedne sekcije ne smeju da imaju istu podlogu).
+ * (providna, `bg-page`) i od `ChatDemoSection` ispod (takođe providna), pa
+ * sekcija stane između njih bez diranja ijedne druge sekcije na stranici
+ * (pravilo: dve susedne sekcije ne smeju da imaju istu podlogu).
  */
 const phases = [
   {

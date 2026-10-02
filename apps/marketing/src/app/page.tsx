@@ -45,8 +45,8 @@ export default function HomePage() {
       <SituationSection />
       <ThirtyDaysSection />
       <NextPhaseSection />
-      <StatBandSection />
       <ChatDemoSection />
+      <StatBandSection surface="card" />
       <WhatsIncludedSection />
       <TimelineSection />
       <CommunityHelpSection />

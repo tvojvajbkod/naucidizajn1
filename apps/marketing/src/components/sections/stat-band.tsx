@@ -9,17 +9,18 @@ import { stats } from "@/lib/brand";
  * i to je ono što se pamti sa te stranice.
  *
  * `surface` postoji zbog pravila da dve susedne sekcije ne smeju da izgledaju
- * isto: na početnoj ova traka stoji između dve sekcije u osnovnoj boji, pa je
- * panel. Ostaje kao prekidač za slučaj da traka jednom stane odmah ispod neke
- * panel sekcije — tada ide u osnovnoj boji.
+ * isto: na početnoj ova traka stoji između `ChatDemoSection` (providna) i
+ * `WhatsIncludedSection` (`bg-panel`), pa je ovde `card` — jedina vrednost koja
+ * se razlikuje od oba suseda. `panel`/`plain` ostaju za druge rasporede.
  */
 export function StatBandSection({
   surface = "panel",
 }: {
-  surface?: "panel" | "plain";
+  surface?: "panel" | "card" | "plain";
 }) {
+  const bg = surface === "panel" ? "bg-panel" : surface === "card" ? "bg-card" : "";
   return (
-    <section className={surface === "panel" ? "bg-panel" : ""}>
+    <section className={bg}>
       <div className="mx-auto grid max-w-6xl items-center gap-10 px-6 py-20 md:grid-cols-[1fr_1.1fr] md:py-24">
         <PercentRing
           value={stats.satisfaction}

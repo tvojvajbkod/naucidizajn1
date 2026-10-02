@@ -39,10 +39,16 @@ export function HeroSection() {
         </h1>
 
         <p className="mt-5 max-w-xl text-foreground/75 text-lg leading-relaxed">
-          Za 30 dana naučiš da napraviš ceo sajt pomoću veštačke inteligencije — bez kodiranja i bez
-          predznanja — i tačno znaš kome da se javiš i koliko da naplatiš. Kroz četiri meseca uz to
-          dolaze SEO, AI automatizacije i napredni web dizajn.
+          Nauči da praviš sajtove pomoću AI-ja — i pretvori tu veštinu u prihod.
         </p>
+
+        <p className="mt-4 max-w-xl text-foreground/75 text-lg leading-relaxed">
+          AI Web Dizajner je praktična zajednica za ljude koji žele da naprave sajt, pronađu
+          klijenta i počnu da zarađuju od web dizajna.
+        </p>
+
+        <p className="mt-6 font-medium text-foreground/90">1 dan teorije. 29 dana prakse.</p>
+        <p className="mt-1 text-foreground/55 text-sm">Mentori. Zajednica. AI alati. Klijenti.</p>
 
         <HeroVideo />
 
@@ -61,7 +67,9 @@ export function HeroSection() {
         </div>
 
         <p className="mt-4 text-foreground/55 text-sm">
-          Plaćaš mesec po mesec. Otkazuješ sam, iz naloga.
+          Cilj nije da završiš još jedan kurs.
+          <br />
+          Cilj je da napraviš nešto što možeš da naplatiš.
         </p>
 
         <dl className="mt-14 grid w-full max-w-4xl grid-cols-2 gap-8 border-border border-t pt-10 sm:grid-cols-4">

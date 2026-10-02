@@ -7,7 +7,7 @@
  * klikne/čita dalje, ne dekoracija.
  *
  * Podloga je `bg-panel` da razdvoji sekciju od heroja (sopstveni preliv) i od
- * `TurningPointSection` ispod (providna, `bg-page`) — pravilo ritma podloga.
+ * `ThirtyDaysSection` ispod (providna, `bg-page`) — pravilo ritma podloga.
  */
 const situations = [
   {

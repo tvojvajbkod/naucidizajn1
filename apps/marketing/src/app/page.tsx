@@ -11,8 +11,8 @@ import { MentorsSection } from "@/components/sections/mentors";
 import { ProofSection } from "@/components/sections/proof";
 import { SituationSection } from "@/components/sections/situation";
 import { StatBandSection } from "@/components/sections/stat-band";
+import { ThirtyDaysSection } from "@/components/sections/thirty-days";
 import { TimelineSection } from "@/components/sections/timeline";
-import { TurningPointSection } from "@/components/sections/turning-point";
 import { WhatsIncludedSection } from "@/components/sections/whats-included";
 import { WorksWallSection } from "@/components/sections/works-wall";
 import { membershipFaq } from "@/lib/faq";
@@ -42,7 +42,7 @@ export default function HomePage() {
     <main>
       <HeroSection />
       <SituationSection />
-      <TurningPointSection />
+      <ThirtyDaysSection />
       <StatBandSection />
       <ChatDemoSection />
       <WhatsIncludedSection />

@@ -11,6 +11,12 @@ import { useEffect, useLayoutEffect, useRef, useState } from "react";
  * vodoravno na računaru / uspravno na telefonu, ulazak u vidokrug otkriva
  * korake redom, `prefers-reduced-motion` gasi animaciju.
  *
+ * Redosled je NAMERNO izražen, ne suptilan stagger (izmena — prva verzija je
+ * imala razmak od samo 80ms po koraku, pa se čitalo kao da se sve pojavljuje
+ * odjednom). Korak se pojavljuje, PA se linija do sledećeg razvuče, PA tek
+ * tada sledeći korak — `STEP` je razmak u ms između dva koraka, a linija crta
+ * unutar tog razmaka, ne istovremeno sa čvorom.
+ *
  * Zaseban komponent a ne izmena `how-it-works.tsx` jer taj komponent crta
  * redni broj koraka (1..5) u krug, dok ovde krug nosi BROJ DANA (01, 05,
  * 10…30) — različit podatak, ne bi trebalo preopteretiti deljenu komponentu
@@ -32,7 +38,11 @@ const days = [
 ];
 
 const useIsoLayoutEffect = typeof window === "undefined" ? useEffect : useLayoutEffect;
-const STEP = 80;
+/** Razmak u ms između pojavljivanja dva uzastopna koraka. */
+const STEP = 550;
+/** Kad unutar razmaka počinje crtanje linije ka sledećem koraku (posle čvora). */
+const LINE_DELAY = 250;
+const LINE_DURATION = 260;
 
 function canAnimate() {
   if (typeof window === "undefined") return false;
@@ -94,7 +104,12 @@ export function ThirtyDaysSection() {
               {index < days.length - 1 ? (
                 <span
                   aria-hidden="true"
-                  className="absolute top-10 left-[19px] h-[calc(100%-0.5rem)] w-px bg-border lg:top-[19px] lg:left-10 lg:h-px lg:w-[calc(100%-1.25rem)]"
+                  className="absolute top-10 left-[19px] h-[calc(100%-0.5rem)] w-px bg-border motion-reduce:transition-none lg:top-[19px] lg:left-10 lg:h-px lg:w-[calc(100%-1.25rem)]"
+                  style={{
+                    opacity: shown ? 1 : 0,
+                    transition: `opacity ${LINE_DURATION}ms ease`,
+                    transitionDelay: shown ? `${index * STEP + LINE_DELAY}ms` : "0ms",
+                  }}
                 />
               ) : null}
 

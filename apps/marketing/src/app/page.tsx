@@ -11,7 +11,6 @@ import { MentorsSection } from "@/components/sections/mentors";
 import { NextPhaseSection } from "@/components/sections/next-phase";
 import { ProofSection } from "@/components/sections/proof";
 import { SituationSection } from "@/components/sections/situation";
-import { StatBandSection } from "@/components/sections/stat-band";
 import { ThirtyDaysSection } from "@/components/sections/thirty-days";
 import { TimelineSection } from "@/components/sections/timeline";
 import { WhatsIncludedSection } from "@/components/sections/whats-included";
@@ -46,7 +45,6 @@ export default function HomePage() {
       <ThirtyDaysSection />
       <NextPhaseSection />
       <ChatDemoSection />
-      <StatBandSection surface="card" />
       <WhatsIncludedSection />
       <TimelineSection />
       <CommunityHelpSection />

@@ -1,160 +1,80 @@
-"use client";
-
 import { Accent } from "@/components/accent";
-import {
-  Calculator,
-  CalendarDays,
-  Handshake,
-  type LucideIcon,
-  MessageSquareQuote,
-  Search,
-  Sparkles,
-  Wand2,
-} from "lucide-react";
-import { useEffect, useLayoutEffect, useRef, useState } from "react";
-
-/** Na serveru nema layout faze — tamo se koristi obični efekat. */
-const useIsoLayoutEffect = typeof window === "undefined" ? useEffect : useLayoutEffect;
+import { PageImage } from "@/components/page-image";
 
 /**
- * Šta se tačno dobija za mesečno članstvo. Stavke su preuzete iz opisa
- * zajednice — ništa dodato, ništa ulepšano, jer se svaka može proveriti.
+ * Šta dobijaš u Skool zajednici — šest razloga da ostaneš i posle prvog
+ * meseca, ne samo šta dobijaš prvog dana. Levo tekst, desno mesto za sliku
+ * (snimak ekrana Skool zajednice, kad stigne).
  */
 interface Item {
+  emoji: string;
   title: string;
   description: string;
-  icon: LucideIcon;
 }
 
 const items: Item[] = [
   {
-    title: "Ceo sajt uz pomoć AI-a, bez koda",
-    description:
-      "Od prazne strane do gotovog sajta: struktura, tekst, slike i objava. Korak po korak, na primeru koji radiš zajedno sa nama.",
-    icon: Wand2,
+    emoji: "🎓",
+    title: "Edukacija",
+    description: "AI workflow, web dizajn, Webflow, prodaja...",
   },
   {
-    title: "Biblioteka promptova",
-    description:
-      "Gotovi upiti za strukturu, tekstove i ispravke. Ne pogađaš formulaciju — koristiš onu koja je već dala rezultat.",
-    icon: Sparkles,
+    emoji: "🤝",
+    title: "Mentorstvo",
+    description: "Pitanja, feedback, korekcije.",
   },
   {
-    title: "Gde se nalaze klijenti",
-    description:
-      "Konkretna mesta i vrste firmi kojima sajt stvarno treba, i redosled kojim ih obrađuješ da ne bi gubio dane na pogrešne ljude.",
-    icon: Search,
+    emoji: "👥",
+    title: "Zajednica",
+    description: "Ljudi koji su na istom putu.",
   },
   {
-    title: "Poruke za obraćanje koje dobijaju odgovor",
-    description:
-      "Šabloni prve poruke, podsetnika i odgovora na „razmisliću“. Prepisuješ, prilagođavaš i šalješ.",
-    icon: MessageSquareQuote,
+    emoji: "💼",
+    title: "Klijenti",
+    description: "Sistemi za pronalaženje i kontaktiranje potencijalnih klijenata.",
   },
   {
-    title: "Kalkulator cene projekta",
-    description:
-      "Koliko da tražiš za jednostavan sajt, a koliko za složeniji — da ne radiš ispod cene niti otkažeš posao previsokim brojem.",
-    icon: Calculator,
+    emoji: "🧠",
+    title: "AI",
+    description: "Novi alati, promptovi i workflow-i.",
   },
   {
-    title: "Kako da prodaš svoj dizajn",
-    description:
-      "Razgovor sa klijentom, predstavljanje rešenja, ispravke i naplata. Deo koji obično odluči hoće li biti i drugi projekat.",
-    icon: Handshake,
-  },
-  {
-    title: "Mentorski sastanak ponedeljkom",
-    description:
-      "Svakog ponedeljka u 19 h, uživo sa mentorima. Pokazuješ šta si uradio i dobijaš ispravke. Sastanci se snimaju, pa propušten termin nije propušteno gradivo.",
-    icon: CalendarDays,
+    emoji: "📈",
+    title: "Napredak",
+    description: "Novi projekti, portfolio i veće cene.",
   },
 ];
 
-/**
- * Kartice ulaze jedna po jedna kad sekcija uđe u vidokrug, a na računaru uz to
- * reaguju na kursor (odluka 25.09.).
- *
- * Pravila:
- * - Bez JavaScript-a i pre hidracije kartice su VIDLJIVE. Zato početno stanje
- *   kaže „prikazano", pa se u layout efektu sakriju — tako nema treptaja, a ni
- *   prazne sekcije u HTML-u koji čita pretraga.
- * - `prefers-reduced-motion` gasi i ulazak i podizanje na kursor; ostaje samo
- *   promena boje ivice, koja nije kretanje.
- * - Razmak između kartica je 70 ms: dovoljno da se primeti redosled, a ceo niz
- *   od sedam kartica završi ispod sekunde.
- */
-const STEP = 70;
-
 export function WhatsIncludedSection() {
-  const [revealed, setRevealed] = useState(true);
-  const gridRef = useRef<HTMLUListElement | null>(null);
-
-  useIsoLayoutEffect(() => {
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-    if (typeof IntersectionObserver === "undefined") return;
-    setRevealed(false);
-  }, []);
-
-  useEffect(() => {
-    const node = gridRef.current;
-    if (!node) return;
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-    if (typeof IntersectionObserver === "undefined") return;
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        for (const entry of entries) {
-          if (entry.isIntersecting) {
-            setRevealed(true);
-            observer.disconnect();
-          }
-        }
-      },
-      { threshold: 0.15 },
-    );
-
-    observer.observe(node);
-    return () => observer.disconnect();
-  }, []);
-
   return (
     <section id="sta-dobijas" className="scroll-mt-20 bg-panel py-20 md:py-24">
       <div className="mx-auto max-w-6xl px-6">
-        <div className="max-w-2xl">
-          <h2 className="font-medium text-3xl text-foreground tracking-[-0.02em] md:text-4xl">
-            Šta <Accent tone="lime">dobijaš</Accent> u Skool zajednici
-          </h2>
-          <p className="mt-4 text-foreground/75 text-lg">
-            Sve na jednom mestu, na srpskom. Jedna članarina nosi ceo put od četiri meseca — izrada
-            se uvek uči uz nalaženje klijenata i naplatu, jer prvo bez drugog ne donosi novac.
-          </p>
-        </div>
+        <div className="grid gap-12 md:grid-cols-2 md:items-center md:gap-16">
+          <div>
+            <h2 className="font-medium text-3xl text-foreground tracking-[-0.02em] md:text-4xl">
+              Šta <Accent tone="lime">dobijaš</Accent> u Skool zajednici
+            </h2>
+            <p className="mt-4 text-foreground/75 text-lg">
+              Svakog meseca dobijaš razlog da nastaviš.
+            </p>
 
-        <ul ref={gridRef} className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {items.map((item, index) => (
-            <li
-              key={item.title}
-              className="motion-reduce:transition-none"
-              style={{
-                opacity: revealed ? 1 : 0,
-                transform: revealed ? "none" : "translateY(14px)",
-                transition: "opacity 520ms ease, transform 520ms cubic-bezier(0.22, 1, 0.36, 1)",
-                transitionDelay: revealed ? `${index * STEP}ms` : "0ms",
-              }}
-            >
-              <div className="group h-full rounded-2xl border border-border bg-card p-6 transition duration-200 hover:-translate-y-1 hover:border-background/30 hover:bg-background/[0.1] motion-reduce:translate-none! motion-reduce:transition-colors">
-                <div className="flex size-10 items-center justify-center rounded-lg bg-primary transition-transform duration-200 group-hover:scale-110 motion-reduce:scale-100!">
-                  <item.icon className="size-5 text-primary-foreground" />
-                </div>
-                <h3 className="mt-4 font-semibold text-foreground">{item.title}</h3>
-                <p className="mt-2 text-foreground/70 text-sm leading-relaxed">
-                  {item.description}
-                </p>
-              </div>
-            </li>
-          ))}
-        </ul>
+            <ul className="mt-10 space-y-6">
+              {items.map((item) => (
+                <li key={item.title} className="flex gap-4">
+                  <span className="text-2xl leading-none" aria-hidden="true">
+                    {item.emoji}
+                  </span>
+                  <div>
+                    <h3 className="font-semibold text-foreground">{item.title}</h3>
+                    <p className="mt-1 text-foreground/70 leading-relaxed">{item.description}</p>
+                  </div>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <PageImage hint="vodoravna slika 3:2 — snimak ekrana Skool zajednice" path="/skool/zajednica.jpg" />
+        </div>
       </div>
     </section>
   );

@@ -9,6 +9,7 @@ import { HeroSection } from "@/components/sections/hero";
 import { MembershipOfferSection } from "@/components/sections/membership-offer";
 import { MentorsSection } from "@/components/sections/mentors";
 import { ProofSection } from "@/components/sections/proof";
+import { SituationSection } from "@/components/sections/situation";
 import { StatBandSection } from "@/components/sections/stat-band";
 import { TimelineSection } from "@/components/sections/timeline";
 import { TurningPointSection } from "@/components/sections/turning-point";
@@ -40,6 +41,7 @@ export default function HomePage() {
   return (
     <main>
       <HeroSection />
+      <SituationSection />
       <TurningPointSection />
       <StatBandSection />
       <ChatDemoSection />

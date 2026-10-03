@@ -1,6 +1,7 @@
 "use client";
 
 import { Accent } from "@/components/accent";
+import { PageImage } from "@/components/page-image";
 import { type CommunityCase, communityCases } from "@/lib/community";
 import { useEffect, useLayoutEffect, useRef, useState } from "react";
 
@@ -168,17 +169,26 @@ export function CommunityHelpSection() {
 
   return (
     <section id="zajednica" className="scroll-mt-20 bg-panel py-20 md:py-24">
-      <div className="mx-auto max-w-3xl px-6">
-        <h2 className="font-medium text-3xl text-foreground tracking-[-0.02em] md:text-4xl">
-          Kad zapneš — tu je <Accent>podrška zajednice</Accent>
-        </h2>
-        <p className="mt-4 text-lg text-muted-foreground leading-relaxed">
-          Svaki posao donese nešto što ne znaš. U zajednici pitaš, i odgovor ne stiže od jedne osobe
-          nego od nekoliko — od onih koji su isto to rešavali pre tebe, i od mentora. Izaberi muku
-          koju i sam imaš.
-        </p>
+      <div className="mx-auto max-w-6xl px-6">
+        <div className="grid gap-10 md:grid-cols-2 md:items-center md:gap-16">
+          <PageImage
+            src="/skool/podrska-primer.png"
+            alt="Primer teme u Skool zajednici Nauči Dizajn — pitanje o sajtu polaznika, sa odgovorima mentora i članova"
+          />
 
-        <div className="mt-8 flex flex-wrap gap-2.5">
+          <div>
+            <h2 className="font-medium text-3xl text-foreground tracking-[-0.02em] md:text-4xl">
+              Kad zapneš — tu je <Accent>podrška zajednice</Accent>
+            </h2>
+            <p className="mt-4 text-lg text-muted-foreground leading-relaxed">
+              Svaki posao donese nešto što ne znaš. U zajednici pitaš, i odgovor ne stiže od jedne
+              osobe nego od nekoliko — od onih koji su isto to rešavali pre tebe, i od mentora.
+              Izaberi muku koju i sam imaš.
+            </p>
+          </div>
+        </div>
+
+        <div className="mt-10 max-w-3xl flex flex-wrap gap-2.5">
           {communityCases.map((item, index) => {
             const on = index === active;
             return (
@@ -199,7 +209,7 @@ export function CommunityHelpSection() {
           })}
         </div>
 
-        <div className="mt-8">
+        <div className="mt-8 max-w-3xl">
           {activeCase ? (
             <CaseBlock key={active} item={activeCase} shownCount={shownCount} typing={typing} />
           ) : null}
@@ -216,7 +226,7 @@ export function CommunityHelpSection() {
           </noscript>
         </div>
 
-        <p className="mt-8 text-muted-foreground text-sm">
+        <p className="mt-8 max-w-3xl text-muted-foreground text-sm">
           Pitanja i odgovori su primeri, napisani da pokažu kako grupa odgovara. Prave poruke iz
           zajednice idu na sajt tek uz saglasnost onih koji su ih napisali.
         </p>

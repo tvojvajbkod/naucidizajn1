@@ -3,8 +3,8 @@ import { PageImage } from "@/components/page-image";
 
 /**
  * Šta dobijaš u Skool zajednici — šest razloga da ostaneš i posle prvog
- * meseca, ne samo šta dobijaš prvog dana. Levo tekst, desno mesto za sliku
- * (snimak ekrana Skool zajednice, kad stigne).
+ * meseca, ne samo šta dobijaš prvog dana. Levo tekst, desno snimak ekrana
+ * Skool zajednice.
  */
 interface Item {
   emoji: string;
@@ -73,7 +73,10 @@ export function WhatsIncludedSection() {
             </ul>
           </div>
 
-          <PageImage hint="vodoravna slika 3:2 — snimak ekrana Skool zajednice" path="/skool/zajednica.jpg" />
+          <PageImage
+            src="/skool/zajednica.jpg"
+            alt="Skool zajednica Nauči Dizajn — naslovna strana sa objavama, mentorskim QnA najavom i statistikom zajednice"
+          />
         </div>
       </div>
     </section>

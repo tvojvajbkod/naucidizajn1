@@ -1,45 +1,51 @@
 import { Accent } from "@/components/accent";
 import { PageImage } from "@/components/page-image";
+import { Briefcase, GraduationCap, Handshake, TrendingUp, Users, Zap } from "lucide-react";
+import type { LucideIcon } from "lucide-react";
 
 /**
  * Šta dobijaš u Skool zajednici — šest razloga da ostaneš i posle prvog
  * meseca, ne samo šta dobijaš prvog dana. Levo tekst, desno snimak ekrana
  * Skool zajednice.
+ *
+ * Ikonica u krugu, isti motiv kao `NextPhaseSection` (`border-primary/45` +
+ * `bg-card`, limeta samo na ikonici i ivici) — sekcija je na `bg-panel`, pa
+ * je krug `bg-card` da se izdvoji od podloge.
  */
 interface Item {
-  emoji: string;
+  icon: LucideIcon;
   title: string;
   description: string;
 }
 
 const items: Item[] = [
   {
-    emoji: "🎓",
+    icon: GraduationCap,
     title: "Edukacija",
     description: "AI workflow, web dizajn, Webflow, prodaja...",
   },
   {
-    emoji: "🤝",
+    icon: Handshake,
     title: "Mentorstvo",
     description: "Pitanja, feedback, korekcije.",
   },
   {
-    emoji: "👥",
+    icon: Users,
     title: "Zajednica",
     description: "Ljudi koji su na istom putu.",
   },
   {
-    emoji: "💼",
+    icon: Briefcase,
     title: "Klijenti",
     description: "Sistemi za pronalaženje i kontaktiranje potencijalnih klijenata.",
   },
   {
-    emoji: "🧠",
+    icon: Zap,
     title: "AI",
     description: "Novi alati, promptovi i workflow-i.",
   },
   {
-    emoji: "📈",
+    icon: TrendingUp,
     title: "Napredak",
     description: "Novi projekti, portfolio i veće cene.",
   },
@@ -61,8 +67,8 @@ export function WhatsIncludedSection() {
             <ul className="mt-10 space-y-6">
               {items.map((item) => (
                 <li key={item.title} className="flex gap-4">
-                  <span className="text-2xl leading-none" aria-hidden="true">
-                    {item.emoji}
+                  <span className="mt-0.5 flex size-7 shrink-0 items-center justify-center rounded-full border border-primary/45 bg-card">
+                    <item.icon className="size-4 text-primary" aria-hidden="true" />
                   </span>
                   <div>
                     <h3 className="font-semibold text-foreground">{item.title}</h3>

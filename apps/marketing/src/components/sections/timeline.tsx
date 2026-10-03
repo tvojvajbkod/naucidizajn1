@@ -2,8 +2,6 @@
 
 import { Accent } from "@/components/accent";
 import { type ProgramMonth, programMonths } from "@/lib/program";
-import { Check } from "lucide-react";
-import { useEffect, useLayoutEffect, useRef, useState } from "react";
 
 /**
  * Put kroz program — četiri meseca, jedan ispod drugog.
@@ -13,81 +11,17 @@ import { useEffect, useLayoutEffect, useRef, useState } from "react";
  * sekcijom iznad („Šta dobijaš"). Krem okvir razdvaja ta dva bloka, a tamni
  * panel drži program kao jednu celinu.
  *
- * Stavke svakog meseca su kvačice i pojavljuju se jedna po jedna kad taj mesec
- * uđe u vidokrug. Pravila su ista kao svuda na sajtu:
- * - bez JavaScript-a i pre hidracije stavke su VIDLJIVE (početno stanje je
- *   „prikazano", pa se sakriju u layout efektu) — tekst mora da se čita i kad
- *   skripta ne radi;
- * - `prefers-reduced-motion` gasi pojavljivanje.
+ * Svaki mesec prikazuje samo oznaku, naslov i ishod — bez liste stavki.
  */
 
-/** Na serveru nema layout faze — tamo se koristi obični efekat. */
-const useIsoLayoutEffect = typeof window === "undefined" ? useEffect : useLayoutEffect;
-
-/** Razmak između dve kvačice. */
-const STEP = 110;
-
-function canAnimate() {
-  if (typeof window === "undefined") return false;
-  if (typeof IntersectionObserver === "undefined") return false;
-  return !window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-}
-
 function MonthRow({ month }: { month: ProgramMonth }) {
-  const [shown, setShown] = useState(true);
-  const ref = useRef<HTMLLIElement | null>(null);
-
-  useIsoLayoutEffect(() => {
-    if (!canAnimate()) return;
-    setShown(false);
-  }, []);
-
-  useEffect(() => {
-    const node = ref.current;
-    if (!node || !canAnimate()) return;
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        for (const entry of entries) {
-          if (entry.isIntersecting) {
-            setShown(true);
-            observer.disconnect();
-          }
-        }
-      },
-      { threshold: 0.35 },
-    );
-
-    observer.observe(node);
-    return () => observer.disconnect();
-  }, []);
-
   return (
-    <li ref={ref} className="p-6 md:p-9">
+    <li className="p-6 md:p-9">
       <div className="grid gap-4 md:grid-cols-[7rem_1fr] md:gap-10">
         <span className="font-semibold text-primary text-sm md:pt-1">{month.label}</span>
         <div>
           <h3 className="font-semibold text-foreground text-xl md:text-2xl">{month.title}</h3>
           <p className="mt-2 font-medium text-foreground/85 leading-relaxed">{month.outcome}</p>
-          <p className="mt-3 text-foreground/65 leading-relaxed">{month.body}</p>
-
-          <ul className="mt-5 grid gap-2.5 sm:grid-cols-2">
-            {month.items.map((item, index) => (
-              <li
-                key={item}
-                className="flex items-start gap-2.5 text-foreground/75 text-sm leading-relaxed motion-reduce:transition-none"
-                style={{
-                  opacity: shown ? 1 : 0,
-                  transform: shown ? "none" : "translateY(6px)",
-                  transition: "opacity 420ms ease, transform 420ms cubic-bezier(0.22, 1, 0.36, 1)",
-                  transitionDelay: shown ? `${index * STEP}ms` : "0ms",
-                }}
-              >
-                <Check className="mt-0.5 size-4 shrink-0 text-primary" aria-hidden="true" />
-                {item}
-              </li>
-            ))}
-          </ul>
         </div>
       </div>
     </li>

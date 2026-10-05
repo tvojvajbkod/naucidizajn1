@@ -32,23 +32,6 @@ export interface CommunityCase {
 
 export const communityCases: CommunityCase[] = [
   {
-    problem: "Forma ne šalje mejl",
-    answers: [
-      {
-        role: "Član zajednice",
-        text: "Sajt ti je statičan — nema ko da primi poruku. Treba ti spoljni servis za forme, to je pet minuta posla.",
-      },
-      {
-        role: "Član zajednice",
-        text: "Ja koristim besplatan plan jednog takvog servisa. Nalepiš adresu na koju stižu poruke i radi, ostatak koda se ne dira.",
-      },
-      {
-        role: "Mentor",
-        text: "Pošalji probni upit sa telefona pre nego što predaš sajt klijentu. Pola grešaka se vidi tek tu.",
-      },
-    ],
-  },
-  {
     problem: "Klijent traži izmene bez kraja",
     answers: [
       {

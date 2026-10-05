@@ -6,6 +6,7 @@ import { FAQSection } from "@/components/sections/faq";
 import { FitCheckSection } from "@/components/sections/fit-check";
 import { HeroSection } from "@/components/sections/hero";
 import { MembershipOfferSection } from "@/components/sections/membership-offer";
+import { MembershipValueSection } from "@/components/sections/membership-value";
 import { MentorsSection } from "@/components/sections/mentors";
 import { NextPhaseSection } from "@/components/sections/next-phase";
 import { ProofSection } from "@/components/sections/proof";
@@ -56,6 +57,7 @@ export default function HomePage() {
       <MembershipOfferSection />
       {/* FAQ ide na panel podlogu jer su i cena iznad i CTA ispod u osnovnoj. */}
       <FAQSection surface="panel" />
+      <MembershipValueSection />
       <CtaSection />
       <JsonLd data={faqJsonLd(membershipFaq)} />
       <JsonLd

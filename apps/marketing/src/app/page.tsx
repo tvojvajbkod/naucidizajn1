@@ -16,6 +16,7 @@ import { ThirtyDaysSection } from "@/components/sections/thirty-days";
 import { TimelineSection } from "@/components/sections/timeline";
 import { WhatsIncludedSection } from "@/components/sections/whats-included";
 import { WorksWallSection } from "@/components/sections/works-wall";
+import { YoutubeVsSystemSection } from "@/components/sections/youtube-vs-system";
 import { membershipFaq } from "@/lib/faq";
 import { buildMetadata } from "@/lib/seo";
 
@@ -52,6 +53,7 @@ export default function HomePage() {
       <StudentWorksMarqueeSection />
       <FitCheckSection />
       <WorksWallSection limit={3} />
+      <YoutubeVsSystemSection />
       <CaseStudyTeaserSection />
       <ProofSection limit={6} />
       <MentorsSection />

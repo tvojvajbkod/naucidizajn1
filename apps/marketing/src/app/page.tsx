@@ -1,5 +1,4 @@
 import { JsonLd, courseJsonLd, faqJsonLd } from "@/components/json-ld";
-import { CaseStudyTeaserSection } from "@/components/sections/case-study-teaser";
 import { ChatDemoSection } from "@/components/sections/chat-demo";
 import { CommunityHelpSection } from "@/components/sections/community-help";
 import { CtaSection } from "@/components/sections/cta";
@@ -15,7 +14,6 @@ import { StudentWorksMarqueeSection } from "@/components/sections/student-works-
 import { ThirtyDaysSection } from "@/components/sections/thirty-days";
 import { TimelineSection } from "@/components/sections/timeline";
 import { WhatsIncludedSection } from "@/components/sections/whats-included";
-import { WorksWallSection } from "@/components/sections/works-wall";
 import { YoutubeVsSystemSection } from "@/components/sections/youtube-vs-system";
 import { membershipFaq } from "@/lib/faq";
 import { buildMetadata } from "@/lib/seo";
@@ -52,9 +50,7 @@ export default function HomePage() {
       <CommunityHelpSection />
       <StudentWorksMarqueeSection />
       <FitCheckSection />
-      <WorksWallSection limit={3} />
       <YoutubeVsSystemSection />
-      <CaseStudyTeaserSection />
       <ProofSection limit={6} />
       <MentorsSection />
       <MembershipOfferSection />

@@ -53,29 +53,4 @@ export const membershipFaq: FaqItem[] = [
     answer:
       "Zato što ti ne fali informacija, nego redosled. Besplatan materijal ti pokaže šta alat ume, ali ne kaže ti koji klijent plaća, koliko da tražiš, šta da odgovoriš kad neko traži popust i kako da isporučiš posao. To je razlika između znanja i zarade. Ako ti treba samo alat, ne treba ti članstvo.",
   },
-  {
-    question: "Prihvataju li klijenti sajt napravljen uz pomoć AI-a?",
-    answer:
-      "Klijent kupuje rezultat — sajt koji radi, izgleda dobro i donosi mu upite. Ne pita kojim alatom je napravljen, isto kao što ne pita u kom programu je crtan logo. AI ti skraćuje izradu; procena šta je dobro, razgovor sa klijentom i ispravke i dalje su na tebi, i baš to se uči.",
-  },
-  {
-    question: "Hoće li AI ukinuti posao web dizajnera?",
-    answer:
-      "Menja ga, i to brzo. Izrada sajta više nije usko grlo — jeste procena, struktura i odnos sa klijentom. Zato je program i postavljen tako da polovinu vremena troši na nalaženje klijenata i prodaju, a ne samo na alat. Ko ostane samo na izradi, njega AI stvarno pritiska.",
-  },
-  {
-    question: "Da li mi je potreban jak računar?",
-    answer:
-      "Ne. Radi se u alatima koji žive u pregledaču, pa je dovoljan prosečan laptop sa stabilnim internetom.",
-  },
-  {
-    question: "Na kom jeziku je edukacija i kako se plaća iz regiona?",
-    answer:
-      "Sve je na srpskom — materijal, sastanci i komunikacija u zajednici. Naplata ide preko Skool platforme, karticom, u dolarima. [POTVRDI: da li postoji mogućnost plaćanja u dinarima ili uplatnicom]",
-  },
-  {
-    question: "Ja sam programer. Ima li ovo smisla za mene?",
-    answer:
-      "Ima, jer prestaješ da zavisiš od dizajnera. Kad umeš i da osmisliš i da napraviš sajt, isporučuješ ceo posao i naplaćuješ ga kao ceo posao. SEO i automatizacije su ti uz to usluga koja se naplaćuje mesečno.",
-  },
 ];

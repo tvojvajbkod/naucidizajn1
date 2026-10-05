@@ -1,7 +1,6 @@
 import { JsonLd, courseJsonLd, faqJsonLd } from "@/components/json-ld";
 import { ChatDemoSection } from "@/components/sections/chat-demo";
 import { CommunityHelpSection } from "@/components/sections/community-help";
-import { CtaSection } from "@/components/sections/cta";
 import { FAQSection } from "@/components/sections/faq";
 import { FitCheckSection } from "@/components/sections/fit-check";
 import { HeroSection } from "@/components/sections/hero";
@@ -53,12 +52,10 @@ export default function HomePage() {
       <FitCheckSection />
       <YoutubeVsSystemSection />
       <ProofSection />
+      <FAQSection />
       <MentorsSection />
-      <MembershipOfferSection />
-      {/* FAQ ide na panel podlogu jer su i cena iznad i CTA ispod u osnovnoj. */}
-      <FAQSection surface="panel" />
       <MembershipValueSection />
-      <CtaSection />
+      <MembershipOfferSection />
       <JsonLd data={faqJsonLd(membershipFaq)} />
       <JsonLd
         data={courseJsonLd({

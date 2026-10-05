@@ -3,7 +3,7 @@ import { MentorPhoto } from "@/components/mentor-photo";
 import { featuredMentors } from "@/lib/testimonials";
 
 /**
- * „Ko te vodi na tvom putu?" — od 23.09.2026. edukaciju vodi jedan čovek, pa sekcija više
+ * „Upoznaj mentora" — od 23.09.2026. edukaciju vodi jedan čovek, pa sekcija više
  * nije mreža od tri kartice nego jedan blok: slika levo, tekst desno. Ako se
  * mentori vrate, raspored se vraća na mrežu (vidi istoriju fajla).
  */
@@ -16,7 +16,7 @@ export function MentorsSection() {
       <div className="mx-auto max-w-6xl px-6">
         <div className="max-w-2xl">
           <h2 className="font-medium text-3xl text-foreground tracking-[-0.02em] md:text-4xl">
-            Ko te vodi <Accent>na tvom putu</Accent>?
+            Upoznaj <Accent>mentora</Accent>
           </h2>
           <p className="mt-4 text-foreground/75 text-lg">
             Ne predaje se iz udžbenika. Gradivo se menja kad se promene alati — zato se sastanci i

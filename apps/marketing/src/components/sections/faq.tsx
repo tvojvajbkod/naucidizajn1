@@ -22,7 +22,7 @@ export function FAQSection({
   items = membershipFaq,
   title = (
     <>
-      Pitanja koja ljudi <Accent>zaista</Accent> postavljaju
+      Šta nas <Accent>pitate</Accent>
     </>
   ),
   description = "Bez uvijanja. Ako nešto ovde ne piše, piši nam i dopunićemo.",

@@ -26,7 +26,14 @@ import { join } from "node:path";
 
 /** Popuni pre pokretanja. `slug` mora da odgovara slug-u rada u works.ts. */
 const sajtovi: Array<{ slug: string; url: string }> = [
-  // { slug: "stolarija-kragujevac", url: "https://primer.rs" },
+  { slug: "tisa-i-begej", url: "https://gagaviiix94-dev.github.io/tisa-i-begej/" },
+  { slug: "studio-square", url: "https://fotostudiosquare.rs" },
+  { slug: "meridian-medical", url: "https://iskrajodesign.github.io/meridian.medikal.mk/" },
+  { slug: "ordinacija-djalovic", url: "https://drmarijadjalovic.com" },
+  {
+    slug: "pokloni-misao",
+    url: "https://aleksandrakijac29-cmyk.github.io/poklonimisao/Pocetna.dc.html",
+  },
 ];
 
 const IZLAZ = join(import.meta.dir, "..", "apps", "marketing", "public", "radovi");

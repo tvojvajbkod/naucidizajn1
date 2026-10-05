@@ -1,52 +1,51 @@
-import { StudentPhoto } from "@/components/student-photo";
 import { stats } from "@/lib/brand";
 import type { Testimonial } from "@/lib/testimonials";
-import { BadgeCheck, Star } from "lucide-react";
+import { Heart, Star, UserRound } from "lucide-react";
 
 /**
- * Utisci kao mehurići oko telefona — bez ruke, samo uređaj i ocene.
+ * Utisci kao obojeni mehurići oko telefona — bez ruke, samo uređaj i ocene.
  *
- * Zamena za red kartica: isti podaci (ime, citat, izvor), samo u formi koja
- * liči na ilustracije „evo kako izgledaju recenzije" — telefon u sredini sa
- * ukupnom ocenom, utisci kao mehurići koji se kaskadno ređaju pored njega.
- * Prikazuju se najviše četiri utiska sa citatom — toliko ih trenutno i ima;
- * ako ih bude više, raspored ostaje čitljiv jer se dodatni jednostavno ne
- * prikazuju u ovoj ilustraciji (puna lista i dalje postoji ispod, u ocenama
- * bez teksta).
+ * Oblik i boje su namerno preuzeti iz referentne ilustracije koju je klijent
+ * poslao (plavi/roze/zeleni mehurić, profil ikonica, zvezdice, srce), ne
+ * izmišljeni — jedina razlika je tekst utiska ispod zvezdica, jer bez njega
+ * mehurić ne dokazuje ništa. Repić mehurića je spljošten ugao
+ * (`rounded-bl-md`), isti trik kao kod chat mehurića u `community-help.tsx`.
+ *
+ * Prikazuju se najviše četiri utiska sa citatom — toliko ih trenutno i ima.
  */
-function Bubble({ item, offset }: { item: Testimonial; offset: boolean }) {
+const COLORS = [
+  { bg: "bg-sky-500", icon: "bg-sky-400/40" },
+  { bg: "bg-pink-500", icon: "bg-pink-400/40" },
+  { bg: "bg-emerald-500", icon: "bg-emerald-400/40" },
+];
+
+function Bubble({ item, color, offset }: { item: Testimonial; color: (typeof COLORS)[number]; offset: boolean }) {
   return (
     <figure
-      className={`rounded-3xl border bg-card p-5 shadow-lg md:max-w-md ${offset ? "md:ml-14" : ""}`}
+      className={`relative rounded-3xl rounded-bl-md p-5 text-white shadow-xl md:max-w-md ${color.bg} ${offset ? "md:ml-14" : ""}`}
     >
-      <div className="flex items-center gap-3">
-        <div className="shrink-0">
-          <StudentPhoto item={item} />
+      <div className="flex items-center gap-2.5">
+        <div className={`flex size-9 shrink-0 items-center justify-center rounded-full ${color.icon}`}>
+          <UserRound className="size-4.5 text-white" aria-hidden="true" />
         </div>
-        <figcaption className="min-w-0">
-          <span className="block truncate font-semibold text-foreground text-sm">
-            {item.name}
-          </span>
+        <figcaption className="min-w-0 flex-1">
+          <span className="block truncate font-semibold text-sm">{item.name}</span>
           {item.role ? (
-            <span className="block truncate text-muted-foreground text-xs">{item.role}</span>
+            <span className="block truncate text-white/75 text-xs">{item.role}</span>
           ) : null}
         </figcaption>
+        <Heart className="size-4.5 shrink-0 fill-white text-white" aria-hidden="true" />
       </div>
 
       <div className="mt-3 flex gap-0.5" aria-label="Ocena 5 od 5">
         {[0, 1, 2, 3, 4].map((index) => (
-          <Star key={index} className="size-3.5 fill-primary text-primary" />
+          <Star key={index} className="size-3.5 fill-white text-white" />
         ))}
       </div>
 
-      <blockquote className="mt-3 text-foreground/80 text-sm leading-relaxed">
+      <blockquote className="mt-3 text-sm text-white/90 leading-relaxed">
         „{item.quote}“
       </blockquote>
-
-      <p className="mt-4 flex items-center gap-1.5 text-muted-foreground text-xs">
-        <BadgeCheck className="size-3.5 shrink-0 text-foreground" aria-hidden="true" />
-        {item.source === "Skool" ? "Recenzija na Skool-u" : "Utisak sa sajta škole"}
-      </p>
     </figure>
   );
 }
@@ -73,7 +72,12 @@ export function TestimonialPhone({ items }: { items: Testimonial[] }) {
 
       <div className="flex flex-col gap-5">
         {shown.map((item, index) => (
-          <Bubble key={item.name} item={item} offset={index % 2 === 1} />
+          <Bubble
+            key={item.name}
+            item={item}
+            color={COLORS[index % COLORS.length] as (typeof COLORS)[number]}
+            offset={index % 2 === 1}
+          />
         ))}
       </div>
     </div>

@@ -210,12 +210,15 @@ Skool). Ono je heroj početne strane i ima svoju punu landing stranu.
   Skripta koja radi oboje odjednom: `/opt/node-tools/audit.mjs` (Playwright,
   prolazi kroz sve stranice). Gradijente ne vidi, pa panel sa prelivom
   (`TimelineSection`, `FitCheckSection`) proveri i okom.
-- **Centrirano je rezervisano za dva trenutka** (odluka 27.09.): hero i sekcija
-  sa prepiskom („Kako ti praviš sajt", `chat-demo.tsx`). Tamo je i sadržaj ispod
-  naslova simetričan, pa centriranje ima smisla. SVE ostale sekcije su levo
-  poravnate — naslov, uvod, kartice i spiskovi. Razlog nije ukus nego čitanje:
-  čim pasus pređe tri reda ili ispod njega dođe spisak, centriran tekst usporava
-  jer levi rub postaje nazubljen. Ne centriraj „da bude ujednačeno".
+- **Centrirano je rezervisano za jedan trenutak** (odluka 27.09., hero izuzet
+  05.10.): sekcija sa prepiskom („Kako ti praviš sajt", `chat-demo.tsx`). Tamo
+  je sadržaj ispod naslova simetričan, pa centriranje ima smisla. SVE ostale
+  sekcije su levo poravnate — naslov, uvod, kartice i spiskovi. Razlog nije ukus
+  nego čitanje: čim pasus pređe tri reda ili ispod njega dođe spisak, centriran
+  tekst usporava jer levi rub postaje nazubljen. Ne centriraj „da bude
+  ujednačeno". Hero (`sections/hero.tsx`) je 05.10. prešao sa centriranog na
+  asimetrični split (tekst levo, ilustracija bleedovana do desne ivice) kad je
+  dobio sliku — ne vraćaj centriranje tamo bez novog dogovora.
 - **Sajt ima JEDNU stranu ponude — početnu** (odluka 28.09.). Ovo poništava
   jučerašnje pravilo „cena nije na početnoj". Do 28.09. su postojale dve strane
   o istoj edukaciji: `/` i `/ai-web-dizajner`. Druga je bila podskup prve plus

@@ -16,7 +16,7 @@ export function YoutubeVsSystemSection() {
     <section className="py-20 md:py-24">
       <div className="mx-auto max-w-6xl px-6">
         <h2 className="max-w-3xl font-medium text-3xl text-foreground tracking-[-0.02em] md:text-4xl">
-          Zašto da platim 99 $ kada na <Accent>Youtube</Accent> mogu da nađem sve besplatno?
+          Zašto da platim 99 $ kada na <Accent>YouTube</Accent> mogu da nađem sve besplatno?
         </h2>
         <p className="mt-4 max-w-2xl text-lg text-muted-foreground">
           YouTube ti daje informacije. AI Web Dizajner ti daje sistem.

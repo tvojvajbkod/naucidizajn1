@@ -51,7 +51,7 @@ export default function HomePage() {
       <StudentWorksMarqueeSection />
       <FitCheckSection />
       <YoutubeVsSystemSection />
-      <ProofSection limit={6} />
+      <ProofSection />
       <MentorsSection />
       <MembershipOfferSection />
       {/* FAQ ide na panel podlogu jer su i cena iznad i CTA ispod u osnovnoj. */}

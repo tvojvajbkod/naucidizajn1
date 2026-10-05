@@ -2,32 +2,11 @@ import { Accent } from "@/components/accent";
 import { TestimonialPhone } from "@/components/testimonial-phone";
 import { VideoWall } from "@/components/video-wall";
 import { links, stats } from "@/lib/brand";
-import { type Testimonial, testimonials } from "@/lib/testimonials";
-import { ArrowUpRight, Star } from "lucide-react";
+import { testimonials } from "@/lib/testimonials";
+import { ArrowUpRight } from "lucide-react";
 
-/** Ocene bez napisanog teksta — kratke, u jednom redu, da ne prave buku. */
-function RatingChip({ item }: { item: Testimonial }) {
-  return (
-    <li className="flex items-center gap-3 rounded-xl border bg-card px-4 py-3">
-      <span className="flex gap-0.5" aria-label="Ocena 5 od 5">
-        {[0, 1, 2, 3, 4].map((index) => (
-          <Star key={index} className="size-3.5 fill-primary text-primary" />
-        ))}
-      </span>
-      <span className="min-w-0">
-        <span className="block truncate font-medium text-foreground text-sm">{item.name}</span>
-        {item.retention ? (
-          <span className="block truncate text-muted-foreground text-xs">{item.retention}</span>
-        ) : null}
-      </span>
-    </li>
-  );
-}
-
-export function ProofSection({ limit }: { limit?: number }) {
+export function ProofSection() {
   const written = testimonials.filter((item) => item.quote);
-  const rated = testimonials.filter((item) => !item.quote);
-  const shownRatings = limit ? rated.slice(0, limit) : rated;
 
   return (
     <section id="utisci" className="scroll-mt-20 py-20 md:py-24">
@@ -67,19 +46,6 @@ export function ProofSection({ limit }: { limit?: number }) {
           Fotografije stoje prazne dok polaznik ne da saglasnost da se njegovo lice objavi. Lice sa
           stocka uz pravi citat bilo bi gore nego prazan krug.
         </p>
-
-        {shownRatings.length ? (
-          <>
-            <h4 className="mt-12 font-semibold text-foreground text-sm uppercase tracking-wide">
-              Ocenili su sa 5 / 5
-            </h4>
-            <ul className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-              {shownRatings.map((item) => (
-                <RatingChip key={item.name} item={item} />
-              ))}
-            </ul>
-          </>
-        ) : null}
       </div>
     </section>
   );

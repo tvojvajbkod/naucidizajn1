@@ -1,10 +1,10 @@
 import { chromium } from "playwright";
 const browser = await chromium.launch();
 const page = await browser.newPage({ viewport: { width: 1440, height: 1000 } });
-await page.goto("http://localhost:3001/naucidizajn1/", { waitUntil: "networkidle" });
+await page.goto("http://localhost:3001/", { waitUntil: "networkidle" });
 const el = await page.$("#zajednica");
 if (el) await el.scrollIntoViewIfNeeded();
-await page.mouse.wheel(0, 900);
-await page.waitForTimeout(1500);
-await page.screenshot({ path: "C:/Users/MARIJA/AppData/Local/Temp/claude/c--Users-MARIJA-Documents-GitHub-naucidizajn2/ce2e1937-560d-4fd4-96b7-6707e14bae17/scratchpad/marquee.png" });
+await page.mouse.wheel(0, 750);
+await page.waitForTimeout(1200);
+await page.screenshot({ path: "C:/Users/MARIJA/AppData/Local/Temp/claude/c--Users-MARIJA-Documents-GitHub-naucidizajn2/ce2e1937-560d-4fd4-96b7-6707e14bae17/scratchpad/marquee2.png" });
 await browser.close();

@@ -1,56 +1,9 @@
 import { Accent } from "@/components/accent";
-import { StudentPhoto } from "@/components/student-photo";
+import { TestimonialPhone } from "@/components/testimonial-phone";
 import { VideoWall } from "@/components/video-wall";
 import { links, stats } from "@/lib/brand";
 import { type Testimonial, testimonials } from "@/lib/testimonials";
-import { ArrowUpRight, BadgeCheck, Star } from "lucide-react";
-
-/**
- * Kartica utiska — fotografija, ime, citat, pa oznaka izvora na dnu.
- *
- * Raspored je preuzet iz obrasca koji se pokazao najuverljivijim na sajtovima
- * sa pretplatom: red jednakih kartica, lice na vrhu, a ispod citata sitna
- * oznaka koja kaže ODAKLE je utisak. Ta oznaka je ovde poenta, ne ukras —
- * kaže se tačno gde se tvrdnja može proveriti.
- *
- * Oznaka nikad ne sme da tvrdi više nego što znamo. „Recenzija na Skool-u"
- * stoji samo uz utiske koji tamo zaista stoje javno.
- */
-function StudentCard({ item }: { item: Testimonial }) {
-  return (
-    <figure className="flex h-full flex-col rounded-2xl border bg-card p-6">
-      {/* Slika je centrirana, tekst poravnat levo — duži citat centriran postaje
-          nazubljen i teže se čita. */}
-      <div className="flex justify-center">
-        <StudentPhoto item={item} />
-      </div>
-
-      <figcaption className="mt-5">
-        <span className="block font-semibold text-foreground">{item.name}</span>
-        {item.role ? (
-          <span className="mt-0.5 block text-muted-foreground text-xs leading-relaxed">
-            {item.role}
-          </span>
-        ) : null}
-      </figcaption>
-
-      <blockquote className="mt-4 flex-1 text-foreground/80 text-sm leading-relaxed">
-        „{item.quote}“
-      </blockquote>
-
-      {item.retention ? (
-        <span className="mt-5 w-fit rounded bg-primary/15 px-2.5 py-1 text-primary text-xs">
-          {item.retention}
-        </span>
-      ) : null}
-
-      <p className="mt-5 flex items-center gap-1.5 border-border/70 border-t pt-4 text-muted-foreground text-xs">
-        <BadgeCheck className="size-3.5 shrink-0 text-foreground" aria-hidden="true" />
-        {item.source === "Skool" ? "Recenzija na Skool-u" : "Utisak sa sajta škole"}
-      </p>
-    </figure>
-  );
-}
+import { ArrowUpRight, Star } from "lucide-react";
 
 /** Ocene bez napisanog teksta — kratke, u jednom redu, da ne prave buku. */
 function RatingChip({ item }: { item: Testimonial }) {
@@ -105,11 +58,9 @@ export function ProofSection({ limit }: { limit?: number }) {
 
         {/* Bez međunaslova (odluka 27.09.): naslov sekcije već kaže da su ovo
             utisci studenata, pa bi „Šta naši studenti kažu o nama" bila ista
-            rečenica dva puta. Kartice idu odmah ispod video trake. */}
-        <div className="mt-16 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-          {written.map((item) => (
-            <StudentCard key={item.name} item={item} />
-          ))}
+            rečenica dva puta. Mehurići idu odmah ispod video trake. */}
+        <div className="mt-16">
+          <TestimonialPhone items={written} />
         </div>
 
         <p className="mt-5 text-muted-foreground text-sm leading-relaxed">

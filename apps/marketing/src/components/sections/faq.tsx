@@ -1,17 +1,22 @@
 import { Accent } from "@/components/accent";
 import type { FaqItem } from "@/lib/faq";
 import { membershipFaq } from "@/lib/faq";
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@repo/ui";
 import type { ReactNode } from "react";
 
 /**
- * FAQ accordion. Pitanja žive u src/lib/faq.ts da bi isti niz mogao da hrani
- * i faqJsonLd() — FAQ schema je najjači AEO signal.
+ * FAQ. Pitanja žive u src/lib/faq.ts da bi isti niz mogao da hrani i
+ * faqJsonLd() — FAQ schema je najjači AEO signal.
  *
  * `surface` postoji zbog pravila da dve susedne sekcije ne smeju da izgledaju
  * isto. FAQ svuda stoji između ponude i završnog CTA-a, a šta je iznad njega
  * razlikuje se od stranice do stranice — zato podloga nije ugrađena nego se
  * bira na mestu upotrebe. Ne menjaj je bez provere ritma cele stranice.
+ *
+ * Otvaranje je na prelazak mišem preko pitanja (odluka klijenta), ne na klik
+ * sa strelicom — zato nema Accordion komponente ni chevron ikonice. Odgovor
+ * se otvara čistim CSS-om (`grid-template-rows` 0fr → 1fr), a `tabIndex` +
+ * `group-focus` drže isto ponašanje na tastaturi i na dodir, gde hover ne
+ * postoji.
  */
 export function FAQSection({
   items = membershipFaq,
@@ -40,18 +45,20 @@ export function FAQSection({
         </h2>
         <p className="mt-4 text-lg text-foreground/65">{description}</p>
 
-        <Accordion type="single" collapsible className="mt-10 w-full">
+        <div className="mt-10 w-full divide-y divide-border">
           {items.map((item) => (
-            <AccordionItem key={item.question} value={item.question}>
-              <AccordionTrigger className="text-left font-semibold text-base text-foreground">
-                {item.question}
-              </AccordionTrigger>
-              <AccordionContent className="text-base text-foreground/70 leading-relaxed">
-                {item.answer}
-              </AccordionContent>
-            </AccordionItem>
+            <div key={item.question} tabIndex={0} className="group py-5 outline-none">
+              <p className="font-semibold text-base text-foreground">{item.question}</p>
+              <div className="grid grid-rows-[0fr] transition-[grid-template-rows] duration-300 ease-out group-hover:grid-rows-[1fr] group-focus:grid-rows-[1fr]">
+                <div className="overflow-hidden">
+                  <p className="pt-3 text-base text-foreground/70 leading-relaxed">
+                    {item.answer}
+                  </p>
+                </div>
+              </div>
+            </div>
           ))}
-        </Accordion>
+        </div>
       </div>
     </section>
   );

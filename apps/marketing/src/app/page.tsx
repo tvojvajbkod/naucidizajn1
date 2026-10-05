@@ -11,6 +11,7 @@ import { MentorsSection } from "@/components/sections/mentors";
 import { NextPhaseSection } from "@/components/sections/next-phase";
 import { ProofSection } from "@/components/sections/proof";
 import { SituationSection } from "@/components/sections/situation";
+import { StudentWorksMarqueeSection } from "@/components/sections/student-works-marquee";
 import { ThirtyDaysSection } from "@/components/sections/thirty-days";
 import { TimelineSection } from "@/components/sections/timeline";
 import { WhatsIncludedSection } from "@/components/sections/whats-included";
@@ -48,6 +49,7 @@ export default function HomePage() {
       <WhatsIncludedSection />
       <TimelineSection />
       <CommunityHelpSection />
+      <StudentWorksMarqueeSection />
       <FitCheckSection />
       <WorksWallSection limit={3} />
       <CaseStudyTeaserSection />

@@ -1,12 +1,12 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
-import type { PointerEvent as ReactPointerEvent } from "react";
 import { Accent } from "@/components/accent";
 import { assetPath } from "@/lib/asset";
 import { publishedWorks } from "@/lib/works";
 import { cn } from "@repo/ui";
 import Image from "next/image";
+import { useEffect, useRef, useState } from "react";
+import type { PointerEvent as ReactPointerEvent } from "react";
 
 /**
  * Coverflow traka radova — kartica najbliža centru se izdvaja (uveća, puna
@@ -130,7 +130,8 @@ export function StudentWorksMarqueeSection() {
             className={cn(
               "w-[72vw] shrink-0 snap-center transition-[transform,opacity,filter,box-shadow] duration-300 ease-out sm:w-[340px]",
               "motion-reduce:!scale-100 motion-reduce:!opacity-100 motion-reduce:!blur-none",
-              index === activeIndex && "shadow-[0_30px_70px_-25px_rgba(0,0,0,0.65)] ring-1 ring-primary/40",
+              index === activeIndex &&
+                "shadow-[0_30px_70px_-25px_rgba(0,0,0,0.65)] ring-1 ring-primary/40",
             )}
           >
             <figure className="overflow-hidden rounded-2xl border bg-background">

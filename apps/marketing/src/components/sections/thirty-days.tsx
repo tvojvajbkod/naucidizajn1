@@ -1,5 +1,6 @@
 "use client";
 
+import { Accent } from "@/components/accent";
 import { cn } from "@repo/ui";
 import { useEffect, useLayoutEffect, useRef, useState } from "react";
 
@@ -83,13 +84,10 @@ export function ThirtyDaysSection() {
     <section>
       <div className="mx-auto max-w-6xl px-6 py-20 md:py-24">
         <h2 className="max-w-2xl font-medium text-3xl text-foreground tracking-[-0.02em] md:text-4xl">
-          Od „ne znam šta radim“ do „ovo mogu da naplatim“
+          Od „ne znam šta radim“ do „ovo mogu da <Accent>naplatim</Accent>“
         </h2>
 
-        <ol
-          ref={ref}
-          className="mt-14 grid gap-8 lg:grid-cols-7 lg:gap-4"
-        >
+        <ol ref={ref} className="mt-14 grid gap-8 lg:grid-cols-7 lg:gap-4">
           {days.map((step, index) => (
             <li
               key={step.day}

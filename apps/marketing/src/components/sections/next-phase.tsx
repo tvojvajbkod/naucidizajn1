@@ -1,3 +1,4 @@
+import { Accent } from "@/components/accent";
 import { Check } from "lucide-react";
 
 /**
@@ -40,7 +41,7 @@ export function NextPhaseSection() {
       <div className="mx-auto max-w-6xl px-6 py-20 md:py-24">
         <div className="max-w-2xl">
           <h2 className="font-medium text-3xl text-foreground tracking-[-0.02em] md:text-4xl">
-            A šta posle 30 dana?
+            A šta posle <Accent>30 dana</Accent>?
           </h2>
           <p className="mt-4 text-lg text-muted-foreground leading-relaxed">
             Ne završavaš program kada dobiješ prvog klijenta.

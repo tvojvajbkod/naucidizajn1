@@ -1,3 +1,5 @@
+import { Accent } from "@/components/accent";
+
 /**
  * „Gde si sada?" — pre nego što objasnimo šta nudimo, posetilac prepoznaje
  * sebe. Tri situacije, svaka sa istom putanjom: citat (unutrašnji glas) →
@@ -36,7 +38,7 @@ export function SituationSection() {
       <div className="mx-auto max-w-6xl px-6 py-20 md:py-24">
         <div className="max-w-2xl">
           <h2 className="font-medium text-3xl text-foreground tracking-[-0.02em] md:text-4xl">
-            Gde si sada?
+            Gde si <Accent>sada</Accent>?
           </h2>
           <p className="mt-4 text-lg text-muted-foreground">
             Verovatno se nalaziš u jednoj od ove 3 situacije:

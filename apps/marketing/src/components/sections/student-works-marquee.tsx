@@ -9,8 +9,16 @@ import { cn } from "@repo/ui";
 import Image from "next/image";
 
 /**
- * Coverflow traka radova — kartica najbliža centru se izdvaja (uveća i
- * zatamni manje), ostale u pozadini blede i smanjuju se prema ivicama.
+ * Coverflow traka radova — kartica najbliža centru se izdvaja (uveća, puna
+ * oštrina i providnost), ostale u pozadini blede, smanjuju se i blago
+ * zamagljuju prema ivicama.
+ *
+ * Kartica je namerno uža od ekrana na mobilnom (72vw, ne skoro puna širina)
+ * da sused UVEK proviruje sa obe strane — bez toga traka na malom ekranu
+ * izgleda kao jedna izolovana slika, ne kao niz koji se skroluje (greška iz
+ * prve verzije, 06.10.). Pad providnosti je namerno blag (do 0,6, ne 0,45)
+ * da taj sused ostane jasno vidljiv kao „još nešto postoji ovde", dok pad
+ * veličine (do 0,68) nosi glavni utisak izdvajanja.
  *
  * Isti izvor podataka kao zid radova (`src/lib/works.ts`): rad se ovde
  * pojavljuje tek kad je `published: true` i kad postoje OBE saglasnosti.
@@ -39,8 +47,13 @@ export function StudentWorksMarqueeSection() {
         const distance = Math.abs(itemCenter - center);
         const proximity = Math.min(distance / (trackRect.width / 2), 1);
 
-        item.style.transform = `scale(${1 - proximity * 0.22})`;
-        item.style.opacity = String(1 - proximity * 0.55);
+        // Skaliranje ide ka ivici bliže centru trake, ne ka sopstvenom centru
+        // kartice — inače kartica koja tek proviruje sa ivice ekrana, čim se
+        // smanji, "pobegne" još dalje van vidljivog dela i nestane.
+        item.style.transformOrigin = itemCenter > center ? "left center" : "right center";
+        item.style.transform = `scale(${1 - proximity * 0.32})`;
+        item.style.opacity = String(1 - proximity * 0.4);
+        item.style.filter = proximity > 0.15 ? `blur(${(proximity * 1.5).toFixed(2)}px)` : "";
         item.style.zIndex = String(Math.round((1 - proximity) * 100));
 
         if (distance < closestDistance) {
@@ -103,7 +116,8 @@ export function StudentWorksMarqueeSection() {
       <ul
         ref={trackRef}
         onPointerDown={onPointerDown}
-        className="mt-12 flex cursor-grab snap-x snap-mandatory gap-6 overflow-x-auto px-[calc(50%-140px)] py-8 [scrollbar-width:none] sm:px-[calc(50%-170px)]"
+        className="mt-12 flex cursor-grab snap-x snap-mandatory gap-4 overflow-x-auto px-[calc(50%-36vw)] py-8 [scrollbar-width:none] sm:gap-6 sm:px-[calc(50%-170px)]"
+        style={{ WebkitOverflowScrolling: "touch" }}
         aria-label="Sajtovi koje su napravili polaznici"
       >
         {publishedWorks.map((work, index) => (
@@ -114,8 +128,8 @@ export function StudentWorksMarqueeSection() {
             }}
             aria-current={index === activeIndex}
             className={cn(
-              "w-[280px] shrink-0 snap-center transition-[transform,opacity,box-shadow] duration-300 ease-out sm:w-[340px]",
-              "motion-reduce:!scale-100 motion-reduce:!opacity-100",
+              "w-[72vw] shrink-0 snap-center transition-[transform,opacity,filter,box-shadow] duration-300 ease-out sm:w-[340px]",
+              "motion-reduce:!scale-100 motion-reduce:!opacity-100 motion-reduce:!blur-none",
               index === activeIndex && "shadow-[0_30px_70px_-25px_rgba(0,0,0,0.65)] ring-1 ring-primary/40",
             )}
           >

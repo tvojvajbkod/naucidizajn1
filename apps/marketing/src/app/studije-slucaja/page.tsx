@@ -7,7 +7,7 @@ import Link from "next/link";
 export const metadata = buildMetadata({
   title: "Studije slučaja",
   description:
-    "Kako izgleda jedan web dizajn projekat od prvog prompta do naplate — sa stvarnim promptovima, porukama klijentu i računicom cene.",
+    "Kako izgleda jedan web dizajn projekat od prvog prompta do naplate - sa stvarnim promptovima, porukama klijentu i računicom cene.",
   path: "/studije-slucaja",
 });
 
@@ -55,7 +55,7 @@ export default function StudijeSlucajaPage() {
 
         <p className="mt-10 max-w-2xl text-muted-foreground text-sm leading-relaxed">
           Priče polaznika objavljujemo samo uz njihovu saglasnost i sa podacima koje sami potvrde.
-          Dok ih nema ovde, nema ih — radije ćemo imati praznu stranicu nego izmišljenu referencu.
+          Dok ih nema ovde, nema ih - radije ćemo imati praznu stranicu nego izmišljenu referencu.
         </p>
       </section>
 

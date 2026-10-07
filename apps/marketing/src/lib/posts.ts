@@ -33,7 +33,7 @@ export const localPosts: BlogPost[] = [
     slug: "klijenti-preko-google-mapa",
     title: "Kako pronaći web dizajn klijente: trik sa Google Mapama koji većina dizajnera ignoriše",
     description:
-      "Umesto slanja ponuda u prazno, klijenti se traže na mapi — lokalne firme koje nemaju sajt ili imaju zastareo. Postupak u četiri koraka.",
+      "Umesto slanja ponuda u prazno, klijenti se traže na mapi - lokalne firme koje nemaju sajt ili imaju zastareo. Postupak u četiri koraka.",
     publishedAt: "2026-09-28",
     cover: {
       src: "/blog/klijenti-preko-google-mapa.jpg",
@@ -41,16 +41,16 @@ export const localPosts: BlogPost[] = [
     },
     content: `Većina početnika i frilensera u web dizajnu pravi istu grešku kada je u pitanju pronalazak prvih klijenata: otvaraju društvene mreže, šalju generičke poruke u prazno ili se nadaju da će ih neko sam kontaktirati.
 
-Postoji jednostavan, a izuzetno efikasan trik koji ubrzava pronalazak klijenata koji zaista imaju i novac i potrebu za novim sajtom — korišćenje Google Mapa.
+Postoji jednostavan, a izuzetno efikasan trik koji ubrzava pronalazak klijenata koji zaista imaju i novac i potrebu za novim sajtom - korišćenje Google Mapa.
 
 ## U čemu je tajna pretrage po mapi
 
-Lokalni biznisi — stomatološke ordinacije, restorani, auto-servisi, frizerski saloni, građevinske firme — svakodnevno zavise od lokalnih kupaca. Kada neko traži uslugu u svom gradu, prva adresa je Google pretraga i Google Mape.
+Lokalni biznisi - stomatološke ordinacije, restorani, auto-servisi, frizerski saloni, građevinske firme - svakodnevno zavise od lokalnih kupaca. Kada neko traži uslugu u svom gradu, prva adresa je Google pretraga i Google Mape.
 
 Kada otvoriš mapu i pogledaš firme u bilo kom gradu, videćeš tri grupe:
 
-1. Firme koje uopšte nemaju naveden sajt — oslanjaju se samo na profil na mapi ili na društvene mreže.
-2. Firme čiji je sajt star deset godina — nije prilagođen telefonu, spor je i nepregledan.
+1. Firme koje uopšte nemaju naveden sajt - oslanjaju se samo na profil na mapi ili na društvene mreže.
+2. Firme čiji je sajt star deset godina - nije prilagođen telefonu, spor je i nepregledan.
 3. Firme sa modernim, funkcionalnim sajtom.
 
 Tvoja ciljna grupa su prve dve.
@@ -59,7 +59,7 @@ Tvoja ciljna grupa su prve dve.
 
 ### 1. Izaberi nišu i grad
 
-Otvori Google Mape i ukucaj delatnost i grad — na primer „stomatolog Beograd“, „autolimarija Novi Sad“, „restoran Niš“.
+Otvori Google Mape i ukucaj delatnost i grad - na primer „stomatolog Beograd“, „autolimarija Novi Sad“, „restoran Niš“.
 
 ### 2. Pogledaj kako stoje na mreži
 
@@ -75,11 +75,11 @@ Nemoj nuditi „lepši dizajn“. Pronađi problem koji ih košta novca:
 
 ### 4. Pošalji personalizovanu ponudu
 
-Umesto generičke poruke, obrati im se direktno i ukaži na problem koji si primetio, uz kratko rešenje — kako im nov sajt može dovesti više pacijenata ili kupaca.
+Umesto generičke poruke, obrati im se direktno i ukaži na problem koji si primetio, uz kratko rešenje - kako im nov sajt može dovesti više pacijenata ili kupaca.
 
 ## Zašto ova metoda daje rezultate
 
-- **Potreba je vidljiva.** Ne nudiš uslugu nekome kome ne treba — javljaš se firmi koja očigledno zaostaje za konkurencijom na istoj mapi.
+- **Potreba je vidljiva.** Ne nudiš uslugu nekome kome ne treba - javljaš se firmi koja očigledno zaostaje za konkurencijom na istoj mapi.
 - **Manja konkurencija.** Većina dizajnera juri klijente po Upwork-u ili Instagramu, dok su lokalne firme potpuno zanemarene.
 - **Vrednost je jasna.** Kada vlasniku pokažeš kako gubi klijente jer mu sajt ne radi dobro na telefonu, izrada sajta postaje investicija, a ne trošak.
 

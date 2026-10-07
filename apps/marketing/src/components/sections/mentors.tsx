@@ -19,7 +19,7 @@ export function MentorsSection() {
             Upoznaj <Accent>mentora</Accent>
           </h2>
           <p className="mt-4 text-foreground/75 text-lg">
-            Ne predaje se iz udžbenika. Gradivo se menja kad se promene alati — zato se sastanci i
+            Ne predaje se iz udžbenika. Gradivo se menja kad se promene alati - zato se sastanci i
             drže svakog ponedeljka u 19 h, uživo.
           </p>
         </div>

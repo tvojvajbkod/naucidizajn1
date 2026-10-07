@@ -95,7 +95,7 @@ export default async function CaseStudyPage({
       <article className="mx-auto max-w-4xl px-6 py-16 md:py-20">
         <CaseSteps steps={study.steps} />
 
-        {/* Uvlačenje prati kolonu koraka — traka napretka zauzima 3,5rem + 3rem razmaka. */}
+        {/* Uvlačenje prati kolonu koraka - traka napretka zauzima 3,5rem + 3rem razmaka. */}
         <div className="lg:pl-[6.5rem]">
           {study.gallery?.length ? (
             <section className="mt-16">
@@ -130,7 +130,7 @@ export default async function CaseStudyPage({
           {study.kind === "demonstracija" ? (
             <p className="mt-8 text-muted-foreground text-sm leading-relaxed">
               Napomena: klijent iz ovog primera je izmišljen, a iznosi su rasponi koji se sreću na
-              tržištu u regionu — nisu obećanje zarade. Koliko ćeš naplatiti zavisi od obima posla,
+              tržištu u regionu - nisu obećanje zarade. Koliko ćeš naplatiti zavisi od obima posla,
               klijenta i toga koliko si ubedljiv u razgovoru.
             </p>
           ) : null}

@@ -35,7 +35,7 @@ export function StudentPhoto({ item }: { item: Testimonial }) {
       className="flex size-16 items-center justify-center rounded-full border border-border border-dashed bg-panel"
       title={
         isProposal && item.slug
-          ? `Mesto za fotografiju — /utisci/${item.slug}.jpg, uz saglasnost polaznika`
+          ? `Mesto za fotografiju - /utisci/${item.slug}.jpg, uz saglasnost polaznika`
           : undefined
       }
     >

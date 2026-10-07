@@ -51,17 +51,17 @@ export function DarkGradientBg({
         {/* Osnovni preliv: malo svetlije pri vrhu, tamnije ka dnu. */}
         <div className="absolute inset-0 bg-[linear-gradient(180deg,#16161a_0%,#0b0b0d_22%,#0b0b0d_100%)]" />
 
-        {/* Limeta sjaj iza heroja — centriran, širok i vrlo slab. */}
+        {/* Limeta sjaj iza heroja - centriran, širok i vrlo slab. */}
         <div className="absolute inset-0 bg-[radial-gradient(1100px_620px_at_50%_-120px,rgba(183,255,0,0.10),transparent_70%)]" />
 
         {/* Dva tiha ugla, da podloga ne bude simetrična kao gradijent iz alata. */}
         <div className="absolute inset-0 bg-[radial-gradient(900px_700px_at_-10%_34%,rgba(143,204,0,0.05),transparent_70%)]" />
         <div className="absolute inset-0 bg-[radial-gradient(900px_700px_at_110%_76%,rgba(183,255,0,0.045),transparent_70%)]" />
 
-        {/* Mrežica — linije na 72px, jedva vidljive. */}
+        {/* Mrežica - linije na 72px, jedva vidljive. */}
         <div className="absolute inset-0 bg-[length:72px_72px] bg-[linear-gradient(to_right,rgba(245,245,242,0.022)_1px,transparent_1px),linear-gradient(to_bottom,rgba(245,245,242,0.022)_1px,transparent_1px)]" />
 
-        {/* Zrno — skida „plastičnost" velikih tamnih polja. */}
+        {/* Zrno - skida „plastičnost" velikih tamnih polja. */}
         <div
           className="absolute inset-0 opacity-[0.035] mix-blend-overlay"
           style={{ backgroundImage: grain }}

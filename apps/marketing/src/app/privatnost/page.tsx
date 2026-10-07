@@ -48,7 +48,7 @@ export default function PrivacyPage() {
         </p>
         <p>
           <strong>Analitika i kolačići.</strong> Podatke o poseti (stranice, uređaj, približna
-          lokacija) — samo ako na traci sa kolačićima prihvatiš analitiku.
+          lokacija) - samo ako na traci sa kolačićima prihvatiš analitiku.
         </p>
         <p>
           Ne tražimo i ne prikupljamo posebne vrste podataka (zdravlje, uverenja i slično). Naše
@@ -59,18 +59,18 @@ export default function PrivacyPage() {
       <LegalSection title="3. Zašto ih obrađujemo i po kom osnovu">
         <ul className="list-disc space-y-1 pl-6">
           <li>
-            <strong>Izvršenje ugovora</strong> — pristup članstvu koje si platio i podrška uz njega.
+            <strong>Izvršenje ugovora</strong> - pristup članstvu koje si platio i podrška uz njega.
           </li>
           <li>
-            <strong>Pristanak</strong> — prijava na webinar, obaveštenja o novim edukacijama,
+            <strong>Pristanak</strong> - prijava na webinar, obaveštenja o novim edukacijama,
             analitika i marketinški kolačići. Pristanak povlačiš u svakom trenutku, jednako lako kao
             što si ga dao.
           </li>
           <li>
-            <strong>Zakonska obaveza</strong> — izdavanje i čuvanje računa i poreske evidencije.
+            <strong>Zakonska obaveza</strong> - izdavanje i čuvanje računa i poreske evidencije.
           </li>
           <li>
-            <strong>Legitiman interes</strong> — bezbednost sajta i sprečavanje zloupotreba, u meri
+            <strong>Legitiman interes</strong> - bezbednost sajta i sprečavanje zloupotreba, u meri
             koja ne preteže nad tvojim pravima.
           </li>
         </ul>
@@ -83,11 +83,11 @@ export default function PrivacyPage() {
       <LegalSection title="4. S kim delimo podatke">
         <p>Podatke ne prodajemo. Delimo ih samo sa obrađivačima koji su nam potrebni da radimo:</p>
         <ul className="list-disc space-y-1 pl-6">
-          <li>platforma zajednice i naplate članstva — Skool,</li>
-          <li>servis koji prima prijave sa formi — [PROVAJDER FORMI],</li>
-          <li>imejl servis za slanje obaveštenja — [PROVAJDER MEJLA],</li>
-          <li>hosting i isporuka sajta — [HOSTING],</li>
-          <li>analitika i oglasni pikseli — Google Analytics, Meta Pixel (samo uz pristanak),</li>
+          <li>platforma zajednice i naplate članstva - Skool,</li>
+          <li>servis koji prima prijave sa formi - [PROVAJDER FORMI],</li>
+          <li>imejl servis za slanje obaveštenja - [PROVAJDER MEJLA],</li>
+          <li>hosting i isporuka sajta - [HOSTING],</li>
+          <li>analitika i oglasni pikseli - Google Analytics, Meta Pixel (samo uz pristanak),</li>
           <li>knjigovodstvo i nadležni organi kada to zakon nalaže.</li>
         </ul>
         <p>
@@ -100,14 +100,14 @@ export default function PrivacyPage() {
       <LegalSection title="5. Koliko dugo čuvamo podatke">
         <ul className="list-disc space-y-1 pl-6">
           <li>
-            prijave na webinar — do povlačenja pristanka, a najduže [2] godine od poslednje prijave,
+            prijave na webinar - do povlačenja pristanka, a najduže [2] godine od poslednje prijave,
           </li>
           <li>
-            podaci o kupovini i računi — u rokovima koje propisuju poreski propisi (najmanje 10
+            podaci o kupovini i računi - u rokovima koje propisuju poreski propisi (najmanje 10
             godina),
           </li>
-          <li>prepiska — [2] godine od poslednje poruke,</li>
-          <li>podaci iz analitike — prema podešavanju servisa, najduže [14] meseci.</li>
+          <li>prepiska - [2] godine od poslednje poruke,</li>
+          <li>podaci iz analitike - prema podešavanju servisa, najduže [14] meseci.</li>
         </ul>
         <p>Posle isteka roka podatke brišemo ili trajno anonimizujemo.</p>
       </LegalSection>

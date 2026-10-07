@@ -38,7 +38,7 @@ export const testimonials: Testimonial[] = [
     name: "Teodora Đurđenić",
     slug: "teodora-djurdjenic",
     role: "Junior UI/UX dizajner @ Nordeus",
-    quote: "Učenje uz mentorstvo je najveći savet koji mogu da dam — to je novac koji ti se vrati.",
+    quote: "Učenje uz mentorstvo je najveći savet koji mogu da dam - to je novac koji ti se vrati.",
     source: "Sajt",
   },
   {

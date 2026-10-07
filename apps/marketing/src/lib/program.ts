@@ -25,7 +25,7 @@ export const programMonths: ProgramMonth[] = [
     label: "Mesec 1",
     title: "Pravljenje sajtova i dolazak do klijenata",
     outcome: "Na kraju prvog meseca imaš gotov sajt i poslate ponude pravim firmama.",
-    body: "Prvo se nauči da se sajt napravi uz AI, bez kodiranja. Odmah zatim ide onaj deo koji ljudi obično preskoče — kome se javljaš, šta tačno pišeš i koliko naplaćuješ.",
+    body: "Prvo se nauči da se sajt napravi uz AI, bez kodiranja. Odmah zatim ide onaj deo koji ljudi obično preskoče - kome se javljaš, šta tačno pišeš i koliko naplaćuješ.",
     items: [
       "Ceo sajt uz AI, od prazne strane do objave",
       "Biblioteka promptova koji skraćuju rad",
@@ -36,7 +36,7 @@ export const programMonths: ProgramMonth[] = [
   },
   {
     label: "Mesec 2",
-    title: "SEO — da sajt bude pronađen",
+    title: "SEO - da sajt bude pronađen",
     outcome:
       "Na kraju drugog meseca umeš da klijentov sajt postaviš tako da ga ljudi nalaze na pretrazi.",
     body: "Sajt koji niko ne nađe ne donosi posao ni klijentu ni tebi. SEO je i najlakši razlog da ti klijent plati drugi projekat, a ne samo prvi.",

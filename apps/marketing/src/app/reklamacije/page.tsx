@@ -4,7 +4,7 @@ import { buildMetadata } from "@/lib/seo";
 
 export const metadata = buildMetadata({
   title: "Reklamacije",
-  description: "Postupak za reklamacije i povraćaj novca — rokovi, način prijave i kontakt.",
+  description: "Postupak za reklamacije i povraćaj novca - rokovi, način prijave i kontakt.",
   path: "/reklamacije",
 });
 

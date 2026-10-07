@@ -37,12 +37,11 @@ export function TimelineSection() {
             <Accent>Tvoj put</Accent> za naredna 4 meseca
           </h2>
           <p className="mt-4 text-foreground/70 text-lg">
-            Svaki mesec ima svoju temu i svoj ishod. Ne biraš sam šta ćeš učiti i ne vrtiš se u krug
-            — znaš gde si i šta sledi.
+            Svaki mesec ima svoju temu i svoj ishod. Ne biraš sam šta ćeš učiti i ne vrtiš se u krug - znaš gde si i šta sledi.
           </p>
         </div>
 
-        {/* Tamnozeleni panel sa prelivom — program kao jedna celina na krem podlozi. */}
+        {/* Tamnozeleni panel sa prelivom - program kao jedna celina na krem podlozi. */}
         <ol className="mt-12 divide-y divide-border overflow-hidden rounded-3xl bg-[linear-gradient(180deg,#18181c_0%,#101014_100%)]">
           {programMonths.map((month) => (
             <MonthRow key={month.label} month={month} />
@@ -50,7 +49,7 @@ export function TimelineSection() {
         </ol>
 
         <p className="mt-6 text-foreground/60 text-sm">
-          Raspored je okvir, ne rok. Članstvo je mesečno i otkazuješ ga sam, u svakom trenutku — ako
+          Raspored je okvir, ne rok. Članstvo je mesečno i otkazuješ ga sam, u svakom trenutku - ako
           ti treba više vremena za neki mesec, niko te ne gura dalje.
         </p>
       </div>

@@ -8,7 +8,7 @@ import { buildMetadata } from "@/lib/seo";
 import { ArrowRight, Clock, Video } from "lucide-react";
 
 export const metadata = buildMetadata({
-  title: "Besplatan webinar — AI dizajnira, ti zarađuješ",
+  title: "Besplatan webinar - AI dizajnira, ti zarađuješ",
   description:
     "Besplatan webinar od 45 minuta: zašto je sada najbolji trenutak za web dizajn uz AI i kako izgleda put do prvog plaćenog klijenta.",
   path: "/webinar",
@@ -42,7 +42,7 @@ const webinarFaq: FaqItem[] = [
   {
     question: "Šta ako ne mogu uživo?",
     answer:
-      "Prijavi se svejedno — snimak stiže na mejl. [POTVRDI: da li se snimak zaista šalje svim prijavljenima]",
+      "Prijavi se svejedno - snimak stiže na mejl. [POTVRDI: da li se snimak zaista šalje svim prijavljenima]",
   },
   {
     question: "Koliko traje?",
@@ -66,7 +66,7 @@ export default function WebinarPage() {
 
           <p className="mt-6 max-w-2xl text-foreground/75 text-lg leading-relaxed">
             Za 45 minuta razumeš tri stvari: zašto je baš sada trenutak, gde su klijenti koji
-            plaćaju i kako izgleda put do prve zarade. Bez predznanja, bez kodiranja — dovoljno je
+            plaćaju i kako izgleda put do prve zarade. Bez predznanja, bez kodiranja - dovoljno je
             da dođeš i slušaš.
           </p>
 
@@ -124,7 +124,7 @@ export default function WebinarPage() {
           </h2>
           <p className="mx-auto mt-4 max-w-lg text-muted-foreground leading-relaxed">
             Ako ti je već jasno da hoćeš da kreneš, članstvo ti otvara ceo materijal i{" "}
-            {stats.skoolMembers} ljudi koji rade isto što i ti — odmah, bez čekanja na sledeći
+            {stats.skoolMembers} ljudi koji rade isto što i ti - odmah, bez čekanja na sledeći
             termin.
           </p>
           <a
@@ -133,7 +133,7 @@ export default function WebinarPage() {
             rel="noreferrer noopener"
             className="mt-8 inline-flex items-center justify-center gap-2 rounded bg-primary px-7 py-3.5 font-semibold text-primary-foreground transition-colors hover:bg-glow"
           >
-            Pridruži se — {membership.price} mesečno
+            Pridruži se - {membership.price} mesečno
             <ArrowRight className="size-4" />
           </a>
         </div>

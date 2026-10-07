@@ -31,7 +31,7 @@ export default function TermsPage() {
           [MATIČNI BROJ], PIB [PIB], email {brand.email} (u daljem tekstu: {brand.legalName}, „mi").
         </p>
         <p>
-          Uslovi važe za našu edukaciju — mesečno članstvo „Postani AI web dizajner" — kao i za
+          Uslovi važe za našu edukaciju - mesečno članstvo „Postani AI web dizajner" - kao i za
           besplatan webinar i sadržaj na ovom sajtu. Upisom ili prijavom prihvataš ove uslove.
         </p>
         <p>
@@ -49,7 +49,7 @@ export default function TermsPage() {
         <p>
           Gradivo je postavljeno kao put od četiri meseca (izrada sajtova i dolazak do klijenata,
           SEO, AI automatizacije, napredni web dizajn). To je raspored materijala, a ne ugovoreno
-          trajanje — članstvo se plaća i otkazuje mesečno, bez obaveze da ostaneš četiri meseca.
+          trajanje - članstvo se plaća i otkazuje mesečno, bez obaveze da ostaneš četiri meseca.
         </p>
         <p>
           Sadržaj edukacija povremeno dopunjujemo i menjamo kada se promene alati o kojima učimo.
@@ -73,7 +73,7 @@ export default function TermsPage() {
       <LegalSection title="4. Trajanje i otkazivanje članstva">
         <p>
           Članstvo traje mesec dana i obnavlja se automatski dok ga ne otkažeš. Otkazuješ ga sam, iz
-          svog naloga na Skool-u, u bilo kom trenutku — nije potrebno da nam pišeš ni da obrazlažeš
+          svog naloga na Skool-u, u bilo kom trenutku - nije potrebno da nam pišeš ni da obrazlažeš
           razlog.
         </p>
         <p>
@@ -81,7 +81,7 @@ export default function TermsPage() {
           povlači naplatu za naredni mesec.
         </p>
         <p>
-          [POTVRDI: šta ostaje polazniku posle otkazivanja — da li zadržava pristup snimcima
+          [POTVRDI: šta ostaje polazniku posle otkazivanja - da li zadržava pristup snimcima
           sastanaka i materijalima, i u kom obimu.]
         </p>
       </LegalSection>
@@ -89,7 +89,7 @@ export default function TermsPage() {
       <LegalSection title="5. Pravo na odustanak i garancija">
         <p>
           Za digitalni sadržaj koji se isporučuje odmah, zakonsko pravo potrošača na odustanak u
-          roku od 14 dana ne važi kada je izvršenje počelo uz izričitu saglasnost potrošača — što
+          roku od 14 dana ne važi kada je izvršenje počelo uz izričitu saglasnost potrošača - što
           potvrđuješ kada prvi put otvoriš materijale.
         </p>
         <p>
@@ -127,12 +127,12 @@ export default function TermsPage() {
         <p>
           Video lekcije, materijali, šabloni, promptovi i naziv {brand.legalName} su naše
           vlasništvo, odnosno vlasništvo naših predavača, i zaštićeni su zakonom. Kupovinom dobijaš
-          pravo da ih koristiš za sopstveno učenje i za rad sa svojim klijentima — ne i da ih
+          pravo da ih koristiš za sopstveno učenje i za rad sa svojim klijentima - ne i da ih
           preprodaješ ili predaješ kao svoje.
         </p>
         <p>
           Radovi koje napraviš tokom edukacije su tvoji. Objavljujemo ih na sajtu samo uz tvoju
-          saglasnost, a kada je u pitanju rad za klijenta — i uz saglasnost tog klijenta.
+          saglasnost, a kada je u pitanju rad za klijenta - i uz saglasnost tog klijenta.
         </p>
       </LegalSection>
 

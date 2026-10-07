@@ -37,7 +37,7 @@ const notForYou = [
   "Tražiš diplomu ili formalno obrazovanje",
   "Očekuješ zagarantovanu zaradu bez javljanja klijentima",
   "Nemaš vremena da radiš van snimaka",
-  "Hoćeš da naučiš kodiranje — ovo je program o dizajnu i prodaji",
+  "Hoćeš da naučiš kodiranje - ovo je program o dizajnu i prodaji",
 ];
 
 function canAnimate() {
@@ -111,7 +111,7 @@ export function FitCheckSection() {
             </ul>
           </div>
 
-          {/* Tiha strana: bez podloge, samo isprekidana ivica — namerno slabija. */}
+          {/* Tiha strana: bez podloge, samo isprekidana ivica - namerno slabija. */}
           <div className="rounded-2xl border border-foreground/20 border-dashed p-7">
             <h3 className="font-semibold text-foreground text-lg">Nije, ako</h3>
             <ul className="mt-5 space-y-3.5">

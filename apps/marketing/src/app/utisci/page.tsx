@@ -6,7 +6,7 @@ import { buildMetadata } from "@/lib/seo";
 export const metadata = buildMetadata({
   title: "Utisci studenata",
   description:
-    "Utisci polaznika Nauči Dizajna sa sajta i iz Skool zajednice — uz podatak koliko dugo je svaki član i dalje aktivan.",
+    "Utisci polaznika Nauči Dizajna sa sajta i iz Skool zajednice - uz podatak koliko dugo je svaki član i dalje aktivan.",
   path: "/utisci",
 });
 
@@ -22,7 +22,7 @@ export default function UtisciPage() {
             Utisci studenata
           </h1>
           <p className="mt-5 max-w-2xl text-foreground/75 text-lg leading-relaxed">
-            Svi utisci ovde su preuzeti sa naših kanala — sa sajta i iz Skool zajednice. Uz
+            Svi utisci ovde su preuzeti sa naših kanala - sa sajta i iz Skool zajednice. Uz
             recenzije iz zajednice stoji i koliko dugo je taj čovek i dalje član koji plaća, jer je
             to podatak koji se ne može ulepšati.
           </p>

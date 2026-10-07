@@ -38,7 +38,7 @@ export function Screenshot({
         ) : null}
       </div>
 
-      {/* 16:10 okvir — snimci se seku na vrhu strane, kao u pregledaču. */}
+      {/* 16:10 okvir - snimci se seku na vrhu strane, kao u pregledaču. */}
       <div className="relative aspect-[16/10] w-full bg-panel">
         <Image
           src={assetPath(src)}

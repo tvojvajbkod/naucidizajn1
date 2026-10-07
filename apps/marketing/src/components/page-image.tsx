@@ -50,7 +50,7 @@ export function PageImage({
   return (
     <div
       className="flex aspect-[3/2] w-full flex-col items-center justify-center gap-3 rounded-xl border border-border border-dashed bg-panel p-6 text-center"
-      title={isProposal ? `Mesto za sliku — ${path}` : undefined}
+      title={isProposal ? `Mesto za sliku - ${path}` : undefined}
     >
       <span className="flex size-12 items-center justify-center rounded-full bg-primary">
         <ImagePlus className="size-5 text-primary-foreground" aria-hidden="true" />

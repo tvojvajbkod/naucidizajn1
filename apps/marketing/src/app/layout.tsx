@@ -29,7 +29,7 @@ import { brand, isProposal } from "@/lib/brand";
 import { ogImage } from "@/lib/seo";
 import { ConsentBanner } from "@repo/ui/consent";
 
-const siteTitle = `${brand.name} — ${brand.tagline}`;
+const siteTitle = `${brand.name} - ${brand.tagline}`;
 const siteDescription =
   "Online škola dizajna na srpskom. Nauči da praviš sajtove uz pomoć AI-a i dođi do prvog plaćenog klijenta za 30 dana.";
 
@@ -69,7 +69,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="sr">
       <body className="bg-page font-sans text-foreground antialiased">
-        {/* Preliv stoji iza SVEGA — i iza zaglavlja, koje je poluprovidno. */}
+        {/* Preliv stoji iza SVEGA - i iza zaglavlja, koje je poluprovidno. */}
         <DarkGradientBg className="flex min-h-screen flex-col">
           <SiteNav />
           <div className="flex-1">{children}</div>

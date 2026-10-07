@@ -1,8 +1,8 @@
-/* Tipografija za tekst objave — bez plugin zavisnosti.
+/* Tipografija za tekst objave - bez plugin zavisnosti.
 
    PAŽNJA: boje ovde moraju da prate tamnu paletu. Do 28.09. je tekst bio
    `var(--color-ink)`, a taj token je posle prelaska na tamnu paletu postao
-   podloga panela (#141417) — tekst je bio praktično nevidljiv. Koristi
+   podloga panela (#141417) - tekst je bio praktično nevidljiv. Koristi
    `--color-foreground` za tekst i `--color-muted-foreground` za tiše delove. */
 .blog-article {
   color: var(--color-foreground);
@@ -35,7 +35,7 @@
   font-weight: 600;
 }
 
-/* Markeri liste u limeti — isti akcenat kao kvačice u ostatku sajta. */
+/* Markeri liste u limeti - isti akcenat kao kvačice u ostatku sajta. */
 .blog-article li::marker {
   color: var(--color-primary);
 }

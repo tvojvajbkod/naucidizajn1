@@ -17,18 +17,18 @@ export function ProofSection() {
           </h2>
           <p className="mt-4 text-lg text-muted-foreground">
             Ocena zajednice je {stats.skoolRating} na {stats.skoolReviews} recenzija. Uz svaku stoji
-            i koliko dugo je taj čovek i dalje član — zadovoljstvo se lako izjavi, zadržavanje se
+            i koliko dugo je taj čovek i dalje član - zadovoljstvo se lako izjavi, zadržavanje se
             plaća svakog meseca.
           </p>
           {/* Sve što stoji na ovom sajtu o nama pišemo mi. Zato ide link na
-              izvor koji ne uređujemo — jedini način da tvrdnja bude proverljiva. */}
+              izvor koji ne uređujemo - jedini način da tvrdnja bude proverljiva. */}
           <a
             href={links.skool}
             target="_blank"
             rel="noreferrer noopener"
             className="mt-4 inline-flex items-center gap-1.5 font-medium text-foreground text-sm underline underline-offset-4"
           >
-            Sve recenzije stoje javno na Skool-u — proveri sam
+            Sve recenzije stoje javno na Skool-u - proveri sam
             <ArrowUpRight className="size-4" />
           </a>
         </div>

@@ -81,7 +81,7 @@ export function WhatsIncludedSection() {
 
           <PageImage
             src="/skool/zajednica.jpg"
-            alt="Skool zajednica Nauči Dizajn — naslovna strana sa objavama, mentorskim QnA najavom i statistikom zajednice"
+            alt="Skool zajednica Nauči Dizajn - naslovna strana sa objavama, mentorskim QnA najavom i statistikom zajednice"
           />
         </div>
       </div>

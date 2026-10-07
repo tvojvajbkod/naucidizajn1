@@ -78,9 +78,9 @@ const demonstracija: CaseStudy = {
   published: true,
   title: "Anatomija jednog projekta: od prompta do naplate",
   summary:
-    "Ceo posao za izmišljenu stolarsku radionicu, korak po korak — sa stvarnim promptovima, porukama i računicom cene.",
+    "Ceo posao za izmišljenu stolarsku radionicu, korak po korak - sa stvarnim promptovima, porukama i računicom cene.",
   intro:
-    "Ovo je prikaz metoda, ne priča o polazniku. Klijent je izmišljen — stolarska radionica iz manjeg grada koja posluje preko Instagrama — da bi svaki korak mogao da se pokaže doslovno: prompt koji se kuca, poruka koja se šalje, način na koji se dolazi do cene. Pravi projekti se razlikuju po detaljima, ali redosled koraka je ovaj.",
+    "Ovo je prikaz metoda, ne priča o polazniku. Klijent je izmišljen - stolarska radionica iz manjeg grada koja posluje preko Instagrama - da bi svaki korak mogao da se pokaže doslovno: prompt koji se kuca, poruka koja se šalje, način na koji se dolazi do cene. Pravi projekti se razlikuju po detaljima, ali redosled koraka je ovaj.",
   facts: [
     { label: "Klijent", value: "Stolarska radionica (primer)" },
     { label: "Obim", value: "Sajt od pet sekcija, jedna strana" },
@@ -92,7 +92,7 @@ const demonstracija: CaseStudy = {
       label: "Korak 1",
       title: "Nalaženje klijenta kome sajt stvarno fali",
       short: "Uzak profil umesto „bilo ko kome treba sajt“.",
-      body: "Ne tražiš „bilo koga kome treba sajt“, nego uzak profil: zanatska radnja ili lokalna usluga koja već prodaje preko Instagrama, ima objavljene radove i fotografije, i dobija poruke sa pitanjem o ceni. Takav klijent ima dokaz da tražnja postoji i muku koju sajt rešava — ne moraš da ga ubeđuješ da mu internet treba. Praktično: pretraga po lokaciji i delatnosti, pa lista od trideset naloga koji ispunjavaju sva tri uslova.",
+      body: "Ne tražiš „bilo koga kome treba sajt“, nego uzak profil: zanatska radnja ili lokalna usluga koja već prodaje preko Instagrama, ima objavljene radove i fotografije, i dobija poruke sa pitanjem o ceni. Takav klijent ima dokaz da tražnja postoji i muku koju sajt rešava - ne moraš da ga ubeđuješ da mu internet treba. Praktično: pretraga po lokaciji i delatnosti, pa lista od trideset naloga koji ispunjavaju sva tri uslova.",
     },
     {
       label: "Korak 2",
@@ -101,19 +101,19 @@ const demonstracija: CaseStudy = {
       body: "Kratka, konkretna i bez pohvala koje zvuče kao šablon. Pomeni jednu stvar koju si stvarno video na njegovom profilu, imenuj problem koji mu to pravi i ponudi nešto malo. Cilj prve poruke nije prodaja nego odgovor.",
       snippetLabel: "Poruka",
       snippet:
-        "Dobar dan, video sam kuhinju od hrasta koju ste objavili prošle nedelje — radovi su zaista lepi.\n\nPrimetio sam da u opisu profila nemate sajt, pa svako ko pita za cenu mora da vam piše poruku. To znači da odgovarate na ista pitanja po više puta dnevno, a ljudi koji pitaju uveče često ne sačekaju odgovor.\n\nNapravio bih vam jednostavnu stranicu sa galerijom radova, cenovnikom po tipu posla i formom za upit. Mogu da vam pošaljem predlog izgleda pre nego što se dogovorimo o bilo čemu — nezavisno od toga da li ćemo raditi.\n\nZanima vas?",
+        "Dobar dan, video sam kuhinju od hrasta koju ste objavili prošle nedelje - radovi su zaista lepi.\n\nPrimetio sam da u opisu profila nemate sajt, pa svako ko pita za cenu mora da vam piše poruku. To znači da odgovarate na ista pitanja po više puta dnevno, a ljudi koji pitaju uveče često ne sačekaju odgovor.\n\nNapravio bih vam jednostavnu stranicu sa galerijom radova, cenovnikom po tipu posla i formom za upit. Mogu da vam pošaljem predlog izgleda pre nego što se dogovorimo o bilo čemu - nezavisno od toga da li ćemo raditi.\n\nZanima vas?",
     },
     {
       label: "Korak 3",
       title: "Šta pitaš pre nego što otvoriš alat",
       short: "Pet pitanja, ne petnaest.",
-      body: "Pet pitanja, ne petnaest. Koje poslove najviše želi da radi, koje najmanje; koliko otprilike košta najčešći posao; ima li fotografije u pristojnoj rezoluciji; šta ljudi najčešće pitaju; kako želi da ga kontaktiraju. Odgovori na ovih pet pitanja su ceo sadržaj sajta — sve ostalo je oblik.",
+      body: "Pet pitanja, ne petnaest. Koje poslove najviše želi da radi, koje najmanje; koliko otprilike košta najčešći posao; ima li fotografije u pristojnoj rezoluciji; šta ljudi najčešće pitaju; kako želi da ga kontaktiraju. Odgovori na ovih pet pitanja su ceo sadržaj sajta - sve ostalo je oblik.",
     },
     {
       label: "Korak 4",
       title: "Prompt za strukturu",
       short: "Prvi prompt traži redosled, ne izgled.",
-      body: "Prvi prompt ne traži izgled nego redosled. AI dobro sklapa strukturu kad mu daš stvarne odgovore klijenta umesto opšteg opisa delatnosti. Loš prompt je „napravi sajt za stolara“ — dobija se isto što i svi drugi. Dobar prompt nosi ograničenja i rečenice klijenta.",
+      body: "Prvi prompt ne traži izgled nego redosled. AI dobro sklapa strukturu kad mu daš stvarne odgovore klijenta umesto opšteg opisa delatnosti. Loš prompt je „napravi sajt za stolara“ - dobija se isto što i svi drugi. Dobar prompt nosi ograničenja i rečenice klijenta.",
       snippetLabel: "Prompt",
       snippet:
         'Praviš strukturu jednostranog sajta za stolarsku radionicu iz manjeg grada u Srbiji.\n\nŠta znam o klijentu:\n- Najviše želi da radi: kuhinje po meri i ugradne plakare\n- Ne želi više da radi: sitne popravke\n- Najčešći posao košta oko 1.500–3.000 €, izrada traje 3–5 nedelja\n- Ima oko 40 dobrih fotografija gotovih radova\n- Ljudi najčešće pitaju: koliko košta, koliko traje, da li izlazi na teren da meri\n- Želi upite preko forme i WhatsApp-a\n\nDaj mi redosled sekcija sa kratkim obrazloženjem zašto svaka stoji baš tu.\nZa svaku sekciju napiši koji je jedan zadatak te sekcije.\nBez marketinških fraza tipa "vrhunski kvalitet" i "dugogodišnje iskustvo".\nPiši na srpskom, ekavica.',
@@ -122,19 +122,19 @@ const demonstracija: CaseStudy = {
       label: "Korak 5",
       title: "Izrada i ono što AI ne radi umesto tebe",
       short: "Struktura stiže brzo; izbor i provera ostaju na tebi.",
-      body: "Struktura i tekst dolaze brzo. Ono što ostaje na tebi: izbor fotografija koje se ne ponavljaju, čitljivost cenovnika, redosled na mobilnom telefonu — jer će osamdeset odsto ljudi sajt otvoriti na telefonu — i provera da forma zaista stiže na mejl koji klijent otvara. Ovo je deo gde se razdvajaju oni koji su naučili alat od onih koji su naučili posao.",
+      body: "Struktura i tekst dolaze brzo. Ono što ostaje na tebi: izbor fotografija koje se ne ponavljaju, čitljivost cenovnika, redosled na mobilnom telefonu - jer će osamdeset odsto ljudi sajt otvoriti na telefonu - i provera da forma zaista stiže na mejl koji klijent otvara. Ovo je deo gde se razdvajaju oni koji su naučili alat od onih koji su naučili posao.",
     },
     {
       label: "Korak 6",
       title: "Kako se dolazi do cene",
       short: "Cena izlazi iz vrednosti za klijenta, ne iz tvojih sati.",
-      body: "Cena ne izlazi iz tvojih sati nego iz vrednosti za klijenta, ograničene onim što tržište podnosi. Računica: ako mu jedan prosečan posao donosi 1.500–3.000 € i sajt mu godišnje donese makar dva upita koja bi inače propao, sajt se isplatio višestruko. Zato je raspon 300–600 € za jednostranu izradu razuman u regionu — ispod toga radiš ispod cene, iznad toga za ovaj obim klijent traži agenciju. Ključna rečenica u ponudi nije cena nego šta je u nju uključeno i šta nije.",
+      body: "Cena ne izlazi iz tvojih sati nego iz vrednosti za klijenta, ograničene onim što tržište podnosi. Računica: ako mu jedan prosečan posao donosi 1.500–3.000 € i sajt mu godišnje donese makar dva upita koja bi inače propao, sajt se isplatio višestruko. Zato je raspon 300–600 € za jednostranu izradu razuman u regionu - ispod toga radiš ispod cene, iznad toga za ovaj obim klijent traži agenciju. Ključna rečenica u ponudi nije cena nego šta je u nju uključeno i šta nije.",
     },
     {
       label: "Korak 7",
       title: "Predaja i naplata",
       short: "Pola unapred, pola po predaji.",
-      body: "Pola unapred, pola po predaji — standard koji te štiti i klijentu deluje ozbiljno. Uz sajt ide kratko uputstvo kako da sam menja cenovnik i dodaje fotografije, jer klijent koji ume sam da promeni cenu neće te zvati za svaku sitnicu, a tebe će preporučiti. Poslednji korak koji svi preskaču: traži da ti napiše dve rečenice utiska dok je zadovoljan. To je tvoj sledeći klijent.",
+      body: "Pola unapred, pola po predaji - standard koji te štiti i klijentu deluje ozbiljno. Uz sajt ide kratko uputstvo kako da sam menja cenovnik i dodaje fotografije, jer klijent koji ume sam da promeni cenu neće te zvati za svaku sitnicu, a tebe će preporučiti. Poslednji korak koji svi preskaču: traži da ti napiše dve rečenice utiska dok je zadovoljan. To je tvoj sledeći klijent.",
     },
   ],
   takeaways: [
@@ -156,14 +156,14 @@ const studentTemplates: CaseStudy[] = [
     slug: "prica-polaznika-1",
     kind: "student",
     published: false,
-    title: "[POPUNI: naslov — šta je postigao, konkretno]",
+    title: "[POPUNI: naslov - šta je postigao, konkretno]",
     summary: "[POPUNI: jedna rečenica za karticu]",
-    intro: "[POPUNI: prvi pasus — odakle je krenuo i gde je sada]",
+    intro: "[POPUNI: prvi pasus - odakle je krenuo i gde je sada]",
     facts: [
       { label: "Vreme do prvog klijenta", value: "[POPUNI]" },
       { label: "Prethodno iskustvo", value: "[POPUNI]" },
       { label: "Delatnost klijenta", value: "[POPUNI]" },
-      { label: "Naplaćeno", value: "[POPUNI — samo ako polaznik pristane]" },
+      { label: "Naplaćeno", value: "[POPUNI - samo ako polaznik pristane]" },
     ],
     steps: [
       {

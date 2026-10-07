@@ -47,7 +47,7 @@ export function HeroSection() {
             </h1>
 
             <p className="mt-5 max-w-xl text-foreground/80 text-lg leading-relaxed">
-              Nauči da praviš sajtove pomoću AI-ja — i pretvori tu veštinu u prihod.
+              Nauči da praviš sajtove pomoću AI-ja - i pretvori tu veštinu u prihod.
             </p>
 
             <p className="mt-4 max-w-xl text-foreground/80 text-lg leading-relaxed">
@@ -61,7 +61,7 @@ export function HeroSection() {
             </p>
 
             {/* Jedno dugme, ne dva: sekundarno („Vidi kako izgleda iznutra") uklonjeno
-                25.09. — ista stranica se otvara iz navigacije. */}
+                25.09. - ista stranica se otvara iz navigacije. */}
             <div className="mt-8">
               <a
                 href={links.skool}
@@ -69,7 +69,7 @@ export function HeroSection() {
                 rel="noreferrer noopener"
                 className="inline-flex items-center justify-center gap-2 rounded bg-primary px-7 py-4 font-semibold text-primary-foreground transition-transform hover:scale-[1.02]"
               >
-                Pridruži se — {membership.price} mesečno
+                Pridruži se - {membership.price} mesečno
                 <ArrowRight className="size-4" />
               </a>
             </div>

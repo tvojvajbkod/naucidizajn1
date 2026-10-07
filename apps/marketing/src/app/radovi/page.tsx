@@ -10,7 +10,7 @@ import Link from "next/link";
 export const metadata = buildMetadata({
   title: "Radovi polaznika",
   description:
-    "Sajtovi koje su polaznici Nauči Dizajna napravili za prave klijente — objavljeni uz saglasnost polaznika i klijenta.",
+    "Sajtovi koje su polaznici Nauči Dizajna napravili za prave klijente - objavljeni uz saglasnost polaznika i klijenta.",
   path: "/radovi",
 });
 
@@ -26,7 +26,7 @@ export default function RadoviPage() {
           </h1>
           {/* AEO: prvi pasus direktno odgovara na pitanje „šta ovde vidim". */}
           <p className="mt-5 max-w-2xl text-lg text-muted-foreground leading-relaxed">
-            Sajtovi koje su polaznici napravili za prave klijente — ne vežbe iz kursa nego plaćen
+            Sajtovi koje su polaznici napravili za prave klijente - ne vežbe iz kursa nego plaćen
             posao. Svaki rad stoji ovde uz saglasnost i polaznika i njegovog klijenta, sa imenom
             autora.
           </p>
@@ -38,7 +38,7 @@ export default function RadoviPage() {
           <WorksGallery />
         ) : (
           <div className="overflow-hidden rounded-2xl border bg-card">
-            {/* Tekst levo, slika desno. Dve kolone tek od `md` — na telefonu
+            {/* Tekst levo, slika desno. Dve kolone tek od `md` - na telefonu
                 slika ide ispod teksta, jer objašnjenje zašto je strana prazna
                 mora da se pročita pre nego što se vidi ukras. */}
             <div className="grid items-center gap-10 p-8 md:grid-cols-[1.1fr_1fr] md:p-10">
@@ -48,12 +48,12 @@ export default function RadoviPage() {
                 </h2>
                 <p className="mt-4 text-muted-foreground leading-relaxed">
                   Sajtove polaznika objavljujemo tek kad dobijemo dozvolu i od polaznika i od
-                  njegovog klijenta — klijent je vlasnik svog brenda i ne objavljujemo ga bez
+                  njegovog klijenta - klijent je vlasnik svog brenda i ne objavljujemo ga bez
                   pitanja. Dok prikupljamo te saglasnosti, ovde nema ničega, i to je namerno: praznu
                   stranicu je lakše objasniti nego tuđi rad predstavljen kao svoj.
                 </p>
                 <p className="mt-4 text-muted-foreground leading-relaxed">
-                  U međuvremenu možeš da vidiš kako ceo posao izgleda iznutra — sa promptovima,
+                  U međuvremenu možeš da vidiš kako ceo posao izgleda iznutra - sa promptovima,
                   porukom klijentu i računicom cene.
                 </p>
                 <Link

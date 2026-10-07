@@ -38,7 +38,7 @@ export function SiteNav() {
       <nav className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-6 py-3">
         <Link
           href="/"
-          aria-label="Nauči Dizajn — početna"
+          aria-label="Nauči Dizajn - početna"
           className="flex items-center text-foreground"
         >
           <SiteLogo />

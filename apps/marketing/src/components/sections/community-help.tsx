@@ -173,16 +173,16 @@ export function CommunityHelpSection() {
         <div className="grid gap-10 md:grid-cols-2 md:items-center md:gap-16">
           <PageImage
             src="/skool/podrska-primer.png"
-            alt="Primer teme u Skool zajednici Nauči Dizajn — pitanje o sajtu polaznika, sa odgovorima mentora i članova"
+            alt="Primer teme u Skool zajednici Nauči Dizajn - pitanje o sajtu polaznika, sa odgovorima mentora i članova"
           />
 
           <div>
             <h2 className="font-medium text-3xl text-foreground tracking-[-0.02em] md:text-4xl">
-              Kad zapneš — tu je <Accent>podrška zajednice</Accent>
+              Kad zapneš - tu je <Accent>podrška zajednice</Accent>
             </h2>
             <p className="mt-4 text-lg text-muted-foreground leading-relaxed">
               Svaki posao donese nešto što ne znaš. U zajednici pitaš, i odgovor ne stiže od jedne
-              osobe nego od nekoliko — od onih koji su isto to rešavali pre tebe, i od mentora.
+              osobe nego od nekoliko - od onih koji su isto to rešavali pre tebe, i od mentora.
               Izaberi muku koju i sam imaš.
             </p>
           </div>
@@ -215,7 +215,7 @@ export function CommunityHelpSection() {
           ) : null}
 
           {/* Bez skripte dugmad ne rade, pa ostali slučajevi stoje ovde.
-              Pregledač sa skriptom ovo ne iscrtava — zato sekcija ne menja
+              Pregledač sa skriptom ovo ne iscrtava - zato sekcija ne menja
               visinu posle hidracije (vidi objašnjenje na vrhu fajla). */}
           <noscript>
             <div className="space-y-10 pt-10">

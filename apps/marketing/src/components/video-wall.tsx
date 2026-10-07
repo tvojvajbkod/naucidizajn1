@@ -116,7 +116,7 @@ export function VideoWall() {
       {hasVideos ? null : (
         <p className="mt-5 text-muted-foreground text-sm leading-relaxed">
           Snimci se objavljuju uz pismenu saglasnost osobe sa snimka. Dok ne stignu, ovde stoje
-          prazna mesta — radije prazno nego tuđe lice sa stocka.
+          prazna mesta - radije prazno nego tuđe lice sa stocka.
         </p>
       )}
     </div>

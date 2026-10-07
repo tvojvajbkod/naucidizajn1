@@ -10,7 +10,7 @@ import Link from "next/link";
 export const metadata = buildMetadata({
   title: "Blog",
   description:
-    "Tekstovi o web dizajnu uz AI, dolasku do klijenata i naplati — iz prakse Nauči Dizajna, na srpskom.",
+    "Tekstovi o web dizajnu uz AI, dolasku do klijenata i naplati - iz prakse Nauči Dizajna, na srpskom.",
   path: "/blog",
 });
 
@@ -38,7 +38,7 @@ export default async function BlogPage() {
           </h1>
           <p className="mt-5 max-w-2xl text-lg text-muted-foreground leading-relaxed">
             Kratki tekstovi iz prakse: kako se dolazi do klijenata, kako se radi uz AI i kako se
-            posao naplaćuje. Bez opštih saveta — svaki tekst ima postupak koji možeš da primeniš
+            posao naplaćuje. Bez opštih saveta - svaki tekst ima postupak koji možeš da primeniš
             istog dana.
           </p>
         </div>
@@ -84,7 +84,7 @@ export default async function BlogPage() {
             ))}
           </ul>
         ) : (
-          /* Prazno stanje je namerno i objašnjeno — isto pravilo kao na /radovi. */
+          /* Prazno stanje je namerno i objašnjeno - isto pravilo kao na /radovi. */
           <div className="max-w-2xl rounded-2xl border bg-card p-8 md:p-10">
             <h2 className="font-medium text-2xl text-foreground tracking-[-0.02em]">
               <Accent>Prvi tekst</Accent> se piše

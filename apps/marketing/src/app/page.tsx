@@ -31,7 +31,7 @@ import { buildMetadata } from "@/lib/seo";
  * DRUGA publika ili druga ponuda, ne „hoćemo još jednu stranicu".
  */
 export const metadata = buildMetadata({
-  title: "Nauči Dizajn — AI dizajnira, ti zarađuješ",
+  title: "Nauči Dizajn - AI dizajnira, ti zarađuješ",
   description:
     "Za 30 dana naučiš da praviš sajtove pomoću veštačke inteligencije i dođeš do prvog plaćenog klijenta. Kroz četiri meseca dodaješ SEO, AI automatizacije i napredni web dizajn. Mesečno članstvo, bez predznanja i bez kodiranja. Na srpskom.",
   path: "/",

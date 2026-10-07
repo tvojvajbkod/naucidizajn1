@@ -12,7 +12,7 @@ export const ogImage = {
   url: "/og.png",
   width: 1200,
   height: 630,
-  alt: `${brand.name} — ${brand.tagline}`,
+  alt: `${brand.name} - ${brand.tagline}`,
 } as const;
 
 export function buildMetadata(input: {

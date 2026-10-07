@@ -50,7 +50,7 @@ const messages: Message[] = [
   },
   {
     from: "covek",
-    text: "Cenovnik pomeri odmah ispod naslova i dodaj formu za upit — ljudi najčešće pitaju za cenu.",
+    text: "Cenovnik pomeri odmah ispod naslova i dodaj formu za upit - ljudi najčešće pitaju za cenu.",
   },
   {
     from: "ai",
@@ -77,7 +77,7 @@ function PersonAvatar({ photo }: { photo?: string }) {
   return (
     <div
       className="flex size-10 shrink-0 items-center justify-center rounded-full border border-border border-dashed bg-muted"
-      title={isProposal ? "Mesto za fotografiju — /chat/<ime>.jpg" : undefined}
+      title={isProposal ? "Mesto za fotografiju - /chat/<ime>.jpg" : undefined}
     >
       <UserRound className="size-5 text-muted-foreground/70" aria-hidden="true" />
     </div>

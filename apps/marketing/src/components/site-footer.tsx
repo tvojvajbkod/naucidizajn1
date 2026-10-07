@@ -38,13 +38,13 @@ export function SiteFooter() {
           <div className="md:col-span-1">
             <Link
               href="/"
-              aria-label="Nauči Dizajn — početna"
+              aria-label="Nauči Dizajn - početna"
               className="flex items-center text-foreground"
             >
               <SiteLogo />
             </Link>
             <p className="mt-4 max-w-xs text-foreground/65 text-sm">
-              Naša misija je najbolja online edukacija na našem jeziku — dostupna svima.
+              Naša misija je najbolja online edukacija na našem jeziku - dostupna svima.
             </p>
             <a
               href={`mailto:${brand.email}`}

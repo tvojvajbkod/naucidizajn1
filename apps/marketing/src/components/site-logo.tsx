@@ -26,7 +26,7 @@ export function SiteLogo({ className }: { className?: string }) {
 
   return (
     <span
-      aria-label={`${logo.alt} — mesto za logo`}
+      aria-label={`${logo.alt} - mesto za logo`}
       style={{ width: logo.width, height: logo.height }}
       className={cn(
         "inline-flex shrink-0 items-center justify-center gap-1.5 rounded border border-current/35 border-dashed",

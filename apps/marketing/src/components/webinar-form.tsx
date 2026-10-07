@@ -133,7 +133,7 @@ export function WebinarForm() {
         />
         <span className="text-foreground/70 text-sm leading-relaxed">
           Saglasan sam da mi pošaljete termin webinara i snimak. Adresu ne dajemo nikome i
-          odjavljuješ se jednim klikom —{" "}
+          odjavljuješ se jednim klikom - {" "}
           <Link href="/privatnost" className="text-foreground underline underline-offset-4">
             politika privatnosti
           </Link>

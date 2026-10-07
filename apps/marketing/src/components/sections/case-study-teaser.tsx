@@ -32,7 +32,7 @@ export function CaseStudyTeaserSection() {
               Pogledaj <Accent>celi postupak</Accent> pre nego što doneseš odluku
             </h2>
             <p className="mt-4 text-foreground/70 text-lg leading-relaxed">
-              Raspakovali smo jedan projekat od prve poruke klijentu do naplate — sa doslovnim
+              Raspakovali smo jedan projekat od prve poruke klijentu do naplate - sa doslovnim
               promptovima koje kucaš, porukom koja dobija odgovor i računicom kako se dolazi do
               cene. Ako ti posle ovoga nije jasno šta radiš, nemoj da se upisuješ.
             </p>

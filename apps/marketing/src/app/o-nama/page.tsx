@@ -17,12 +17,12 @@ export default function ONamaPage() {
       <section className="border-b bg-panel">
         <div className="mx-auto max-w-6xl px-6 py-16 md:py-20">
           <h1 className="max-w-3xl font-medium text-4xl text-foreground leading-tight tracking-[-0.02em] md:text-5xl">
-            Najbolja online edukacija na našem jeziku — dostupna svima
+            Najbolja online edukacija na našem jeziku - dostupna svima
           </h1>
           {/* AEO: prvi pasus odgovara na „šta je Nauči Dizajn". */}
           <p className="mt-5 max-w-2xl text-lg text-muted-foreground leading-relaxed">
             {brand.name} je online škola dizajna koja od 2020. uči ljude sa našeg govornog područja
-            veštinama od kojih se živi. Danas sve to stoji u jednoj edukaciji — „Postani AI web
+            veštinama od kojih se živi. Danas sve to stoji u jednoj edukaciji - „Postani AI web
             dizajner": izrada sajtova uz veštačku inteligenciju, dolazak do klijenata, SEO, AI
             automatizacije i napredni web dizajn. Kroz naše edukacije prošlo je preko{" "}
             {stats.studentsSince2020} polaznika.

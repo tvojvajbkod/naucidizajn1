@@ -41,7 +41,7 @@ export function MembershipOfferSection() {
           {/* Kolona je bila PUNA limeta i bola je oči (izmena 28.09., na osnovu
               utiska firme). Sada je prigušena tamnozelena `#16210B`: ponuda se
               i dalje izdvaja od ostatka strane, ali limeta je vraćena tamo gde
-              treba da udari — na cenu i na dugme.
+              treba da udari - na cenu i na dugme.
 
               Tekst je ovde SVETAO, jer je podloga tamna. Ne vraćaj
               `text-primary-foreground` na ovu kolonu: to je skoro crna boja i
@@ -75,7 +75,7 @@ export function MembershipOfferSection() {
                 <strong className="font-semibold text-foreground">
                   Otkazuješ sam, u svakom trenutku.
                 </strong>{" "}
-                Pretplatu gasiš iz svog naloga — bez poziva, mejla i objašnjenja. Ostaje aktivna do
+                Pretplatu gasiš iz svog naloga - bez poziva, mejla i objašnjenja. Ostaje aktivna do
                 kraja meseca koji si platio i posle toga se više ništa ne naplaćuje. Upis ide preko
                 Skool platforme, gde zajednica i živi.
               </p>
@@ -85,7 +85,7 @@ export function MembershipOfferSection() {
           <div className="bg-panel p-8 md:p-12">
             <h2 className="font-semibold text-foreground text-lg">Kako ide upis</h2>
             {/* Termin sastanka (ponedeljak, 19 h) potvrdila je Nauči Dizajn
-                firma 28.09. Stoji na tri mesta — ovde, u kartici „Mentorski
+                firma 28.09. Stoji na tri mesta - ovde, u kartici „Mentorski
                 sastanak" i u FAQ-u. Ako se termin promeni, menja se na sva tri. */}
             <ol className="mt-6 space-y-5">
               {steps.map((step, index) => (

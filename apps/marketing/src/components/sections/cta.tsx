@@ -14,7 +14,7 @@ import type { ReactNode } from "react";
 const surfaces = {
   plain: "",
   panel: "bg-panel pt-20 md:pt-24",
-  /* stara imena iz svetle verzije — oba sada vode na panel podlogu */
+  /* stara imena iz svetle verzije - oba sada vode na panel podlogu */
   cream: "bg-panel pt-20 md:pt-24",
   muted: "bg-panel pt-20 md:pt-24",
 } as const;
@@ -47,7 +47,7 @@ export function CtaSection({
               rel="noreferrer noopener"
               className="inline-flex items-center justify-center gap-2 rounded bg-primary px-7 py-4 font-semibold text-primary-foreground transition-transform hover:scale-[1.02]"
             >
-              Pridruži se — {membership.price} mesečno
+              Pridruži se - {membership.price} mesečno
               <ArrowRight className="size-4" />
             </a>
             <Link
